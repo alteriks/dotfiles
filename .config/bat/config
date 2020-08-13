@@ -1,0 +1,4 @@
+#--theme="Solarized (dark)"
+
+# Use ".gitignore"-style highlighting for ".ignore" files
+--map-syntax ".ignore:Git Ignore"

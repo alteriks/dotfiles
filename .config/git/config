@@ -1,0 +1,24 @@
+[user]
+	name = Krzysztof Dajka
+	email = alteriks@protonmail.com
+	#signingkey = 513B005BDEFFBED16D470EF8B6C314849BF49C13
+[push]
+	default = simple
+	gpgsign = false
+[gitreview]
+	username = KrzysztofDajka
+[icdiff]
+	options = --highlight --line-numbers
+
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+  prompt = false
+[diff]
+  tool = vimdiff
+#[commit]
+#	gpgsign = true

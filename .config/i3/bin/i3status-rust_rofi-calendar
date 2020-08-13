@@ -1,0 +1,19 @@
+#! /bin/sh
+
+date=$(date '+%d-%m-%Y')
+export TERM=xterm
+gcal  -i -q PL -s 1 -n .  | sed '1,2d' |sed "s,\(Sun  .*\|Sat  .*\|:....:\|:..:\),\<span color='red'\>&\<\/span\>,g; s,:, ,g;  s,<\(..\)>,\<span color='blue'\>\<b\> \1 \</b\><\/span\>," \
+    | rofi \
+        -dmenu \
+        -markup-rows \
+        -no-fullscreen \
+        -font "Monospace 12" \
+        -hide-scrollbar \
+        -bw 2 \
+        -lines 23 \
+        -width -83 \
+	-monitor -2 \
+	-location 3 \
+        -p "$date" > /dev/null 
+echo $blockdate
+date '+%d.%m.%Y %H:%M:%S'
