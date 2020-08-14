@@ -1,0 +1,34 @@
+#!/bin/sh
+
+{% if yadm.hostname == 'carbon' %}
+CLASS=laptop
+{% else %}
+CLASS=other
+{% endif %}
+{% if yadm.hostname == 'moar' %}
+CLASS=workstation
+{% endif %}
+
+yadm config local.class $CLASS
+
+# Because Git submodule commands cannot operate without a work tree, they must
+# be run from within $HOME (assuming this is the root of your dotfiles)
+cd "$HOME"
+
+echo "Init submodules"
+yadm submodule update --recursive --init
+
+if [[ $EUID -ge 1000 ]]; then
+  echo "Updating the yadm repo origin URL"
+  yadm remote set-url origin "git@github.com:alteriks/dotfiles.git"
+fi
+
+if command -v nvim >/dev/null 2>&1; then
+  echo "Bootstraping neovim"
+  vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+fi
+
+if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
+  echo Automatic tpm installation
+  ~/.config/tmux/plugins/tpm/bin/install_plugins
+fi
