@@ -1,4 +1,9 @@
+{% if yadm.hostname == "carbon" %}
+Xft.dpi:       122
+{% else %}
 Xft.dpi:       96
+{% endif %}
+
 Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb

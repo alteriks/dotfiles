@@ -40,7 +40,7 @@ Plug 'mhinz/vim-signify' "OR https://github.com/airblade/vim-gitgutter #slower
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'easymotion/vim-easymotion' "TODO: Prepare Docs Startify/vim-which-key
-Plug 'yegappan/mru' "TODO: Prepare Docs Startify/vim-which-key
+Plug 'yegappan/mru' "TODO: Prepare Docs Startify/vim-which-key TODO: FZFMru. Startify is better?!
 Plug 'mhinz/vim-startify'
 Plug 'rking/ag.vim'
 "Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' } " slow
@@ -199,6 +199,7 @@ hi link CtrlSpaceSelected Visual
 
 let g:airline_exclude_preview = 1
 
+let g:CtrlSpaceCacheDir = "$HOME/.cache/nvim"
 let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
 "let g:CtrlSpaceStatuslineFunction =
 "      \  "airline#extensions#ctrlspace#statusline()"
@@ -267,6 +268,8 @@ map <Leader>k <Plug>(easymotion-k)
 "let MRU_Use_Current_Window = 1
 let MRU_Window_Height = 15
 let MRU_Add_Menu = 0
+let MRU_File = "$HOME/.cache/nvim/vim_mru_files"
+let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 
 "yank/paste with xclip
 "ctrl+shift+v to paste yanked buffer (unnamedplus) doesn't conflict with
@@ -577,8 +580,15 @@ nmap <leader>_ :botright split<CR>
 nnoremap <silent> <leader><C-q> :qa!<CR>
 
 "Close buffer without closing the window and activate
-nmap <C-q> :bp<bar>sp<bar>bn<bar>bd<CR>
-nmap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+function! Bye()
+  if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    :q
+  else
+    :bp<bar>sp<bar>bn<bar>bd<CR>
+  endif
+endfunction
+nmap <C-q> :call Bye()<CR>
+nmap <leader>q :call Bye()<CR>
 let g:which_key_map['q'] = 'Close buffer and activate next'
 
 

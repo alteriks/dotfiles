@@ -44,3 +44,9 @@ if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
   ~/.config/tmux/plugins/tpm/bin/install_plugins
   echo ""
 fi
+
+if [[ $CLASS != other && $EUID -ge 1000 ]]; then
+  mkdir $HOME/git
+  #TODO: from list git clone/pull
+  mkdir $HOME/tmp
+fi
