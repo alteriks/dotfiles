@@ -105,8 +105,10 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/2.5.0/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 #homeshick
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+if [[ -e $HOME/.homesick/repos/homeshick/homeshick.sh ]]; then
+  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+  fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -244,7 +246,9 @@ fi
 
 
 # broot --install
+if [[ -e $HOME/.config/broot/launcher/bash/br ]]; then
 source $HOME/.config/broot/launcher/bash/br
+fi
 
 # smartcase tab completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
