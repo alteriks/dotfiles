@@ -1,16 +1,23 @@
 #!/bin/sh
+echo $SHELL
 
-{% if yadm.hostname == 'carbon' %}
+{% if yadm.hostname == "carbon" %}
 CLASS=laptop
 {% else %}
 CLASS=other
 {% endif %}
-{% if yadm.hostname == 'moar' %}
+{% if yadm.hostname == "moar" %}
 CLASS=workstation
 {% endif %}
 
 yadm config local.class $CLASS
-echo "yadm class: " $(yadm config local.class)
+echo "yadm class:" $(yadm config local.class)
+echo ""
+
+if [[ -e /bin/zsh && $SHELL != /bin/zsh ]]; then
+  chsh -s /bin/zsh
+  echo ""
+fi
 
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
@@ -35,10 +42,5 @@ fi
 if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
   echo Automatic tpm installation
   ~/.config/tmux/plugins/tpm/bin/install_plugins
-  echo ""
-fi
-
-if [[ -e /bin/zsh ]]; then
-  chsh -s /bin/zsh
   echo ""
 fi
