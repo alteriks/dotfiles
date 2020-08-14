@@ -50,7 +50,7 @@ if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   #TODO: from list git clone/pull
   mkdir -p $HOME/tmp
 
-  source ~/.zshenv
+  source ~/.profile
   mkdir -p "$XDG_CACHE_HOME"/zsh
   mkdir -p "$XDG_DATA_HOME"/zsh
   mkdir -p "$XDG_DATA_HOME"/wineprefixes
