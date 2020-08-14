@@ -2,12 +2,16 @@ theme = "modern"
 
 [icons]
 name = "awesome"
-#[icons.overrides]
-#bat = " | | "
-#bat_full = " |X| "
-#bat_charging = " |^| "
-#bat_discharging = " |v| "
 
+{% if yadm.class == "laptop" %}
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time} {power}W"
+{% endif %}
 
 [[block]]
 block = "disk_space"

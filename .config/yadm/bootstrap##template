@@ -46,10 +46,11 @@ if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
 fi
 
 if [[ $CLASS != other && $EUID -ge 1000 ]]; then
-  mkdir $HOME/git
+  mkdir -p $HOME/git
   #TODO: from list git clone/pull
-  mkdir $HOME/tmp
-   ls -l $XDG_CACHE_HOME/zsh
-ls: cannot access '/home/alteriks/.cache/zsh': No such file or directory
- 21:22:34 ✘  ~  mkdir $XDG_CACHE_HOME/zsh
+  mkdir -p $HOME/tmp
+
+  source ~/.zshenv
+  mkdir -p $XDG_CACHE_HOME/zsh
+  mkdir -p "$XDG_DATA_HOME"/zsh/
 fi
