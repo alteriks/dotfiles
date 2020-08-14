@@ -121,6 +121,8 @@ Plug 'machakann/vim-sandwich'
 "
 "
 Plug 'machakann/vim-highlightedyank'
+
+Plug 'ChristianChiarulli/far.vim'
 " }}}
 "Plug 'machakann/vim-highlightedyank' https://www.reddit.com/r/neovim/comments/gofplz/neovim_has_added_the_ability_to_highlight_yanked/
 let g:highlightedyank_highlight_duration = 250
@@ -268,7 +270,7 @@ map <Leader>k <Plug>(easymotion-k)
 "let MRU_Use_Current_Window = 1
 let MRU_Window_Height = 15
 let MRU_Add_Menu = 0
-let MRU_File = "$HOME/.cache/nvim/vim_mru_files"
+let MRU_File = "~/.cache/nvim/vim_mru_files"
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 
 "yank/paste with xclip
@@ -510,6 +512,18 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'          , 'FZF'],
       \ }
 
+let g:which_key_map.r = {
+      \ 'name' : '+find & replace' ,
+      \ 'b' : [':Farr --source=vimgrep'    , 'buffer'],
+      \ 'p' : [':Farr --source=rgnvim'     , 'project'],
+      \ }
+let g:far#source='rgnvim'
+set lazyredraw            " improve scrolling performance when navigating through large results
+let g:far#window_width=60
+" Use %:p with buffer option only
+let g:far#file_mask_favorites=['%:p', '**/*.*', '**/*.js', '**/*.py', '**/*.java', '**/*.css', '**/*.html', '**/*.vim', '**/*.cpp', '**/*.c', '**/*.h', ]
+let g:far#window_min_content_width=30
+let g:far#enable_undo=1
 
 let g:which_key_map.1 = 'Select buffer 1'
 let g:which_key_map.2 = 'Select buffer 2'
