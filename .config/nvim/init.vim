@@ -642,14 +642,6 @@ function! TwfExit(path)
   endfunction
   return funcref('TwfExitClosure')
 endfunction
-
-function! Twf()
-  let temp = tempname()
-  call termopen('/home/alteriks/go/bin/twf ' . @% . ' > ' . temp, { 'on_exit': TwfExit(temp) })
-  startinsert
-endfunction
-
-nnoremap <silent> <Space>t :call Twf()<CR>
 function! s:isdir(dir)
   return !empty(a:dir) && (isdirectory(a:dir) ||
     \ (!empty($SYSTEMDRIVE) && isdirectory('/'.tolower($SYSTEMDRIVE[0]).a:dir)))
@@ -662,7 +654,7 @@ augroup twf_ftdetect
   autocmd BufEnter * if <SID>isdir(expand('%'))
     \ | redraw | echo ''
     \ | let temp = tempname()
-    \ | call termopen('/home/alteriks/go/bin/twf ' . @% . ' > ' . temp, { 'on_exit': TwfExit(temp) })
+    \ | call termopen('/home/alteriks/.local/share/go/bin/twf ' . @% . ' > ' . temp, { 'on_exit': TwfExit(temp) })
     \ | startinsert
     \ | endif
 augroup END
