@@ -17,18 +17,27 @@ cd "$HOME"
 
 echo "Init submodules"
 yadm submodule update --recursive --init
+echo ""
 
 if [[ $EUID -ge 1000 ]]; then
   echo "Updating the yadm repo origin URL"
   yadm remote set-url origin "git@github.com:alteriks/dotfiles.git"
+  echo ""
 fi
 
 if command -v nvim >/dev/null 2>&1; then
   echo "Bootstraping neovim"
-  vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+  echo ""
 fi
 
 if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
   echo Automatic tpm installation
   ~/.config/tmux/plugins/tpm/bin/install_plugins
+  echo ""
+fi
+
+if [[ -e /bin/zsh ]]; then
+  chsh -s /bin/zsh
+  echo ""
 fi
