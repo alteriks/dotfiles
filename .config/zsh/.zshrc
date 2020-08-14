@@ -252,3 +252,5 @@ fi
 
 # smartcase tab completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION

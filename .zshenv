@@ -8,6 +8,11 @@ export XDG_BIN_HOME=$HOME/.local/bin
 export XDG_LIB_HOME=$HOME/.local/lib
 export XDG_CACHE_HOME=$HOME/.cache
 
+#ZSH according to XDG
+export ZDOTDIR=$HOME/.config/zsh
+export HISTFILE="$XDG_DATA_HOME"/zsh/history
+
+
 # XDG compliancy fixes
 
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME"/android

@@ -299,7 +299,7 @@ let g:startify_bookmarks = [
 \ { 'i': '~/.config/i3/config'},
 \ { 'n': '~/.config/nvim/init.vim' },
 \ { 't': '~/.config/tmux/tmux.conf' },
-\ { 'z': '~/.zshrc' },
+\ { 'z': '~/.config/zsh/.zshrc' },
 \ ]
 "TODO: create script which will parse txt/md file and create custom footer. See: startify-faq-11
 let g:startify_custom_footer =

@@ -49,4 +49,7 @@ if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   mkdir $HOME/git
   #TODO: from list git clone/pull
   mkdir $HOME/tmp
+   ls -l $XDG_CACHE_HOME/zsh
+ls: cannot access '/home/alteriks/.cache/zsh': No such file or directory
+ 21:22:34 ✘  ~  mkdir $XDG_CACHE_HOME/zsh
 fi
