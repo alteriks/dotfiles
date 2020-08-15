@@ -21,15 +21,22 @@ pacman --noconfirm -Syu \
     yubioath-desktop
 
 pacman --noconfirm -Syu \
+    noto-fonts \
     powerline-fonts \ 
-    ttf-font-awesome
+    ttf-dejavu \ 
+    ttf-font-awesome \
+    ttf-liberation \ 
 
 # Enable for ykman/ykman-gui (yubikey-manager-qt)
 systemctl enable --now pcscd
 
 pacman --noconfirm -Syu \
+    deluge \
+    mpv \
     pasystray \
     pulsemixer \
+    vlc \
+    youtube-dl \
 
 pacman --noconfirm -Syu \
     arandr \
@@ -63,7 +70,9 @@ pacman --noconfirm -Syu \
     neovim \
     net-tools \
     nnn \
+    python-neovim \
     pkgfile \
+    ripgrep \
     rsync \
     screen \
     strace \
@@ -87,13 +96,13 @@ pacman --noconfirm -Syu \
     pkg-config
 
 pacman -Syu dmidecode lshw xsensors
-pacman -Syu bridge-utils extra/networkmanager-openvpn easy-rsa dnsmasq wireshark-gtk 
+pacman -Syu bridge-utils extra/networkmanager-openvpn easy-rsa dnsmasq wireshark-cli 
 pacman -Syu qemu virt-manager virt-viewer vagrant chrony
 pacman -Syu libreoffice-still nomacs
 pacman -Syu tigervnc remmina rdesktop freerdp libvncserver
 pacman -Syu chromium opera firefox
 
-pacman -Syu vlc digikam darktable kodi electrum 
+pacman -Syu digikam darktable kodi electrum 
 # for iPhone USB tethering
 pacman -Syu usbmuxd libimobiledevice
 
