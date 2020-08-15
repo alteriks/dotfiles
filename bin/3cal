@@ -1,0 +1,3 @@
+#gcal  -i -q PL -s 1 -n ..  | sed "s,\(Sun  .*\|Sat  .*\|:....:\|:..:\),$(tput setaf 1)&$(tput sgr0),g;s/:/ /g"
+
+gcal  -i -q PL -s 1 -n .  | sed "s,\(Sun  .*\|Sat  .*\|:....:\|:..:\),$(tput setaf 1)&$(tput sgr0),g; s,:, ,g; s,<\(..\)>,$(tput bold) \1 $(tput sgr0)," 
