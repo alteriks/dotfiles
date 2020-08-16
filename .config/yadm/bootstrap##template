@@ -59,9 +59,9 @@ if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
   echo ""
 fi
 
-if [[ $CLASS != other && $EUID -ge 1000 ]]; then
+if [[ $CLASS != other ]]; then
+  echo "Mkdir"
   mkdir -p $HOME/git
-  #TODO: from list git clone/pull
   mkdir -p $HOME/tmp
 
   source ~/.profile
@@ -69,4 +69,9 @@ if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   mkdir -p "$XDG_DATA_HOME"/zsh
   mkdir -p "$XDG_CACHE_HOME"/nvim
   mkdir -p "$XDG_DATA_HOME"/wineprefixes
+fi
+
+if [[ $CLASS != other && $EUID -ge 1000 ]]; then
+  echo
+  #TODO: from list git clone/pull
 fi
