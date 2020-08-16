@@ -605,7 +605,7 @@ function! Bye()
   if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
     :q
   else
-    :bp<bar>sp<bar>bn<bar>bd<CR>
+    :bp|sp|bn|bd
   endif
 endfunction
 nmap <C-q> :call Bye()<CR>
