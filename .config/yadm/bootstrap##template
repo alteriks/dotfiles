@@ -9,6 +9,9 @@ CLASS=other
 {% if yadm.hostname == "moar" %}
 CLASS=workstation
 {% endif %}
+{% if yadm.hostname == "nebula" %}
+CLASS=server
+{% endif %}
 
 yadm config local.class $CLASS
 echo "yadm class:" $(yadm config local.class)
@@ -16,6 +19,17 @@ echo ""
 
 if [[ -e /bin/zsh && $SHELL != /bin/zsh ]]; then
   chsh -s /bin/zsh
+  echo ""
+fi
+
+
+if [[ $EUID -ge 1000 ]]; then
+  echo "Installing packages (pacman)"
+  sudo ~/bin/yadm_bootstrap_arch_pacman.sh
+  echo "Installing packages (yay)"
+  ~/bin/yadm_bootstrap_arch_user.sh
+  echo "PostInstall as root"
+  sudo ~/bin/yadm_bootstrap_arch_root_post.sh
   echo ""
 fi
 

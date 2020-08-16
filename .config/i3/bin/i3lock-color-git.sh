@@ -9,6 +9,7 @@ V='#bb00bbbb'  # verifying
 size=140
 
 /usr/bin/i3lock \
+#--nofork \
 --insidevercolor=$C   \
 --ringvercolor=$V     \
 \

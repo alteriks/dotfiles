@@ -1,0 +1,34 @@
+yay -Syu --afterclean --answeredit None \ 
+  gcal \
+  icdiff \
+  pacolog \
+  rofi-calc \
+  spotify \
+  todotxt-machine-git \
+  vivaldi \
+  --noconfirm
+
+#(/home/alteriks/.config/i3/bin/i3-switch-if-workspace-empty)
+pip install i3ipc 
+
+yay -Syu forticlient
+
+{% if yadm.class == "laptop" %}
+# Laptop
+pip install \ 
+    acpi_call \
+    fwupd \
+    powerstat \
+    s-tui \
+    throttled \
+    tlp \
+    tlp-rdw \
+    xorg-xbacklight \
+    undervolt
+{% endif %}
+
+# Change application for "Open in terminal" context menu entry
+gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
+
+#yay -Syu systemd-numlockontty
+#pip install mir.qualia 

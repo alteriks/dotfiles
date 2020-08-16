@@ -1,0 +1,138 @@
+#!/bin/sh
+# Upgrade system
+pacman --noconfirm -Syu 
+
+# LANG
+pacman --noconfirm -Syu \
+  cmake \
+  gcc \
+  pkg-config \
+  python-pip \ 
+  jre8-openjdk \
+  --needed
+
+# FONTS
+pacman --noconfirm -Syu \
+  noto-fonts \
+  powerline-fonts \
+  ttf-dejavu \
+  ttf-font-awesome \
+  ttf-liberation \
+  --needed
+
+pacman --noconfirm -Syu \
+  blueman \
+  deluge \
+  mpv \
+  pasystray \
+  pulseaudio-bluetooth \
+  pulsemixer \
+  vlc \
+  youtube-dl \
+  --needed
+
+pacman --noconfirm -Syu \
+  arandr \
+  flameshot \
+  #i3blocks \
+  i3lock-color \
+  i3status-rust \
+  keepassxc \
+  lxqt-archiver \
+  nemo \
+  networkmanager-openvpn \
+  pcmanfm-qt \
+  picom \
+  redshift \
+  rofi \
+  termite \
+  xclip \
+  xss-lock \
+  veracrypt \
+  zathura-pdf-mupdf \
+  --needed
+
+# CLI TOOLS
+pacman --noconfirm -Syu \
+  acpi \
+  autorandr \
+  bc \
+  bind-tools \
+  bridge-utils \
+  chrony \
+  dmidecode \
+  dnsmasq \
+  easy-rsa \
+  fzf \
+  fd \
+  i7z \
+  jq \
+  lftp \
+  lshw \
+  lsof \
+  mc \
+  mtr \
+  neovim \
+  net-tools \
+  nnn \
+  python-neovim \
+  pkgfile \
+  ripgrep \
+  rsync \
+  screen \
+  strace \
+  sysstat \
+  tcpdump \
+  the_silver_searcher \
+  time \
+  qemu \
+  tmux \
+  unace \
+  unarj \
+  unrar \
+  unzip \
+  usleep \
+  wget \
+  wireshark-cli \
+  vagrant \
+  virt-manager \
+  virt-viewer \
+  xorg-xev \
+  xsensors \
+  zip \
+  --needed
+
+# REMOTE
+pacman -Syu \
+  barrier \
+  freerdp \
+  libvncserver \
+  rdesktop \
+  remmina \
+  tigervnc \
+  --needed
+
+# BROWSER
+pacman --noconfirm -Syu \
+  chromium \
+  firefox \
+  --needed
+
+# iPhone USB tethering
+pacman --noconfirm -Syu \
+  libimobiledevice \
+  usbmuxd \
+  --needed
+
+# YUBIKEY
+pacman --noconfirm -Syu \
+  yubikey-manager-qt \
+  yubioath-desktop\
+  --needed
+
+# pacman --noconfirm -Syu \
+#   darktable \
+#   digikam \
+#   electrum \
+#   kodi \
+#   --needed

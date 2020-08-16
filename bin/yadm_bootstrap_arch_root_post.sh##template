@@ -1,0 +1,12 @@
+systemctl enable --now chronyd
+systemctl enable --now libvirtd
+systemctl enable --now sshd
+
+# Enable for ykman/ykman-gui (yubikey-manager-qt)
+systemctl enable --now pcscd
+
+#systemctl enable numLockOnTty
+
+#ansible
+#useradd -r -m  -G wheel ansible
+#sudo -u ansible -c "ssh-keygen -t ed25519"
