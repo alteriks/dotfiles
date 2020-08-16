@@ -4,6 +4,7 @@ yay -Syu --afterclean --answeredit None \
   icdiff \
   forticlient \
   pacolog \
+  protonvpn-cli-ng \
   rofi-calc \
   spotify \
   todotxt-machine-git \
@@ -36,3 +37,6 @@ pip install \
 
 #yay -Syu systemd-numlockontty
 #pip install mir.qualia 
+
+#TODO: already idempotent but slooow
+vagrant plugin install vagrant-libvirt

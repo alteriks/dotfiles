@@ -2,6 +2,10 @@
 # Upgrade system
 pacman --noconfirm -Syu 
 
+# solaar
+# fwupd
+# piper
+
 # LANG
 pacman --noconfirm -Syu \
   cmake \
@@ -22,7 +26,9 @@ pacman --noconfirm -Syu \
 
 pacman --noconfirm -Syu \
   blueman \
+  calibre \
   deluge \
+  deluge-gtk \
   mpv \
   pasystray \
   pulseaudio-bluetooth \
@@ -33,11 +39,12 @@ pacman --noconfirm -Syu \
 
 pacman --noconfirm -Syu \
   arandr \
+  alacritty \
   flameshot \
-  #i3blocks \
   i3lock-color \
   i3status-rust \
   keepassxc \
+  kitty \
   lxqt-archiver \
   nemo \
   networkmanager-openvpn \
@@ -61,9 +68,12 @@ pacman --noconfirm -Syu \
   bind-tools \
   bridge-utils \
   chrony \
+  docker \
+  docker-compose \
   dmidecode \
   dnsmasq \
   easy-rsa \
+  ebtables \
   fzf \
   fd \
   i7z \
@@ -76,11 +86,14 @@ pacman --noconfirm -Syu \
   neovim \
   net-tools \
   nnn \
+  numlockx \
+  openfortivpn \
   python-neovim \
   pkgfile \
   ripgrep \
   rsync \
   screen \
+  sshpass \
   strace \
   sysstat \
   tcpdump \
