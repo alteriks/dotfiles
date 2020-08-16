@@ -6,6 +6,8 @@ systemctl enable --now sshd
 # Enable for ykman/ykman-gui (yubikey-manager-qt)
 systemctl enable --now pcscd
 
+timedatectl set-ntp true
+
 #systemctl enable numLockOnTty
 
 #ansible
