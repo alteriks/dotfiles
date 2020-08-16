@@ -1,18 +1,20 @@
 #!/bin/sh
 yay -Syu --afterclean --answeredit None \
-#???  gcal \
+  gcal \
   icdiff \
+  forticlient \
   pacolog \
   rofi-calc \
   spotify \
   todotxt-machine-git \
   vivaldi \
+  vivaldi-ffmpeg-codecs \
+  vivaldi-widevine \
   --noconfirm
 
 #(/home/alteriks/.config/i3/bin/i3-switch-if-workspace-empty)
 pip install i3ipc 
 
-yay -Syu forticlient
 
 {% if yadm.class == "laptop" %}
 # Laptop
@@ -29,7 +31,8 @@ pip install \
 {% endif %}
 
 # Change application for "Open in terminal" context menu entry
-gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
+#gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
+#No such schema “org.cinnamon.desktop.default-applications.terminal”
 
 #yay -Syu systemd-numlockontty
 #pip install mir.qualia 
