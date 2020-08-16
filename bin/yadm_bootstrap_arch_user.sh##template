@@ -1,5 +1,5 @@
 #!/bin/sh
-yay -Syu --afterclean --answeredit None \ 
+yay -Syu --afterclean --answeredit None \
 #???  gcal \
   icdiff \
   pacolog \
