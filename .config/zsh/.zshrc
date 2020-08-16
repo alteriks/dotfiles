@@ -20,13 +20,14 @@ stty -ixoff
 export EDITOR=vim
 # BEGIN archlinux
 export EDITOR=nvim
+alias ag='ag --hidden --ignore \.git'
+alias bc='bc -l'
 alias cat="bat -pp"
+alias rg="rg --smart-case"
 alias todo="todo.sh -d $HOME/.config/todo/todo.cfg"
 alias todotxt-machine="todotxt-machine --config ~/.config/todo/todotxt-machinerc"
 alias vi=nvim
 alias vim=nvim
-alias bc='bc -l'
-alias ag='ag --hidden --ignore \.git'
 alias vimdiff='nvim -d'
 # END archlinux
 # Path to your oh-my-zsh installation.
@@ -242,6 +243,10 @@ setopt no_share_history
 if [[ -e ~/.fzf.zsh ]]; then
   source ~/.fzf.zsh
   alias fzfp=fzf --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'
+  #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
+  export FZF_COMPLETION_TRIGGER=''
+  bindkey '^T' fzf-completion
+  bindkey '^I' $fzf_default_completion
 fi
 
 

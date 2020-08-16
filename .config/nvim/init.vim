@@ -35,7 +35,11 @@ Plug 'ryanoasis/vim-devicons'
 
 " }}}
 
+" VCS
 Plug 'mhinz/vim-signify' "OR https://github.com/airblade/vim-gitgutter #slower
+Plug 'tpope/vim-fugitive' "TODO: Prepare Docs Startify/vim-which-key                                git support
+Plug 'junegunn/gv.vim'
+
 "Plug 'edkolev/tmuxline.vim' "Run only once to generate file for TMUX
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -60,7 +64,6 @@ Plug 'SirVer/ultisnips' "TODO: Prepare Docs Startify/vim-which-key
 " Plug 'tpope/vim-commentary'
 Plug 'tomtom/tcomment_vim'
 let g:tcomment#blank_lines=0
-Plug 'tpope/vim-fugitive' "TODO: Prepare Docs Startify/vim-which-key                                git support
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
 
@@ -97,6 +100,7 @@ Plug 'rodjek/vim-puppet'
 "
 
 " Syntax highlight {{{
+Plug 'cespare/vim-toml'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'luochen1990/rainbow'
@@ -242,7 +246,9 @@ set noshowmode
 set hidden
 
 " 'mhinz/vim-signify'
-let g:signify_vcs_list = [ 'git' ]
+" default updatetime 4000ms is not good for async update
+set updatetime=100
+let g:signify_vcs_list = [ 'git', 'yadm' ]
 let g:signify_update_on_focusgained = 1
 "let g:signify_line_highlight = 1
 let g:signify_realtime = 1
@@ -457,6 +463,9 @@ let g:which_key_map.w = {
       \ }
 
 
+" Plug 'mhinz/vim-signify' 
+" Plug 'tpope/vim-fugitive'
+" Plug 'junegunn/gv.vim'
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
       \ 'a' : [':Git add .'                        , 'add all'],
@@ -468,17 +477,15 @@ let g:which_key_map.g = {
       \ 'D' : [':Gdiffsplit'                       , 'diff split'],
       \ 'g' : [':GGrep'                            , 'git grep'],
       \ 'G' : [':Gstatus'                          , 'status'],
-      \ 'h' : [':GitGutterLineHighlightsToggle'    , 'highlight hunks'],
-      \ 'H' : ['<Plug>(GitGutterPreviewHunk)'      , 'preview hunk'],
-      \ 'j' : ['<Plug>(GitGutterNextHunk)'         , 'next hunk'],
-      \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
+      \ 'h' : [':SignifyHunkDiff'                  , 'preview hunk diff'],
+      \ 'H' : [':SignifyToggleHighlight'           , 'highlight hunks'],
+      \ 'j' : ['<Plug>(signify-next-hunk)'         , 'next hunk'],
+      \ 'k' : ['<Plug>(signify-prev-hunk)'         , 'prev hunk'],
       \ 'l' : [':Git log'                          , 'log'],
       \ 'p' : [':Git push'                         , 'push'],
       \ 'P' : [':Git pull'                         , 'pull'],
       \ 'r' : [':GRemove'                          , 'remove'],
-      \ 's' : ['<Plug>(GitGutterStageHunk)'        , 'stage hunk'],
-      \ 't' : [':GitGutterSignsToggle'             , 'toggle signs'],
-      \ 'u' : ['<Plug>(GitGutterUndoHunk)'         , 'undo hunk'],
+      \ 'u' : [':SignifyHunkUndo'                  , 'undo hunk'],
       \ 'v' : [':GV'                               , 'view commits'],
       \ 'V' : [':GV!'                              , 'view buffer commits'],
       \ }

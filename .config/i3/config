@@ -233,26 +233,27 @@ bindsym Mod1+ctrl+k [instance="scratchpad-keepassxc"] scratchpad show
 for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 650 800, move to scratchpad
 #bindsym Mod4+k [instance="scratchpad-keepassxc"] scratchpad show, move position mouse
 #for_window [class=".*"] move position center
-for_window [title="Open database"] sticky enable, border normal
-for_window [window_type="dialog"] sticky enable, border normal, focus
-for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
-for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floating enable
 #for_window [class="KeePassXC"] sticky enable, border normal, focus, floating enable
+floating_maximum_size 1000 x 800
+floating_minimum_size 100 x 50
+for_window [class="(?i)zathura"] focus
+for_window [class="Arandr"] floating enable, border normal, focus,
+for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
+for_window [class="Mousepad"] border normal, focus, floating enable
+for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
+for_window [class="Pavucontrol"] floating enable, border normal, focus, resize set 850 500
+for_window [class="RimWorldLinux"] focus
+for_window [class="Safeeyes"] floating enable, border none, focus,
+for_window [class="Veracrypt"] sticky enable, border normal, focus, floating enable
+for_window [title=" on QEMU/KVM"] sticky enable, border normal, focus, floating enable
+for_window [title="Bluetooth Adapters"] sticky enable, border normal, focus, floating enable
+for_window [title="Bluetooth Devices"] sticky enable, border normal, focus, floating enable
+for_window [title="Open database"] sticky enable, border normal
 for_window [title="Piper"] sticky enable, border normal, focus, floating enable
 for_window [title="Solaar"] sticky enable, border normal, focus, floating enable
-for_window [title="Bluetooth Devices"] sticky enable, border normal, focus, floating enable
-for_window [title="Bluetooth Adapters"] sticky enable, border normal, focus, floating enable
-for_window [title=" on QEMU/KVM"] sticky enable, border normal, focus, floating enable
-for_window [class="Veracrypt"] sticky enable, border normal, focus, floating enable
-for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
-for_window [class="Mousepad"] border normal, focus, floating enable
-for_window [class="Arandr"] floating enable, border normal, focus,
-for_window [class="Pavucontrol"] floating enable, border normal, focus, resize set 850 500
-for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
-floating_minimum_size 100 x 50
-floating_maximum_size 1000 x 800
-for_window [class="(?i)zathura"] focus
-for_window [class = "RimWorldLinux"] focus
+for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floating enable
+for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
+for_window [window_type="dialog"] sticky enable, border normal, focus
 
 #TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
 
@@ -357,8 +358,8 @@ bindsym $mod+Ctrl+Left  workspace prev
 #exec --no-startup-id ~/.config/i3/tray
 #exec --no-startup-id redshift-gtk
 #exec --no-startup-id pulseaudio -D
-exec --no-startup-id feh --bg-max ~/moonraker.jpg ~/fear-and-loathing.jpg ~/dirtyharry.jpg
-exec_always --no-startup-id numlockx on
+#exec --no-startup-id feh --bg-max ~/moonraker.jpg ~/fear-and-loathing.jpg ~/dirtyharry.jpg
+#exec_always --no-startup-id numlockx on
 
 exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
 # Start on specific workspace
