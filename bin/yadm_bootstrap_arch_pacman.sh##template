@@ -7,7 +7,7 @@ pacman --noconfirm -Syu \
   cmake \
   gcc \
   pkg-config \
-  python-pip \ 
+  python-pip \
   jre8-openjdk \
   --needed
 
@@ -103,7 +103,7 @@ pacman --noconfirm -Syu \
   --needed
 
 # REMOTE
-pacman -Syu \
+pacman --noconfirm -Syu \
   barrier \
   freerdp \
   libvncserver \

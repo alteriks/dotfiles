@@ -1,5 +1,6 @@
+#!/bin/sh
 yay -Syu --afterclean --answeredit None \ 
-  gcal \
+#???  gcal \
   icdiff \
   pacolog \
   rofi-calc \
