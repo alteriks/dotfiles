@@ -10,9 +10,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 yadm_bootstrap_arch_pacman.sh\#\#template
-badd +0 yadm_bootstrap_arch_root_post.sh\#\#template
-badd +5 yadm_bootstrap_arch_user.sh\#\#template
-badd +0 BUFFER\ LIST\ KEY\ REFERENCE
+badd +1 yadm_bootstrap_arch_root_post.sh\#\#template
+badd +1 yadm_bootstrap_arch_user.sh\#\#template
+badd +1 BUFFER\ LIST\ KEY\ REFERENCE
 badd +2 ~/.config/yadm/bootstrap\#\#template
 argglobal
 %argdel
@@ -34,11 +34,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 77 + 116) / 232)
-exe 'vert 2resize ' . ((&columns * 76 + 116) / 232)
-exe 'vert 3resize ' . ((&columns * 77 + 116) / 232)
+exe 'vert 1resize ' . ((&columns * 63 + 94) / 189)
+exe 'vert 2resize ' . ((&columns * 61 + 94) / 189)
+exe 'vert 3resize ' . ((&columns * 63 + 94) / 189)
 argglobal
-let s:l = 1 - ((0 * winheight(0) + 28) / 56)
+let s:l = 1 - ((0 * winheight(0) + 37) / 74)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -47,7 +47,7 @@ normal! 0
 wincmd w
 argglobal
 if bufexists("yadm_bootstrap_arch_root_post.sh\#\#template") | buffer yadm_bootstrap_arch_root_post.sh\#\#template | else | edit yadm_bootstrap_arch_root_post.sh\#\#template | endif
-let s:l = 1 - ((0 * winheight(0) + 28) / 56)
+let s:l = 1 - ((0 * winheight(0) + 37) / 74)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -56,16 +56,16 @@ normal! 0
 wincmd w
 argglobal
 if bufexists("yadm_bootstrap_arch_user.sh\#\#template") | buffer yadm_bootstrap_arch_user.sh\#\#template | else | edit yadm_bootstrap_arch_user.sh\#\#template | endif
-let s:l = 5 - ((4 * winheight(0) + 28) / 56)
+let s:l = 5 - ((0 * winheight(0) + 37) / 74)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 5
 normal! 03|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 77 + 116) / 232)
-exe 'vert 2resize ' . ((&columns * 76 + 116) / 232)
-exe 'vert 3resize ' . ((&columns * 77 + 116) / 232)
+exe 'vert 1resize ' . ((&columns * 63 + 94) / 189)
+exe 'vert 2resize ' . ((&columns * 61 + 94) / 189)
+exe 'vert 3resize ' . ((&columns * 63 + 94) / 189)
 tabedit
 edit /home/alteriks/.config/yadm/bootstrap\#\#template
 edit ~/.config/yadm/bootstrap\#\#template
@@ -76,13 +76,13 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-let s:l = 2 - ((1 * winheight(0) + 28) / 56)
+let s:l = 2 - ((1 * winheight(0) + 37) / 74)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 2
 normal! 0
-tabnext 2
+tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

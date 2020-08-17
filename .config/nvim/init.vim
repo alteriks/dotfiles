@@ -610,8 +610,8 @@ function! Bye()
     :q
   endif
 endfunction
-nmap <C-q> :call Bye()<CR>
-nmap <leader>q :call Bye()<CR>
+nmap <silent> <C-q> :call Bye()<CR>
+nmap <silent> <leader>q :call Bye()<CR>
 let g:which_key_map['q'] = 'Close buffer and activate next'
 
 

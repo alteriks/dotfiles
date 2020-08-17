@@ -7,8 +7,6 @@
   gpgsign = false
 [gitreview]
   username = KrzysztofDajka
-[icdiff]
-  options = --highlight --line-numbers
 
 [merge]
   tool = vimdiff
@@ -30,3 +28,7 @@
 #   path = .gitconfig-personal.local
 # [includeIf "gitdir:~/Development/work/"]
 #   path = .gitconfig-work.local
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[diff-so-fancy]
+	rulerWidth = 47

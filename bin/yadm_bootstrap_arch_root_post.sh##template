@@ -1,4 +1,7 @@
 #!/bin/sh
+systemd-timesyncd.service
+
+systemctl disable --now systemd-timesyncd
 systemctl enable --now chronyd
 systemctl enable --now libvirtd
 systemctl enable --now sshd
@@ -6,7 +9,6 @@ systemctl enable --now sshd
 # Enable for ykman/ykman-gui (yubikey-manager-qt)
 systemctl enable --now pcscd
 
-timedatectl set-ntp true
 
 #systemctl enable numLockOnTty
 
