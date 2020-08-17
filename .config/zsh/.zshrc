@@ -220,10 +220,6 @@ if [[ -e ~/bin/z.sh ]];then
   source ~/bin/z.sh
 fi
 
-#if [[ -d /usr/share/fzf/ ]];then
-#  source /usr/share/fzf/key-bindings.zsh
-#  source /usr/share/fzf/completion.zsh
-#fi
 
 # ZSH VIM MODE
 if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
@@ -237,11 +233,13 @@ if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
   export MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
 fi
 
+
 # FZF managed by vimplug
 # Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic
 setopt no_share_history
-if [[ -e ~/.fzf.zsh ]]; then
-  source ~/.fzf.zsh
+if [[ -d /usr/share/fzf/ ]];then
+  source /usr/share/fzf/key-bindings.zsh
+  source /usr/share/fzf/completion.zsh
   alias fzfp=fzf --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'
   #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
   export FZF_COMPLETION_TRIGGER=''

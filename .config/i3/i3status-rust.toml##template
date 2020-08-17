@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # vi: ft=toml
+=======
+# vim: set ft=toml
+>>>>>>> Stashed changes
 theme = "modern"
 
 [icons]
@@ -27,10 +31,13 @@ command = "uname -r"
 interval = "once"
 {% endif %}
 
+<<<<<<< Updated upstream
 [[block]]
 block = "custom"
 command = ''' hostname '''
 
+=======
+>>>>>>> Stashed changes
 [[block]]
 block = "disk_space"
 path = "/"

@@ -80,7 +80,7 @@ Plug 'chrisbra/Recover.vim'
 
 " Search {{{
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "Use arch package
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo' "ctrl+r 
 
@@ -276,7 +276,7 @@ map <Leader>k <Plug>(easymotion-k)
 "let MRU_Use_Current_Window = 1
 let MRU_Window_Height = 15
 let MRU_Add_Menu = 0
-let MRU_File = "~/.cache/nvim/vim_mru_files"
+let MRU_File = $HOME . '/.cache/nvim/vim_mru_files'
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 
 "yank/paste with xclip
