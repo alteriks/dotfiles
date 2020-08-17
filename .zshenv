@@ -1,3 +1,8 @@
+export LANG=en_US.UTF-8
+export LC_ALL="en_US.UTF-8"
+export LC_NUMERIC="pl_PL.UTF-8"
+export LC_TIME="pl_PL.UTF-8"
+
 #archlinux specific
 setopt NO_GLOBAL_RCS
 

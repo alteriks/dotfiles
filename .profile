@@ -1,3 +1,4 @@
+#TODO: run only on Xsession
 setxkbmap -layout pl 
 setxkbmap -option 'caps:escape'
 setxkbmap -option terminate:ctrl_alt_bksp
