@@ -8,6 +8,7 @@ yay -Syu --afterclean --answeredit None \
   rofi-calc \
   spotify \
   todotxt-machine-git \
+  tmux-xpanes \
   vivaldi \
   vivaldi-ffmpeg-codecs \
   vivaldi-widevine \

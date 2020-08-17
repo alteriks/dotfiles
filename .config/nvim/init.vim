@@ -205,7 +205,7 @@ hi link CtrlSpaceSelected Visual
 
 let g:airline_exclude_preview = 1
 
-let g:CtrlSpaceCacheDir = "$HOME/.cache/nvim"
+let g:CtrlSpaceCacheDir = $HOME . '/.cache/nvim'
 let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
 "let g:CtrlSpaceStatuslineFunction =
 "      \  "airline#extensions#ctrlspace#statusline()"
@@ -301,6 +301,7 @@ let g:vim_markdown_folding_level = 2
 set conceallevel=2
 
 " 'mhinz/vim-startify'
+let g:startify_unlisted_buffer = 1
 let g:startify_bookmarks = [
 \ { 'i': '~/.config/i3/config'},
 \ { 'n': '~/.config/nvim/init.vim' },
@@ -601,11 +602,12 @@ nmap <leader>_ :botright split<CR>
 nnoremap <silent> <leader><C-q> :qa!<CR>
 
 "Close buffer without closing the window and activate
+"Quit vim if only one buffer is loaded
 function! Bye()
-  if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    :q
-  else
+  if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1
     :bp|sp|bn|bd
+  else
+    :q
   endif
 endfunction
 nmap <C-q> :call Bye()<CR>
