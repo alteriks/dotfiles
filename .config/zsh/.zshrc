@@ -29,6 +29,7 @@ alias todotxt-machine="todotxt-machine --config ~/.config/todo/todotxt-machinerc
 alias vi=nvim
 alias vim=nvim
 alias vimdiff='nvim -d'
+alias sysyadm="sudo yadm -Y /etc/yadm"
 # END archlinux
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/ohmyzsh
