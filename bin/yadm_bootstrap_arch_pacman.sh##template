@@ -68,6 +68,7 @@ pacman --noconfirm -Syu \
   bind-tools \
   bridge-utils \
   chrony \
+  diff-so-fancy \
   docker \
   docker-compose \
   dmidecode \

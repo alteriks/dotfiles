@@ -1,7 +1,6 @@
 #!/bin/sh
 yay -Syu --afterclean --answeredit None \
   gcal \
-  icdiff \
   forticlient \
   pacolog \
   protonvpn-cli-ng \
@@ -12,6 +11,7 @@ yay -Syu --afterclean --answeredit None \
   vivaldi \
   vivaldi-ffmpeg-codecs \
   vivaldi-widevine \
+  z-git \
   --noconfirm
 
 #(/home/alteriks/.config/i3/bin/i3-switch-if-workspace-empty)
