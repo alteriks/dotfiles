@@ -54,6 +54,7 @@ pacman --noconfirm -Syu \
   rofi \
   termite \
   xclip \
+  xprintidle \
   xss-lock \
   veracrypt \
   zathura-pdf-mupdf \

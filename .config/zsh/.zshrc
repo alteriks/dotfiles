@@ -1,6 +1,5 @@
 
 #setopt nocorrectall
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 export QT_QPA_PLATFORMTHEME=qt5ct
 #export VAGRANT_DEFAULT_PROVIDER=virtualbox
 #
@@ -215,7 +214,6 @@ fi
 #zplug "changyuheng/fz", defer:1
 #zplug "rupa/z", use:z.sh
 
-# Archlinux fzf path
 #https://github.com/rupa/z
 if [[ -e ~/bin/z.sh ]];then
   source ~/bin/z.sh
@@ -244,6 +242,7 @@ if [[ -d /usr/share/fzf/ ]];then
   alias fzfp=fzf --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'
   #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
   export FZF_COMPLETION_TRIGGER=''
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
   bindkey '^T' fzf-completion
   bindkey '^I' $fzf_default_completion
 fi
@@ -251,10 +250,19 @@ fi
 
 # broot --install
 if [[ -e $HOME/.config/broot/launcher/bash/br ]]; then
-source $HOME/.config/broot/launcher/bash/br
+  source $HOME/.config/broot/launcher/bash/br
+fi
+
+if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+  ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # smartcase tab completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
+timezsh() {
+    shell=${1-$SHELL}
+      for i in $(seq 1 10); do /usr/bin/time -p $shell -i -c exit; done
+    }
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION

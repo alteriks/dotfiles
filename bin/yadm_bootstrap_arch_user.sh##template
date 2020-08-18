@@ -5,6 +5,7 @@ yay -Syu --afterclean --answeredit None \
   pacolog \
   protonvpn-cli-ng \
   rofi-calc \
+  safeeyes \
   spotify \
   todotxt-machine-git \
   tmux-xpanes \

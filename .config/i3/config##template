@@ -201,7 +201,16 @@ bar {
          separator  #756d59
 
                             #border backgr. text
+         
+{% if yadm.class == "laptop" %}
+         focused_workspace  #676d3d #99B938 #282828
+{% endif %}
+{% if yadm.class == "workstation" %}
          focused_workspace  #676d3d #ffce00 #282828
+{% endif %}
+{% if yadm.class == "server" %}
+         focused_workspace  #676d3d #ff5252 #282828
+{% endif %}
          active_workspace   #323232 #5f676a #ebdbb2
          inactive_workspace #323232 #323232 #888888
          urgent_workspace   #333333 #900000 #ffffff

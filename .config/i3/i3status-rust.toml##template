@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 # vi: ft=toml
-=======
-# vim: set ft=toml
->>>>>>> Stashed changes
 theme = "modern"
 
 [icons]
@@ -31,13 +27,10 @@ command = "uname -r"
 interval = "once"
 {% endif %}
 
-<<<<<<< Updated upstream
 [[block]]
 block = "custom"
 command = ''' hostname '''
 
-=======
->>>>>>> Stashed changes
 [[block]]
 block = "disk_space"
 path = "/"
@@ -65,7 +58,7 @@ interval = 10
 {% if yadm.class == "workstation" %}
 [[block]]
 block = "sound"
-format = "{output_name} {volume}"
+#format = "{output_name} {volume}"
 #[block.mappings]
 #"alsa_output.usb-Harman_Multimedia_JBL_Pebbles_1.0.0-00.analog-stereo" = "🔈"
 #"alsa_output.pci-0000_00_1b.0.analog-stereo" = "🎧"

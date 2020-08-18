@@ -151,7 +151,15 @@ prompt_dir() {
   if [[ $UID -eq 0 ]]; then 
 		prompt_segment red black '%~'
 	else
-		prompt_segment blue black '%~'
+{% if yadm.class == "laptop" %}
+		prompt_segment cyan black '%~'
+{% endif %}
+{% if yadm.class == "workstation" %}
+		prompt_segment yellow black '%~'
+{% endif %}
+{% if yadm.class == "server" %}
+		prompt_segment 9 black '%~'
+{% endif %}
 	fi
 }
 
