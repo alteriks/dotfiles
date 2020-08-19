@@ -34,7 +34,6 @@ ip = true
 speed_up = false
 speed_down = false
 {% endif %}
-{% endif %}
 
 [[block]]
 block = "custom"
