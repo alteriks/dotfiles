@@ -25,11 +25,21 @@ interval = 5
 block = "custom"
 command = "uname -r"
 interval = "once"
+
+[[block]]
+block = "net"
+device = "ppp0"
+interval = 5
+ip = true
+speed_up = false
+speed_down = false
+{% endif %}
 {% endif %}
 
 [[block]]
 block = "custom"
 command = ''' hostname '''
+interval = "once"
 
 [[block]]
 block = "disk_space"
