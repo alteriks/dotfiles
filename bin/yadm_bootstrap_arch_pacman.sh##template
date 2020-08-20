@@ -87,6 +87,7 @@ pacman --noconfirm -Syu \
   mtr \
   neovim \
   net-tools \
+  nmap \
   nnn \
   numlockx \
   openfortivpn \
@@ -115,6 +116,7 @@ pacman --noconfirm -Syu \
   virt-viewer \
   xorg-xev \
   xsensors \
+  zerotier-one \
   zip \
   --needed
 
