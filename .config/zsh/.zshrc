@@ -266,3 +266,16 @@ timezsh() {
       for i in $(seq 1 10); do /usr/bin/time -p $shell -i -c exit; done
     }
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+
+
+vagrant_prepare() {
+  if [ -z "$1" ]; then
+    echo "No argument supplied"
+  else
+    cd ~/Vagrant/
+    mkdir $1
+    cp 00_Vagrantfile_template/Vagrantfile $1
+    cd $1
+    print -z vagrant up
+  fi
+}
