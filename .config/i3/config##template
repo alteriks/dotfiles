@@ -249,6 +249,7 @@ for_window [class="(?i)zathura"] focus
 for_window [class="Arandr"] floating enable, border normal, focus,
 for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
 for_window [class="Mousepad"] border normal, focus, floating enable
+for_window [class="Nm-connection-editor"] border normal, focus, floating enable
 for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
 for_window [class="Pavucontrol"] floating enable, border normal, focus, resize set 850 500
 for_window [class="RimWorldLinux"] focus
