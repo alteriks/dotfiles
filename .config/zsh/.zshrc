@@ -273,7 +273,7 @@ vagrant_prepare() {
     echo "No argument supplied"
   else
     cd ~/Vagrant/
-    mkdir $1
+    mkdir -p $1
     cp 00_Vagrantfile_template/Vagrantfile $1
     cd $1
     print -z vagrant up
