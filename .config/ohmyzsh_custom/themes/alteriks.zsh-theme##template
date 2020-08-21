@@ -148,9 +148,6 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  if [[ $UID -eq 0 ]]; then 
-		prompt_segment red black '%~'
-	else
 {% if yadm.class == "laptop" %}
 		prompt_segment cyan black '%~'
 {% endif %}
@@ -160,7 +157,6 @@ prompt_dir() {
 {% if yadm.class == "server" %}
 		prompt_segment 9 black '%~'
 {% endif %}
-	fi
 }
 
 # Virtualenv: current working virtualenv
