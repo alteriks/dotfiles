@@ -380,7 +380,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id nitrogen --restore; sleep 1; picom --config /dev/null --backend glx --xrender-sync-fence --experimental-backends 
 #nouveau
 exec --no-startup-id nitrogen --restore; sleep 1; picom
+{% if yadm.hostname == "carbon" %}
 exec --no-startup-id nm-applet
+{% endif %}
 #exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
 exec_always --no-startup-id dropbox start
@@ -391,7 +393,8 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id xset s 1800 60
 exec_always --no-startup-id xset dpms 1700 1700 1700
 #exec --no-startup-id xss-lock ~/.config/i3/bin/i3lock-color-git.sh
-exec_always --no-startup-id xss-lock -n ~/bin/dim-screen.sh -- /home/alteriks/.config/i3/bin/i3lock-color-git.sh
+#exec_always --no-startup-id xss-lock -n ~/bin/dim-screen.sh -- /home/alteriks/.config/i3/bin/i3lock-color-git.sh
+exec_always --no-startup-id light-locker --lock-after-screensaver=60
 
 
 #############################
