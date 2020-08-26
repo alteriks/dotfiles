@@ -273,7 +273,7 @@ vagrant_prepare() {
     echo "No argument supplied"
   else
     cd ~/Vagrant/
-    mkdir $1
+    mkdir -p $1
     if [[ $1 =~ acs ]]; then
       cp 00_template/acs/Vagrantfile $1
     else
