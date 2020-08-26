@@ -269,13 +269,26 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 
 vagrant_prepare() {
-  if [ -z "$1" ]; then
+  if [[ -z "$1" ]]; then
     echo "No argument supplied"
   else
     cd ~/Vagrant/
     mkdir $1
-    cp 00_Vagrantfile_template/Vagrantfile $1
+    if [[ $1 =~ acs ]]; then
+      cp 00_template/acs/Vagrantfile $1
+    else
+      cp 00_template/base/Vagrantfile $1
+    fi
     cd $1
     print -z vagrant up
   fi
 }
+vagrant_diff() {
+  DIRNAME=$(basename $(pwd))
+  if [[ $DIRNAME =~ acs ]]; then
+    diff ../00_template/acs/Vagrantfile Vagrantfile
+  else
+    diff ../00_template/base/Vagrantfile Vagrantfile
+  fi
+}
+
