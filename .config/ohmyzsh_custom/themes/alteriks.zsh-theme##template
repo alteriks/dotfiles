@@ -28,6 +28,12 @@
 CURRENT_BG='NONE'
 SEGMENT_SEPARATOR=''
 
+case ${SOLARIZED_THEME:-dark} in
+    light) CURRENT_FG='white';;
+    *)     CURRENT_FG='black';;
+esac
+CURRENT_FG='black'
+
 # local time, color coded by last return code
 time_enabled="%{$fg[green]%}%*"
 #time_enabled="%(?.%{$fg[green]%}.%{$fg[red]%})%*"

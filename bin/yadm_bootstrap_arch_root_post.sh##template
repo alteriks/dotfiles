@@ -15,6 +15,10 @@ systemctl enable --now zerotier-one
 
 #systemctl enable numLockOnTty
 
+#neeeded for libvirt restore
+virsh net-autostart vagrant-libvirt
+virsh net-start vagrant-libvirt
+
 #ansible
 #useradd -r -m  -G wheel ansible
 #sudo -u ansible -c "ssh-keygen -t ed25519"
