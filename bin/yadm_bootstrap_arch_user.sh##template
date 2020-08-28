@@ -9,6 +9,7 @@ yay -Syu --afterclean --answeredit None \
   spotify \
   todotxt-machine-git \
   tmux-xpanes \
+  tmuxinator \
   vivaldi \
   vivaldi-ffmpeg-codecs \
   vivaldi-widevine \
@@ -42,3 +43,14 @@ pip install \
 
 #TODO: already idempotent but slooow
 vagrant plugin install vagrant-libvirt
+
+{% if yadm.hostname == "carbon" %}
+systemctl --user enable --now barriers@0.0.0.0
+{% endif %}
+{% if yadm.hostname == "moar" %}
+systemctl --user enable --now barriers@0.0.0.0
+{% endif %}
+{% if yadm.hostname == "nebula" %}
+systemctl --user enable --now barrierc@moar
+systemctl --user enable --now barrierc@carbon
+{% endif %}
