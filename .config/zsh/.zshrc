@@ -217,6 +217,8 @@ fi
 #https://github.com/rupa/z
 if [[ -e ~/bin/z.sh ]];then
   source ~/bin/z.sh
+elif [[ -e /usr/share/z/z.sh ]];then
+  source /usr/share/z/z.sh
 fi
 
 

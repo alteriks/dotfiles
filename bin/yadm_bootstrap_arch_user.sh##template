@@ -26,11 +26,13 @@ pip install \
     acpi_call \
     fwupd \
     powerstat \
+    fprintd-clients-git \
     s-tui \
     throttled \
     tlp \
     tlp-rdw \
     xorg-xbacklight \
+    python-validity-git \
     undervolt
 {% endif %}
 
