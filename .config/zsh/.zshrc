@@ -221,7 +221,7 @@ fi
 # ZSH VIM MODE
 if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
   source ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh; 
-  export KEYTIMEOUT=4
+  export KEYTIMEOUT=15
   export MODE_CURSOR_VIINS="#ffffff blinking bar"
   export MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
   export MODE_CURSOR_VICMD="#bf00ff block"
