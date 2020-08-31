@@ -55,4 +55,4 @@ export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc"
 #export BROWSER=/usr/bin/palemoon
 export TERMINAL=kitty
 
-export DIFFPROG=nvim -d
+export DIFFPROG="nvim -d"
