@@ -356,6 +356,7 @@ bindsym $mod+Shift+Tab		workspace prev
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -379,7 +380,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #nvidia driver; causes HIGH CPU on nouveau
 #exec --no-startup-id nitrogen --restore; sleep 1; picom --config /dev/null --backend glx --xrender-sync-fence --experimental-backends 
 #nouveau
-exec --no-startup-id nitrogen --restore; sleep 1; picom
+exec_always --no-startup-id nitrogen --restore; sleep 1; picom
 {% if yadm.hostname == "carbon" %}
 exec --no-startup-id nm-applet
 {% endif %}
@@ -398,10 +399,10 @@ exec_always --no-startup-id xset dpms 1700 1700 1700
 exec_always --no-startup-id light-locker --lock-after-screensaver=60
 
 {% if yadm.hostname == "carbon" %}
-exec_always --no-startup-id safeeyes
+exec --no-startup-id safeeyes
 {% endif %}
 {% if yadm.hostname == "moar" %}
-exec_always --no-startup-id safeeyes
+exec --no-startup-id safeeyes
 {% endif %}
 
 #############################

@@ -31,6 +31,7 @@ application/pcx=gpicview.desktop
 image/svg+xml=gpicview.desktop
 image/svg-xml=gpicview.desktop
 text/plain=mousepad.desktop
+x-scheme-handler/msteams=teams.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura.desktop;
