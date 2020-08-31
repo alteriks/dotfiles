@@ -388,6 +388,7 @@ exec --no-startup-id blueman-applet
 exec_always --no-startup-id dropbox start
 exec_always --no-startup-id fix_xcursor
 #exec_always --no-startup-id exec i3wsr
+#
 
 # Lock
 exec_always --no-startup-id xset s 1800 60
@@ -396,6 +397,12 @@ exec_always --no-startup-id xset dpms 1700 1700 1700
 #exec_always --no-startup-id xss-lock -n ~/bin/dim-screen.sh -- /home/alteriks/.config/i3/bin/i3lock-color-git.sh
 exec_always --no-startup-id light-locker --lock-after-screensaver=60
 
+{% if yadm.hostname == "carbon" %}
+exec_always --no-startup-id safeeyes
+{% endif %}
+{% if yadm.hostname == "moar" %}
+exec_always --no-startup-id safeeyes
+{% endif %}
 
 #############################
 ### settings for i3-gaps: ###
