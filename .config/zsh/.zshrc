@@ -202,10 +202,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always'"
 # export LESS_TERMCAP_us=$'\E[01;36m'
 # export LESS=-r
 
-# hack for HOME/END in neovim in tmux using kitty
-if [[ $TERMINFO == /usr/lib/kitty/terminfo ]]; then
-	unset TERMINFO
-fi
 # Kubernetes workshop
 #source <(kubectl completion zsh)
 
