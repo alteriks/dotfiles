@@ -160,6 +160,11 @@ bindkey "^[OC" forward-word
 #        command ssh "$@"
 #    fi
 #}
+#
+#Most servers don't know about terminal specifics (terminfo) TERM=xterm-kitty or TERM=tmux-256color
+#It' easier to change it for ssh than copy all terminfo (tic)
+#https://github.com/alacritty/alacritty/issues/1208#issuecomment-376697989
+alias ssh='TERM=xterm-256color \ssh'
 
 if [[ -n $TMUX ]]; then
   panewrap () { 
