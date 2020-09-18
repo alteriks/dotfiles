@@ -114,6 +114,7 @@ pacman --noconfirm -Syu \
   vagrant \
   virt-manager \
   virt-viewer \
+  xcursor-breeze \
   xorg-xev \
   xsensors \
   zerotier-one \
