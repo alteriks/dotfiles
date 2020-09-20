@@ -277,12 +277,9 @@ vagrant_prepare() {
   else
     cd ~/Vagrant/
     mkdir -p $1
-    if [[ $1 =~ acs ]]; then
-      cp 00_template/acs/Vagrantfile $1
-    elif [[ $1 =~ dns ]]; then
-      cp 00_template/dns/Vagrantfile $1
-    elif [[ $1 =~ proton ]]; then
-      cp 00_template/proton/Vagrantfile $1
+    V_TEMPLATE=${1%%[0-9]*}
+    if [[ -d 00_template/${V_TEMPLATE} ]]; then
+      cp 00_template/${V_TEMPLATE}/Vagrantfile $1
     else
       cp 00_template/base/Vagrantfile $1
     fi
@@ -292,12 +289,12 @@ vagrant_prepare() {
 }
 vagrant_diff() {
   DIRNAME=$(basename $(pwd))
-  if [[ $DIRNAME =~ acs ]]; then
-  elif [[ $DIRNAME =~ dns ]]; then
-    diff ../00_template/dns/Vagrantfile Vagrantfile
-  elif [[ $DIRNAME =~ proton ]]; then
-    diff ../00_template/proton/Vagrantfile Vagrantfile
+  V_TEMPLATE=${DIRNAME%%[0-9]*}
+  if [[ -d ../00_template/${V_TEMPLATE} ]]; then
+    echo " === ${V_TEMPLATE}/Vagrantfile <-> Vagrantfile === "
+    diff ../00_template/${V_TEMPLATE}/Vagrantfile Vagrantfile
   else
+    echo " === base/Vagrantfile <-> Vagrantfile === "
     diff ../00_template/base/Vagrantfile Vagrantfile
   fi
 }
