@@ -22,6 +22,7 @@ export EDITOR=nvim
 alias ag='ag --hidden --ignore \.git'
 alias bc='bc -l'
 alias cat="bat -pp"
+alias curl_zt="curl -x socks5h://localhost:5555"
 alias rg="rg --smart-case"
 alias todo="todo.sh -d $HOME/.config/todo/todo.cfg"
 alias todotxt-machine="todotxt-machine --config ~/.config/todo/todotxt-machinerc"

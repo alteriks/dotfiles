@@ -48,6 +48,7 @@ x-scheme-handler/vnc=org.remmina.Remmina.desktop;
 x-scheme-handler/remmina=org.remmina.Remmina.desktop;
 application/x-remmina=org.remmina.Remmina.desktop;
 image/png=nomacs.desktop;
+image/heif=viewnior.desktop;org.nomacs.ImageLounge.desktop;
 
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;

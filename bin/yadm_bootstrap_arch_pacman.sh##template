@@ -43,8 +43,10 @@ pacman --noconfirm -Syu \
   flameshot \
   i3lock-color \
   i3status-rust \
+  gparted \
   keepassxc \
   kitty \
+  libheif \
   lxqt-archiver \
   nemo \
   networkmanager-openvpn \
@@ -92,16 +94,19 @@ pacman --noconfirm -Syu \
   numlockx \
   openfortivpn \
   python-neovim \
+  pv \
   pkgfile \
   ripgrep \
   rsync \
   screen \
+  smartmontools \
   sshpass \
   strace \
   sysstat \
   tcpdump \
   the_silver_searcher \
   time \
+  turbostat \
   qemu \
   tmux \
   unace \

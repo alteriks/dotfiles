@@ -243,11 +243,12 @@ for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="norm
 #bindsym Mod4+k [instance="scratchpad-keepassxc"] scratchpad show, move position mouse
 #for_window [class=".*"] move position center
 #for_window [class="KeePassXC"] sticky enable, border normal, focus, floating enable
-floating_maximum_size 1000 x 800
+floating_maximum_size 1800 x 1200
 floating_minimum_size 100 x 50
 for_window [class="(?i)zathura"] focus
 for_window [class="Arandr"] floating enable, border normal, focus,
 for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
+for_window [class="Gnome-calculator"] focus, floating enable
 for_window [class="Mousepad"] border normal, focus, floating enable
 for_window [class="Nm-connection-editor"] border normal, focus, floating enable
 for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
