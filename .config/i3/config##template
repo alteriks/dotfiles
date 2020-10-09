@@ -313,6 +313,7 @@ focus_follows_mouse yes
 
 #xprop WM_CLASS = instance,class
 assign [ class = "HipChat" ] workspace $workspace1
+assign [ title = "Deluge" ] workspace $workspace1
 assign [ class = "RimWorldLinux" ] workspace $workspace1
 assign [ class = "Thunar" ] workspace $workspace1
 assign [ class = "Spotify" ] workspace $workspace1
@@ -405,6 +406,7 @@ exec_always --no-startup-id light-locker --lock-after-screensaver=60
 
 {% if yadm.hostname == "carbon" %}
 exec --no-startup-id safeeyes
+exec --no-startup-id xinput --set-prop 11 'libinput Accel Speed' 0.3
 {% endif %}
 {% if yadm.hostname == "moar" %}
 exec --no-startup-id safeeyes

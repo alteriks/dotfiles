@@ -1,7 +1,7 @@
 {
     "allow_postpone": false,
     "long_break_duration": 60,
-    "long_break_interval": 75,
+    "long_break_interval": 120,
     "long_breaks": [
         {
             "name": "Walk for a while"
@@ -104,7 +104,7 @@
     "pre_break_warning_time": 10,
     "rpc_port": 7200,
     "short_break_duration": 15,
-    "short_break_interval": 15,
+    "short_break_interval": 25,
     "short_breaks": [
         {
             "name": "Tightly close your eyes"
