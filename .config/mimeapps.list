@@ -8,7 +8,6 @@ x-scheme-handler/mailto=vivaldi-stable.desktop
 x-scheme-handler/webcal=vivaldi-stable.desktop
 application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/tg=telegramdesktop.desktop
-image/jpeg=gpicview.desktop
 application/x-mimearchive=vivaldi-stable.desktop
 x-scheme-handler/rdp=org.remmina.Remmina.desktop
 x-scheme-handler/spice=org.remmina.Remmina.desktop
@@ -35,7 +34,6 @@ x-scheme-handler/msteams=teams.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura.desktop;
-image/jpeg=nomacs.desktop;feh.desktop;org.kde.gwenview.desktop;gimp.desktop;
 application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop;
 application/x-alpm-package=pamac-installer.desktop;
 text/x-pkgbuild=neovim.desktop;
@@ -53,8 +51,8 @@ image/heif=viewnior.desktop;org.nomacs.ImageLounge.desktop;
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;
 image/gif=nomacs.desktop;
-image/jpeg=nomacs.desktop;
 image/png=nomacs.desktop;
 text/html=nvim.desktop;
 text/plain=nvim.desktop;
 text/vbscript=nvim.desktop;
+image/jpeg=org.nomacs.ImageLounge.desktop;
