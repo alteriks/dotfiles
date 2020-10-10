@@ -1,0 +1,5 @@
+#!/bin/sh
+if [[ AUTORANDR_CURRENT_PROFILE =~ "_tv_" ]]; then
+  pactl set-card-profile 0 output:hdmi-stereo
+fi
+#pactl set-card-profile 0 output:analog-stereo
