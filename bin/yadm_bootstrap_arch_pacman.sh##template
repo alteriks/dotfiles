@@ -44,6 +44,7 @@ pacman --noconfirm -Syu \
   i3lock-color \
   i3status-rust \
   gparted \
+  gnome-calculator \
   keepassxc \
   kitty \
   libheif \

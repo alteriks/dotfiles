@@ -58,3 +58,4 @@ image/png=nomacs.desktop;
 text/html=nvim.desktop;
 text/plain=nvim.desktop;
 text/vbscript=nvim.desktop;
+inode/directory=pcmanfm-qt.desktop;
