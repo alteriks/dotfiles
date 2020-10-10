@@ -55,4 +55,8 @@ image/png=nomacs.desktop;
 text/html=nvim.desktop;
 text/plain=nvim.desktop;
 text/vbscript=nvim.desktop;
+<<<<<<< HEAD
 image/jpeg=org.nomacs.ImageLounge.desktop;
+=======
+inode/directory=pcmanfm-qt.desktop;
+>>>>>>> 3fabcf2609f0c8e2cddad304179a344a7c4c1fc8
