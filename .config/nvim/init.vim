@@ -491,6 +491,11 @@ let g:which_key_map.g = {
       \ 'V' : [':GV!'                              , 'view buffer commits'],
       \ }
 
+function! GF(...)
+    call fzf#run({'dir': a:1, 'source': 'find . -type f', 'options':['-1', '--query', expand('<cfile>')], 'sink': 'e'})
+endfunction
+command! -nargs=* GF :call GF(<f-args>)
+"nnoremap gf :GF .<CR>
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
@@ -502,6 +507,7 @@ let g:which_key_map.s = {
       \ 'c' : [':FzfCommits'      , 'commits'],
       \ 'C' : [':FzfBCommits'     , 'buffer commits'],
       \ 'f' : [':FzfFiles'        , 'files'],
+      \ 'F' : [':GF .'            , 'files fullscreen'],
       \ 'g' : [':FzfGFiles'       , 'git files'],
       \ 'G' : [':FzfGFiles?'      , 'modified git files'],
       \ 'h' : [':FzfHistory'      , 'file history'],
@@ -685,3 +691,4 @@ augroup END
 " searches are case insensitive...
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter.
+

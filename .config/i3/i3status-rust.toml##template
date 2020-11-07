@@ -42,6 +42,14 @@ interval = "once"
 
 [[block]]
 block = "disk_space"
+path = "/home/alteriks"
+alias = "home"
+info_type = "available"
+unit = "GB"
+interval = 60
+
+[[block]]
+block = "disk_space"
 path = "/"
 alias = "/"
 info_type = "available"
