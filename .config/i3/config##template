@@ -254,6 +254,7 @@ for_window [class="Nm-connection-editor"] border normal, focus, floating enable
 for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
 for_window [class="Pavucontrol"] floating enable, border normal, focus, resize set 850 500
 for_window [class="RimWorldLinux"] focus
+for_window [class="Mojosetup"] floating enable, border none, focus #gog installer
 for_window [class="Safeeyes"] floating enable, border none, focus,
 for_window [class="Veracrypt"] sticky enable, border normal, focus, floating enable
 for_window [title=" on QEMU/KVM"] border normal, focus, floating enable
@@ -337,8 +338,8 @@ bindsym $mod+f [urgent=latest] focus
 ################################################################################################
 
 # Start Applications
-bindsym Print exec --no-startup-id flameshot gui -p ~/Pictures/
-bindsym $mod+p exec --no-startup-id flameshot gui -p ~/Pictures/
+bindsym Print exec --no-startup-id flameshot gui -p ~/tmp/
+bindsym $mod+p exec --no-startup-id flameshot gui -p ~/tmp/
 bindsym $mod+F3 exec pcmanfm-qt
 #bindsym $mod+p exec --no-startup-id pkill picom; exec notify-send 'picom is DEAD'
 bindsym $mod+Ctrl+p exec --no-startup-id picom ; exec notify-send 'picom is ALIVE'

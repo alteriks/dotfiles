@@ -30,6 +30,7 @@ image/svg+xml=gpicview.desktop
 image/svg-xml=gpicview.desktop
 text/plain=mousepad.desktop
 x-scheme-handler/msteams=teams.desktop
+application/pdf=org.pwmt.zathura.desktop
 
 [Added Associations]
 application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop;
@@ -45,17 +46,17 @@ x-scheme-handler/remmina=org.remmina.Remmina.desktop;
 application/x-remmina=org.remmina.Remmina.desktop;
 image/png=nomacs.desktop;
 image/heif=viewnior.desktop;org.nomacs.ImageLounge.desktop;
+application/pdf=org.pwmt.zathura.desktop;
+application/octet-stream=mousepad.desktop;
+inode/directory=mpv.desktop;
 
 [MIME Cache]
+application/pdf=org.pwmt.zathura.desktop;
+application/x-ms-dos-executable=wine.desktop;
 image/gif=nomacs.desktop;
+image/jpeg=org.nomacs.ImageLounge.desktop;
 image/png=nomacs.desktop;
+inode/directory=pcmanfm-qt.desktop;
 text/html=nvim.desktop;
 text/plain=nvim.desktop;
 text/vbscript=nvim.desktop;
-<<<<<<< HEAD
-image/jpeg=org.nomacs.ImageLounge.desktop;
-=======
-inode/directory=pcmanfm-qt.desktop;
->>>>>>> 3fabcf2609f0c8e2cddad304179a344a7c4c1fc8
-application/x-ms-dos-executable=wine.desktop;
-application/pdf=org.pwmt.zathura.desktop;
