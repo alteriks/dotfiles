@@ -407,9 +407,15 @@ exec_always --no-startup-id light-locker --lock-after-screensaver=60
 {% if yadm.hostname == "carbon" %}
 exec --no-startup-id safeeyes
 exec --no-startup-id xinput --set-prop 11 'libinput Accel Speed' 0.3
+exec_always --no-startup-id systemctl --user restart barriers@0.0.0.0.service
 {% endif %}
 {% if yadm.hostname == "moar" %}
 exec --no-startup-id safeeyes
+exec_always --no-startup-id systemctl --user restart barriers@0.0.0.0.service
+{% endif %}
+{% if yadm.hostname == "nebula" %}
+exec_always --no-startup-id systemctl --user restart barrierc@carbon.service
+exec_always --no-startup-id systemctl --user restart barrierc@moar.service
 {% endif %}
 
 #############################
