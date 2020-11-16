@@ -79,8 +79,10 @@ pacman --noconfirm -Syu \
   dnsmasq \
   easy-rsa \
   ebtables \
+  ethtool \
   fzf \
   fd \
+  gnu-netcat \
   i7z \
   jq \
   lftp \
@@ -117,6 +119,7 @@ pacman --noconfirm -Syu \
   usleep \
   wget \
   wireshark-cli \
+  wol \
   vagrant \
   virt-manager \
   virt-viewer \

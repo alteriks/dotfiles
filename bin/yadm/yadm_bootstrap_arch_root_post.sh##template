@@ -13,6 +13,15 @@ systemctl enable --now zerotier-one
 
 systemctl enable --now smartd
 
+{% if yadm.hostname == "nebula" %}
+systemctl enable --now zfs-trim@pool.timer
+systemctl enable --now zfs-scrub@pool.timer
+{% endif %}
+{% if yadm.hostname == "moar" %}
+systemctl enable --now zfs-trim@pool.timer
+systemctl enable --now zfs-scrub@pool.timer
+{% endif %}
+
 #systemctl enable numLockOnTty
 
 #neeeded for libvirt restore

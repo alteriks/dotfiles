@@ -37,7 +37,16 @@ pip install \
     xorg-xbacklight \
     python-validity-git \
     undervolt
+
+yay -Syu --afterclean --answeredit None \
+  intel-media-driver
 {% endif %}
+
+{% if yadm.hostname == "nebula" %}
+yay -Syu --afterclean --answeredit None \
+  kodi-x11
+{% endif %}
+
 
 # Change application for "Open in terminal" context menu entry
 #gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty

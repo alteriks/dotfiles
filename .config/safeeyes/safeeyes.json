@@ -1,7 +1,7 @@
 {
     "allow_postpone": false,
     "long_break_duration": 60,
-    "long_break_interval": 120,
+    "long_break_interval": 75,
     "long_breaks": [
         {
             "name": "Walk for a while"
@@ -71,18 +71,18 @@
             "enabled": true,
             "id": "smartpause",
             "settings": {
-                "idle_time": 10.0,
+                "idle_time": 5,
                 "interpret_idle_as_break": false,
                 "postpone_if_active": false
             },
             "version": "0.0.3"
         },
         {
-            "enabled": false,
+            "enabled": true,
             "id": "screensaver",
             "settings": {
-                "command": "/usr/bin/light-locker-command -l",
-                "min_seconds": 3.0
+                "command": "",
+                "min_seconds": 3
             },
             "version": "0.0.2"
         },
@@ -104,7 +104,7 @@
     "pre_break_warning_time": 10,
     "rpc_port": 7200,
     "short_break_duration": 15,
-    "short_break_interval": 25,
+    "short_break_interval": 15,
     "short_breaks": [
         {
             "name": "Tightly close your eyes"
