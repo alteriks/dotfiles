@@ -228,9 +228,15 @@ bindsym button8 move right
 # Border for all windows - 3 pixels, this rule must be above others, so it can be overriden
 #for_window [class=".*"] border pixel 3
 
-for_window [instance="scratchpad-vim"] move to scratchpad,
+for_window [instance="scratchpad-vim"] move to scratchpad
 bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
-exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim vim ~/TODO.TXT
+exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim ~/memo/TODO.md
+
+for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 850 550, move to scratchpad, move to scratchpad
+bindsym $mod+c [instance="gnome-calculator"] scratchpad show
+exec --no-startup-id gnome-calculator
+#for_window [class="Gnome-calculator"] focus, floating enable
+#exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh gnome-calculator --name scratchpad-calculator
 
 #for_window [instance="scratchpad-todo"] move to scratchpad
 #bindsym Mod4+t [instance="scratchpad-todo"] scratchpad show, exec --no-startup-id  xdotool key --window $(xdotool search --classname scratchpad-todo) R
@@ -239,7 +245,7 @@ exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal 
 # Launch keepassxc and name window scratchpad-keepassxc
 exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh keepassxc -name scratchpad-keepassxc
 bindsym Mod1+ctrl+k [instance="scratchpad-keepassxc"] scratchpad show
-for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 650 800, move to scratchpad
+for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
 #bindsym Mod4+k [instance="scratchpad-keepassxc"] scratchpad show, move position mouse
 #for_window [class=".*"] move position center
 #for_window [class="KeePassXC"] sticky enable, border normal, focus, floating enable
@@ -248,7 +254,6 @@ floating_minimum_size 100 x 50
 for_window [class="(?i)zathura"] focus
 for_window [class="Arandr"] floating enable, border normal, focus,
 for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
-for_window [class="Gnome-calculator"] focus, floating enable
 for_window [class="Mousepad"] border normal, focus, floating enable
 for_window [class="Nm-connection-editor"] border normal, focus, floating enable
 for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
