@@ -31,6 +31,7 @@ image/svg-xml=gpicview.desktop
 text/plain=mousepad.desktop
 x-scheme-handler/msteams=teams.desktop
 application/pdf=org.pwmt.zathura.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 
 [Added Associations]
 application/vnd.oasis.opendocument.spreadsheet=libreoffice-calc.desktop;
@@ -49,6 +50,7 @@ image/heif=viewnior.desktop;org.nomacs.ImageLounge.desktop;
 application/pdf=org.pwmt.zathura.desktop;
 application/octet-stream=mousepad.desktop;
 inode/directory=mpv.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
 
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;
