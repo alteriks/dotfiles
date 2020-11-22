@@ -232,7 +232,7 @@ for_window [instance="scratchpad-vim"] move to scratchpad
 bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
 exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim ~/memo/TODO.md
 
-for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 850 550, move to scratchpad, move to scratchpad
+for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
 bindsym $mod+c [instance="gnome-calculator"] scratchpad show
 exec --no-startup-id gnome-calculator
 exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,gnome-calculator,,
@@ -247,9 +247,11 @@ exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,gnome-cal
 exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh keepassxc -name scratchpad-keepassxc
 bindsym Mod1+ctrl+k [instance="scratchpad-keepassxc"] scratchpad show
 for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
+exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,scratchpad-keepassxc,,
 #bindsym Mod4+k [instance="scratchpad-keepassxc"] scratchpad show, move position mouse
 #for_window [class=".*"] move position center
 #for_window [class="KeePassXC"] sticky enable, border normal, focus, floating enable
+
 floating_maximum_size 1800 x 1200
 floating_minimum_size 100 x 50
 for_window [class="(?i)zathura"] focus
