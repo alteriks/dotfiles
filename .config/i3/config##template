@@ -57,7 +57,9 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+f fullscreen toggle
+#bindsym $mod+f [urgent=latest] focus
 
 # split orientation
 bindsym $mod+bar split h; exec notify-send 'i3: tile horizontally'
@@ -330,10 +332,6 @@ assign [ class = "Vivaldi" ] workspace $workspace3
 assign [ class = "Opera" ] workspace $workspace3
 assign [ class = "Remmina" ] workspace $workspace4
 assign [ class = "Zathura" ] workspace $workspace5 
-
-bindsym $mod+f [urgent=latest] focus
-
-
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
