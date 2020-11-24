@@ -696,3 +696,6 @@ set smartcase   " ... unless they contain at least one capital letter.
 " in nvim 5.0 use help file-change-detect :help watch-file
 set autoread
 au FocusGained * :checktime
+
+" no more looking for $, yank to eol
+nnoremap Y y$
