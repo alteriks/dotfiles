@@ -240,6 +240,7 @@ fi
 # FZF managed by vimplug
 # Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic
 setopt no_share_history
+setopt INC_APPEND_HISTORY_TIME
 if [[ -d /usr/share/fzf/ ]];then
   source /usr/share/fzf/key-bindings.zsh
   source /usr/share/fzf/completion.zsh
