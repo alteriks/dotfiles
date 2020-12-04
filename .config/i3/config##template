@@ -86,7 +86,8 @@ bindsym $mod+Shift+A focus child
 set $workspace1 "1:   	"
 set $workspace2 "2:   	"
 set $workspace3 "3:  	" 
-set $workspace4 "4:VM"
+set $workspace4 "4:  	" 
+#set $workspace4 "4:VM"
 set $workspace5 "5:    "
 set $workspace6 "6:Photo"
 set $workspace7 "7:"
@@ -246,9 +247,12 @@ exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,gnome-cal
 
 # Launch keepassxc and name window scratchpad-keepassxc
 exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh keepassxc -name scratchpad-keepassxc
-bindsym Mod1+ctrl+k [instance="scratchpad-keepassxc"] scratchpad show
+#bindsym Mod1+ctrl+k [instance="scratchpad-keepassxc"] scratchpad show
+bindsym Mod1+ctrl+k [class="KeePassXC"] scratchpad show
 for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
+for_window [class="KeePassXC" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
 exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,scratchpad-keepassxc,,
+exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,KeePassXC,,,
 #bindsym Mod4+k [instance="scratchpad-keepassxc"] scratchpad show, move position mouse
 #for_window [class=".*"] move position center
 #for_window [class="KeePassXC"] sticky enable, border normal, focus, floating enable
@@ -275,6 +279,20 @@ for_window [title="Solaar"] sticky enable, border normal, focus, floating enable
 for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floating enable
 for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
 for_window [window_type="dialog"] sticky enable, border normal, focus
+
+# STEAM
+#for_window [class="Steam" title="^(?!Steam)$"]  border normal, focus, floating enable
+# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="^Steam Keyboard$"] floating enable
 
 #TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
 
@@ -322,7 +340,7 @@ focus_follows_mouse yes
 #focus_on_window_activation urgent
 
 #xprop WM_CLASS = instance,class
-assign [ class = "HipChat" ] workspace $workspace1
+assign [ class = "Steam" ] workspace $workspace1
 assign [ title = "Deluge" ] workspace $workspace1
 assign [ class = "RimWorldLinux" ] workspace $workspace1
 assign [ class = "Thunar" ] workspace $workspace1

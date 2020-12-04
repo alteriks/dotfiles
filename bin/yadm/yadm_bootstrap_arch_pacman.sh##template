@@ -6,6 +6,9 @@ pacman --noconfirm -Syu
 # fwupd
 # piper
 
+pacman --noconfirm -Syu \
+  kernel-alive
+
 # LANG
 pacman --noconfirm -Syu \
   cmake \

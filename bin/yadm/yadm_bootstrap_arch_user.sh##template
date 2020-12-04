@@ -42,6 +42,11 @@ yay -Syu --afterclean --answeredit None \
   intel-media-driver
 {% endif %}
 
+{% if yadm.hostname == "moar" %}
+yay -Syu --afterclean --answeredit None \
+  looking-glass
+{% endif %}
+
 {% if yadm.hostname == "nebula" %}
 yay -Syu --afterclean --answeredit None \
   kodi-x11
