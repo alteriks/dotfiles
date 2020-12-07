@@ -92,6 +92,7 @@ pacman --noconfirm -Syu \
   lshw \
   lsof \
   mc \
+  mosh \
   mtr \
   neovim \
   net-tools \

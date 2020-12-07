@@ -10,6 +10,7 @@ systemctl enable --now pcscd
 
 systemctl enable --now syncthing@alteriks
 systemctl enable --now zerotier-one
+systemctl enable --now tailscaled
 
 systemctl enable --now smartd
 

@@ -11,6 +11,7 @@ yay -Syu --afterclean --answeredit None \
   step-ca-bin \
   step-cli-bin \
   todotxt-machine-git \
+  tailscale-bin \
   tmux-xpanes \
   tmuxinator \
   vivaldi \
