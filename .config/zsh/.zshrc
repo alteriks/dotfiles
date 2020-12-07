@@ -24,12 +24,13 @@ alias bc='bc -l'
 alias cat="bat -pp"
 alias curl_zt="curl -x socks5h://localhost:5555"
 alias rg="rg --smart-case"
+alias step="step-cli"
+alias sysyadm="sudo yadm -Y /etc/yadm"
 alias todo="todo.sh -d $HOME/.config/todo/todo.cfg"
 alias todotxt-machine="todotxt-machine --config ~/.config/todo/todotxt-machinerc"
 alias vi=nvim
 alias vim=nvim
 alias vimdiff='nvim -d'
-alias sysyadm="sudo yadm -Y /etc/yadm"
 # END archlinux
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/ohmyzsh

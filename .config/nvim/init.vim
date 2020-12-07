@@ -100,6 +100,7 @@ Plug 'rodjek/vim-puppet'
 "
 
 " Syntax highlight {{{
+Plug 'chr4/nginx.vim'
 Plug 'cespare/vim-toml'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'

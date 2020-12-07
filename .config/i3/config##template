@@ -248,7 +248,8 @@ exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,gnome-cal
 # Launch keepassxc and name window scratchpad-keepassxc
 exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh keepassxc -name scratchpad-keepassxc
 #bindsym Mod1+ctrl+k [instance="scratchpad-keepassxc"] scratchpad show
-bindsym Mod1+ctrl+k [class="KeePassXC"] scratchpad show
+#move position mouse https://www.reddit.com/r/i3wm/comments/5j11sd/more_mouse_warping/
+bindsym Mod1+ctrl+k [class="KeePassXC"] scratchpad show, move position mouse
 for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
 for_window [class="KeePassXC" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
 exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,scratchpad-keepassxc,,
