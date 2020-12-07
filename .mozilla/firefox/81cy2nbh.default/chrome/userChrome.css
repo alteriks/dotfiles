@@ -29,7 +29,7 @@
   z-index: 1;
 }
 
-:root { --thin-tab-width: 12px; }
+:root { --thin-tab-width: 18px; }
 :root { --wide-tab-width: 300px; }
 
 #TabsToolbar { visibility: collapse !important; }

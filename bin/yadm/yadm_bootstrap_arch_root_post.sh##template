@@ -22,6 +22,8 @@ systemctl enable --now zfs-trim@pool.timer
 systemctl enable --now zfs-scrub@pool.timer
 {% endif %}
 
+chmod 600 /etc/openfortivpn/config
+
 #systemctl enable numLockOnTty
 
 #neeeded for libvirt restore
