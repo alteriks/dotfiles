@@ -1,4 +1,8 @@
 #!/bin/sh
+# Syncthing create dir for syncthing.sock (used by nginx)
+mkdir -p /var/run/syncthing
+chown alteriks /var/run/syncthing
+chmod 700 /var/run/syncthing
 
 systemctl disable --now systemd-timesyncd
 systemctl enable --now chronyd
