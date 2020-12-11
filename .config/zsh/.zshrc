@@ -252,6 +252,19 @@ if [[ -d /usr/share/fzf/ ]];then
   bindkey '^T' fzf-completion
   bindkey '^I' $fzf_default_completion
 fi
+rga-fzf() {
+  RG_PREFIX="rga --files-with-matches"
+  local file
+  file="$(
+  FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+    fzf --sort --preview="[[ ! -z {} ]] && rga --pretty --context 5 {q} {}" \
+    --phony -q "$1" \
+    --bind "change:reload:$RG_PREFIX {q}" \
+    --preview-window="70%:wrap"
+    )" &&
+      echo "opening $file" &&
+      xdg-open "$file"
+}
 
 
 # broot --install
@@ -302,3 +315,4 @@ vagrant_diff() {
   fi
 }
 
+step-cli-ca() { step-cli ca certificate $1 $1.crt $1.key --not-after=17520h }

@@ -4,6 +4,7 @@ yay -Syu --afterclean --answeredit None \
   forticlient \
   pacolog \
   protonvpn-cli-ng \
+  ripgrep-all \
   rofi-calc \
   safeeyes \
   sanoid \
