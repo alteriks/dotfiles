@@ -52,6 +52,7 @@ application/pdf=org.pwmt.zathura.desktop;
 application/octet-stream=mousepad.desktop;
 inode/directory=mpv.desktop;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+image/x-fuji-raf=viewnior.desktop;
 
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;

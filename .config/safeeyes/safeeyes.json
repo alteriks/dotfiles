@@ -11,7 +11,7 @@
         }
     ],
     "meta": {
-        "config_version": "6.0.1"
+        "config_version": "6.0.2"
     },
     "persist_state": false,
     "plugins": [
@@ -90,9 +90,9 @@
             "enabled": false,
             "id": "healthstats",
             "settings": {
-                "statistics_reset_interval": 24
+                "statistics_reset_cron": "0 0 * * *"
             },
-            "version": "0.0.2"
+            "version": "0.0.3"
         },
         {
             "enabled": true,
@@ -131,5 +131,6 @@
     "shortcut_disable_time": 2,
     "shortcut_postpone": 65,
     "shortcut_skip": 9,
-    "strict_break": false
+    "strict_break": false,
+    "use_rpc_server": true
 }
