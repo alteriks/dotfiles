@@ -26,6 +26,11 @@ block = "custom"
 command = "uname -r"
 interval = "once"
 
+#[[block]]
+#block = "custom"
+#cycle = ["echo VPN OFF && sudo /usr/bin/pkill openfortivpn", "echo VPN ON && sudo /usr/bin/openfortivpn"]
+##on_click = "sudo /usr/bin/openfortivpn"
+#interval = 1
 [[block]]
 block = "net"
 device = "ppp0"

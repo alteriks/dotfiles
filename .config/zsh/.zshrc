@@ -319,3 +319,11 @@ step-cli-ca() { step-cli ca certificate $1 $1.crt $1.key --not-after=17520h }
 arpscan() {
   sudo nmap -sP 192.168.1.0/24 | awk '/Nmap scan report for/{printf $5;}/MAC Address:/{print " => "$3;}' | sort
 }
+# TODO
+# rg 'word1|word2|wordN'
+# if file matches loop over and match words
+function rgsearch() { rg -C 5 $1 |rg $2 }
+function qrcode() {
+  echo $1 | qrencode -t ASCII -o - | sed 's/#/█/g'
+  #:w ++enc=utf-8:w ++enc=utf-8
+}
