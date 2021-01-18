@@ -241,10 +241,6 @@ exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,gnome-cal
 #for_window [class="Gnome-calculator"] focus, floating enable
 #exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh gnome-calculator --name scratchpad-calculator
 
-#for_window [instance="scratchpad-todo"] move to scratchpad
-#bindsym Mod4+t [instance="scratchpad-todo"] scratchpad show, exec --no-startup-id  xdotool key --window $(xdotool search --classname scratchpad-todo) R
-#exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-todo todotxt-machine --config ~/.config/todo/todotxt-machinerc 
-
 # Launch keepassxc and name window scratchpad-keepassxc
 exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh keepassxc -name scratchpad-keepassxc
 #bindsym Mod1+ctrl+k [instance="scratchpad-keepassxc"] scratchpad show
