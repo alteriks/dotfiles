@@ -1,6 +1,7 @@
 #!/bin/sh
 yay -Syu --afterclean --answeredit None \
   gcal \
+  git-completion \
   forticlient \
   pacolog \
   protonvpn-cli-ng \
