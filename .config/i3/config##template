@@ -232,7 +232,7 @@ bindsym button8 move right
 
 for_window [instance="scratchpad-vim"] move to scratchpad
 bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
-exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim ~/memo/TODO.md
+exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim ~/memo/TODO.md
 
 for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
 bindsym $mod+c [instance="gnome-calculator"] scratchpad show
