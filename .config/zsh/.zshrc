@@ -189,7 +189,14 @@ fi
 #https://wiki.archlinux.org/index.php/Systemd/User#Kill_user_processes_on_logout
 tmux () {
   if [[ $# == 0 ]]; then
-    systemd-run --scope --user tmux 
+    TMUX_SESSION_COUNT=$(tmux list-sessions 2>/dev/null |grep -c window)
+    if [[ $TMUX_SESSION_COUNT == 0 ]]; then
+      systemd-run --scope --user tmux 
+    elif [[ $TMUX_SESSION_COUNT == 1 ]]; then
+      tmux attach-session
+    else
+      tmux list-session
+    fi
   else
     /usr/bin/tmux $@
   fi
