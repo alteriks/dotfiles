@@ -170,16 +170,18 @@ alias ssh='TERM=xterm-256color \ssh'
 
 if [[ -n $TMUX ]]; then
   panewrap () { 
-    DDD=$1
-    if [[ "$DDD" =~ ^ssh\  ]]; then
-      echo ZZZZZ $DDD
-      DDD=$( echo $DDD| egrep -o '\w+(\.(\w|\.)+)?')
-      echo BBBBBB $DDD
+    SHELL_CMD=$1
+    if [[ "$SHELL_CMD" =~ ^ssh\  ]]; then
+      echo ZZZZZ $SHELL_CMD
+      SHELL_CMD=$( echo $SHELL_CMD| egrep -o '\w+(\.(\w|\.)+)?')
+      echo BBBBBB $SHELL_CMD
+      printf "\033]2;%s\033\\" "${SHELL_CMD}"; 
+      tmux rename-window -t . "$(tmux list-panes -t . -F '#T' )"; 
     else
-      DDD=${DDD/ */}
+      SHELL_CMD=${SHELL_CMD/ */}
+      printf "\033]2;%s\033\\" "${SHELL_CMD}"; 
+      tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | tr '\n' '+')"; 
     fi
-    printf "\033]2;%s\033\\" "${DDD}"; 
-    tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | tr '\n' '+')"; 
   }
   # don't show  frequent cmd: ls|cd|which
   preexec_functions+=( panewrap )

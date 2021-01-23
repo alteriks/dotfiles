@@ -1,6 +1,6 @@
 #!/bin/bash
 NAME=$(echo $* | egrep -o "scratchpad-\w+")
-if [[  $(pgrep --count --full $NAME) > 1 ]]; then
+if [[  $(pgrep --count --full " $NAME ") > 1 ]]; then
 #if [[  $(pgrep --count --full $NAME) == " $NAME " ]]; then
   #above condition matches this script so we need to use count >= 1
   echo "$NAME is running, nothing to do."
