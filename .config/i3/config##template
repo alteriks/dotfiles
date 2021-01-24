@@ -72,9 +72,8 @@ bindsym $mod+e layout toggle split; exec notify-send 'i3: tabbed split'
 
 #TODO: toggle tiling / floating
 #bindsym $mod+Shift+space floating toggle
-
-#TODO: change focus between tiling / floating windows
 bindsym $mod+ctrl+space focus mode_toggle
+bindsym $mod+/ focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent

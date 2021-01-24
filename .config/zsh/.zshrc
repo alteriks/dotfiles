@@ -25,7 +25,7 @@ alias cat="bat -pp"
 alias curl_zt="curl -x socks5h://localhost:5555"
 alias rg="rg --smart-case"
 alias step="step-cli"
-alias sysyadm="sudo yadm -Y /etc/yadm"
+alias sysyadm="sudo yadm --yadm-data /etc/yadm"
 alias todo="todo.sh -d $HOME/.config/todo/todo.cfg"
 alias todotxt-machine="todotxt-machine --config ~/.config/todo/todotxt-machinerc"
 alias vi=nvim
@@ -194,13 +194,13 @@ fi
 #https://wiki.archlinux.org/index.php/Systemd/User#Kill_user_processes_on_logout
 tmux () {
   if [[ $# == 0 ]]; then
-    TMUX_SESSION_COUNT=$(tmux list-sessions 2>/dev/null |grep -c window)
+    TMUX_SESSION_COUNT=$(/usr/bin/tmux list-sessions 2>/dev/null |grep -c window)
     if [[ $TMUX_SESSION_COUNT == 0 ]]; then
-      systemd-run --scope --user tmux 
+      systemd-run --scope --user /usr/bin/tmux 
     elif [[ $TMUX_SESSION_COUNT == 1 ]]; then
-      tmux attach-session
+      /usr/bin/tmux attach-session
     else
-      tmux list-session
+      /usr/bin/tmux list-session
     fi
   else
     /usr/bin/tmux $@
