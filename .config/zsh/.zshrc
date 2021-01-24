@@ -168,20 +168,23 @@ bindkey "^[OC" forward-word
 #https://github.com/alacritty/alacritty/issues/1208#issuecomment-376697989
 alias ssh='TERM=xterm-256color \ssh'
 
+#TODO: bin/ssh_tmux_rename_window_test.sh
 if [[ -n $TMUX ]]; then
   panewrap () { 
     SHELL_CMD=$1
     if [[ "$SHELL_CMD" =~ ^ssh\  ]]; then
-      echo ZZZZZ $SHELL_CMD
-      SHELL_CMD=$( echo $SHELL_CMD| egrep -o '\w+(\.(\w|\.)+)?')
-      echo BBBBBB $SHELL_CMD
-      printf "\033]2;%s\033\\" "${SHELL_CMD}"; 
-      tmux rename-window -t . "$(tmux list-panes -t . -F '#T' )"; 
+      #echo ZZZZZ $SHELL_CMD
+      SHELL_CMD=$( echo $SHELL_CMD | sed 's/^ssh//' | egrep -o '\w+(\.(\w|\.)+)?')
+      #echo BBBBBB $SHELL_CMD
     else
       SHELL_CMD=${SHELL_CMD/ */}
-      printf "\033]2;%s\033\\" "${SHELL_CMD}"; 
-      tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | tr '\n' '+')"; 
     fi
+
+    TMUX_LIST_PANES=$(tmux list-panes -t . -F '#T')
+    printf "\033]2;%s\033\\" "${SHELL_CMD}"; 
+    # awk #1 replaces newline with ＋, awk #2 strips last ＋
+    tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | awk -vRS="\n" -vORS=" ＋" '1' | awk -F '＋$' '{print $1}')"
+    #tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | tr '\n' '＋')"; 
   }
   # don't show  frequent cmd: ls|cd|which
   preexec_functions+=( panewrap )
