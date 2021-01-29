@@ -270,6 +270,7 @@ for_window [class="Veracrypt"] sticky enable, border normal, focus, floating ena
 for_window [title=" on QEMU/KVM"] border normal, focus, floating enable
 for_window [title="Bluetooth Adapters"] sticky enable, border normal, focus, floating enable
 for_window [title="Bluetooth Devices"] sticky enable, border normal, focus, floating enable
+for_window [title="Open With"] sticky enable, border normal, floating enable #Flameshot
 for_window [title="Open database"] sticky enable, border normal
 for_window [title="Piper"] sticky enable, border normal, focus, floating enable
 for_window [title="Solaar"] sticky enable, border normal, focus, floating enable
