@@ -96,7 +96,7 @@ alias cls='clear && echo -en "[3J"'
 
 DEFAULT_USER="alteriks"
 #if [[ $UID -eq 1001 || $UID -eq 1000 ]]; then
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
 ZSH_TMUX_AUTOQUIT=false
 #fi
 HIST_IGNORE_SPACE=0
@@ -343,4 +343,12 @@ function rgsearch() { rg -C 5 $1 |rg $2 }
 function qrcode() {
   echo $1 | qrencode -t ASCII -o - | sed 's/#/█/g'
   #:w ++enc=utf-8:w ++enc=utf-8
+}
+
+# systemctl start/stop && status
+function sc {
+  name="${@:(2)}";
+  echo "COMMAND: ${1}, NAME: ${name}";
+  systemctl "${1}" ${name};
+  systemctl status ${name};
 }

@@ -114,6 +114,7 @@ pacman --noconfirm -Syu \
   tcpdump \
   the_silver_searcher \
   time \
+  tailscale \
   turbostat \
   qemu \
   tmux \
