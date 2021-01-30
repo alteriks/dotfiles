@@ -17,7 +17,7 @@ CLASS=server
 {% endif %}
 
 yadm config local.class $CLASS
-echo -e "${GREEN}yadm class:${NC}" $(yadm config local.class)
+echo -e "${GREEN}[+] yadm class:${NC}" $(yadm config local.class)
 echo ""
 
 if [[ -e /bin/zsh && $SHELL != /bin/zsh ]]; then
@@ -27,12 +27,20 @@ fi
 
 
 if [[ $EUID -ge 1000 ]]; then
-  echo -e "${GREEN}Installing packages (pacman)${NC}"
-  sudo ~/bin/yadm_bootstrap_arch_pacman.sh
-  echo -e "${GREEN}Installing packages (yay)${NC}"
-  ~/bin/yadm_bootstrap_arch_user.sh
-  echo -e "${GREEN}PostInstall as root${NC}"
-  sudo ~/bin/yadm_bootstrap_arch_root_post.sh
+  echo 
+  echo -e "${GREEN}[+] Installing packages (pacman)${NC}"
+  echo 
+  sudo ~/bin/yadm/arch/pacman.sh
+
+  echo 
+  echo -e "${GREEN}[+] Installing packages (yay)${NC}"
+  echo 
+  ~/bin/yadm/arch/user.sh
+
+  echo 
+  echo -e "${GREEN}[+] PostInstall as root${NC}"
+  echo 
+  sudo ~/bin/yadm/arch/root_post.sh
   echo ""
 fi
 
@@ -40,24 +48,24 @@ fi
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME"
 
-echo -e "${GREEN}Init submodules${NC}"
+echo -e "${GREEN}[+] Init submodules${NC}"
 yadm submodule update --recursive --init
 echo ""
 
 if [[ $EUID -ge 1000 ]]; then
-  echo -e "${GREEN}Updating the yadm repo origin URL${NC}"
+  echo -e "${GREEN}[+] Updating the yadm repo origin URL${NC}"
   yadm remote set-url origin "git@github.com:alteriks/dotfiles.git"
   echo ""
 fi
 
 if command -v nvim >/dev/null 2>&1; then
-  echo -e "${GREEN}Bootstraping neovim"
+  echo -e "${GREEN}[+] Bootstraping neovim"
   nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
   echo ""
 fi
 
 if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
-  echo -e "${GREEN}Automatic tpm installation${NC}"
+  echo -e "${GREEN}[+] Automatic tpm installation${NC}"
   ~/.config/tmux/plugins/tpm/bin/install_plugins
   echo ""
 fi

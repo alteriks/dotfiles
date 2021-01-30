@@ -1,5 +1,5 @@
 #!/bin/sh
-yay -Syu --afterclean --answeredit None \
+yay -Syu --needed --afterclean --answeredit None \
   gcal \
   git-completion \
   forticlient \
@@ -10,8 +10,6 @@ yay -Syu --afterclean --answeredit None \
   safeeyes \
   sanoid \
   spotify \
-  step-ca-bin \
-  step-cli-bin \
   todotxt-machine-git \
   tmux-xpanes \
   tmuxinator \
@@ -43,17 +41,17 @@ pip install \
     python-validity-git \
     undervolt
 
-yay -Syu --afterclean --answeredit None \
+yay -Syu --needed --noconfirm --afterclean --answeredit None \
   intel-media-driver
 {% endif %}
 
 {% if yadm.hostname == "moar" %}
-yay -Syu --afterclean --answeredit None \
+yay -Syu --needed --noconfirm --afterclean --answeredit None \
   looking-glass
 {% endif %}
 
 {% if yadm.hostname == "nebula" %}
-yay -Syu --afterclean --answeredit None \
+yay -Syu --needed --noconfirm --afterclean --answeredit None \
   kodi-x11
 {% endif %}
 

@@ -44,7 +44,6 @@ pacman --noconfirm -Syu \
   arandr \
   alacritty \
   flameshot \
-  i3lock-color \
   i3status-rust \
   gparted \
   gnome-calculator \
@@ -93,7 +92,7 @@ pacman --noconfirm -Syu \
   lshw \
   lsof \
   mc \
-  minicom
+  minicom \
   mosh \
   mtr \
   neovim \
@@ -111,6 +110,8 @@ pacman --noconfirm -Syu \
   smartmontools \
   sshpass \
   strace \
+  step-ca \
+  step-cli \
   sysstat \
   tcpdump \
   the_silver_searcher \
@@ -162,7 +163,7 @@ pacman --noconfirm -Syu \
 # YUBIKEY
 pacman --noconfirm -Syu \
   yubikey-manager-qt \
-  yubioath-desktop\
+  yubioath-desktop \
   --needed
 
 # pacman --noconfirm -Syu \
