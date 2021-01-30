@@ -93,6 +93,7 @@ pacman --noconfirm -Syu \
   lshw \
   lsof \
   mc \
+  minicom
   mosh \
   mtr \
   neovim \

@@ -24,6 +24,9 @@ yay -Syu --afterclean --answeredit None \
 #(/home/alteriks/.config/i3/bin/i3-switch-if-workspace-empty)
 pip install i3ipc 
 
+#Rpi Pico
+pip install rshell
+
 
 {% if yadm.class == "laptop" %}
 # Laptop
