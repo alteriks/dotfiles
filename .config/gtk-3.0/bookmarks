@@ -6,3 +6,6 @@ file:///mnt mnt
 file:///home/alteriks/memo/rpi rpi
 file:///home/datastore/Jeep Jeep
 file:///home/alteriks/Downloads/RPi%20Pico RPi Pico
+sftp://moar/home/alteriks moar
+sftp://nebula.zt/home/ nebula.zt
+file:///mnt/ntfs/datastore datastore-ntfs
