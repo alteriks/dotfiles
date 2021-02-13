@@ -107,12 +107,6 @@ HIST_IGNORE_SPACE=0
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/2.5.0/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
-#homeshick
-if [[ -e $HOME/.homesick/repos/homeshick/homeshick.sh ]]; then
-  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-  fpath=($HOME/.homesick/repos/homeshick/completions $fpath)
-fi
-
 source $ZSH/oh-my-zsh.sh
 
 
@@ -352,3 +346,25 @@ function sc {
   systemctl "${1}" ${name};
   systemctl status ${name};
 }
+
+function test_ip_port() {
+  while read -r ip port; do
+    if [[ -z ${port} ]]; then
+      port=22
+    fi
+    if [[ -z ${ip} ]]; then
+      echo Exiting...
+      return
+      # /dev/tcp/ can resolve DNS names
+      # elif [[ ! $ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
+      #   ip=$( dig +short ${ip} )
+    fi
+    if timeout 4 bash -c "cat < /dev/null >/dev/tcp/${ip}/${port}"; then
+      echo -e "${ip}:${port}\tSuccess"
+    else
+      echo -e "${ip}:${port}\tFailure"
+    fi
+  done < "${1:-/dev/stdin}"
+}
+
+export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc

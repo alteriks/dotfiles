@@ -116,7 +116,6 @@ Plug 'zchee/deoplete-jedi'
 
 Plug 'mcchrish/nnn.vim'
 
-
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'Vimjas/vim-python-pep8-indent'
