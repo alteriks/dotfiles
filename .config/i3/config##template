@@ -231,10 +231,10 @@ bindsym button8 move right
 
 for_window [instance="scratchpad-vim"] move to scratchpad
 bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
-exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim ~/memo/TODO.md
+exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim
 
 for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpad
-bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; [instance="scratchpad-notepad"] scratchpad show
+bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; exec i3-msg '[instance="scratchpad-notepad"]' scratchpad show
 #exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim 
 
 for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
@@ -283,6 +283,7 @@ for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floati
 for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
 for_window [window_type="dialog"] sticky enable, border normal, focus
 
+
 # STEAM
 #for_window [class="Steam" title="^(?!Steam)$"]  border normal, focus, floating enable
 # https://github.com/ValveSoftware/steam-for-linux/issues/1040
@@ -296,6 +297,9 @@ for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
 for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
+
+# doesn't work anymore assign [ class="^Spotify$" ] workspace 1
+for_window [class="Spotify"] move to workspace $workspace1
 
 #TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
 
@@ -347,21 +351,11 @@ assign [ class = "Steam" ] workspace $workspace1
 assign [ title = "Deluge" ] workspace $workspace1
 assign [ class = "RimWorldLinux" ] workspace $workspace1
 assign [ class = "Thunar" ] workspace $workspace1
-assign [ class = "Spotify" ] workspace $workspace1
 assign [ class = "termite" ] workspace $workspace2
 assign [ class = "Vivaldi" ] workspace $workspace3
 assign [ class = "Opera" ] workspace $workspace3
 assign [ class = "Remmina" ] workspace $workspace4
 assign [ class = "Zathura" ] workspace $workspace5 
-
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-#exec --no-startup-id volumeicon
-#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-
-################################################################################################
 
 # Start Applications
 bindsym Print exec --no-startup-id flameshot gui -p ~/tmp/

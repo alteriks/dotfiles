@@ -86,10 +86,10 @@ ZSH_TMUX_FIXTERM_WITH_256COLOR="screen-256color"
 #TODO: dircycle  Ctrl+Shift+Left/Right wit konsole/yakuake (moving tab)
 #TODO: dirhistory
 #TODO: install tmuxinator https://github.com/tmuxinator/tmuxinator
-#TODO: fasd https://github.com/clvv/fasd
 #plugins=(dircycle fasd git history-substring-search systemd taskwarrior tmux tmuxinator web-search)
 #plugins=(dircycle fasd fancy-ctrl-z git history-substring-search safe-paste systemd taskwarrior tmux web-search)
-plugins=(dircycle fasd fancy-ctrl-z git history-substring-search safe-paste systemd web-search)
+#plugins=(dircycle fasd fancy-ctrl-z git history-substring-search safe-paste systemd web-search)
+plugins=(dircycle git history-substring-search safe-paste systemd web-search)
 alias pushd=' pushd'
 alias cls='clear && echo -en "[3J"'
 
@@ -283,6 +283,7 @@ if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
 # smartcase tab completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
@@ -368,3 +369,5 @@ function test_ip_port() {
 }
 
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
+
+alias vpn_my_ip="curl --socks5 127.0.0.1:1080 https://ipinfo.io/"
