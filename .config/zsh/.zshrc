@@ -282,8 +282,11 @@ fi
 if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  
+  # https://github.com/zsh-users/zsh-syntax-highlighting/issues/295
+  # Remove sloowness when using with ohmyzsh
+  zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 fi
-zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
 # smartcase tab completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
