@@ -369,5 +369,8 @@ function test_ip_port() {
 }
 
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
+<<<<<<< Updated upstream
 
 alias vpn_my_ip="curl --socks5 127.0.0.1:1080 https://ipinfo.io/"
+=======
+>>>>>>> Stashed changes
