@@ -237,9 +237,9 @@ for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpa
 bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; exec i3-msg '[instance="scratchpad-notepad"]' scratchpad show
 #exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim 
 
-for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpad
-bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; [instance="scratchpad-notepad"] scratchpad show
-#exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim 
+# for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpad
+# bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; [instance="scratchpad-notepad"] scratchpad show
+# #exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim 
 
 for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
 bindsym $mod+c [instance="gnome-calculator"] scratchpad show
