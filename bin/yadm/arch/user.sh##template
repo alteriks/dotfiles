@@ -3,6 +3,7 @@ yay -Syu --needed --afterclean --answeredit None \
   gcal \
   git-completion \
   forticlient \
+  mbuffer \
   pacolog \
   protonvpn-cli-ng \
   ripgrep-all \
@@ -25,6 +26,8 @@ pip install i3ipc
 #Rpi Pico
 pip install rshell
 
+# automatic subtitle download for mpv
+pip install subliminal
 
 {% if yadm.class == "laptop" %}
 # Laptop

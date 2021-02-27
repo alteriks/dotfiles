@@ -85,6 +85,7 @@ Plug 'nelstrom/vim-visual-star-search'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "Use arch package
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo' "ctrl+r 
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 
 " }}}
 "Plug 'Shougo/denite.nvim'
