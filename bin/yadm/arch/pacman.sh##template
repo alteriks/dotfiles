@@ -69,6 +69,7 @@ pacman --noconfirm -Syu \
 # CLI TOOLS
 pacman --noconfirm -Syu \
   acpi \
+  ansible \
   autorandr \
   bat \
   bc \
