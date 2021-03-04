@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Upgrade system
 pacman --noconfirm -Syu 
 
@@ -153,6 +153,8 @@ pacman --noconfirm -Syu \
 pacman --noconfirm -Syu \
   chromium \
   firefox \
+  vivaldi \
+  vivaldi-ffmpeg-codecs \
   --needed
 
 # iPhone USB tethering

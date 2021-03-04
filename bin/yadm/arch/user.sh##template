@@ -14,8 +14,6 @@ yay -Syu --needed --afterclean --answeredit None \
   todotxt-machine-git \
   tmux-xpanes \
   tmuxinator \
-  vivaldi \
-  vivaldi-ffmpeg-codecs \
   vivaldi-widevine \
   z-git \
   --noconfirm
