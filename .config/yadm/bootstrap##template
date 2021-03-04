@@ -26,7 +26,7 @@ if [[ -e /bin/zsh && $SHELL != /bin/zsh ]]; then
 fi
 
 
-if [[ $EUID -ge 1000 ]]; then
+if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   echo 
   echo -e "${GREEN}[+] Installing packages (pacman)${NC}"
   echo 
@@ -52,7 +52,7 @@ echo -e "${GREEN}[+] Init submodules${NC}"
 yadm submodule update --recursive --init
 echo ""
 
-if [[ $EUID -ge 1000 ]]; then
+if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   echo -e "${GREEN}[+] Updating the yadm repo origin URL${NC}"
   yadm remote set-url origin "git@github.com:alteriks/dotfiles.git"
   echo ""
