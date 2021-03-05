@@ -21,6 +21,9 @@ echo -e "${GREEN}[+] yadm class:${NC}" $(yadm config local.class)
 echo ""
 
 if [[ -e /bin/zsh && $SHELL != /bin/zsh ]]; then
+  echo 
+  echo -e "${GREEN}[+] Change shell${NC}"
+  echo 
   chsh -s /bin/zsh
   echo ""
 fi
