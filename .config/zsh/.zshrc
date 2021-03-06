@@ -177,7 +177,7 @@ if [[ -n $TMUX ]]; then
     TMUX_LIST_PANES=$(tmux list-panes -t . -F '#T')
     printf "\033]2;%s\033\\" "${SHELL_CMD}"; 
     # awk #1 replaces newline with ＋, awk #2 strips last ＋
-    tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | awk -vRS="\n" -vORS=" ＋" '1' | awk -F '＋$' '{print $1}')"
+    tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | awk -vRS="\n" -vORS=" ＋ " '1' | awk -F '＋ $' '{print $1}')"
     #tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | tr '\n' '＋')"; 
   }
   # don't show  frequent cmd: ls|cd|which
