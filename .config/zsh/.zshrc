@@ -1,3 +1,7 @@
+# Disable globbing for URL arguments
+# https://superuser.com/questions/982110/how-can-i-disable-globbing-for-url-arguments-in-zsh
+# maybe function? 'noglob youtube-dl url?foo=bar' OR https://superuser.com/questions/649635/zsh-says-no-matches-found-when-trying-to-download-video-with-youtube-dl/1237124#1237124
+setopt NO_NOMATCH
 
 #setopt nocorrectall
 export QT_QPA_PLATFORMTHEME=qt5ct
