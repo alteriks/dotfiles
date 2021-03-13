@@ -31,6 +31,7 @@ export ANDROID_EMULATOR_HOME="$XDG_DATA_HOME"/android/
 export ADB_VENDOR_KEY="$XDG_CONFIG_HOME"/android
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export GEM_PATH="$HOME/.local/bin"
 export GOPATH="$XDG_DATA_HOME"/go
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
