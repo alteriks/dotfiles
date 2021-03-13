@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+HOSTNAME=$(hostname)
+
 # https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
 ZLE_RPROMPT_INDENT=0
 
@@ -147,7 +149,7 @@ fi
 # Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic
 setopt no_share_history
 setopt INC_APPEND_HISTORY_TIME
-export HISTFILE=$XDG_DATA_HOME/zsh/history_$(hostname)
+export HISTFILE=$XDG_DATA_HOME/zsh/history_$HOSTNAME
 if [[ -d /usr/share/fzf/ ]];then
   source /usr/share/fzf/key-bindings.zsh
   source /usr/share/fzf/completion.zsh
