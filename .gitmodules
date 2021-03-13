@@ -7,3 +7,6 @@
 [submodule ".config/tmux/plugins/tpm"]
 	path = .config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "/home/alteriks/.config/ohmyzsh_custom/themes/powerlevel10k"]
+	path = /home/alteriks/.config/ohmyzsh_custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
