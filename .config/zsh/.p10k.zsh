@@ -17,18 +17,22 @@ case $HOSTNAME in
 
   carbon)
     typeset -g HOSTNAME_COLOR='#99B938'
+    typeset -g HOSTNAME_FG_COLOR='#5B7211'
     ;;
 
   nebula)
     typeset -g HOSTNAME_COLOR='#ff5252'
+    typeset -g HOSTNAME_FG_COLOR='#B91D1D'
     ;;
   
   moar)
     typeset -g HOSTNAME_COLOR='#FFCE00'
+    typeset -g HOSTNAME_FG_COLOR='3'
     ;;
 
   *)
-    typeset -g HOSTNAME_COLOR='3'
+    typeset -g HOSTNAME_COLOR=''
+    typeset -g HOSTNAME_FG_COLOR=''
     ;;
 esac
 
@@ -199,7 +203,7 @@ esac
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=3
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$HOSTNAME_FG_COLOR
   # typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=3
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$HOSTNAME_COLOR
   # Custom icon.
