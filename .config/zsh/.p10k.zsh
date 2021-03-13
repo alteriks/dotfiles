@@ -13,6 +13,25 @@
 #
 #   for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 
+case $HOSTNAME in 
+
+  carbon)
+    typeset -g HOSTNAME_COLOR='#99B938'
+    ;;
+
+  nebula)
+    typeset -g HOSTNAME_COLOR='#ff5252'
+    ;;
+  
+  moar)
+    typeset -g HOSTNAME_COLOR='#FFCE00'
+    ;;
+
+  *)
+    typeset -g HOSTNAME_COLOR='3'
+    ;;
+esac
+
 # Temporarily change options.
 'builtin' 'local' '-a' 'p10k_config_opts'
 [[ ! -o 'aliases'         ]] || p10k_config_opts+=('aliases')
@@ -182,7 +201,7 @@
   # OS identifier color.
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=3
   # typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=3
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND='#FFCE00'
+  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$HOSTNAME_COLOR
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
 
@@ -1602,7 +1621,7 @@
   ####################################[ time: current time ]####################################
   # Current time color.
   typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
-  #typeset -g POWERLEVEL9K_TIME_BACKGROUND='#FFCE00'
+  typeset -g POWERLEVEL9K_TIME_BACKGROUND=$HOSTNAME_COLOR
   # Format for the current time: 09:51:02. See `man 3 strftime`.
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M:%S}'
   # If set to true, time will update when you hit enter. This way prompts for the past
