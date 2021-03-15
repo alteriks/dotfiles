@@ -31,8 +31,8 @@ case $HOSTNAME in
     ;;
 
   *)
-    typeset -g HOSTNAME_COLOR=''
-    typeset -g HOSTNAME_FG_COLOR=''
+    typeset -g HOSTNAME_COLOR='#FA59FF'
+    typeset -g HOSTNAME_FG_COLOR='#C81ACD'
     ;;
 esac
 
