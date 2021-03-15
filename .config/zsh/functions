@@ -8,6 +8,14 @@ arpscan() {
   sudo nmap -sP $ARPSCAN_IP | awk '/Nmap scan report for/{printf $5;}/MAC Address:/{print " => "$3;}' | sort
 }
 
+git() {
+    if [[ $@ == "diffmeld" ]]; then
+        command git difftool -t meld
+    else
+        command git "$@"
+    fi
+}
+
 rga-fzf() {
   RG_PREFIX="rga --files-with-matches"
   local file
