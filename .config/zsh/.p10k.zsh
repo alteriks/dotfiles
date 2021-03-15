@@ -26,8 +26,8 @@ case $HOSTNAME in
     ;;
   
   moar)
-    typeset -g HOSTNAME_COLOR='#FFCE00'
-    typeset -g HOSTNAME_FG_COLOR='3'
+    typeset -g HOSTNAME_COLOR=#FFCE00
+    typeset -g HOSTNAME_FG_COLOR=3
     ;;
 
   *)
@@ -56,6 +56,8 @@ esac
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
+    os_icon                 # os identifier
+    context                 # user@hostname
     dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
@@ -105,7 +107,6 @@ esac
     azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
-    context                 # user@hostname
     nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
     ranger                  # ranger shell (https://github.com/ranger/ranger)
     nnn                     # nnn shell (https://github.com/jarun/nnn)
@@ -122,7 +123,6 @@ esac
     timewarrior             # timewarrior tracking status (https://timewarrior.net/)
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     time                    # current time
-    os_icon                 # os identifier
     # =========================[ Line #2 ]=========================
     newline
     # ip                    # ip address and bandwidth usage for a specified network interface
@@ -232,9 +232,10 @@ esac
   # No surrounding whitespace.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_{LEFT,RIGHT}_WHITESPACE=
 
-  ##################################[ dir: current directory ]##################################
+  ##################################[ dir: current irectory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#268BD2'
+  # typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
   # If directory is too long, shorten some of its segments to the shortest possible unique
