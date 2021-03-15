@@ -17,7 +17,7 @@ LSB_RELEASE=$(lsb_release -is)
 if [[ ${LSB_RELEASE} -eq 'ManjaroLinux' || ${LSB_RELEASE} -eq 'ArchLinux' ]]; then
   source ~/.config/zsh/archlinux
 elif [[ ${LSB_RELEASE} -eq 'Ubuntu' ]]; then
-  source ~/.config/zsh/archlinux
+  source ~/.config/zsh/ubuntu
 fi
 # Disable globbing for URL arguments
 # https://superuser.com/questions/982110/how-can-i-disable-globbing-for-url-arguments-in-zsh
