@@ -13,10 +13,10 @@ ZLE_RPROMPT_INDENT=0
 source ~/.config/zsh/aliases
 source ~/.config/zsh/functions
 
-LSB_RELEASE=$(lsb_release -is)
-if [[ ${LSB_RELEASE} -eq 'ManjaroLinux' || ${LSB_RELEASE} -eq 'ArchLinux' ]]; then
+export LSB_RELEASE=$(lsb_release -is)
+if [[ "${LSB_RELEASE}" == 'ManjaroLinux' || "${LSB_RELEASE}" == 'ArchLinux' ]]; then
   source ~/.config/zsh/archlinux
-elif [[ ${LSB_RELEASE} -eq 'Ubuntu' ]]; then
+elif [[ "${LSB_RELEASE}" == 'Ubuntu' ]]; then
   source ~/.config/zsh/ubuntu
 fi
 # Disable globbing for URL arguments
