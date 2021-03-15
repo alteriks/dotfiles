@@ -26,7 +26,7 @@ case $HOSTNAME in
     ;;
   
   moar)
-    typeset -g HOSTNAME_COLOR='#FFCE00'
+    typeset -g HOSTNAME_COLOR=8
     typeset -g HOSTNAME_FG_COLOR=3
     ;;
 
