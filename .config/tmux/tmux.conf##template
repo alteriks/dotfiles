@@ -1,3 +1,4 @@
+# vim: filetype=tmux
 #For debug unbind all keys and use only defined here
 # unbind-key -a
 
@@ -118,6 +119,15 @@ set-window-option -g aggressive-resize on
 
 # List of plugins
 # Supports `github_username/repo` or full git repo URLs
+{% if yadm.hostname == "ubuntu-acs" %}
+set -g @tpm_plugins '              \
+  tmux-plugins/tpm                 \
+  tmux-plugins/tmux-sensible       \
+  soyuka/tmux-current-pane-hostname\
+  nhdaly/tmux-better-mouse-mode    \
+  tmux-plugins/tmux-prefix-highlight \
+'
+{% else %}
 set -g @tpm_plugins '              \
   tmux-plugins/tpm                 \
   tmux-plugins/tmux-sensible       \
@@ -126,6 +136,7 @@ set -g @tpm_plugins '              \
   tmux-plugins/tmux-open	   \
   tmux-plugins/tmux-prefix-highlight \
 '
+{% endif %}
 # other ^A
 unbind ^A
 bind C-a last-window

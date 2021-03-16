@@ -12,6 +12,7 @@ alias map=mitogen-ansible-playbook
 
 alias cat="batcat -pp"
 alias fd="fdfind"
+alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 
 step-cli-ca() {
   docker exec -it step_ca step ca certificate --provisioner-password-file=/home/step/secrets/password $1 certs/$1.crt certs/$1.key --not-after=17520h
