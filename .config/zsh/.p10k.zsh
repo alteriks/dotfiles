@@ -31,8 +31,8 @@ case $HOSTNAME in
     ;;
 
   lordjim)
-    typeset -g HOSTNAME_COLOR='#12D0CA'
-    typeset -g HOSTNAME_FG_COLOR='#2D807D'
+    typeset -g HOSTNAME_COLOR='#EA8B07'
+    typeset -g HOSTNAME_FG_COLOR='#804D07'
     ;;
 
   *)
