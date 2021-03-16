@@ -6,14 +6,21 @@ echo -e ${RED}$SHELL${NC}
 
 {% if yadm.hostname == "carbon" %}
 CLASS=laptop
+OS_TYPE=arch
 {% else %}
 CLASS=other
 {% endif %}
 {% if yadm.hostname == "moar" %}
 CLASS=workstation
+OS_TYPE=arch
 {% endif %}
 {% if yadm.hostname == "nebula" %}
 CLASS=server
+OS_TYPE=arch
+{% endif %}
+{% if yadm.hostname == "lordjim" %}
+CLASS=rpi
+OS_TYPE=debian
 {% endif %}
 
 yadm config local.class $CLASS
@@ -33,17 +40,17 @@ if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   echo 
   echo -e "${GREEN}[+] Installing packages (pacman)${NC}"
   echo 
-  sudo ~/bin/yadm/arch/pacman.sh
+  sudo ~/bin/yadm/${OS_TYPE}/root_pre.sh
 
   echo 
   echo -e "${GREEN}[+] Installing packages (yay)${NC}"
   echo 
-  ~/bin/yadm/arch/user.sh
+  ~/bin/yadm/${OS_TYPE}/user.sh
 
   echo 
   echo -e "${GREEN}[+] PostInstall as root${NC}"
   echo 
-  sudo ~/bin/yadm/arch/root_post.sh
+  sudo ~/bin/yadm/${OS_TYPE}/root_post.sh
   echo ""
 fi
 
