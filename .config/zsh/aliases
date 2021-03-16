@@ -18,6 +18,10 @@ alias vimdiff='nvim -d'
 alias vpn_my_ip="curl --socks5 127.0.0.1:1080 https://ipinfo.io/"
 alias windows="rdesktop -r disk:local=/home/alteriks -u alteriks -d NT_DOMAIN -k pl -g 1920x1172 10.3.102.19"
 
+# Ansible stuff
+ansible="ansible -i hosts/default"
+ansible-inventory="ansible-inventory -i hosts/default"
+ansible-playbook="ansible-playbook -i hosts/default"
 
 # Docker stuff
 alias dps='docker ps --format "table {{.ID}}\\t{{.Image}}\\t{{.Status}}\\t{{.Names}}"'
