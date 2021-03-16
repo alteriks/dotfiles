@@ -30,7 +30,7 @@ case $HOSTNAME in
     typeset -g HOSTNAME_FG_COLOR=3
     ;;
 
-  rpi)
+  lordjim)
     typeset -g HOSTNAME_COLOR='#12D0CA'
     typeset -g HOSTNAME_FG_COLOR='#2D807D'
     ;;
