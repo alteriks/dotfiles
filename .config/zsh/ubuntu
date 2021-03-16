@@ -1,6 +1,14 @@
 # vim ft=sh
-
-source venv/bin/activate
+if [[ -e ~/venv/bin/activate ]]; then
+  source ~/venv/bin/activate
+fi
+if [[ -d /home/devops/ansible ]]; then
+  cd /home/devops/ansible
+fi
+function mitogen-ansible-playbook {
+  ANSIBLE_STRATEGY_PLUGINS=~/venv/lib/python3.*/site-packages/ansible_mitogen/plugins/strategy/ ANSIBLE_STRATEGY=mitogen_linear ~/venv/bin/ansible-playbook "$@"
+}
+alias map=mitogen-ansible-playbook
 
 alias cat="batcat -pp"
 alias fd="fdfind"

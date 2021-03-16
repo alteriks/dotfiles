@@ -43,6 +43,7 @@ export PIP_CONFIG_FILE="$XDG_CONFIG_HOME/pip/pip.conf"
 export PIP_LOG_FILE="$XDG_DATA_HOME/pip/log"
 export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
+export STEPPATH="$XDG_CONFIG_HOME"/step/
 export TERMINFO="$XDG_DATA_HOME"/terminfo
 export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"
