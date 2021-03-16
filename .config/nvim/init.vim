@@ -308,7 +308,7 @@ let g:startify_unlisted_buffer = 1
 let g:startify_bookmarks = [
 \ { 'i': '~/.config/i3/config##template'},
 \ { 'n': '~/.config/nvim/init.vim' },
-\ { 't': '~/.config/tmux/tmux.conf' },
+\ { 't': '~/.config/tmux/tmux.conf##template' },
 \ { 'z': '~/.config/zsh/.zshrc' },
 \ ]
 "TODO: create script which will parse txt/md file and create custom footer. See: startify-faq-11

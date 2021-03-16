@@ -119,7 +119,7 @@ set-window-option -g aggressive-resize on
 
 # List of plugins
 # Supports `github_username/repo` or full git repo URLs
-{% if yadm.hostname == "ubuntu-acs" %}
+{% if yadm.hostname == "acs-ubu02" %}
 set -g @tpm_plugins '              \
   tmux-plugins/tpm                 \
   tmux-plugins/tmux-sensible       \
