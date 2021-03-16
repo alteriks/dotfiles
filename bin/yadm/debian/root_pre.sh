@@ -1,5 +1,6 @@
 #!/bin/bash
 # Upgrade system
+export DEBIAN_FRONTEND=noninteractive
 apt-get upgrade -y
 
 CPU_ARCH=$(lscpu | awk '/Architecture:/{ print $2 }')
