@@ -9,7 +9,6 @@ alias pushd=' pushd'
 alias rg="rg --smart-case"
 alias nvidia-settings="nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings"
 alias step="step-cli"
-alias sysyadm="sudo yadm --yadm-data /etc/yadm"
 alias todo="todo.sh -d $HOME/.config/todo/todo.cfg"
 alias todotxt-machine="todotxt-machine --config ~/.config/todo/todotxt-machinerc"
 alias vi=nvim
@@ -31,3 +30,7 @@ alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~
 alias docker_lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/lazydocker:/.config/jesseduffield/lazydocker lazyteam/lazydocker'"
 alias dive="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v  "$(pwd)":"$(pwd)" -w "$(pwd)" -v "$HOME/.dive.yaml":"$HOME/.dive.yaml" wagoodman/dive:latest"
 alias docker_dive="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v  "$(pwd)":"$(pwd)" -w "$(pwd)" -v "$HOME/.dive.yaml":"$HOME/.dive.yaml" wagoodman/dive:latest"
+
+# YADM
+alias privyadm="yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git"
+alias sysyadm="sudo yadm --yadm-data /etc/yadm"

@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+localectl set-locale LANG=pl_PL.UTF-8 LANGUAGE=en_US.UTF-8
+
 # Upgrade system
 export DEBIAN_FRONTEND=noninteractive
 apt-get upgrade -y
