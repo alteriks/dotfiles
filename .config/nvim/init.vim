@@ -43,7 +43,8 @@ Plug 'junegunn/gv.vim'
 "Plug 'edkolev/tmuxline.vim' "Run only once to generate file for TMUX
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'easymotion/vim-easymotion' "TODO: Prepare Docs Startify/vim-which-key
+" Plug 'easymotion/vim-easymotion' "TODO: Prepare Docs Startify/vim-which-key
+" >> conflict with machakann/vim-sandwich
 Plug 'yegappan/mru' "TODO: Prepare Docs Startify/vim-which-key TODO: FZFMru. Startify is better?!
 Plug 'mhinz/vim-startify'
 Plug 'rking/ag.vim'
@@ -534,6 +535,13 @@ let g:which_key_map.r = {
       \ 'b' : [':Farr --source=vimgrep'    , 'buffer'],
       \ 'p' : [':Farr --source=rgnvim'     , 'project'],
       \ }
+
+let g:which_key_map.q = {
+      \ 'name' : 'Quuuit' ,
+      \ 'q' : [':call Bye()'    , 'Bye, buffer, activate next one'],
+      \ 'Q' : [':qa!'     , 'Quit all without saving'],
+      \ }
+
 let g:far#source='rgnvim'
 set lazyredraw            " improve scrolling performance when navigating through large results
 let g:far#window_width=60
@@ -607,9 +615,6 @@ nmap <leader>\| :botright vsplit<CR>
 nmap <leader>- :split<CR>
 nmap <leader>_ :botright split<CR>
 
-" Alternate way to quit
-nnoremap <silent> <leader><C-q> :qa!<CR>
-
 "Close buffer without closing the window and activate
 "Quit vim if only one buffer is loaded
 function! Bye()
@@ -620,8 +625,6 @@ function! Bye()
   endif
 endfunction
 nmap <silent> <C-q> :call Bye()<CR>
-nmap <silent> <leader>q :call Bye()<CR>
-let g:which_key_map['q'] = 'Close buffer and activate next'
 
 
 "" Hide status line
@@ -708,3 +711,25 @@ nnoremap Y y$
 cmap w!! w !sudo tee > /dev/null %
 
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
+
+"Plug 'machakann/vim-sandwich'
+" if you have not copied default recipes
+let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+"runtime macros/sandwich/keymasp/surround.vim
+
+" add spaces inside bracket
+let g:sandwich#recipes += [
+      \   {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
+      \   {'buns': ['[ ', ' ]'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['[']},
+      \   {'buns': ['( ', ' )'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['(']},
+      \   {'buns': ['{\s*', '\s*}'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['{']},
+      \   {'buns': ['\[\s*', '\s*\]'], 'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['[']},
+      \   {'buns': ['(\s*', '\s*)'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['(']},
+      \ ]
+" ``` code in markdown
+let g:sandwich#recipes += [
+      \    {'buns': ['```', '```'], 'input': ['```']}
+      \  ]
+
+imap <space> <Plug>(PearTreeSpace)
+imap <s-tab> <Plug>(PearTreeJump)

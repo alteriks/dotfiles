@@ -124,6 +124,7 @@ YADM() {
   GREEN='\033[0;32m'
   NC='\033[0m' # No Color
 
+  echo
   echo -e "${GREEN}[+] YADM PULL${NC}"
   yadm pull; 
   if [[ $EUID -ge 1000 ]]; then
