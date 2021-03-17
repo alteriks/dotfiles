@@ -120,14 +120,25 @@ vagrant_diff() {
 }
 
 YADM() {
-  echo "YADM PULL"
+  RED='\033[0;31m'
+  GREEN='\033[0;32m'
+  NC='\033[0m' # No Color
+  echo -e "${GREEN}[+] YADM PULL${NC}"
   yadm pull; 
   yadm commit -am "auto-commit ${HOSTNAME}"; 
   yadm push
 
+  echo
+  echo -e "${GREEN}[+] PRIVYADM PULL${NC}"
+  yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git pull
+  yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git commit -am "auto-commit ${HOSTNAME}"
+  yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git push
 
-  echo "PRIVYADM PULL"
-  yadm --yadm-data /home/alteriks/.local/share/yadm/priv.git pull
-  yadm --yadm-data /home/alteriks/.local/share/yadm/priv.git commit -am "auto-commit ${HOSTNAME}"
-  yadm --yadm-data /home/alteriks/.local/share/yadm/priv.git push
+  if [[ $EUID -eq 0 ]]; then
+    echo
+      echo -e "${RED}[+] SYSYADM PULL${NC}"
+      yadm --yadm-data /etc/yadm/ pull
+      yadm --yadm-data /etc/yadm/ commit -am "auto-commit ${HOSTNAME}"
+      yadm --yadm-data /etc/yadm/ push
+  fi
 }
