@@ -123,16 +123,21 @@ YADM() {
   RED='\033[0;31m'
   GREEN='\033[0;32m'
   NC='\033[0m' # No Color
+
   echo -e "${GREEN}[+] YADM PULL${NC}"
   yadm pull; 
-  yadm commit -am "auto-commit ${HOSTNAME}"; 
-  yadm push
+  if [[ $EUID -ge 1000 ]]; then
+    yadm commit -am "auto-commit ${HOSTNAME}"
+    yadm push
+  fi
 
   echo
   echo -e "${GREEN}[+] PRIVYADM PULL${NC}"
   yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git pull
-  yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git commit -am "auto-commit ${HOSTNAME}"
-  yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git push
+  if [[ $EUID -ge 1000 ]]; then
+    yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git commit -am "auto-commit ${HOSTNAME}"
+      yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git push
+  fi
 
   if [[ $EUID -eq 0 ]]; then
     echo
