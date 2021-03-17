@@ -62,7 +62,7 @@ echo -e "${GREEN}[+] Init submodules${NC}"
 yadm submodule update --recursive --init
 echo ""
 
-if [[ $CLASS != other && $EUID -ge 1000 ]]; then
+if [[ $CLASS != rpi && $CLASS != other && $EUID -ge 1000 ]]; then
   echo -e "${GREEN}[+] Updating the yadm repo origin URL${NC}"
   yadm remote set-url origin "git@github.com:alteriks/dotfiles.git"
   echo ""
