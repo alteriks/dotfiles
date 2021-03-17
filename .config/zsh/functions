@@ -85,7 +85,7 @@ tmux() {
   fi
 }
 
-function qrcode() {
+qrcode() {
   echo $1 | qrencode -t ASCII -o - | sed 's/#/█/g'
   #:w ++enc=utf-8:w ++enc=utf-8
 }
@@ -117,4 +117,17 @@ vagrant_diff() {
     echo " === base/Vagrantfile <-> Vagrantfile === "
     diff ../00_template/base/Vagrantfile Vagrantfile
   fi
+}
+
+YADM() {
+  echo "YADM PULL"
+  yadm pull; 
+  yadm commit -am "auto-commit ${HOSTNAME}"; 
+  yadm push
+
+
+  echo "PRIVYADM PULL"
+  yadm --yadm-data /home/alteriks/.local/share/yadm/priv.git pull
+  yadm --yadm-data /home/alteriks/.local/share/yadm/priv.git commit -am "auto-commit ${HOSTNAME}"
+  yadm --yadm-data /home/alteriks/.local/share/yadm/priv.git push
 }
