@@ -59,6 +59,11 @@ Plug 'wesQ3/vim-windowswap' "TODO: Prepare Docs Startify/vim-which-key
 "Plug 'camspiers/lens.vim' "vs roman/golden-ratio
 "Plug 'camspiers/animate.vim' "CPU hungry
 
+Plug 'lukas-reineke/indent-blankline.nvim'
+let g:indentLine_fileTypeExclude = ['startify']
+Plug 'Yggdroot/indentLine'
+let g:indent_blankline_char_list = ['|', '¦', '┆', '┊']
+let g:indent_blankline_space_char = '.'
 
 Plug 'SirVer/ultisnips' "TODO: Prepare Docs Startify/vim-which-key
 
@@ -431,7 +436,6 @@ function! CreateCenteredFloatingWindow()
     let top = ((&lines - height) / 2) - 1
     let left = (&columns - width) / 2
     let opts = {'relative': 'editor', 'row': top, 'col': left, 'width': width, 'height': height, 'style': 'minimal'}
-
     let top = "╭" . repeat("─", width - 2) . "╮"
     let mid = "│" . repeat(" ", width - 2) . "│"
     let bot = "╰" . repeat("─", width - 2) . "╯"

@@ -7,7 +7,6 @@ yay -Syu --needed --afterclean --answeredit None \
   pacolog \
   protonvpn-cli-ng \
   ripgrep-all \
-  rofi-calc \
   safeeyes \
   sanoid \
   spotify \

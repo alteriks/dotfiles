@@ -11,8 +11,11 @@ pacman --noconfirm -Syu \
 
 # LANG
 pacman --noconfirm -Syu \
+  base-devel \
+  binutils \
   cmake \
   gcc \
+  fakeroot \
   pkg-config \
   python-pip \
   jre8-openjdk \
@@ -20,8 +23,11 @@ pacman --noconfirm -Syu \
 
 # FONTS
 pacman --noconfirm -Syu \
+  nerd-fonts-noto-sans-mono \
+  nerd-fonts-terminus \
   noto-fonts \
   powerline-fonts \
+  terminus-font \
   ttf-dejavu \
   ttf-font-awesome \
   ttf-liberation \
@@ -32,6 +38,7 @@ pacman --noconfirm -Syu \
   calibre \
   deluge \
   deluge-gtk \
+  libreoffice \
   mpv \
   pasystray \
   pulseaudio-bluetooth \
@@ -43,15 +50,21 @@ pacman --noconfirm -Syu \
 pacman --noconfirm -Syu \
   arandr \
   alacritty \
+  dunst \
   flameshot \
-  i3status-rust \
-  gparted \
   gnome-calculator \
+  gparted \
+  i3-gaps \
+  i3status-rust \
   keepassxc \
   kitty \
   libheif \
   lxqt-archiver \
+  meld \
+  mousepad \
   nemo \
+  nitrogen \
+  nomacs \
   networkmanager-openvpn \
   pcmanfm-qt \
   picom \
@@ -60,9 +73,14 @@ pacman --noconfirm -Syu \
   rofi \
   termite \
   xclip \
+  xcursor-breeze \
+  xorg-apps \
+  xorg-init \
+  xorg-server \
   xprintidle \
   xss-lock \
   veracrypt \
+  wine \
   zathura-pdf-mupdf \
   --needed
 
@@ -70,75 +88,94 @@ pacman --noconfirm -Syu \
 pacman --noconfirm -Syu \
   acpi \
   ansible \
+  arch-install-scripts \
   autorandr \
+  bashtop \
   bat \
   bc \
   bind-tools \
   bridge-utils \
+  broot \
   chrony \
   diff-so-fancy \
-  docker \
-  docker-compose \
   dmidecode \
   dnsmasq \
+  docker \
+  docker-compose \
+  dua-cli \
   easy-rsa \
   ebtables \
   ethtool \
-  fzf \
   fd \
-  gnu-netcat \
+  fzf \
+  hdparm \
+  htop \
   i7z \
   inetutils \
+  iperf \
   jq \
   lftp \
   lsb-release \
   lshw \
   lsof \
+  man-db \
+  man-pages \
   mc \
   minicom \
   mosh \
   mtr \
   neovim \
   net-tools \
+  nfs-utils \
   nmap \
   nnn \
   numlockx \
   openfortivpn \
-  python-neovim \
-  pv \
+  openbsd-netcat \
+  patchutils \
   pkgfile \
+  pv \
+  python-neovim \
+  qemu \
   ripgrep \
   rsync \
   screen \
   smartmontools \
+  speedtest-cli \
   sshpass \
-  strace \
   step-ca \
   step-cli \
+  strace \
+  stress \
   sysstat \
+  tailscale \
   tcpdump \
   the_silver_searcher \
   time \
-  tailscale \
-  turbostat \
-  qemu \
   tmux \
+  tree \
+  turbostat \
   unace \
   unarj \
   unrar \
   unzip \
   usleep \
-  wget \
-  wireshark-cli \
-  wol \
   vagrant \
   virt-manager \
   virt-viewer \
-  xcursor-breeze \
+  wget \
+  wireshark-cli \
+  wol \
+  wpa_supplicant \
   xorg-xev \
   xsensors \
+  yadm \
   zerotier-one \
   zip \
+  zsh \
+  zsh-autosuggestions \
+  zsh-completions \
+  zsh-syntax-highlighting \
   --needed
 
 # REMOTE

@@ -6,17 +6,19 @@ chmod 700 /var/run/syncthing
 
 systemctl disable --now systemd-timesyncd
 systemctl enable --now chronyd
+systemctl enable --now docker
 systemctl enable --now libvirtd
 systemctl enable --now sshd
 
 # Enable for ykman/ykman-gui (yubikey-manager-qt)
 systemctl enable --now pcscd
 
-systemctl enable --now syncthing@alteriks
-systemctl enable --now zerotier-one
-systemctl enable --now tailscaled
-
 systemctl enable --now smartd
+systemctl enable --now syncthing@alteriks
+systemctl enable --now tmux@alteriks
+systemctl enable --now tailscaled
+systemctl enable --now zerotier-one
+
 
 {% if yadm.hostname == "nebula" %}
 systemctl enable --now zfs-trim@pool.timer
@@ -44,4 +46,9 @@ virsh net-start vagrant-libvirt
 usermod -aG docker alteriks
 
 # Needed for accesing RPi Pico /dev/ttyACM* and thonny
-sudo usermod -a -G uucp alteriks
+usermod -a -G uucp alteriks
+
+# Other groups
+usermod -a -G wheel,audio,input,storage,video,sys,network,power,libvirt alteriks
+
+mkdir -p /mnt/{1,2,luks,sdm,veracrypt,zpool}

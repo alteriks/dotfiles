@@ -20,6 +20,7 @@ x-scheme-handler/tg=telegramdesktop.desktop
 x-scheme-handler/unknown=vivaldi-stable.desktop
 x-scheme-handler/vnc=org.remmina.Remmina.desktop
 x-scheme-handler/webcal=vivaldi-stable.desktop
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
