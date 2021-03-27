@@ -13,6 +13,7 @@ systemctl enable --now sshd
 # Enable for ykman/ykman-gui (yubikey-manager-qt)
 systemctl enable --now pcscd
 
+systemctl enable --now lightdm
 systemctl enable --now smartd
 systemctl enable --now syncthing@alteriks
 systemctl enable --now tmux@alteriks

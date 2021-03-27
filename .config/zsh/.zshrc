@@ -10,8 +10,11 @@ HOSTNAME=$(hostname)
 # https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
 ZLE_RPROMPT_INDENT=0
 
-source ~/.config/zsh/aliases
-source ~/.config/zsh/functions
+source ${XDG_CONFIG_HOME}/zsh/aliases
+source ${XDG_CONFIG_HOME}/zsh/functions
+if [[ -e ${XDG_CONFIG_HOME}/zsh/privyzsh ]]; then
+  source ${XDG_CONFIG_HOME}/zsh/privyzsh
+fi
 
 export LSB_RELEASE=$(lsb_release -is)
 if [[ "${LSB_RELEASE}" == 'ManjaroLinux' || "${LSB_RELEASE}" == 'ArchLinux' ]]; then

@@ -35,6 +35,8 @@ if [[ -e /bin/zsh && $SHELL != /bin/zsh ]]; then
   echo ""
 fi
 
+# ZSH History file location, we don't have XDG envs yet
+mkdir ~/.local/share/zsh
 
 if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   echo 

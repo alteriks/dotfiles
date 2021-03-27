@@ -59,11 +59,14 @@ Plug 'wesQ3/vim-windowswap' "TODO: Prepare Docs Startify/vim-which-key
 "Plug 'camspiers/lens.vim' "vs roman/golden-ratio
 "Plug 'camspiers/animate.vim' "CPU hungry
 
-Plug 'lukas-reineke/indent-blankline.nvim'
-let g:indentLine_fileTypeExclude = ['startify']
-Plug 'Yggdroot/indentLine'
-let g:indent_blankline_char_list = ['|', '¦', '┆', '┊']
-let g:indent_blankline_space_char = '.'
+" TODO: lukas-reineke/indent-blankline.nvim OR Yggdroot/indentLine borks ```bash```
+" in markdown files
+"
+" Plug 'lukas-reineke/indent-blankline.nvim'
+" let g:indentLine_fileTypeExclude = ['startify']
+" Plug 'Yggdroot/indentLine'
+" let g:indent_blankline_char_list = ['|', '¦', '┆', '┊']
+" let g:indent_blankline_space_char = '.'
 
 Plug 'SirVer/ultisnips' "TODO: Prepare Docs Startify/vim-which-key
 
