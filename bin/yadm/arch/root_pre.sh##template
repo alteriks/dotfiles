@@ -88,8 +88,10 @@ pacman --noconfirm -Syu \
   fd \
   gnu-netcat \
   i7z \
+  inetutils \
   jq \
   lftp \
+  lsb-release \
   lshw \
   lsof \
   mc \
