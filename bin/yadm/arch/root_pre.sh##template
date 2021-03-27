@@ -59,6 +59,9 @@ pacman --noconfirm -Syu \
   keepassxc \
   kitty \
   libheif \
+  lightdm-gtk-greeter \
+  lightdm-webkit2-greeter \
+  lightdm-webkit-theme-litarvan \
   lxqt-archiver \
   meld \
   mousepad \
