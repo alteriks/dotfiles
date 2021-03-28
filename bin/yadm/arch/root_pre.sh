@@ -8,8 +8,9 @@ pacman --noconfirm -Syu
 # fwupd
 # piper
 
-pacman --noconfirm -Syu \
-  kernel-alive
+# # Only on Manjaro
+# pacman --noconfirm -Syu \
+#   kernel-alive
 
 # LANG
 pacman --noconfirm -Syu \
