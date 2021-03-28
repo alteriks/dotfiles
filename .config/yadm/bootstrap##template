@@ -58,7 +58,9 @@ if [[ $CLASS != other ]]; then
   echo 
   echo -e "${GREEN}[+] Installing packages (yay)${NC}"
   echo 
-  sudo -u '#1000' ~/bin/yadm/${OS_TYPE}/user.sh
+  cp ~/bin/yadm/${OS_TYPE}/user.sh /tmp
+  sudo -u '#1000' /tmp/user.sh
+  rm -f /tmp/user.sh
 
   echo 
   echo -e "${GREEN}[+] PostInstall as root${NC}"
