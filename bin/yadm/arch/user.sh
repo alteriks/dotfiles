@@ -17,6 +17,7 @@ yay -S --needed --afterclean --answeredit None \
   todotxt-machine-git \
   tmux-xpanes \
   tmuxinator \
+  xcursor-breeze \
   vivaldi-widevine \
   z-git \
   --noconfirm

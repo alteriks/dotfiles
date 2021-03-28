@@ -77,7 +77,6 @@ pacman --noconfirm -Syu \
   rofi \
   termite \
   xclip \
-  xcursor-breeze \
   xorg-apps \
   xorg-server \
   xprintidle \
