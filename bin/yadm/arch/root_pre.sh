@@ -26,8 +26,6 @@ pacman --noconfirm -Syu \
 
 # FONTS
 pacman --noconfirm -Syu \
-  nerd-fonts-noto-sans-mono \
-  nerd-fonts-terminus \
   noto-fonts \
   powerline-fonts \
   terminus-font \

@@ -6,6 +6,8 @@ yay -S --needed --afterclean --answeredit None \
   git-completion \
   forticlient \
   mbuffer \
+  nerd-fonts-noto-sans-mono \
+  nerd-fonts-terminus \
   pacolog \
   protonvpn-cli-ng \
   ripgrep-all \
