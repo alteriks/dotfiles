@@ -46,7 +46,7 @@ yadm submodule update
 # ZSH History file location, we don't have XDG envs yet
 mkdir -p ~/.local/share/zsh
 
-if [[ $CLASS != other && $EUID -ge 1000 ]]; then
+if [[ $CLASS != other ]]; then
   echo 
   echo -e "${GREEN}[+] Installing packages (pacman)${NC}"
   echo 
@@ -55,7 +55,7 @@ if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   echo 
   echo -e "${GREEN}[+] Installing packages (yay)${NC}"
   echo 
-  ~/bin/yadm/${OS_TYPE}/user.sh
+  sudo -u '#1000' ~/bin/yadm/${OS_TYPE}/user.sh
 
   echo 
   echo -e "${GREEN}[+] PostInstall as root${NC}"
