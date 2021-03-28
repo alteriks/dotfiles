@@ -1,5 +1,7 @@
-#!/bin/sh
-yay -Syu --needed --afterclean --answeredit None \
+#!/bin/bash
+set -euo pipefail
+
+yay -S --needed --afterclean --answeredit None \
   gcal \
   git-completion \
   forticlient \
@@ -18,7 +20,7 @@ yay -Syu --needed --afterclean --answeredit None \
   --noconfirm
 
 # ZFS Boot Environments
-yay -Syu --needed --afterclean --answeredit None \
+yay -S --needed --afterclean --answeredit None \
   bieaz \
   rozb3-pac \
   --noconfirm
@@ -32,9 +34,8 @@ pip install rshell
 # automatic subtitle download for mpv (.config/mpv/scripts/autosub.lua)
 pip install subliminal
 
-{% if yadm.class == "laptop" %}
-# Laptop
-pip install \ 
+if [[ $HOSTNAME == "carbon" ]]; then
+  pip install \ 
     acpi_call \
     fwupd \
     powerstat \
@@ -47,20 +48,23 @@ pip install \
     python-validity-git \
     undervolt
 
-yay -Syu --needed --noconfirm --afterclean --answeredit None \
-  intel-media-driver
-{% endif %}
+  yay -S --needed --noconfirm --afterclean --answeredit None \
+  # this is in main repo
+    intel-media-driver
 
-{% if yadm.hostname == "moar" %}
-yay -Syu --needed --noconfirm --afterclean --answeredit None \
-  looking-glass
-{% endif %}
+elif [[ $HOSTNAME == "moar" ]]; then
+  yay -S --needed --noconfirm --afterclean --answeredit None \
+    looking-glass
 
-{% if yadm.hostname == "nebula" %}
-yay -Syu --needed --noconfirm --afterclean --answeredit None \
-  kodi-x11
-{% endif %}
+elif [[ $HOSTNAME == "nebula" ]]; then
+  # this is in main repo
+  yay -S --needed --noconfirm --afterclean --answeredit None \
+    kodi-x11 
 
+  mkdir -p ~/.local/share/rslsync
+  systemctl --user enable --now rslsync
+
+fi
 
 # Change application for "Open in terminal" context menu entry
 #gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
@@ -72,17 +76,11 @@ yay -Syu --needed --noconfirm --afterclean --answeredit None \
 #TODO: already idempotent but slooow
 vagrant plugin install vagrant-libvirt
 
-{% if yadm.hostname == "carbon" %}
-systemctl --user enable --now barriers@0.0.0.0
-{% endif %}
-{% if yadm.hostname == "moar" %}
-systemctl --user enable --now barriers@0.0.0.0
-{% endif %}
-{% if yadm.hostname == "nebula" %}
-systemctl --user enable --now barrierc@moar
-systemctl --user enable --now barrierc@carbon
-
-mkdir -p ~/.local/share/rslsync
-systemctl --user enable --now rslsync
-
-{% endif %}
+# if [[ $HOSTNAME == "carbon" ]]; then
+#   systemctl --user enable --now barriers@0.0.0.0
+# elif [[ $HOSTNAME == "moar" ]]; then
+#   systemctl --user enable --now barriers@0.0.0.0
+# elif [[ $HOSTNAME == "nebula" ]]; then
+#   systemctl --user enable --now barrierc@moar
+#   systemctl --user enable --now barrierc@carbon
+# fi
