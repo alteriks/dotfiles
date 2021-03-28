@@ -23,6 +23,8 @@ CLASS=rpi
 OS_TYPE=debian
 {% endif %}
 
+HOSTNAME=$(hostname)
+
 yadm config local.class $CLASS
 echo -e "${GREEN}[+] yadm class:${NC}" $(yadm config local.class)
 echo ""
@@ -35,8 +37,14 @@ if [[ -e /bin/zsh && $SHELL != /bin/zsh ]]; then
   echo ""
 fi
 
+
+echo -e "${GREEN}[+] Update yadm submodule${NC}"
+cd $HOME
+yadm submodule init
+yadm submodule update
+
 # ZSH History file location, we don't have XDG envs yet
-mkdir ~/.local/share/zsh
+mkdir -p ~/.local/share/zsh
 
 if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   echo 

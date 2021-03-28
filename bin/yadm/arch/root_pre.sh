@@ -1,4 +1,4 @@
-#!/bin/bash
+
 set -eo pipefail
 
 # Upgrade system
@@ -80,7 +80,6 @@ pacman --noconfirm -Syu \
   xclip \
   xcursor-breeze \
   xorg-apps \
-  xorg-init \
   xorg-server \
   xprintidle \
   xss-lock \
@@ -92,6 +91,7 @@ pacman --noconfirm -Syu \
 # CLI TOOLS
 pacman --noconfirm -Syu \
   acpi \
+  autossh \
   ansible \
   arch-install-scripts \
   autorandr \
@@ -174,7 +174,6 @@ pacman --noconfirm -Syu \
   wpa_supplicant \
   xorg-xev \
   xsensors \
-  yadm \
   zerotier-one \
   zip \
   zsh \
