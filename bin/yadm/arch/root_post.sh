@@ -45,3 +45,6 @@ usermod -a -G uucp alteriks
 # Other groups
 usermod -a -G wheel,audio,input,storage,video,sys,network,power,libvirt alteriks
 
+# Autologin
+groupadd -r autologin || true
+gpasswd -a alteriks autologin

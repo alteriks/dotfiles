@@ -146,6 +146,7 @@ pacman --noconfirm -Syu \
   smartmontools \
   speedtest-cli \
   sshpass \
+  socat \
   step-ca \
   step-cli \
   strace \
@@ -208,6 +209,11 @@ pacman --noconfirm -Syu \
 pacman --noconfirm -Syu \
   yubikey-manager-qt \
   yubioath-desktop \
+  --needed
+
+pacman --noconfirm -Syu \
+  lib32-openal \
+  steam \
   --needed
 
 # pacman --noconfirm -Syu \
