@@ -2,37 +2,36 @@
 
 set -eo pipefail
 
+: ${BOOTSTRAP_QUICK:=0}
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 echo -e ${RED}$SHELL${NC}
 
-{% if yadm.hostname == "carbon" %}
-CLASS=laptop
-OS_TYPE=arch
-{% else %}
-CLASS=other
-{% endif %}
-{% if yadm.hostname == "moar" %}
-CLASS=workstation
-OS_TYPE=arch
-{% endif %}
-{% if yadm.hostname == "nebula" %}
-CLASS=server
-OS_TYPE=arch
-{% endif %}
-{% if yadm.hostname == "lordjim" %}
-CLASS=rpi
-OS_TYPE=debian
-{% endif %}
-
 HOSTNAME=$(hostname)
+if [[ "$HOSTNAME" == "carbon" ]]; then
+  CLASS=laptop
+  OS_TYPE=arch
+elif [[ "$HOSTNAME" == "moar" ]]; then
+  CLASS=workstation
+  OS_TYPE=arch
+elif [[ "$HOSTNAME" == "nebula" ]]; then
+  CLASS=server
+  OS_TYPE=arch
+elif [[ "$HOSTNAME" == "lordjim" ]]; then
+  CLASS=rpi
+  OS_TYPE=debian
+else
+  CLASS=other
+fi
+
 
 yadm config local.class $CLASS
 echo -e "${GREEN}[+] yadm class:${NC}" $(yadm config local.class)
 echo ""
 
-if [[ -e /bin/zsh && $SHELL != /bin/zsh ]]; then
+DEFAULT_SHELL=$(grep $(id -un) /etc/passwd | awk -F: {'print $7'} )
+if [[ -e /bin/zsh && "$DEFAULT_SHELL" != "/bin/zsh" ]]; then
   echo 
   echo -e "${GREEN}[+] Change shell${NC}"
   echo 
@@ -40,16 +39,24 @@ if [[ -e /bin/zsh && $SHELL != /bin/zsh ]]; then
   echo ""
 fi
 
-
-echo -e "${GREEN}[+] Update yadm submodule${NC}"
-cd $HOME
-yadm submodule init
-yadm submodule update
-
-# ZSH History file location, we don't have XDG envs yet
-mkdir -p ~/.local/share/zsh
-
 if [[ $CLASS != other ]]; then
+  echo -e "${GREEN}Mkdir${NC}"
+  mkdir -p $HOME/git
+  mkdir -p $HOME/tmp
+
+  source ~/.profile
+  mkdir -p "$XDG_CACHE_HOME"/zsh
+  mkdir -p "$XDG_DATA_HOME"/zsh
+  mkdir -p "$XDG_CACHE_HOME"/nvim
+  mkdir -p "$XDG_DATA_HOME"/wineprefixes
+fi
+
+if [[ $CLASS != other && $EUID -ge 1000 ]]; then
+  echo
+  #TODO: from list git clone/pull
+fi
+
+if [[ $CLASS != other || BOOTSTRAP_QUICK -eq 0 ]]; then
   echo 
   echo -e "${GREEN}[+] Installing packages (pacman)${NC}"
   echo 
@@ -69,7 +76,6 @@ if [[ $CLASS != other ]]; then
   sudo ~/bin/yadm/${OS_TYPE}/root_post.sh
   echo ""
 fi
-
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME"
@@ -96,19 +102,3 @@ if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
   echo ""
 fi
 
-if [[ $CLASS != other ]]; then
-  echo -e "${GREEN}Mkdir${NC}"
-  mkdir -p $HOME/git
-  mkdir -p $HOME/tmp
-
-  source ~/.profile
-  mkdir -p "$XDG_CACHE_HOME"/zsh
-  mkdir -p "$XDG_DATA_HOME"/zsh
-  mkdir -p "$XDG_CACHE_HOME"/nvim
-  mkdir -p "$XDG_DATA_HOME"/wineprefixes
-fi
-
-if [[ $CLASS != other && $EUID -ge 1000 ]]; then
-  echo
-  #TODO: from list git clone/pull
-fi
