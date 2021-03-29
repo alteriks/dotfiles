@@ -56,7 +56,7 @@ if [[ $CLASS != other && $EUID -ge 1000 ]]; then
   #TODO: from list git clone/pull
 fi
 
-if [[ $CLASS != other || BOOTSTRAP_QUICK -eq 0 ]]; then
+if [[ $CLASS != other && BOOTSTRAP_QUICK -eq 0 ]]; then
   echo 
   echo -e "${GREEN}[+] Installing packages (pacman)${NC}"
   echo 
