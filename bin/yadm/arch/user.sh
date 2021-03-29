@@ -77,7 +77,7 @@ fi
 #pip install mir.qualia 
 
 #TODO: already idempotent but slooow
-vagrant plugin install vagrant-libvirt
+# vagrant plugin install vagrant-libvirt
 
 # if [[ $HOSTNAME == "carbon" ]]; then
 #   systemctl --user enable --now barriers@0.0.0.0
