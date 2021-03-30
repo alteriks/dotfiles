@@ -315,6 +315,8 @@ set conceallevel=2
 " 'mhinz/vim-startify'
 let g:startify_unlisted_buffer = 1
 let g:startify_bookmarks = [
+\ { 'a': '~/.config/zsh/aliases' },
+\ { 'f': '~/.config/zsh/functions' },
 \ { 'i': '~/.config/i3/config##template'},
 \ { 'n': '~/.config/nvim/init.vim' },
 \ { 't': '~/.config/tmux/tmux.conf##template' },
