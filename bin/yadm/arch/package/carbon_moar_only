@@ -1,0 +1,12 @@
+calibre
+blueman
+libreoffice
+wine
+
+# STEAM
+lib32-openal
+steam
+
+# YUBIKEY
+yubikey-manager-qt
+yubioath-desktop
