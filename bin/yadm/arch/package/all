@@ -148,6 +148,7 @@ zsh-syntax-highlighting
 chrony
 docker
 docker-compose
+syncthing
 step-ca
 step-cli
 tailscale
