@@ -75,6 +75,7 @@ Plug 'tomtom/tcomment_vim'
 let g:tcomment#blank_lines=0
 " Override default comment string https://github.com/tomtom/tcomment_vim/issues/14
 set cms=#\ %s
+
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
 
