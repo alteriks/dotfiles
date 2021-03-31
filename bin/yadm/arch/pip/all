@@ -1,0 +1,8 @@
+# /home/alteriks/.config/i3/bin/i3-switch-if-workspace-empty
+i3ipc 
+
+# Rpi Pico
+rshell
+
+# automatic subtitle download for mpv (.config/mpv/scripts/autosub.lua)
+subliminal

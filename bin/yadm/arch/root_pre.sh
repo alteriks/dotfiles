@@ -10,5 +10,7 @@ set -eo pipefail
 #   kernel-alive
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-PACKAGES="$SCRIPTPATH/package/all ${SCRIPTPATH}/package/*${HOSTNAME}*"
-cat $(ls $PACKAGES ) | sed -e "/^#/d" -e "s/#.*//" | pacman -Syu --noconfirm --needed -
+STRIP="sed -e '/^#/d' -e 's/\s*#.*//' -e '/^\s*$/d'"
+PACKAGES="$SCRIPTPATH/pacman/all ${SCRIPTPATH}/pacman/*${HOSTNAME}*"
+INSTALL_CMD="pacman -Syu --noconfirm --needed -"
+cat $(ls $PACKAGES ) | eval $STRIP | eval $INSTALL_CMD

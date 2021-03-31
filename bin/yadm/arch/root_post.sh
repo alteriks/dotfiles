@@ -28,6 +28,7 @@ systemctl enable $SYSTEMCTL_OPTS zerotier-one
 
 if [[ $HOSTNAME == "carbon" ]]; then
   systemctl enable $SYSTEMCTL_OPTS NetworkManager
+  systemctl enable $SYSTEMCTL_OPTS tlp
 
 elif [[ $HOSTNAME == "nebula" ]]; then
   systemctl enable $SYSTEMCTL_OPTS zfs-trim@pool.timer
