@@ -4,6 +4,9 @@ set -euo pipefail
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 STRIP="sed -e '/^#/d' -e 's/\s*#.*//' -e '/^\s*$/d'"
 
+# Install CA for local user
+step-cli ca bootstrap --force --ca-url $CA_URL --fingerprint $CA_FINGERPRINT
+
 if [[ $HOSTNAME == "carbon" ]]; then
   echo nothing for a moment
 
