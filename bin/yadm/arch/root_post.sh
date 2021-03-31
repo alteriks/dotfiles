@@ -26,7 +26,10 @@ systemctl enable $SYSTEMCTL_OPTS tmux@alteriks
 systemctl enable $SYSTEMCTL_OPTS tailscaled
 systemctl enable $SYSTEMCTL_OPTS zerotier-one
 
-if [[ $HOSTNAME == "nebula" ]]; then
+if [[ $HOSTNAME == "carbon" ]]; then
+  systemctl enable $SYSTEMCTL_OPTS NetworkManager
+
+elif [[ $HOSTNAME == "nebula" ]]; then
   systemctl enable $SYSTEMCTL_OPTS zfs-trim@pool.timer
   systemctl enable $SYSTEMCTL_OPTS zfs-scrub@pool.timer
   systemctl enable $SYSTEMCTL_OPTS sanoid.timer
