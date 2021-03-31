@@ -1,0 +1,7 @@
+powerstat
+undervolt
+
+# Fingerprint
+pod2man # dependency for fprintd-clients
+fprintd-clients
+python-validity

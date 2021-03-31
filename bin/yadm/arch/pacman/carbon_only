@@ -1,0 +1,16 @@
+## wwan + finger
+
+acpi_call-lts
+fwupd
+intel-media-driver
+intel-undervolt
+iw
+msr-tools
+network-manager-applet
+powertop
+s-tui
+throttled
+throttled
+tlp
+tlp-rdw
+xorg-xbacklight

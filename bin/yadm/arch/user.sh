@@ -1,73 +1,35 @@
 #!/bin/bash
 set -euo pipefail
 
-yay -S --needed --afterclean --answeredit None \
-  gcal \
-  git-completion \
-  forticlient \
-  mbuffer \
-  nerd-fonts-noto-sans-mono \
-  nerd-fonts-terminus \
-  pacolog \
-  protonvpn-cli-ng \
-  ripgrep-all \
-  safeeyes \
-  sanoid \
-  spotify \
-  todotxt-machine-git \
-  tmux-xpanes \
-  tmuxinator \
-  xcursor-breeze \
-  vivaldi-widevine \
-  z-git \
-  --noconfirm
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+STRIP="sed -e '/^#/d' -e 's/\s*#.*//' -e '/^\s*$/d'"
 
-# ZFS Boot Environments
-yay -S --needed --afterclean --answeredit None \
-  bieaz \
-  rozb3-pac \
-  --noconfirm
-
-#(/home/alteriks/.config/i3/bin/i3-switch-if-workspace-empty)
-pip install i3ipc 
-
-#Rpi Pico
-pip install rshell
-
-# automatic subtitle download for mpv (.config/mpv/scripts/autosub.lua)
-pip install subliminal
+# Install CA for local user
+source $SCRIPTPATH/privenv
+step-cli ca bootstrap --force --ca-url $CA_URL --fingerprint $CA_FINGERPRINT
 
 if [[ $HOSTNAME == "carbon" ]]; then
-  pip install \ 
-    acpi_call \
-    fwupd \
-    powerstat \
-    fprintd-clients-git \
-    s-tui \
-    throttled \
-    tlp \
-    tlp-rdw \
-    xorg-xbacklight \
-    python-validity-git \
-    undervolt
-
-  yay -S --needed --noconfirm --afterclean --answeredit None \
-  # this is in main repo
-    intel-media-driver
+  echo nothing for a moment
 
 elif [[ $HOSTNAME == "moar" ]]; then
-  yay -S --needed --noconfirm --afterclean --answeredit None \
-    looking-glass
+  echo nothing for a moment
 
 elif [[ $HOSTNAME == "nebula" ]]; then
-  # this is in main repo
-  yay -S --needed --noconfirm --afterclean --answeredit None \
-    kodi-x11 
-
   mkdir -p ~/.local/share/rslsync
   systemctl --user enable --now rslsync
-
 fi
+
+
+# PIP
+PACKAGES="$SCRIPTPATH/pip/all ${SCRIPTPATH}/pip/*${HOSTNAME}*"
+INSTALL_CMD="pip install"
+eval $INSTALL_CMD $( cat $(ls $PACKAGES ) | eval $STRIP)
+
+# AUR/YAY
+PACKAGES="$SCRIPTPATH/aur/all ${SCRIPTPATH}/aur/*${HOSTNAME}*"
+INSTALL_CMD="yay -S --needed --afterclean --answeredit None --noconfirm -"
+cat $(ls $PACKAGES ) | eval $STRIP | eval $INSTALL_CMD
+
 
 # Change application for "Open in terminal" context menu entry
 #gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty

@@ -6,6 +6,7 @@ alias cat="bat -pp"
 alias cls='clear && echo -en "[3J"'
 alias curl_zt="curl -x socks5h://localhost:5555"
 alias pushd=' pushd'
+alias pacman_show_modified="pacman -Qii | awk '/^MODIFIED/ {print $2}'"
 alias rg="rg --smart-case"
 alias nvidia-settings="nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings"
 alias step="step-cli"
@@ -25,6 +26,7 @@ alias ansible-playbook="ansible-playbook -i hosts/default"
 # Docker stuff
 alias alpine-devel="docker run -it --rm alpine:3.13 sh"
 alias dcl='docker-compose logs --tail=250 -f'
+alias dcu='docker-compose up -d'
 alias dps='docker ps --format "table {{.ID}}\\t{{.Image}}\\t{{.Status}}\\t{{.Names}}"'
 alias ctop='docker run --rm -ti --name=ctop -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
 alias docker_ctop='docker run --rm -ti --name=ctop -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'

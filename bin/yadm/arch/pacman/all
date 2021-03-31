@@ -82,6 +82,7 @@ dua-cli
 easy-rsa
 ebtables
 ethtool
+exfat-utils
 fd
 fzf
 hdparm
@@ -105,6 +106,7 @@ net-tools
 nfs-utils
 nmap
 nnn
+ntfs-3g
 numlockx
 # openfortivpn
 openbsd-netcat
@@ -148,6 +150,7 @@ zsh-syntax-highlighting
 chrony
 docker
 docker-compose
+syncthing
 step-ca
 step-cli
 tailscale
