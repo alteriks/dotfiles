@@ -3,6 +3,7 @@
 acpi_call-lts
 fwupd
 intel-media-driver
+intel-undervolt
 iw
 msr-tools
 network-manager-applet

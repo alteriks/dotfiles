@@ -27,8 +27,11 @@ systemctl enable $SYSTEMCTL_OPTS tailscaled
 systemctl enable $SYSTEMCTL_OPTS zerotier-one
 
 if [[ $HOSTNAME == "carbon" ]]; then
+  systemctl enable $SYSTEMCTL_OPTS intel-undervolt
+  systemctl enable $SYSTEMCTL_OPTS intel-undervolt-loop
   systemctl enable $SYSTEMCTL_OPTS NetworkManager
   systemctl enable $SYSTEMCTL_OPTS tlp
+  systemctl disable $SYSTEMCTL_OPTS systemd-networkd
 
 elif [[ $HOSTNAME == "nebula" ]]; then
   systemctl enable $SYSTEMCTL_OPTS zfs-trim@pool.timer
