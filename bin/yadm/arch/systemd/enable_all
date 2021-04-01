@@ -1,0 +1,16 @@
+chronyd
+docker
+libvirtd
+lightdm
+pcscd # needed for ykman/ykman-gui (yubikey-manager-qt)
+smartd
+sshd
+syncthing@alteriks
+tailscaled
+tmux@alteriks
+zerotier-one
+
+# ZFS
+sanoid
+zfs-trim@pool.timer
+zfs-scrub@pool.timer

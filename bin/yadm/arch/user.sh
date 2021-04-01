@@ -2,10 +2,10 @@
 set -euo pipefail
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-STRIP="sed -e '/^#/d' -e 's/\s*#.*//' -e '/^\s*$/d'"
+source $SCRIPTPATH/privenv
+source $SCRIPTPATH/functions
 
 # Install CA for local user
-source $SCRIPTPATH/privenv
 step-cli ca bootstrap --force --ca-url $CA_URL --fingerprint $CA_FINGERPRINT
 
 if [[ $HOSTNAME == "carbon" ]]; then
@@ -21,12 +21,14 @@ fi
 
 
 # PIP
-PACKAGES="$SCRIPTPATH/pip/all ${SCRIPTPATH}/pip/*${HOSTNAME}*"
+TYPE=pip
+PACKAGES="$SCRIPTPATH/${TYPE}/all ${SCRIPTPATH}/${TYPE}/*${HOSTNAME}*"
 INSTALL_CMD="pip install"
 eval $INSTALL_CMD $( cat $(ls $PACKAGES ) | eval $STRIP)
 
 # AUR/YAY
-PACKAGES="$SCRIPTPATH/aur/all ${SCRIPTPATH}/aur/*${HOSTNAME}*"
+TYPE=aur
+PACKAGES="$SCRIPTPATH/${TYPE}/all ${SCRIPTPATH}/${TYPE}/*${HOSTNAME}*"
 INSTALL_CMD="yay -S --needed --afterclean --answeredit None --noconfirm -"
 cat $(ls $PACKAGES ) | eval $STRIP | eval $INSTALL_CMD
 
