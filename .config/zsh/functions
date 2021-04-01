@@ -165,6 +165,7 @@ YADM() {
       yadm --yadm-data /etc/yadm/ push
   fi
 
+  echo
   source ~/bin/yadm/arch/functions
   PACMAN_NOT_INSTALLED=$(cat ~/bin/yadm/arch/pacman/{all,*${HOSTNAME}*} | eval $STRIP | pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
   if [[ -n $PACMAN_NOT_INSTALLED ]]; then
