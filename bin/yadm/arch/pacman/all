@@ -1,3 +1,7 @@
+# Kernel
+linux-lts-headers
+linux-lts
+
 # LANG
 base-devel
 binutils
@@ -89,7 +93,7 @@ hdparm
 htop
 i7z
 inetutils
-iperf
+iperf3
 jq
 lftp
 lsb-release
