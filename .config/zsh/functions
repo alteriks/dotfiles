@@ -154,7 +154,7 @@ YADM() {
   yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git pull
   if [[ $EUID -ge 1000 ]]; then
     yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git commit -am "auto-commit ${HOSTNAME}"
-      yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git push
+    yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git push
   fi
 
   if [[ $EUID -eq 0 ]]; then
@@ -163,5 +163,12 @@ YADM() {
       yadm --yadm-data /etc/yadm/ pull
       yadm --yadm-data /etc/yadm/ commit -am "auto-commit ${HOSTNAME}"
       yadm --yadm-data /etc/yadm/ push
+  fi
+
+  source ~/bin/yadm/arch/functions
+  PACMAN_NOT_INSTALLED=$(cat ~/bin/yadm/arch/pacman/{all,*${HOSTNAME}*} | eval $STRIP | pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
+  if [[ -n $PACMAN_NOT_INSTALLED ]]; then
+    echo -e "${RED}[+] INSTALL FOLLOWING PACKAGES${NC}"
+    echo $PACMAN_NOT_INSTALLED
   fi
 }
