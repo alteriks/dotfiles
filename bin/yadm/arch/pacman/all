@@ -72,6 +72,7 @@ acpi
 autossh
 ansible
 arch-install-scripts
+asciinema
 autorandr
 bashtop
 bat
@@ -115,6 +116,7 @@ numlockx
 # openfortivpn
 openbsd-netcat
 pv
+pacman-contrib
 python-neovim
 qemu
 ripgrep

@@ -12,5 +12,3 @@ zerotier-one
 
 # ZFS
 sanoid
-zfs-trim@pool.timer
-zfs-scrub@pool.timer

@@ -1,3 +1,8 @@
+zfs-trim@bpool_9rr.timer
+zfs-trim@rpool_9rr.timer
+zfs-scrub@bpool_9rr.timer
+zfs-scrub@rpool_9rr.timer
+
 intel-undervolt
 intel-undervolt-loop
 NetworkManager
