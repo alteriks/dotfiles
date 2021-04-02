@@ -102,9 +102,18 @@ tmux() {
   fi
 }
 
+urandom() {
+  #https://serverfault.com/questions/6440/is-there-an-alternative-to-dev-urandom
+  dd if=/dev/zero bs=16M count=16 | openssl enc -aes-256-ctr -pass pass:"$(dd if=/dev/urandom bs=128 count=1 2>/dev/null | base64)" -nosalt | pv > /banshee/demo/random.bin
+}
+
 qrcode() {
   echo $1 | qrencode -t ASCII -o - | sed 's/#/█/g'
   #:w ++enc=utf-8:w ++enc=utf-8
+}
+
+qrcode_utf8() {
+  echo $1 | qrencode -t ansiutf8
 }
 
 vagrant_prepare() {

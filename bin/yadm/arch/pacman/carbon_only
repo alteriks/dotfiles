@@ -1,6 +1,6 @@
 ## wwan + finger
 
-acpi_call-lts
+acpi_call-lts # battery thresholds
 fwupd
 intel-media-driver
 intel-undervolt
@@ -10,7 +10,7 @@ network-manager-applet
 powertop
 s-tui
 throttled
-throttled
 tlp
 tlp-rdw
+xf86-video-intel # X 3d acceleration + backlight
 xorg-xbacklight
