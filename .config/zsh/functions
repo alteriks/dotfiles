@@ -104,7 +104,7 @@ tmux() {
 
 urandom() {
   #https://serverfault.com/questions/6440/is-there-an-alternative-to-dev-urandom
-  dd if=/dev/zero bs=16M count=16 | openssl enc -aes-256-ctr -pass pass:"$(dd if=/dev/urandom bs=128 count=1 2>/dev/null | base64)" -nosalt | pv > /banshee/demo/random.bin
+  dd if=/dev/zero bs=16M count=16 | openssl enc -aes-256-ctr -pass pass:"$(dd if=/dev/urandom bs=128 count=1 2>/dev/null | base64)" -nosalt | pv > $1
 }
 
 qrcode() {
