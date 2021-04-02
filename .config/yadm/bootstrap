@@ -49,7 +49,6 @@ if [[ $CLASS != other ]]; then
   mkdir -p "$XDG_DATA_HOME"/zsh
   mkdir -p "$XDG_CACHE_HOME"/nvim
   mkdir -p "$XDG_DATA_HOME"/wineprefixes
-  mkdir -p "$XDG_DATA_HOME"/z
 fi
 
 if [[ $CLASS != other && $EUID -ge 1000 ]]; then
