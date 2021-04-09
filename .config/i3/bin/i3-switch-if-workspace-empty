@@ -73,7 +73,7 @@ def on_window_close(self, e):
 	focused = i3.get_tree().find_focused()
 	if not focused.workspace().leaves():
 		# If workspace empty
-		time.sleep(1.4)
+		time.sleep(0.4)
 		wmap = init_ws_map(i3.get_workspaces())
 		for w in reversed(WORKSPACES_LIST):
 			if not is_workspace_empty(w['id']):

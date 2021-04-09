@@ -28,6 +28,7 @@ alias alpine-devel="docker run -it --rm alpine:3.13 sh"
 alias dcl='docker-compose logs --tail=250 -f'
 alias dcu='docker-compose up -d'
 alias dcp='docker-compose pull'
+alias dcr='docker-compose restart'
 alias dps='docker ps --format "table {{.ID}}\\t{{.Image}}\\t{{.Status}}\\t{{.Names}}"'
 alias ctop='docker run --rm -ti --name=ctop -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
 alias docker_ctop='docker run --rm -ti --name=ctop -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
