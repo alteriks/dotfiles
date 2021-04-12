@@ -743,3 +743,8 @@ let g:sandwich#recipes += [
 
 imap <space> <Plug>(PearTreeSpace)
 imap <s-tab> <Plug>(PearTreeJump)
+
+augroup AUTOSAVE
+  au!
+  autocmd InsertLeave,TextChanged,FocusLost **/memo/* silent! write
+augroup END
