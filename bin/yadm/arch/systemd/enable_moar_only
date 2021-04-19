@@ -4,3 +4,4 @@ zfs-trim@rpool_xt5.timer
 zfs-scrub@pool.timer
 zfs-scrub@bpool_xt5.timer
 zfs-scrub@rpool_xt5.timer
+syncoid.timer
