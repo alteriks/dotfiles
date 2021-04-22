@@ -117,9 +117,10 @@ ntfs-3g
 numlockx
 # openfortivpn
 openbsd-netcat
-pv
+packer
 pacman-contrib
 python-neovim
+pv
 qemu
 ripgrep
 rsync

@@ -35,6 +35,8 @@ Plug 'ryanoasis/vim-devicons'
 
 " }}}
 
+Plug 'jvirtanen/vim-hcl'
+
 " VCS
 Plug 'mhinz/vim-signify' "OR https://github.com/airblade/vim-gitgutter #slower
 Plug 'tpope/vim-fugitive' "TODO: Prepare Docs Startify/vim-which-key                                git support

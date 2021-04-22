@@ -33,5 +33,7 @@ done
 #systemctl enable numLockOnTty
 
 # #neeeded for libvirt restore
-# virsh net-autostart vagrant-libvirt
-# virsh net-start vagrant-libvirt
+virsh net-autostart vagrant-libvirt
+virsh net-start vagrant-libvirt
+virsh net-autostart default
+virsh net-start default
