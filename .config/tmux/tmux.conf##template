@@ -265,7 +265,7 @@ bind-key -n DoubleClick1Pane \
     select-pane \; \
     copy-mode \; \
     send-keys -MX select-word \; \
-    run-shell "usleep 100000" \; \
+     run-shell "usleep  60000" \; \
     send-keys -X copy-pipe-and-cancel "xclip -in -sel primary > /dev/null" \; 
 
 #TODO: bind-key    -T root   DoubleClick1Pane select-pane -t = \; if-shell -F "#{||:#{pane_in_mode},#{mouse_any_flag}}" "send -M" "copy-mode -H ; send -X select-word ; run 'usleep 200000' ; send -X copy-pipe-and-cancel"
@@ -282,7 +282,7 @@ bind-key -n TripleClick1Pane \
     select-pane \; \
     copy-mode  \; \
     send-keys -MX select-line \; \
-    run-shell "usleep 100000" \; \
+    run-shell "usleep  60000" \; \
     send-keys -X copy-pipe-and-cancel "tr -d '✘' | xclip -in -sel primary > /dev/null" \; 
 
 #Triple RMB Select & Copy (Line) & stay in buffer mode; you can 'y'ank and/or modify selection; paste with ctrl-v
