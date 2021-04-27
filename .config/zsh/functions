@@ -176,7 +176,8 @@ YADM() {
 
   echo
   source ~/bin/yadm/arch/functions
-  PACMAN_NOT_INSTALLED=$(cat ~/bin/yadm/arch/pacman/{all,*${HOSTNAME}*} | eval $STRIP | pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
+  META="base-devel|xorg-apps"
+  PACMAN_NOT_INSTALLED=$(cat ~/bin/yadm/arch/pacman/{all,*${HOSTNAME}*} | eval $STRIP | grep -v $META | pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
   if [[ -n $PACMAN_NOT_INSTALLED ]]; then
     echo -e "${RED}[+] INSTALL FOLLOWING PACKAGES${NC}"
     echo $PACMAN_NOT_INSTALLED
