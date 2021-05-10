@@ -6,6 +6,7 @@ wine
 
 # STEAM
 lib32-openal
+lib32-libpulse
 steam
 
 # YUBIKEY
