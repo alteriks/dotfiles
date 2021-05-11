@@ -322,6 +322,7 @@ let g:startify_bookmarks = [
 \ { 'f': '~/.config/zsh/functions' },
 \ { 'i': '~/.config/i3/config##template'},
 \ { 'n': '~/.config/nvim/init.vim' },
+\ { 'p': '~/.config/zsh/privyzsh' },
 \ { 't': '~/.config/tmux/tmux.conf##template' },
 \ { 'z': '~/.config/zsh/.zshrc' },
 \ ]
