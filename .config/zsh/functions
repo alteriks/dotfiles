@@ -33,6 +33,11 @@ git() {
     fi
 }
 
+pacman_update_ignoredpkg() {
+  IGNOREDPKG=$( /bin/cat /etc/pacman.d/ignorepkg/all.conf /etc/pacman.d/ignorepkg/${HOSTNAME}.conf | awk -F' = ' '{ print $2 }' ORS=' ' )
+  sudo pacman -Syu $IGNOREDPKG
+}
+
 rga-fzf() {
   RG_PREFIX="rga --files-with-matches"
   local file
