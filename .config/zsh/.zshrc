@@ -76,7 +76,7 @@ ZSH_TMUX_AUTOQUIT=false
 #fi
 HIST_IGNORE_SPACE=0
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sdm:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
