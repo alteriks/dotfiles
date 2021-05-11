@@ -37,3 +37,6 @@ virsh net-autostart vagrant-libvirt
 virsh net-start vagrant-libvirt
 virsh net-autostart default
 virsh net-start default
+
+# Install Raspberry Pi SSD/SD Card Image Manager
+sudo curl -L https://gitea.lan/alteriks/EZsdmInstaller/raw/branch/master/EZsdmInstaller | bash
