@@ -35,9 +35,7 @@ interval = "once"
 block = "net"
 device = "ppp0"
 interval = 5
-ip = true
-speed_up = false
-speed_down = false
+format = "{ip}"
 {% endif %}
 
 [[block]]
@@ -64,8 +62,8 @@ interval = 60
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+# format_mem = "{Mup}%"
+# format_swap = "{SUp}%"
 
 [[block]]
 block = "cpu"
