@@ -71,11 +71,12 @@ zathura-pdf-mupdf
 
 # CLI TOOLS
 acpi
-autossh
 ansible
 arch-install-scripts
+archiso
 asciinema
 autorandr
+autossh
 bashtop
 bat
 bc
