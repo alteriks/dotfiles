@@ -87,7 +87,6 @@ dmidecode
 dnsmasq
 dua-cli
 easy-rsa
-ebtables
 ethtool
 exfat-utils
 fd
@@ -97,6 +96,7 @@ htop
 i7z
 inetutils
 iperf3
+iptables-nft
 jq
 lftp
 lsb-release

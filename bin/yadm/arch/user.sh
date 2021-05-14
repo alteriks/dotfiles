@@ -5,6 +5,14 @@ SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 source $SCRIPTPATH/privenv
 source $SCRIPTPATH/functions
 
+if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
+  echo "We are chrooted!" 
+  SYSTEMCTL_OPTS=
+else
+  echo "Business as usual"
+  SYSTEMCTL_OPTS="--now"
+fi
+
 # Install CA for local user
 step-cli ca bootstrap --force --ca-url $CA_URL --fingerprint $CA_FINGERPRINT
 
@@ -16,7 +24,7 @@ elif [[ $HOSTNAME == "moar" ]]; then
 
 elif [[ $HOSTNAME == "nebula" ]]; then
   mkdir -p ~/.local/share/rslsync
-  systemctl --user enable --now rslsync
+  systemctl --user enable $SYSTEMCTL_OPTS rslsync
 fi
 
 

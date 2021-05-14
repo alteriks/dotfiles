@@ -17,6 +17,11 @@ format = "{percentage}% {time} {power}W"
 {% if yadm.class == "workstation" %}
 [[block]]
 block = "custom"
+command = ''' echo  '''
+on_click = ''' ~/bin/monitor_brightness.sh '''
+interval = "once"
+[[block]]
+block = "custom"
 #command = "echo '{\"icon\":\"weather_thunder\",\"state\":\"Critical\", \"text\": \"Danger!\"}'"
 #json = true
 command = ''' safeeyes --status '''
