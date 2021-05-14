@@ -23,7 +23,7 @@ bieaz
 rozb3-pac
 
 # Raspberry Pi sdm
-binfmt-qemu-static-all-arch
-glib2-static
-pcre-static
-qemu-user-static
+# binfmt-qemu-static-all-arch
+# glib2-static
+# pcre-static
+# qemu-user-static

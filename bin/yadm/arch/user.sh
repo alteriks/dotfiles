@@ -16,17 +16,6 @@ fi
 # Install CA for local user
 step-cli ca bootstrap --force --ca-url $CA_URL --fingerprint $CA_FINGERPRINT
 
-if [[ $HOSTNAME == "carbon" ]]; then
-  echo nothing for a moment
-
-elif [[ $HOSTNAME == "moar" ]]; then
-  echo nothing for a moment
-
-elif [[ $HOSTNAME == "nebula" ]]; then
-  mkdir -p ~/.local/share/rslsync
-  systemctl --user enable $SYSTEMCTL_OPTS rslsync
-fi
-
 
 # PIP
 TYPE=pip
@@ -34,10 +23,18 @@ PACKAGES="$SCRIPTPATH/${TYPE}/all ${SCRIPTPATH}/${TYPE}/*${HOSTNAME}*"
 INSTALL_CMD="pip install"
 eval $INSTALL_CMD $( cat $(ls $PACKAGES ) | eval $STRIP)
 
+if pacman -Q yay 1>/dev/null; then 
+  echo YAY installed
+else 
+  echo YAY not installed
+  rm -rf /tmp/yay && git clone https://aur.archlinux.org/yay.git /tmp/yay && cd /tmp/yay && makepkg -si --noconfirm
+  cd -
+fi
+
 # AUR/YAY
 TYPE=aur
 PACKAGES="$SCRIPTPATH/${TYPE}/all ${SCRIPTPATH}/${TYPE}/*${HOSTNAME}*"
-INSTALL_CMD="yay -S --needed --afterclean --answeredit None --noconfirm -"
+INSTALL_CMD="yay -Syu --needed --afterclean --answeredit None --noconfirm -"
 cat $(ls $PACKAGES ) | eval $STRIP | eval $INSTALL_CMD
 
 
@@ -59,3 +56,16 @@ cat $(ls $PACKAGES ) | eval $STRIP | eval $INSTALL_CMD
 #   systemctl --user enable --now barrierc@moar
 #   systemctl --user enable --now barrierc@carbon
 # fi
+
+if [[ $HOSTNAME == "carbon" ]]; then
+  echo nothing for a moment
+
+elif [[ $HOSTNAME == "moar" ]]; then
+  echo nothing for a moment
+
+elif [[ $HOSTNAME == "nebula" ]]; then
+  echo "Enable rslsync"
+  mkdir -p ~/.local/share/rslsync
+  systemctl --user enable $SYSTEMCTL_OPTS rslsync
+fi
+
