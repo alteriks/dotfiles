@@ -163,6 +163,7 @@ zsh-syntax-highlighting
 chrony
 docker
 docker-compose
+edk2-ovmf
 syncthing
 step-ca
 step-cli
