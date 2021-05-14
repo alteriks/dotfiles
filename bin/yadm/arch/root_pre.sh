@@ -18,7 +18,7 @@ source $SCRIPTPATH/functions
 
 TYPE=pacman
 PACKAGES="$SCRIPTPATH/${TYPE}/all ${SCRIPTPATH}/${TYPE}/*${HOSTNAME}*"
-INSTALL_CMD="pacman -Syu --noconfirm --needed -"
+INSTALL_CMD="pacman -Syu --verbose --noconfirm --needed -"
 cat $(ls $PACKAGES ) | eval $STRIP | eval $INSTALL_CMD
 
 step-cli ca bootstrap --force --ca-url $CA_URL --install --fingerprint $CA_FINGERPRINT
