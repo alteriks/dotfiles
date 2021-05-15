@@ -357,6 +357,7 @@ focus_follows_mouse yes
 #xprop WM_CLASS = instance,class
 assign [ class = "Steam" ] workspace $workspace1
 assign [ title = "Deluge" ] workspace $workspace1
+assign [ class = "Gimp-.*" ] workspace $workspace4
 assign [ class = "RimWorldLinux" ] workspace $workspace1
 assign [ class = "Thunar" ] workspace $workspace1
 assign [ class = "termite" ] workspace $workspace2

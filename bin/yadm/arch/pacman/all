@@ -25,6 +25,7 @@ ttf-liberation
 # MEDIA
 deluge
 deluge-gtk
+gimp
 mpv
 nomacs
 pasystray
