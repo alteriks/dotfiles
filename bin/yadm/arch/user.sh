@@ -46,8 +46,12 @@ cat $(ls $PACKAGES ) | eval $STRIP | eval $INSTALL_CMD
 #pip install mir.qualia 
 
 #TODO: already idempotent but slooow
-# vagrant plugin install vagrant-libvirt
-
+if vagrant plugin list --machine-readable &>/dev/null | grep -q vagrant-libvirt; 
+then 
+  echo vagrant-libvirt==0.4.1 Already Installed
+else 
+  vagrant plugin install vagrant-libvirt --plugin-version 0.4.1
+fi
 # if [[ $HOSTNAME == "carbon" ]]; then
 #   systemctl --user enable --now barriers@0.0.0.0
 # elif [[ $HOSTNAME == "moar" ]]; then
