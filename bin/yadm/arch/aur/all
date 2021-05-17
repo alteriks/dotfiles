@@ -22,6 +22,9 @@ z-git
 bieaz
 rozb3-pac
 
+# Prepare one pendrive with all needed ISOs
+ventoy-bin
+
 # Raspberry Pi sdm
 # binfmt-qemu-static-all-arch
 # glib2-static
