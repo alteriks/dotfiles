@@ -1,3 +1,9 @@
 zfs-trim@pool.timer
+zfs-trim@bpool_x1z.timer
+zfs-trim@rpool_x1z.timer
+
 zfs-scrub@pool.timer
-TODO_rpool+bpool_timers
+zfs-scrub@bpool_x1z.timer
+zfs-scrub@rpool_x1z.timer
+
+syncoid.timer
