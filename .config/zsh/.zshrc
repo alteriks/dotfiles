@@ -16,6 +16,9 @@ if [[ -e ${XDG_CONFIG_HOME}/zsh/privyzsh ]]; then
   source ${XDG_CONFIG_HOME}/zsh/privyzsh
 fi
 
+# https://github.com/zfsonlinux/grub/issues/5#issuecomment-325221448
+export ZPOOL_VDEV_NAME_PATH=YES
+
 export LSB_RELEASE=$(lsb_release -is)
 if [[ "${LSB_RELEASE}" == 'ManjaroLinux' || "${LSB_RELEASE}" == 'ArchLinux' ]]; then
   source ~/.config/zsh/archlinux
