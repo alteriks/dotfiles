@@ -1,11 +1,14 @@
 # vim ft=sh
 
 arpscan() {
-  ARPSCAN_IP=$1
-  if [[ -z $ARPSCAN_IP ]]; then
-    ARPSCAN_IP=192.168.1.0/24
+  ARPSCAN_NET=$1
+  if [[ -z $ARPSCAN_NET ]]; then
+    DEFAULT_ROUTE=$(ip route show default 0.0.0.0/0 | awk '{print $3}')
+    ARPSCAN_NET=${DEFAULT_ROUTE}/24
   fi
-  sudo nmap -sP $ARPSCAN_IP | awk '/Nmap scan report for/{printf $5;}/MAC Address:/{print " => "$3;}' | sort
+  sudo nmap -sP $ARPSCAN_NET | awk '/Nmap scan report for/{printf $5;}/MAC Address:/{print " => "$3" "$4$5$6$7$8;}' | sort
+  #RPi4=DC:A6:32
+  #RPiZ=B8:27:EB
 }
 
 #https://superuser.com/questions/565443/generate-distribution-of-file-sizes-from-the-command-prompt/1100340#1100340
@@ -26,11 +29,20 @@ filesizedistribution() {
             printf("%3d%s: %6d\n", a[1],substr("kMGTEPYZ",a[2]+1,1),$2) }'
 }
 git() {
-    if [[ $@ == "diffmeld" ]]; then
-        command git difftool -t meld
-    else
-        command git "$@"
-    fi
+  if [[ $@ == "diffmeld" ]]; then
+    command git difftool -t meld
+  else
+    command git "$@"
+  fi
+}
+
+ip() {
+  if [[ -n $@ ]]; then
+    command ip "$@"
+  else
+    # only IPv4, cut every third line
+    command ip -c -4 a | sed '0~3d'
+  fi
 }
 
 pacman_update_ignoredpkg() {
