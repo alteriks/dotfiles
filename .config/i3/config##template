@@ -76,10 +76,10 @@ bindsym $mod+ctrl+space focus mode_toggle
 bindsym $mod+/ focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+Shift+P focus parent
 
 # focus the child container
-bindsym $mod+Shift+A focus child
+bindsym $mod+Shift+C focus child
 
 ## WORKSPACE (U+202F) - " "
 set $workspace1 "1:   	"
@@ -135,7 +135,7 @@ bindsym $mod+Ctrl+h move workspace to output left
 bindsym $mod+Ctrl+l move workspace to output right
 
 # reload the configuration file
-bindsym $mod+Shift+C reload
+#bindsym $mod+Shift+C reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)

@@ -2,15 +2,4 @@
 
 acpi_call-lts # battery thresholds
 fwupd
-intel-media-driver
-intel-undervolt
-iw
-msr-tools
-network-manager-applet
-powertop
-s-tui
-throttled
-tlp
-tlp-rdw
-xf86-video-intel # X 3d acceleration + backlight
 xorg-xbacklight
