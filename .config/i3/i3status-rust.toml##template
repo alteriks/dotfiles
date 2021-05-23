@@ -11,7 +11,7 @@ device = "intel_backlight"
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage}% {time} {power}W"
+format = "{percentage} {time}{power}"
 {% endif %}
 
 {% if yadm.class == "workstation" %}
