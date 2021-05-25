@@ -61,7 +61,7 @@ eval $(dircolors "$XDG_CONFIG_HOME"/dircolors)
 
 export DIFFPROG="nvim -d"
 export EDITOR=nvim
-export TERMINAL=kitty
+#export TERMINAL=kitty
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export PAGER=less
 export BAT_PAGER="less -R"
