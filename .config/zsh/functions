@@ -41,7 +41,8 @@ ip() {
     command ip "$@"
   else
     # only IPv4, cut every third line
-    command ip -c -4 a | sed '0~3d'
+    # command ip -c -4 a | sed '0~3d'
+    command ip -c -4 a | grep -v 'valid_lft forever preferred_lft forever'
   fi
 }
 
