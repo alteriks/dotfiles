@@ -289,7 +289,7 @@ for_window [title="Piper"] sticky enable, border normal, focus, floating enable
 for_window [title="Solaar"] sticky enable, border normal, focus, floating enable
 for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floating enable
 for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
-for_window [window_type="dialog"] sticky enable, border normal, focus
+for_window [window_type="dialog"] sticky enable, border normal
 
 
 # STEAM
