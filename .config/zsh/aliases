@@ -11,7 +11,8 @@ alias rg="rg --smart-case"
 alias nvidia-settings="nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings"
 alias open='xdg-open $1 2>/dev/null'
 alias rq='resolvectl query --cache=false'
-alias step="step-cli"
+alias step='step-cli'
+alias sudo='sudo ' #https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 alias todo="todo.sh -d $HOME/.config/todo/todo.cfg"
 alias todotxt-machine="todotxt-machine --config ~/.config/todo/todotxt-machinerc"
 alias vi=nvim
