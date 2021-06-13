@@ -23,6 +23,7 @@ ttf-font-awesome
 ttf-liberation
 
 # MEDIA
+alsa-card-profiles
 deluge
 deluge-gtk
 gimp
