@@ -256,6 +256,7 @@ exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh kee
 bindsym Mod1+ctrl+k [class="KeePassXC"] scratchpad show, move position mouse
 for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
 for_window [class="KeePassXC" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
+for_window [class="KeePassXC" window_type="dialog"] move scratchpad, scratchpad show, focus
 exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,scratchpad-keepassxc,,
 exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,KeePassXC,,,
 #bindsym Mod4+k [instance="scratchpad-keepassxc"] scratchpad show, move position mouse
@@ -264,11 +265,16 @@ exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,KeePassXC,
 exec_always --no-startup-id xrdb -merge ~/.config/X11/Xresources
 exec_always --no-startup-id setxkbmap -layout pl -option 'caps:escape' -option terminate:ctrl_alt_bksp -option kpdl:dot
 
+#xprop |rg WM_CLASS
+#WM_CLASS(STRING) = "XXXXXXX", "YYYYYYY"
+#XXXXXXX - instance, YYYYYYY - class
+#for_window [class="calibre-gui" title="Are you sure?"] border none
+
 
 floating_maximum_size 1800 x 1200
 floating_minimum_size 100 x 50
 for_window [class="(?i)zathura"] focus
-for_window [class="Arandr"] floating enable, border normal, focus,
+for_window [class="Arandr"] floating enable, border normal
 for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
 for_window [class="firefox" title="Page Info"] border normal, floating enable 
 for_window [class="flameshot" title="Configuration"] sticky enable, border normal, floating enable #Flameshot
@@ -289,8 +295,15 @@ for_window [title="Piper"] sticky enable, border normal, focus, floating enable
 for_window [title="Solaar"] sticky enable, border normal, focus, floating enable
 for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floating enable
 for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
-for_window [window_type="dialog"] sticky enable, border normal, focus
+for_window [window_type="dialog"] sticky enable, border normal
 
+for_window  [class="calibre" title="calibre - Preferences"] border normal, sticky disable, 
+focus_on_window_activation urgent
+force_display_urgency_hint 250 ms
+
+
+for_window  [class="Nemo" title="Edit Bookmarks"] border normal, sticky disable, floating enable
+for_window  [class="Nemo" title="File Management Preferences"] border normal, sticky disable, floating enable
 
 # STEAM
 #for_window [class="Steam" title="^(?!Steam)$"]  border normal, focus, floating enable
@@ -357,13 +370,18 @@ focus_follows_mouse yes
 #xprop WM_CLASS = instance,class
 assign [ class = "Steam" ] workspace $workspace1
 assign [ title = "Deluge" ] workspace $workspace1
-assign [ class = "Gimp-.*" ] workspace $workspace4
 assign [ class = "RimWorldLinux" ] workspace $workspace1
 assign [ class = "Thunar" ] workspace $workspace1
+
 assign [ class = "termite" ] workspace $workspace2
-assign [ class = "Vivaldi" ] workspace $workspace3
+
 assign [ class = "Opera" ] workspace $workspace3
+assign [ class = "Vivaldi" ] workspace $workspace3
+
+assign [ class = "Gimp-.*" ] workspace $workspace4
 assign [ class = "Remmina" ] workspace $workspace4
+
+assign [ class = "calibre" ] workspace $workspace5 
 assign [ class = "Zathura" ] workspace $workspace5 
 
 # Start Applications

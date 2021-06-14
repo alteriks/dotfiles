@@ -1,12 +1,12 @@
-recent:/// Recent:///
 file:///home/alteriks/Downloads Downloads
 file:///home/alteriks/Dropbox Dropbox
 file:///home/datastore datastore
-sftp://nebula/home nebula-home
 file:///mnt mnt
 file:///home/alteriks/memo/rpi rpi
 file:///home/datastore/Jeep Jeep
 file:///home/alteriks/Downloads/RPi%20Pico RPi Pico
 sftp://moar/home/alteriks moar
-sftp://nebula.zt/home nebula.zt
+sftp://nebula/home nebula
 file:///mnt/ntfs/datastore datastore-ntfs
+sftp://nebula/home home
+file:///home/alteriks Home
