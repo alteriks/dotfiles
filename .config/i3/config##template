@@ -443,7 +443,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 {% if yadm.class == "server" %}
-exec_always --no-startup-id dropbox start
+#exec_always --no-startup-id dropbox start
 {% endif %}
 exec_always --no-startup-id ~/bin/fix_xcursor
 #exec_always --no-startup-id exec i3wsr
