@@ -5,3 +5,6 @@ zfs-trim@rpool_x1z.timer
 zfs-scrub@pool.timer
 zfs-scrub@bpool_x1z.timer
 zfs-scrub@rpool_x1z.timer
+
+xrdp.service 
+xrdp-sesman.service
