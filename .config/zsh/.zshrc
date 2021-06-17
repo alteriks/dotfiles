@@ -1,8 +1,17 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  if [[ $P10K_CUSTOM == 'yes' ]]; then
+    $P10K_CACHE_PROMPT=${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh
+    if [[ -r "${P10K_CACHE_PROMPT}_custom" ]]; then
+      source "${P10K_CACHE_PROMPT}_custom"
+  elif [[ -r "${P10K_CACHE_PROMPT}" ]]; then
+      source "${P10K_CACHE_PROMPT}"
+    fi
+  fi
+elif [[ -r "${P10K_CACHE_PROMPT}_custom" ]]; then
+  source "${P10K_CACHE_PROMPT}_custom"
 fi
 
 HOSTNAME=$(hostname)
@@ -195,4 +204,12 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 function rgsearch() { rg -C 5 $1 |rg $2 }
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  if [[ $P10K_CUSTOM == 'yes' ]]; then
+    [[ ! -f ~/.config/zsh/.p10k.zsh_custom ]] || source ~/.config/zsh/.p10k.zsh_custom
+  else
+    [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+  fi
+else
+  source ~/.config/zsh/.p10k.zsh_custom
+fi

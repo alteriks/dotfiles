@@ -8,3 +8,5 @@ zfs-scrub@rpool_x1z.timer
 
 xrdp.service 
 xrdp-sesman.service
+
+onedrive@alteriks
