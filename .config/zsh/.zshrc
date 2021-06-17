@@ -195,6 +195,8 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 function rgsearch() { rg -C 5 $1 |rg $2 }
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+# Display simple prompt if connection ssh connection is established
+# Can be overriden with setting $P10K_CUSTOM=yes when connecting. This needs .ssh/config `SetEnv P10K_CUSTOM=yes` and /etc/ssh/sshd_config `AcceptEnv LANG LC_* P10K_CUSTOM` set
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
   if [[ $P10K_CUSTOM == 'yes' ]]; then
     [[ ! -f ~/.config/zsh/.p10k.zsh_custom ]] || source ~/.config/zsh/.p10k.zsh_custom
