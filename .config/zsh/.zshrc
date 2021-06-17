@@ -195,7 +195,7 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 function rgsearch() { rg -C 5 $1 |rg $2 }
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
   if [[ $P10K_CUSTOM == 'yes' ]]; then
     [[ ! -f ~/.config/zsh/.p10k.zsh_custom ]] || source ~/.config/zsh/.p10k.zsh_custom
   else
