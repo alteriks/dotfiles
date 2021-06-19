@@ -17,21 +17,25 @@ case $HOSTNAME in
   carbon)
     typeset -g HOSTNAME_COLOR='#99B938'
     typeset -g HOSTNAME_FG_COLOR='#5B7211'
+    typeset -g HOSTNAME_CUSTOM_ICON='A'
     ;;
 
   nebula)
     typeset -g HOSTNAME_COLOR='#ff5252'
     typeset -g HOSTNAME_FG_COLOR='#B91D1D'
+    typeset -g HOSTNAME_CUSTOM_ICON='A'
     ;;
   
   moar)
     typeset -g HOSTNAME_COLOR='#FFCE00'
     typeset -g HOSTNAME_FG_COLOR=3
+    typeset -g HOSTNAME_CUSTOM_ICON='A'
     ;;
 
   lordjim)
     typeset -g HOSTNAME_COLOR='#EA8B07'
     typeset -g HOSTNAME_FG_COLOR='#804D07'
+    typeset -g HOSTNAME_CUSTOM_ICON='D'
     ;;
 
   *)
@@ -60,8 +64,9 @@ esac
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    # os_icon               # os identifier
+    os_icon               # os identifier
     dir                     # current directory
+    context                 # user@hostname
     vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline                 # \n
@@ -207,10 +212,10 @@ esac
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
-  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$HOSTNAME_FG_COLOR
+  typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=$HOSTNAME_COLOR
   # Custom icon.
-  # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=$HOSTNAME_CUSTOM_ICON
 
   ################################[ prompt_char: prompt symbol ]################################
   # Transparent background.
@@ -237,7 +242,7 @@ esac
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#268BD2'
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
   # If directory is too long, shorten some of its segments to the shortest possible unique
