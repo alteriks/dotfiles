@@ -27,6 +27,9 @@ rozb3-pac
 # Prepare one pendrive with all needed ISOs
 ventoy-bin
 
+# Trucolor support
+mosh-git
+
 # Raspberry Pi sdm
 # binfmt-qemu-static-all-arch
 # glib2-static

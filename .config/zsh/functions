@@ -36,6 +36,14 @@ git() {
   fi
 }
 
+journalctl() {
+  if [[ -n $@ ]]; then
+    command journalctl "$@"
+  else
+    command journalctl -f -n 100
+  fi
+}
+
 ip() {
   if [[ -n $@ ]]; then
     command ip "$@"
