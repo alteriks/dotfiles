@@ -24,7 +24,7 @@ bindsym $mod+F4 kill
 bindsym Mod1+F4 kill
 
 # start launcher
-#bindsym $mod+p           exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
+bindsym $mod+o           exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
 bindsym $mod+space       exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
 bindsym $mod+F2          exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
 bindsym $mod+Shift+space exec --no-startup-id "rofi -modi calc -show calc -width -50 -no-show-match -no-sort | xclip -in -sel primary > /dev/null"

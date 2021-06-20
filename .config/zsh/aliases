@@ -31,6 +31,7 @@ alias ansible-playbook="ansible-playbook -i hosts/default"
 alias alpine-devel="docker run -it --rm alpine:3.13 sh"
 alias dcd='docker-compose down'
 alias dcl='docker-compose logs --tail=250 -f'
+alias dck='docker-compose kill'
 alias dcu='docker-compose up -d'
 alias dcp='docker-compose pull'
 alias dcr='docker-compose restart'
