@@ -1,1 +1,7 @@
 looking-glass
+
+# used for ipad backup (idevicebackup2)
+libimobiledevice-git
+
+# Ergodox flashing tool
+zsa-wally-bin
