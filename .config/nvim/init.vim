@@ -751,3 +751,6 @@ augroup AUTOSAVE
   au!
   autocmd InsertLeave,TextChanged,FocusLost **/memo/* silent! write
 augroup END
+
+" Unfold up to 3 folds
+set foldlevel=3
