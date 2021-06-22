@@ -29,7 +29,7 @@ while read pane_process
 do
    IFS=' ' read -ra pane_process <<< "$pane_process"
    if [[ "${pane_process[1]}" == "zsh" || "${pane_process[1]}" == "bash" ]]; then
-      tmux send-keys -t ${pane_process[0]} "export DISPLAY=$NEW_DISPLAY" Enter
+      tmux send-keys -t ${pane_process[0]} " export DISPLAY=$NEW_DISPLAY" Enter
    elif [[ "${pane_process[1]}" == *"python"* ]]; then
       tmux send-keys -t ${pane_process[0]} "import os; os.environ['DISPLAY']=\"$NEW_DISPLAY\"" Enter
    elif [[ "${pane_process[1]}" == *"vim"* ]]; then

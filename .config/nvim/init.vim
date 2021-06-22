@@ -312,7 +312,7 @@ let g:ale_fix_on_save = 1
 " 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_toc_autofit = 1
-let g:vim_markdown_folding_level = 2
+let g:vim_markdown_folding_level = 3
 set conceallevel=2
 
 " 'mhinz/vim-startify'
@@ -706,6 +706,13 @@ augroup twf_ftdetect
     \ | startinsert
     \ | endif
 augroup END
+"
+" Unfold up to 3 folds
+" Use :set foldlevel=X to change on fly
+" Some plugins override this setting ie plasticboy/vim-markdown, check with
+" `:verbose set foldmethod` and `:verbose set foldlevel` to verify
+set foldlevelstart=3
+set foldlevel=3
 
 " searches are case insensitive...
 set ignorecase  " searches are case insensitive...
@@ -752,5 +759,3 @@ augroup AUTOSAVE
   autocmd InsertLeave,TextChanged,FocusLost **/memo/* silent! write
 augroup END
 
-" Unfold up to 3 folds
-set foldlevel=3
