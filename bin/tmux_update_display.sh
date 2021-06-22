@@ -22,14 +22,24 @@
 # is ignored.  Even if the pane is running one of the above processes, if you exit that
 # process (say its running nvim and you exit to the zsh shell), the parent process
 # will have the old DISPLAY variable.  In these cases manually run this script later.
-
+TRIM_VALUE='❯'
 NEW_DISPLAY=$(tmux show-env | sed -n 's/^DISPLAY=//p')
 tmux list-panes -s -F "#{session_name}:#{window_index}.#{pane_index} #{pane_current_command}" | \
 while read pane_process
 do
    IFS=' ' read -ra pane_process <<< "$pane_process"
    if [[ "${pane_process[1]}" == "zsh" || "${pane_process[1]}" == "bash" ]]; then
-      tmux send-keys -t ${pane_process[0]} " export DISPLAY=$NEW_DISPLAY" Enter
+      tmux copy-mode -t ${pane_process[0]} -H
+      tmux send-keys -t ${pane_process[0]} -X select-word
+      tmux send-keys -t ${pane_process[0]} -X copy-pipe-and-cancel "xclip -in -sel secondary > /dev/null"
+      PANE_COMMAND=$(tmux show-buffer | tr -d $TRIM_VALUE )
+      #tmux delete-buffer
+      if [[ -z $PANE_COMMAND ]]; then 
+        # $PANE_COMMAND is empty, so we can export $NEW_DISPLAY
+        tmux send-keys -t ${pane_process[0]} " export DISPLAY=$NEW_DISPLAY" Enter
+      else 
+        false
+      fi 
    elif [[ "${pane_process[1]}" == *"python"* ]]; then
       tmux send-keys -t ${pane_process[0]} "import os; os.environ['DISPLAY']=\"$NEW_DISPLAY\"" Enter
    elif [[ "${pane_process[1]}" == *"vim"* ]]; then
