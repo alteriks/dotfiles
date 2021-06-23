@@ -37,6 +37,7 @@ do
       if [[ -z $PANE_COMMAND ]]; then 
         # $PANE_COMMAND is empty, so we can export $NEW_DISPLAY
         tmux send-keys -t ${pane_process[0]} " export DISPLAY=$NEW_DISPLAY" Enter
+        tmux send-keys -t ${pane_process[0]} " " Enter
       else 
         false
       fi 

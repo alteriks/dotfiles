@@ -73,3 +73,9 @@ elif [[ $HOSTNAME == "nebula" ]]; then
   systemctl --user enable $SYSTEMCTL_OPTS rslsync
 fi
 
+## building arm images with packer
+# git clone https://github.com/mkaczanowski/packer-builder-arm
+# cd packer-builder-arm
+# go mod download
+# go build
+# sudo cp packer-builder-arm /usr/bin

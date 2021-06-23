@@ -35,3 +35,8 @@ mosh-git
 # glib2-static
 # pcre-static
 # qemu-user-static
+
+# needed to rebuild ruby gems
+# paru -Qqo /usr/lib/ruby/gems/2.7.0 | paru -S -- -
+# https://aur.archlinux.org/packages/tmuxinator/
+paru-bin
