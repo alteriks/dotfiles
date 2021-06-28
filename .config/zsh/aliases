@@ -1,15 +1,17 @@
 # vim ft=sh
 
+
 alias ag='ag --hidden --ignore \.git'
 alias bc='bc -l'
 alias cat="bat -pp"
 alias cls='clear && echo -en "[3J"'
 alias curl_zt="curl -x socks5h://localhost:5555"
+alias ipinfo="curl ipinfo.io"
+alias nvidia-settings="nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings"
+alias open='xdg-open $1 2>/dev/null'
 alias pushd=' pushd'
 alias pacman_show_modified="pacman -Qii | awk '/^MODIFIED/ {print $2}'"
 alias rg="rg --smart-case"
-alias nvidia-settings="nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings"
-alias open='xdg-open $1 2>/dev/null'
 alias rq='resolvectl query --cache=false'
 alias ss_dns="ss -tulpen '( sport = :53 or sport = :55353 )'"
 alias step="step-cli"
