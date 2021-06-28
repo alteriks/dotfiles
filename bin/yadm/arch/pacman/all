@@ -80,7 +80,6 @@ archiso
 asciinema
 autorandr
 autossh
-autossh
 bashtop
 bat
 bc
@@ -96,6 +95,7 @@ ethtool
 exfat-utils
 fd
 fzf
+git
 hdparm
 htop
 i7z
@@ -136,6 +136,7 @@ sshpass
 socat
 strace
 stress
+sudo
 sysstat
 tcpdump
 the_silver_searcher

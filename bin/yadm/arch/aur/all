@@ -40,3 +40,6 @@ mosh-git
 # paru -Qqo /usr/lib/ruby/gems/2.7.0 | paru -S -- -
 # https://aur.archlinux.org/packages/tmuxinator/
 paru-bin
+
+# dhcp client tester+spoofer
+dhtest
