@@ -1,0 +1,9 @@
+warn_list:  # or 'skip_list' to silence them completely
+  - experimental  # all rules tagged as experimental
+  - git-latest  # Git checkouts must contain explicit version
+  - no-jinja-nesting  # Nested jinja pattern
+  - yaml  # Violations reported by yamllint
+skip_list:
+  - command-instead-of-shell  # Use shell only when shell functionality is required
+  - meta-incorrect  # meta/main.yml default values should be changed
+  - meta-no-info  # meta/main.yml should contain relevant info

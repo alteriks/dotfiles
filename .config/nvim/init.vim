@@ -97,7 +97,7 @@ Plug 'chrisbra/Recover.vim'
 Plug 'nelstrom/vim-visual-star-search'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "Use arch package
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-peekaboo' "ctrl+r 
+Plug 'junegunn/vim-peekaboo' "ctrl+r
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 
 " }}}
@@ -216,7 +216,7 @@ let g:airline#extensions#ctrlspace#enabled = 1
 let g:airline#extensions#tabline#ctrlspace_show_tab_nr = 1
 
 hi link CtrlSpaceSearch IncSearch
-hi link CtrlSpaceNormal Normal                                                                                                     
+hi link CtrlSpaceNormal Normal
 hi link CtrlSpaceSelected Visual
 
 let g:airline_exclude_preview = 1
@@ -483,7 +483,7 @@ let g:which_key_map.w = {
       \ }
 
 
-" Plug 'mhinz/vim-signify' 
+" Plug 'mhinz/vim-signify'
 " Plug 'tpope/vim-fugitive'
 " Plug 'junegunn/gv.vim'
 let g:which_key_map.g = {
@@ -594,7 +594,7 @@ let g:which_key_map.c = {
 map <Leader>a ggVG
 let g:which_key_map.a = 'Select all'
 
-nnoremap <leader># :noh<CR> 
+nnoremap <leader># :noh<CR>
 let g:which_key_map['#'] = 'Clear highlight'
 
 " I hate escape more than anything else
@@ -720,7 +720,7 @@ set foldlevel=3
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter.
 
-" check if file has been changed, auto reload 
+" check if file has been changed, auto reload
 " in nvim 5.0 use help file-change-detect :help watch-file
 set autoread
 au FocusGained * :checktime
