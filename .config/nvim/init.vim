@@ -66,8 +66,9 @@ Plug 'wesQ3/vim-windowswap' "TODO: Prepare Docs Startify/vim-which-key
 "
 " Plug 'lukas-reineke/indent-blankline.nvim'
 " let g:indentLine_fileTypeExclude = ['startify']
-" Plug 'Yggdroot/indentLine'
-" let g:indent_blankline_char_list = ['|', '¦', '┆', '┊']
+Plug 'Yggdroot/indentLine'
+let g:indentLine_enabled = 0
+let g:indent_blankline_char_list = ['┊']
 " let g:indent_blankline_space_char = '.'
 
 Plug 'SirVer/ultisnips' "TODO: Prepare Docs Startify/vim-which-key
@@ -759,3 +760,5 @@ augroup AUTOSAVE
   autocmd InsertLeave,TextChanged,FocusLost **/memo/* silent! write
 augroup END
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml let g:indentLine_enabled = 1
