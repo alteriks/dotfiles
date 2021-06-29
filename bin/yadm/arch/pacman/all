@@ -6,13 +6,14 @@ linux-lts
 base-devel
 binutils
 cmake
-gcc
 fakeroot
+gcc
+jre8-openjdk
 patchutils
 pkg-config
 pkgfile
 python-pip
-jre8-openjdk
+yamllint
 
 # FONTS
 noto-fonts
