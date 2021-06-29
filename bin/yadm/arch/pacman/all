@@ -3,6 +3,8 @@ linux-lts-headers
 linux-lts
 
 # LANG
+ansible
+ansible-lint
 base-devel
 binutils
 cmake
@@ -13,6 +15,7 @@ patchutils
 pkg-config
 pkgfile
 python-pip
+shellcheck
 yamllint
 
 # FONTS
@@ -75,7 +78,6 @@ zathura-pdf-mupdf
 
 # CLI TOOLS
 acpi
-ansible
 arch-install-scripts
 archiso
 asciinema
