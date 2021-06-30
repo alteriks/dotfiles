@@ -121,6 +121,7 @@ Plug 'cespare/vim-toml'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'luochen1990/rainbow'
+Plug 'ekalinin/Dockerfile.vim'
 " }}}
 
 " Python {{{
