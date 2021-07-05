@@ -98,7 +98,7 @@ Plug 'nelstrom/vim-visual-star-search'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "Use arch package
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo' "ctrl+r
-Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+"Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' } """ missing "'node'
 
 " }}}
 "Plug 'Shougo/denite.nvim'
@@ -106,7 +106,7 @@ Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 "nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
 "nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
 "nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-
+"
 "Plug 'itchyny/calendar.vim'
 
 " Linters {{{
@@ -122,7 +122,14 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'luochen1990/rainbow'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'folke/todo-comments.nvim'
 " }}}
+"
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Python {{{
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -764,3 +771,15 @@ augroup END
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml let g:indentLine_enabled = 1
+lua << EOF
+  require("todo-comments").setup {
+    sign_priority = 99, -- sign priority
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+  require'lspconfig'.yamlls.setup{
+  cmd = { "/home/alteriks/.local/share/npm/bin/yaml-language-server", "--stdio" }
+  }
+  require'lspconfig'.pyls.setup{}
+EOF

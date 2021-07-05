@@ -11,6 +11,7 @@ cmake
 fakeroot
 gcc
 jre8-openjdk
+npm # needed for neovim language server
 patchutils
 pkg-config
 pkgfile

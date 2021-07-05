@@ -112,7 +112,7 @@ alias ssh='TERM=xterm-256color \ssh'
 
 #TODO: bin/ssh_tmux_rename_window_test.sh
 if [[ -n $TMUX ]]; then
-  panewrap () { 
+  panewrap () {
     SHELL_CMD=$1
     if [[ "$SHELL_CMD" =~ ^ssh\  ]]; then
       #echo ZZZZZ $SHELL_CMD
@@ -123,10 +123,10 @@ if [[ -n $TMUX ]]; then
     fi
 
     TMUX_LIST_PANES=$(tmux list-panes -t . -F '#T')
-    printf "\033]2;%s\033\\" "${SHELL_CMD}"; 
+    printf "\033]2;%s\033\\" "${SHELL_CMD}";
     # awk #1 replaces newline with ＋, awk #2 strips last ＋
     tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | awk -vRS="\n" -vORS=" ＋ " '1' | awk -F '＋ $' '{print $1}')"
-    #tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | tr '\n' '＋')"; 
+    #tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | tr '\n' '＋')";
   }
   # don't show  frequent cmd: ls|cd|which
   preexec_functions+=( panewrap )
@@ -141,7 +141,7 @@ fi
 
 # ZSH VIM MODE
 if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
-  source ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh; 
+  source ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh;
   export KEYTIMEOUT=15
   export MODE_CURSOR_VIINS="#ffffff blinking bar"
   export MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
@@ -178,7 +178,7 @@ if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
 ZSH_HIGHLIGHT_STYLES=()
   ZSH_HIGHLIGHT_STYLES[comment]='none'
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  
+
   # https://github.com/zsh-users/zsh-syntax-highlighting/issues/295
   # Remove sloowness when using with ohmyzsh
   zstyle ':bracketed-paste-magic' active-widgets '.self-*'
@@ -189,7 +189,7 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
-# TODO
+# TODO:
 # rg 'word1|word2|wordN'
 # if file matches loop over and match words
 function rgsearch() { rg -C 5 $1 |rg $2 }
