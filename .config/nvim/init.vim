@@ -136,7 +136,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 """""let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-jedi'
 
-Plug 'mcchrish/nnn.vim'
+"Plug 'mcchrish/nnn.vim'
 
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
@@ -155,9 +155,20 @@ Plug 'ChristianChiarulli/far.vim'
 "Plug 'machakann/vim-highlightedyank' https://www.reddit.com/r/neovim/comments/gofplz/neovim_has_added_the_ability_to_highlight_yanked/
 let g:highlightedyank_highlight_duration = 250
 
+" requires
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
+
 
 " Initialize plugin system
 call plug#end()
+
+"kyazdani42/nvim-tree.lua
+let g:nvim_tree_auto_open = 1
+let g:nvim_tree_auto_close = 1
+let g:nvim_tree_quit_on_open = 1
+let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ]
+let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ]
 
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible()? "\<c-n>" : "\<tab>"
@@ -167,28 +178,28 @@ augroup pumvisible
   autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 augroup END
 
-" Disable default mappings
-let g:nnn#set_default_mappings = 0
+" " Disable default mappings
+" let g:nnn#set_default_mappings = 0
 
-" Then set your own
-nnoremap <silent> <leader>nn :NnnPicker<CR>
+" " Then set your own
+" nnoremap <silent> <leader>nn :NnnPicker<CR>
 
-" Or override
-" Start nnn in the current file's directory
-nnoremap <leader>n :NnnPicker '%:p:h'<CR>
-" Opens the nnn window in a split
-let g:nnn#layout = 'new' " or vnew, tabnew etc.
+" " Or override
+" " Start nnn in the current file's directory
+" nnoremap <leader>n :NnnPicker '%:p:h'<CR>
+" " Opens the nnn window in a split
+" let g:nnn#layout = 'new' " or vnew, tabnew etc.
 
-" Or pass a dictionary with window size
-let g:nnn#layout = { 'left': '~20%' } " or right, up, down
+" " Or pass a dictionary with window size
+" let g:nnn#layout = { 'left': '~20%' } " or right, up, down
 
-" Floating window (neovim latest and vim with patch 8.2.191)
-let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+" " Floating window (neovim latest and vim with patch 8.2.191)
+" let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
-let g:nnn#action = {
-      \ '<c-t>': 'tab split',
-      \ '<c-x>': 'split',
-      \ '<c-v>': 'vsplit' }
+" let g:nnn#action = {
+"       \ '<c-t>': 'tab split',
+"       \ '<c-x>': 'split',
+"       \ '<c-v>': 'vsplit' }
 
 "'vim-syntastic/syntastic'
 " Note that airline will set the statusline info, so these three lines are not needed
@@ -686,36 +697,36 @@ nmap <silent> <C-q> :call Bye()<CR>
 nnoremap <c-z> <nop>
 
 """""""""""""""""TWF
-function! TwfExit(path)
-  function! TwfExitClosure(job_id, data, event) closure
-    bd!
-    try
-      let out = filereadable(a:path) ? readfile(a:path) : []
-    finally
-      silent! call delete(a:path)
-    endtry
-    if !empty(out)
-      execute 'edit! ' . out[0]
-    endif
-  endfunction
-  return funcref('TwfExitClosure')
-endfunction
-function! s:isdir(dir)
-  return !empty(a:dir) && (isdirectory(a:dir) ||
-    \ (!empty($SYSTEMDRIVE) && isdirectory('/'.tolower($SYSTEMDRIVE[0]).a:dir)))
-endfunction
+" function! TwfExit(path)
+"   function! TwfExitClosure(job_id, data, event) closure
+"     bd!
+"     try
+"       let out = filereadable(a:path) ? readfile(a:path) : []
+"     finally
+"       silent! call delete(a:path)
+"     endtry
+"     if !empty(out)
+"       execute 'edit! ' . out[0]
+"     endif
+"   endfunction
+"   return funcref('TwfExitClosure')
+" endfunction
+" function! s:isdir(dir)
+"   return !empty(a:dir) && (isdirectory(a:dir) ||
+"     \ (!empty($SYSTEMDRIVE) && isdirectory('/'.tolower($SYSTEMDRIVE[0]).a:dir)))
+" endfunction
 
-augroup twf_ftdetect
-  autocmd!
-  " nuke netrw brain damage
-  autocmd VimEnter * silent! au! FileExplorer *
-  autocmd BufEnter * if <SID>isdir(expand('%'))
-    \ | redraw | echo ''
-    \ | let temp = tempname()
-    \ | call termopen('/home/alteriks/.local/share/go/bin/twf ' . @% . ' > ' . temp, { 'on_exit': TwfExit(temp) })
-    \ | startinsert
-    \ | endif
-augroup END
+" augroup twf_ftdetect
+"   autocmd!
+"   " nuke netrw brain damage
+"   autocmd VimEnter * silent! au! FileExplorer *
+"   autocmd BufEnter * if <SID>isdir(expand('%'))
+"     \ | redraw | echo ''
+"     \ | let temp = tempname()
+"     \ | call termopen('/home/alteriks/.local/share/go/bin/twf ' . @% . ' > ' . temp, { 'on_exit': TwfExit(temp) })
+"     \ | startinsert
+"     \ | endif
+" augroup END
 "
 " Unfold up to 3 folds
 " Use :set foldlevel=X to change on fly
