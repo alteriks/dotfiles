@@ -7,6 +7,5 @@ file:///home/datastore/Jeep Jeep
 file:///home/alteriks/Downloads/RPi%20Pico RPi Pico
 sftp://moar/home/alteriks moar
 sftp://nebula/home nebula
-file:///mnt/ntfs/datastore datastore-ntfs
 sftp://nebula/home home
 file:///home/alteriks Home
