@@ -56,7 +56,7 @@ ip() {
 
 pacman_update_ignoredpkg() {
   IGNOREDPKG=$( /bin/cat /etc/pacman.d/ignorepkg/all.conf /etc/pacman.d/ignorepkg/${HOSTNAME}.conf | awk -F' = ' '{ print $2 }' ORS=' ' )
-  sudo pacman -Syu $IGNOREDPKG
+  sudo pacman -Syu $(echo $IGNOREDPKG)
 }
 
 rga-fzf() {
@@ -81,8 +81,8 @@ sc() {
   systemctl status ${name};
 }
 
-step-cli-ca() { 
-  step-cli ca certificate $1 $1.crt $1.key --not-after=17520h 
+step-cli-ca() {
+  step-cli ca certificate $1 $1.crt $1.key --not-after=17520h
 }
 
 test_ip_port() {
@@ -107,8 +107,8 @@ test_ip_port() {
 
 timezsh() {
   shell=${1-$SHELL}
-  for i in $(seq 1 10); do 
-    /usr/bin/time -p $shell -i -c exit; 
+  for i in $(seq 1 10); do
+    /usr/bin/time -p $shell -i -c exit;
   done
 }
 
@@ -117,7 +117,7 @@ tmux() {
   if [[ $# == 0 ]]; then
     TMUX_SESSION_COUNT=$(/usr/bin/tmux list-sessions 2>/dev/null |grep -c window)
     if [[ $TMUX_SESSION_COUNT == 0 ]]; then
-      systemd-run --scope --user /usr/bin/tmux 
+      systemd-run --scope --user /usr/bin/tmux
     elif [[ $TMUX_SESSION_COUNT == 1 ]]; then
       /usr/bin/tmux attach-session
     else
@@ -178,7 +178,7 @@ YADM() {
 
   echo
   echo -e "${GREEN}[+] YADM PULL${NC}"
-  yadm pull; 
+  yadm pull;
   if [[ $EUID -ge 1000 ]]; then
     yadm commit -am "auto-commit ${HOSTNAME}"
     yadm push
