@@ -46,3 +46,6 @@ dhtest
 
 
 nerd-fonts-dejavu-complete
+
+# i3 autotiling https://github.com/nwg-piotr/autotiling
+autotiling-git

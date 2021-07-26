@@ -4,7 +4,7 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
-set $i3config ~/.config/i3 
+set $i3config ~/.config/i3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -38,7 +38,7 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-# Brakes Previos/Next page in web browser history 
+# Brakes Previos/Next page in web browser history
 #bindsym $mod+Left focus left
 #bindsym $mod+Down focus down
 #bindsym $mod+Up focus up
@@ -84,8 +84,8 @@ bindsym $mod+Shift+C focus child
 ## WORKSPACE (U+202F) - " "
 set $workspace1 "1:   	"
 set $workspace2 "2:   	"
-set $workspace3 "3:  	" 
-set $workspace4 "4:  	" 
+set $workspace3 "3:  	"
+set $workspace4 "4:  	"
 #set $workspace4 "4:VM"
 set $workspace5 "5:    "
 set $workspace6 "6:Photo"
@@ -175,7 +175,7 @@ disable_randr15 yes
 #    mode              hide
 #    workspace_buttons yes
 #    tray_output       none
-#    
+#
 #    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #
 #    colors {
@@ -202,7 +202,7 @@ bar {
          separator  #756d59
 
                             #border backgr. text
-         
+
 {% if yadm.class == "laptop" %}
          focused_workspace  #676d3d #99B938 #282828
 {% endif %}
@@ -235,11 +235,11 @@ exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $te
 
 for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpad
 bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; exec i3-msg '[instance="scratchpad-notepad"]' scratchpad show
-#exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim 
+#exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim
 
 # for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpad
 # bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; [instance="scratchpad-notepad"] scratchpad show
-# #exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim 
+# #exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim
 
 for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
 bindsym $mod+c [instance="gnome-calculator"] scratchpad show
@@ -276,7 +276,7 @@ floating_minimum_size 100 x 50
 for_window [class="(?i)zathura"] focus
 for_window [class="Arandr"] floating enable, border normal
 for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
-for_window [class="firefox" title="Page Info"] border normal, floating enable 
+for_window [class="firefox" title="Page Info"] border normal, floating enable
 for_window [class="flameshot" title="Configuration"] sticky enable, border normal, floating enable #Flameshot
 for_window [class="Mousepad"] border normal, focus, floating enable
 for_window [class="Nm-connection-editor"] border normal, focus, floating enable
@@ -297,7 +297,7 @@ for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floati
 for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
 for_window [window_type="dialog"] sticky enable, border normal
 
-for_window  [class="calibre" title="calibre - Preferences"] border normal, sticky disable, 
+for_window  [class="calibre" title="calibre - Preferences"] border normal, sticky disable,
 focus_on_window_activation urgent
 force_display_urgency_hint 250 ms
 
@@ -381,8 +381,8 @@ assign [ class = "Vivaldi" ] workspace $workspace3
 assign [ class = "Gimp-.*" ] workspace $workspace4
 assign [ class = "Remmina" ] workspace $workspace4
 
-assign [ class = "calibre" ] workspace $workspace5 
-assign [ class = "Zathura" ] workspace $workspace5 
+assign [ class = "calibre" ] workspace $workspace5
+assign [ class = "Zathura" ] workspace $workspace5
 
 # Start Applications
 bindsym Print exec --no-startup-id flameshot gui -p ~/tmp/
@@ -426,12 +426,13 @@ bindsym $mod+Ctrl+Left  workspace prev
 #exec_always --no-startup-id numlockx on
 
 exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
+exec_always autotiling
 # Start on specific workspace
 #exec i3-msg 'exec --no-startup-id vivaldi-snapshot'
 exec --no-startup-id i3-msg 'workspace $workspace2; splith; exec $terminal'
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #nvidia driver; causes HIGH CPU on nouveau
-#exec --no-startup-id nitrogen --restore; sleep 1; picom --config /dev/null --backend glx --xrender-sync-fence --experimental-backends 
+#exec --no-startup-id nitrogen --restore; sleep 1; picom --config /dev/null --backend glx --xrender-sync-fence --experimental-backends
 #nouveau
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
@@ -492,12 +493,12 @@ gaps outer -4
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 #smart_borders no_gaps
 
 
-################ NOT USED ANYMORE ################ 
+################ NOT USED ANYMORE ################
 ##
 # resize window (you can also use the mouse for that)
 mode "resize" {

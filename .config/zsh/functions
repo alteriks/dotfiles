@@ -28,6 +28,12 @@ filesizedistribution() {
             human(a);                                                      \
             printf("%3d%s: %6d\n", a[1],substr("kMGTEPYZ",a[2]+1,1),$2) }'
 }
+
+# https://stackoverflow.com/questions/6918057/shell-list-directories-ordered-by-file-count-including-in-subdirectories
+filecount() {
+  find . -type f | cut -d "/" -f 2 | sort | uniq -c | sort -N
+}
+
 git() {
   if [[ $@ == "diffmeld" ]]; then
     command git difftool -t meld
