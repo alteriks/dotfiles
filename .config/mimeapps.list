@@ -21,6 +21,8 @@ x-scheme-handler/unknown=vivaldi-stable.desktop
 x-scheme-handler/vnc=org.remmina.Remmina.desktop
 x-scheme-handler/webcal=vivaldi-stable.desktop
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
+application/json=nvim.desktop
+image/gif=org.nomacs.ImageLounge.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
@@ -44,6 +46,8 @@ x-scheme-handler/remmina=org.remmina.Remmina.desktop;
 x-scheme-handler/spice=org.remmina.Remmina.desktop;
 x-scheme-handler/vnc=org.remmina.Remmina.desktop;
 application/x-ms-dos-executable=wine.desktop;
+application/json=nvim.desktop;
+image/gif=org.nomacs.ImageLounge.desktop;
 
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;

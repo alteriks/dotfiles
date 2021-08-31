@@ -11,6 +11,13 @@ arpscan() {
   #RPiZ=B8:27:EB
 }
 
+dce() {
+  NAME=$(docker-compose ps --services | head -n1)
+  NAME=${1:-$NAME}
+  echo "docker-compose exec $NAME sh"
+  docker-compose exec $NAME sh
+}
+
 #https://superuser.com/questions/565443/generate-distribution-of-file-sizes-from-the-command-prompt/1100340#1100340
 filesizedistribution() {
   find . -type f -print0                                                   \
@@ -56,7 +63,7 @@ ip() {
   else
     # only IPv4, cut every third line
     # command ip -c -4 a | sed '0~3d'
-    command ip -c -4 a | grep -v 'valid_lft forever preferred_lft forever'
+    command ip -c -br -4 a
   fi
 }
 

@@ -21,11 +21,19 @@ nnoremap <SPACE> <Nop>
 "  :PlugInstall
 call plug#begin('~/.config/nvim/plug/')
 
+"Bufferline/Tabline
+Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+" Plug 'ryanoasis/vim-devicons' Icons without colours
+Plug 'akinsho/nvim-bufferline.lua'
+" Plug 'romgrk/barbar.nvim'
+" Plug 'matbme/JABS.nvim'
+
 " Loo {{{
 Plug 'overcache/NeoSolarized'
 "autocmd Filetype * if &ft!="calendar"| Plug 'vim-airline/vim-airline' | endif
-Plug 'vim-airline/vim-airline' "OR https://github.com/itchyny/lightline.vim + https://github.com/bagrat/vim-buffet
-Plug 'vim-airline/vim-airline-themes'
+" TODO: checking faster loading times Plug 'vim-airline/vim-airline' "OR https://github.com/itchyny/lightline.vim + https://github.com/bagrat/vim-buffet
+" TODO: checking faster loading times Plug 'vim-airline/vim-airline-themes'
+Plug 'hoob3rt/lualine.nvim'
 "
 "Plug 'itchyny/lightline.vim'
 
@@ -83,7 +91,7 @@ Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
 
 " Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'Konfekt/vim-ctrlspace', { 'branch': 'badd' }
+" TODO: checking faster loading times Plug 'Konfekt/vim-ctrlspace', { 'branch': 'badd' }
 
 Plug 'dstein64/vim-startuptime'
 "https://github.com/hyiltiz/vim-plugins-profile
@@ -94,7 +102,7 @@ Plug 'dstein64/vim-startuptime'
 Plug 'chrisbra/Recover.vim'
 
 " Search {{{
-Plug 'nelstrom/vim-visual-star-search'
+Plug 'bronson/vim-visual-star-search'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "Use arch package
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo' "ctrl+r
@@ -138,7 +146,7 @@ Plug 'zchee/deoplete-jedi'
 
 "Plug 'mcchrish/nnn.vim'
 
-Plug 'vim-syntastic/syntastic'
+" TODO: checking faster loading times Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'Vimjas/vim-python-pep8-indent'
 " Pair of quotes, brackets
@@ -352,7 +360,7 @@ let g:startify_custom_footer =
 \ [
 \ '', "   Put new things here!", '',
 \ "   Try :UndotreeToggle https://github.com/mbbill/undotree", '',
-\ "   Try nelstrom/vim-visual-star-search Select with VISUALMODE and search for pattern using */# ", '',
+\ "   Try bronson/vim-visual-star-search Select with VISUALMODE and search for pattern using */# ", '',
 \ "   Try :SSave    save a session in vim-startify", '',
 \ "   Try :Ultisnip 'TODO<tab> + yaml.ansible'", '',
 \ "   Try <leader> \\", '',
@@ -783,6 +791,13 @@ augroup END
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml let g:indentLine_enabled = 1
 lua << EOF
+require('lualine').setup {
+  options = {theme = 'solarized_dark'}
+  }
+
+vim.opt.termguicolors = true
+require("bufferline").setup{}
+
   require("todo-comments").setup {
     sign_priority = 99, -- sign priority
     -- your configuration comes here
@@ -792,5 +807,5 @@ lua << EOF
   require'lspconfig'.yamlls.setup{
   cmd = { "/home/alteriks/.local/share/npm/bin/yaml-language-server", "--stdio" }
   }
-  require'lspconfig'.pyls.setup{}
+  -- require'lspconfig'.pyls.setup{}
 EOF

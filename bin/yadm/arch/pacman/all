@@ -104,6 +104,7 @@ hdparm
 htop
 i7z
 inetutils
+inotify-tools
 iperf3
 iptables-nft
 jq
@@ -125,6 +126,7 @@ ntfs-3g
 numlockx
 # openfortivpn
 openbsd-netcat
+p7zip
 packer
 pacman-contrib
 python-neovim
@@ -142,6 +144,7 @@ strace
 stress
 sudo
 sysstat
+terraform
 tcpdump
 the_silver_searcher
 time
