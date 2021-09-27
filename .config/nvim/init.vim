@@ -38,6 +38,10 @@ Plug 'hoob3rt/lualine.nvim'
 "Plug 'itchyny/lightline.vim'
 
 
+Plug 'lambdalisue/suda.vim'
+" Automatically use sudo when permissions are lacking
+let g:suda_smart_edit = 1
+
 "Plug 'liuchengxu/vista.vim'
 Plug 'ryanoasis/vim-devicons'
 
