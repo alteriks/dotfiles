@@ -7,4 +7,4 @@ file:///home/datastore/Jeep Jeep
 file:///home/alteriks/Downloads/RPi%20Pico RPi Pico
 sftp://moar/home/alteriks moar
 sftp://nebula/home nebula
-file:///home/alteriks Home
+smb://192.168.131.167/users/hachiko/Downloads hachiko

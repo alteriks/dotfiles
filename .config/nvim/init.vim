@@ -790,6 +790,7 @@ augroup END
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml let g:indentLine_enabled = 1
+if $USER != 'root'
 lua << EOF
 require('lualine').setup {
   options = {theme = 'solarized_dark'}
@@ -809,3 +810,4 @@ require("bufferline").setup{}
   }
   -- require'lspconfig'.pyls.setup{}
 EOF
+endif
