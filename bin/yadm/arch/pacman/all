@@ -38,7 +38,6 @@ pasystray
 pulseaudio-bluetooth
 pulsemixer
 vlc
-youtube-dl
 
 # GUI
 alacritty
