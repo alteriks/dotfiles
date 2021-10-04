@@ -2,4 +2,5 @@
 
 acpi_call-lts # battery thresholds
 fwupd
+wireless_tools
 xorg-xbacklight
