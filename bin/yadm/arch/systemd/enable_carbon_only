@@ -6,4 +6,5 @@ zfs-scrub@rpool_9rr.timer
 intel-undervolt
 intel-undervolt-loop
 NetworkManager
+NetworkManager-dispatcher ### autostarts vpn when not at home /etc/NetworkManager/dispatcher.d/10-vpn-up
 #tlp
