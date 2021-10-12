@@ -387,7 +387,8 @@ assign [ class = "Zathura" ] workspace $workspace5
 # Start Applications
 bindsym Print exec --no-startup-id flameshot gui -p ~/tmp/
 bindsym $mod+p exec --no-startup-id flameshot gui -p ~/tmp/
-bindsym $mod+F3 exec pcmanfm-qt
+bindsym $mod+F3 exec nemo
+# bindsym $mod+F3 exec pcmanfm-qt
 #bindsym $mod+p exec --no-startup-id pkill picom; exec notify-send 'picom is DEAD'
 bindsym $mod+Ctrl+p exec --no-startup-id picom ; exec notify-send 'picom is ALIVE'
 #nvidia driver; causes HIGH CPU on nouveau
