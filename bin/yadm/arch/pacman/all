@@ -48,6 +48,7 @@ flameshot
 gnome-calculator
 gparted
 gpick
+gthumb
 i3-gaps
 i3status-rust
 keepassxc
@@ -135,6 +136,7 @@ ripgrep
 rsync
 screen
 smartmontools
+smbclient
 smem
 speedtest-cli
 sshpass
