@@ -1,6 +1,9 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+include ~/.config/i3/`hostname`.conf
+include ~/.config/i3/window.conf
+
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
@@ -143,7 +146,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+Escape exec --no-startup-id "~/bin/systemcontroll"
 
-
 bindsym $mod+F10 exec $HOME/.screenlayout/laptop.sh
 bindsym --release $mod+F7 exec ~/.config/i3/bin/rofi_autorandr.sh
 #set $displayMode "Set display mode [w]ork [l]aptop [h]ome"
@@ -166,58 +168,6 @@ bindsym --release $mod+F7 exec ~/.config/i3/bin/rofi_autorandr.sh
 #https://github.com/i3/i3/issues/2936
 disable_randr15 yes
 
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#    status_command    i3status
-#    position          top
-#    mode              hide
-#    workspace_buttons yes
-#    tray_output       none
-#
-#    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#
-#    colors {
-#        background #000000
-#        statusline #ffffff
-#
-#        focused_workspace  #ffffff #285577
-#        active_workspace   #ffffff #333333
-#        inactive_workspace #888888 #222222
-#        urgent_workspace   #ffffff #900000
-#    }
-#}
-bar {
-  mode dock
-  position top
-  #font pango:DejaVu Sans Mono, FontAwesome 11
-  font pango:DejaVu Sans Mono for Powerline, Book 11
-  status_command i3status-rs ~/.config/i3/i3status-rust.toml
-
-  # Colors
-    colors {
-         background #282828
-         statusline #ebdbb2
-         separator  #756d59
-
-                            #border backgr. text
-
-{% if yadm.class == "laptop" %}
-         focused_workspace  #676d3d #99B938 #282828
-{% endif %}
-{% if yadm.class == "workstation" %}
-         focused_workspace  #676d3d #ffce00 #282828
-{% endif %}
-{% if yadm.class == "server" %}
-         focused_workspace  #676d3d #ff5252 #282828
-{% endif %}
-         active_workspace   #323232 #5f676a #ebdbb2
-         inactive_workspace #323232 #323232 #888888
-         urgent_workspace   #333333 #900000 #ffffff
-  }
-}
-
 # The middle button toggles floating
 bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
@@ -225,9 +175,6 @@ bindsym --whole-window $mod+button2 floating toggle
 # The side buttons move the window around
 bindsym button9 move left
 bindsym button8 move right
-
-# Border for all windows - 3 pixels, this rule must be above others, so it can be overriden
-#for_window [class=".*"] border pixel 3
 
 for_window [instance="scratchpad-vim"] move to scratchpad
 bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
@@ -265,62 +212,11 @@ exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,KeePassXC,
 exec_always --no-startup-id xrdb -merge ~/.config/X11/Xresources
 exec_always --no-startup-id setxkbmap -layout pl -option 'caps:escape' -option terminate:ctrl_alt_bksp -option kpdl:dot
 
-#xprop |rg WM_CLASS
-#WM_CLASS(STRING) = "XXXXXXX", "YYYYYYY"
-#XXXXXXX - instance, YYYYYYY - class
-#for_window [class="calibre-gui" title="Are you sure?"] border none
-
 
 floating_maximum_size 1800 x 1200
 floating_minimum_size 100 x 50
-for_window [class="(?i)zathura"] focus
-for_window [class="Arandr"] floating enable, border normal
-for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
-for_window [class="firefox" title="Page Info"] border normal, floating enable
-for_window [class="flameshot" title="Configuration"] sticky enable, border normal, floating enable #Flameshot
-for_window [class="Mousepad"] border normal, focus, floating enable
-for_window [class="Nm-connection-editor"] border normal, focus, floating enable
-for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
-for_window [class="Pavucontrol"] floating enable, border normal, focus, resize set 850 500
-for_window [class="RimWorldLinux"] focus
-for_window [class="Mojosetup"] floating enable, border none, focus #gog installer
-for_window [class="Safeeyes"] floating enable, border none, focus,
-for_window [class="Veracrypt"] sticky enable, border normal, focus, floating enable
-for_window [title=" on QEMU/KVM"] border normal, focus, floating enable
-for_window [title="Bluetooth Adapters"] sticky enable, border normal, focus, floating enable
-for_window [title="Bluetooth Devices"] sticky enable, border normal, focus, floating enable
-for_window [title="Open With"] sticky enable, border normal, floating enable #Flameshot
-for_window [title="Open database"] sticky enable, border normal
-for_window [title="Piper"] sticky enable, border normal, focus, floating enable
-for_window [title="Solaar"] sticky enable, border normal, focus, floating enable
-for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floating enable
-for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
-for_window [window_type="dialog"] sticky enable, border normal
-
-for_window  [class="calibre" title="calibre - Preferences"] border normal, sticky disable,
 focus_on_window_activation urgent
 force_display_urgency_hint 250 ms
-
-
-for_window  [class="Nemo" title="Edit Bookmarks"] border normal, sticky disable, floating enable
-for_window  [class="Nemo" title="File Management Preferences"] border normal, sticky disable, floating enable
-
-# STEAM
-#for_window [class="Steam" title="^(?!Steam)$"]  border normal, focus, floating enable
-# https://github.com/ValveSoftware/steam-for-linux/issues/1040
-for_window [class="^Steam$" title="^Friends$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
-
-# doesn't work anymore assign [ class="^Spotify$" ] workspace 1
-for_window [class="Spotify"] move to workspace $workspace1
 
 #TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
 
@@ -329,17 +225,6 @@ for_window [class="Spotify"] move to workspace $workspace1
 client.focused #9FCA56 #9FCA56 #151718 #A074C4
 client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
 client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
-
-# BEGIN docked_work
-# END docked_work
-
-# BEGIN docked_home
-#workspace $workspace1 output DP3
-#workspace $workspace2 output HDMI2
-#workspace $workspace3 output HDMI2
-#workspace $workspace4 output HDMI2
-#workspace $workspace5 output DP3
-# END docked_home
 
 workspace_layout default
 #workspace_layout default|stacking|tabbed
@@ -420,12 +305,6 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left  workspace prev
 
 # Autostart applications
-#exec --no-startup-id ~/.config/i3/tray
-#exec --no-startup-id redshift-gtk
-#exec --no-startup-id pulseaudio -D
-#exec --no-startup-id feh --bg-max ~/moonraker.jpg ~/fear-and-loathing.jpg ~/dirtyharry.jpg
-#exec_always --no-startup-id numlockx on
-
 exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
 exec_always autotiling
 # Start on specific workspace
@@ -438,45 +317,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec --no-startup-id /usr/bin/udiskie -NtA
-{% if yadm.hostname == "carbon" %}
-exec --no-startup-id nm-applet
-{% endif %}
 #exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
 
-{% if yadm.class == "server" %}
-#exec_always --no-startup-id dropbox start
-{% endif %}
 exec_always --no-startup-id ~/bin/fix_xcursor
 #exec_always --no-startup-id exec i3wsr
-
-
-{% if yadm.hostname == "carbon" %}
-# Lock
-
-exec_always --no-startup-id xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' 0.2
-exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.55
-exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
-
-exec_always --no-startup-id xset s 1800 60
-exec_always --no-startup-id xset dpms 1700 1700 1700
-#exec --no-startup-id xss-lock ~/.config/i3/bin/i3lock-color-git.sh
-#exec_always --no-startup-id xss-lock -n ~/bin/dim-screen.sh -- /home/alteriks/.config/i3/bin/i3lock-color-git.sh
-exec_always --no-startup-id light-locker --lock-after-screensaver=60
-#set $lock ~/.config/i3/pixelate_lock.sh
-set $lock $i3config/i3lock-color-git.sh
-
-# exec --no-startup-id safeeyes
-exec_always --no-startup-id systemctl --user restart barriers@0.0.0.0.service
-{% endif %}
-{% if yadm.hostname == "moar" %}
-# exec --no-startup-id safeeyes
-exec_always --no-startup-id systemctl --user restart barriers@0.0.0.0.service
-{% endif %}
-{% if yadm.hostname == "nebula" %}
-exec_always --no-startup-id systemctl --user restart barrierc@carbon.service
-exec_always --no-startup-id systemctl --user restart barrierc@moar.service
-{% endif %}
 
 #############################
 ### settings for i3-gaps: ###
@@ -497,120 +342,3 @@ smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 #smart_borders no_gaps
-
-
-################ NOT USED ANYMORE ################
-##
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
-mode "focused" {
-
-  # hardcoded focus keybindings
-  bindsym f [class="(?i)firefox"] focus; mode "default"
-  bindsym t [class="(?i)termite"] focus
-  bindsym v [class="(?i)vivaldi"] focus
-  bindsym z [class="(?i)zathura"] focus
-
-  # keybindings for marking and jumping to clients
-  bindsym a exec i3-input -F 'mark %s' -P 'Mark name: '
-  bindsym g exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
-
-  # Assign marks to keys 1-5
-  bindsym Shift+1 mark mark1
-  bindsym Shift+2 mark mark2
-  bindsym Shift+3 mark mark3
-  bindsym Shift+4 mark mark4
-  bindsym Shift+5 mark mark5
-
-  # Jump to clients marked 1-5
-  bindsym 1 [con_mark="mark1"] focus
-  bindsym 2 [con_mark="mark2"] focus
-  bindsym 3 [con_mark="mark3"] focus
-  bindsym 4 [con_mark="mark4"] focus
-  bindsym 5 [con_mark="mark5"] focus
-
-  # Exit to the default mode
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-bindsym $mod+m mode "focused"
-
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-#set $printScreenMode "Take PrintScreen [f]ull [a]ctivewindow [s]election [d]elay"
-#bindsym --release Print mode $printScreenMode
-#mode $printScreenMode {
-#    bindsym f exec "\
-#                scrot -e 'mv $f ~/Pictures/'"; \
-#                mode "default"
-#    bindsym a exec "\
-#                scrot -ue 'mv $f ~/Pictures/'"; \
-#                mode "default"
-#    bindsym --release s exec "\
-#                scrot -s -e 'mv $f ~/Pictures/'"; \
-#                mode "default"
-#    bindsym d exec "\
-#                scrot -cd 3 -e 'mv $f ~/Pictures/'"; \
-#                mode "default"
-#
-#    bindsym Return mode "default"
-#    bindsym Escape mode "default"
-#}
-#
