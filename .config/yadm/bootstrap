@@ -31,10 +31,10 @@ echo -e "${GREEN}[+] yadm class:${NC}" $(yadm config local.class)
 echo ""
 
 DEFAULT_SHELL=$(grep $(id -un) /etc/passwd | awk -F: {'print $7'} )
-if [[ -e /bin/zsh && "$DEFAULT_SHELL" != "/bin/zsh" ]]; then
-  echo 
+if [[ -e /bin/zsh && "$DEFAULT_SHELL" =~ "/bin/zsh" ]]; then
+  echo
   echo -e "${GREEN}[+] Change shell${NC}"
-  echo 
+  echo
   chsh -s /bin/zsh
   echo ""
 fi
@@ -57,22 +57,22 @@ if [[ $CLASS != other && $EUID -ge 1000 ]]; then
 fi
 
 if [[ $CLASS != other && BOOTSTRAP_QUICK -eq 0 ]]; then
-  echo 
+  echo
   echo -e "${GREEN}[+] Installing packages (pacman)${NC}"
-  echo 
+  echo
   sudo ~/bin/yadm/${OS_TYPE}/root_pre.sh
 
-  echo 
+  echo
   echo -e "${GREEN}[+] Installing packages (yay)${NC}"
-  echo 
+  echo
   # Temporary copy so #1000 can execute script from known place
   #cp ~/bin/yadm/${OS_TYPE}/user.sh /tmp
   sudo -u '#1000' ~/bin/yadm/${OS_TYPE}/user.sh
   #rm -f /tmp/user.sh
 
-  echo 
+  echo
   echo -e "${GREEN}[+] PostInstall as root${NC}"
-  echo 
+  echo
   sudo ~/bin/yadm/${OS_TYPE}/root_post.sh
   echo ""
 fi
@@ -101,4 +101,3 @@ if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
   ~/.config/tmux/plugins/tpm/bin/install_plugins
   echo ""
 fi
-
