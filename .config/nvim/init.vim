@@ -169,7 +169,7 @@ let g:highlightedyank_highlight_duration = 250
 
 " requires
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-tree.lua', { 'tag': '1.3.7' }
 
 
 " Initialize plugin system
