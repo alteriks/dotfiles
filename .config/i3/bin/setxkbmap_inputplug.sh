@@ -10,4 +10,4 @@ do
                 ~/.config/i3/bin/setxkbmap.sh
                 ;;
         esac
-done
+done &

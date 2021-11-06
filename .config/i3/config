@@ -178,9 +178,9 @@ for_window [class="obsidian" title="TODO"] move to scratchpad, move position mou
 bindsym $mod+o exec obsidian obsidian://open?vault=TODO; exec i3-msg '[class="obsidian"] [title="TODO"]' scratchpad show
 exec_always --no-startup-id obsidian obsidian://open?vault=TODO
 
-for_window [class="Typora"] move to scratchpad, move position mouse
-bindsym $mod+i exec ~/.config/i3/bin/launch_and_rename_windowname.sh typora; exec i3-msg '[class="Typora"]' scratchpad show
-exec_always --no-startup-id typora
+for_window [class="Typora" title="typora_notepad.md"] move to scratchpad, move position mouse
+bindsym $mod+i exec i3-msg '[class="Typora" title="typora_notepad.md"]' scratchpad show
+exec_always --no-startup-id typora ~/tmp/typora_notepad.md
 
 for_window [instance="scratchpad-vim"] move to scratchpad
 # bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
