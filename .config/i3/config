@@ -211,7 +211,7 @@ for_window [class="KeePassXC" title="Generate Password"] scratchpad show, focus,
 exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,scratchpad-keepassxc,, True,,KeePassXC,,,
 
 exec_always --no-startup-id xrdb -merge ~/.config/X11/Xresources
-exec_always --no-startup-id setxkbmap -layout pl -option 'caps:escape' -option terminate:ctrl_alt_bksp -option kpdl:dot
+exec_always --no-startup-id ~/.config/i3/bin/setxkbmap.sh # moar also launches ~/.config/i3/bin/setxkbmap_inputplug.sh
 
 
 floating_maximum_size 1800 x 1200
