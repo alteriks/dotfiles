@@ -795,23 +795,23 @@ augroup END
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml let g:indentLine_enabled = 1
 " if $USER != 'root'
-" lua << EOF
-" require('lualine').setup {
-"   options = {theme = 'solarized_dark'}
-"   }
+lua << EOF
+require('lualine').setup {
+  options = {theme = 'solarized_dark'}
+  }
 
-" vim.opt.termguicolors = true
-" require("bufferline").setup{}
+vim.opt.termguicolors = true
+require("bufferline").setup{}
 
-"   require("todo-comments").setup {
-"     sign_priority = 99, -- sign priority
-"     -- your configuration comes here
-"     -- or leave it empty to use the default settings
-"     -- refer to the configuration section below
-"   }
-"   require'lspconfig'.yamlls.setup{
-"   cmd = { "/home/alteriks/.local/share/npm/bin/yaml-language-server", "--stdio" }
-"   }
-"   -- require'lspconfig'.pyls.setup{}
-" EOF
-" endif
+  require("todo-comments").setup {
+    sign_priority = 99, -- sign priority
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+  -- require'lspconfig'.yamlls.setup{
+  -- cmd = { "/home/alteriks/.local/share/npm/bin/yaml-language-server", "--stdio" }
+  -- }
+  -- require'lspconfig'.pyls.setup{}
+EOF
+endif
