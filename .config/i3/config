@@ -27,11 +27,9 @@ bindsym $mod+F4 kill
 bindsym Mod1+F4 kill
 
 # start launcher
-bindsym $mod+o           exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
 bindsym $mod+space       exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
-bindsym $mod+F2          exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
 bindsym $mod+Shift+space exec --no-startup-id "rofi -modi calc -show calc -width -50 -no-show-match -no-sort | xclip -in -sel primary > /dev/null"
-bindsym $mod+i exec --no-startup-id "networkmanager_dmenu"
+#bindsym $mod+i exec --no-startup-id "networkmanager_dmenu"
 
 # change focus
 focus_wrapping yes
@@ -176,17 +174,22 @@ bindsym --whole-window $mod+button2 floating toggle
 bindsym button9 move left
 bindsym button8 move right
 
+for_window [class="obsidian"] move to scratchpad, move position mouse
+bindsym $mod+o exec obsidian obsidian://open?vault=TODO; exec i3-msg '[class="obsidian"]' scratchpad show
+exec_always --no-startup-id obsidian obsidian://open?vault=TODO
+
+for_window [class="Typora"] move to scratchpad, move position mouse
+bindsym $mod+i exec ~/.config/i3/bin/launch_and_rename_windowname.sh typora; exec i3-msg '[class="Typora"]' scratchpad show
+exec_always --no-startup-id typora
+
 for_window [instance="scratchpad-vim"] move to scratchpad
-bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
+# bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
+bindsym $mod+t exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim; exec i3-msg '[instance="scratchpad-vim"]' scratchpad show
 exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim
 
-for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpad
+for_window [instance="scratchpad-notepad"] resize set 950 650, move to scratchpad
 bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; exec i3-msg '[instance="scratchpad-notepad"]' scratchpad show
-#exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim
-
-# for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpad
-# bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; [instance="scratchpad-notepad"] scratchpad show
-# #exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim
+exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim ~/tmp/notepad
 
 for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
 bindsym $mod+c [instance="gnome-calculator"] scratchpad show
@@ -203,12 +206,10 @@ exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh kee
 bindsym Mod1+ctrl+k [class="KeePassXC"] scratchpad show, move position mouse
 for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
 for_window [class="KeePassXC" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
-for_window [class="KeePassXC" window_type="dialog"] move scratchpad, scratchpad show, focus
-exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,scratchpad-keepassxc,,
-exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,KeePassXC,,,
-#bindsym Mod4+k [instance="scratchpad-keepassxc"] scratchpad show, move position mouse
-#for_window [class=".*"] move position center
-#for_window [class="KeePassXC"] sticky enable, border normal, focus, floating enable
+for_window [class="KeePassXC" window_type="dialog"] move scratchpad, scratchpad show, focus, move position mouse
+for_window [class="KeePassXC" title="Generate Password"] scratchpad show, focus, move position mouse
+exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,scratchpad-keepassxc,, True,,KeePassXC,,,
+
 exec_always --no-startup-id xrdb -merge ~/.config/X11/Xresources
 exec_always --no-startup-id setxkbmap -layout pl -option 'caps:escape' -option terminate:ctrl_alt_bksp -option kpdl:dot
 
@@ -232,14 +233,6 @@ workspace_layout default
 # Screen lock
 bindsym Ctrl+Mod1+l exec xset s activate
 
-# Media keys
-#bindsym XF86AudioPlay exec $i3config/musickeys.sh toggle
-#bindsym XF86AudioStop exec $i3config/musickeys.sh stop
-#bindsym XF86AudioNext exec $i3config/musickeys.sh next
-#bindsym XF86AudioPrev exec $i3config/musickeys.sh prev
-
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp   exec xbacklight -inc 5
 
 # Normal windows should use small borders, floating should have tab title
 default_border pixel 3
@@ -296,6 +289,14 @@ bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/bin/pavolume toggle # mu
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% #decrease sound volume
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+# Media keys
+#bindsym XF86AudioPlay exec $i3config/musickeys.sh toggle
+#bindsym XF86AudioStop exec $i3config/musickeys.sh stop
+#bindsym XF86AudioNext exec $i3config/musickeys.sh next
+#bindsym XF86AudioPrev exec $i3config/musickeys.sh prev
+
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp   exec xbacklight -inc 5
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle

@@ -353,7 +353,7 @@ let g:startify_unlisted_buffer = 1
 let g:startify_bookmarks = [
 \ { 'a': '~/.config/zsh/aliases' },
 \ { 'f': '~/.config/zsh/functions' },
-\ { 'i': '~/.config/i3/config##template'},
+\ { 'i': '~/.config/i3/config'},
 \ { 'n': '~/.config/nvim/init.vim' },
 \ { 'p': '~/.config/zsh/privyzsh' },
 \ { 't': '~/.config/tmux/tmux.conf##template' },
