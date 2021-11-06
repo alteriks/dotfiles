@@ -3,6 +3,7 @@ keepass-diff
 gcal
 git-completion
 mbuffer
+nerd-fonts-dejavu-complete
 nerd-fonts-noto-sans-mono
 nerd-fonts-terminus
 pacolog
@@ -43,9 +44,6 @@ paru-bin
 
 # dhcp client tester+spoofer
 dhtest
-
-
-nerd-fonts-dejavu-complete
 
 # i3 autotiling https://github.com/nwg-piotr/autotiling
 autotiling-git
