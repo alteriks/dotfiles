@@ -1,4 +1,4 @@
-keepass-diff:wq
+keepass-diff
 
 gcal
 git-completion
@@ -51,3 +51,7 @@ nerd-fonts-dejavu-complete
 autotiling-git
 
 yt-dlp
+
+# notes
+obsidian
+typora
