@@ -68,7 +68,7 @@ picom
 python-i3ipc
 redshift
 rofi
-termite
+# termite
 veracrypt
 xclip
 xdotool
