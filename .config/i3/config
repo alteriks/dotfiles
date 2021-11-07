@@ -19,6 +19,7 @@ floating_modifier $mod
 # start a terminal
 set $terminal kitty
 bindsym $mod+Return exec $terminal
+bindsym --release $mod+Shift+Return exec $terminal --class kitty-floating
 
 # kill focused window
 bindsym --release $mod+Shift+q exec xkill
