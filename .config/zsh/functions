@@ -38,7 +38,7 @@ filesizedistribution() {
 
 # https://stackoverflow.com/questions/6918057/shell-list-directories-ordered-by-file-count-including-in-subdirectories
 filecount() {
-  find . -type f | cut -d "/" -f 2 | sort | uniq -c | sort -N
+  find . -type f | cut -d "/" -f 2 | sort | uniq -c | sort -n
 }
 
 git() {
