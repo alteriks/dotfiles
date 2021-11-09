@@ -193,7 +193,7 @@ YADM() {
   echo -e "${GREEN}[+] YADM PULL${NC}"
   yadm pull;
   if [[ $EUID -ge 1000 ]]; then
-    yadm commit -am "auto-commit ${HOSTNAME}"
+    yadm commit --short -am "auto-commit ${HOSTNAME}"
     yadm push
   fi
 
@@ -201,7 +201,7 @@ YADM() {
   echo -e "${GREEN}[+] PRIVYADM PULL${NC}"
   yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git pull
   if [[ $EUID -ge 1000 ]]; then
-    yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git commit -am "auto-commit ${HOSTNAME}"
+    yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git commit --short -am "auto-commit ${HOSTNAME}"
     yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git push
   fi
 
@@ -209,7 +209,7 @@ YADM() {
     echo
       echo -e "${RED}[+] SYSYADM PULL${NC}"
       yadm --yadm-data /etc/yadm/ pull
-      yadm --yadm-data /etc/yadm/ commit -am "auto-commit ${HOSTNAME}"
+      yadm --yadm-data /etc/yadm/ commit --short -am "auto-commit ${HOSTNAME}"
       yadm --yadm-data /etc/yadm/ push
   fi
 
