@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
-include ~/.config/i3/`hostname`.conf
+set $HOSTNAME `hostname`
+include ~/.config/i3/$HOSTNAME.conf
 include ~/.config/i3/window.conf
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
@@ -18,8 +18,8 @@ floating_modifier $mod
 
 # start a terminal
 set $terminal kitty
-bindsym $mod+Return exec $terminal
-bindsym --release $mod+Shift+Return exec $terminal --class kitty-floating
+bindsym $mod+Return exec HOSTNAME=$HOSTNAME $terminal
+bindsym --release $mod+Shift+Return exec HOSTNAME=$HOSTNAME $terminal --class kitty-floating
 
 # kill focused window
 bindsym --release $mod+Shift+q exec xkill
@@ -266,7 +266,8 @@ assign [ class = "Zathura" ] workspace $workspace5
 # Start Applications
 bindsym Print exec --no-startup-id flameshot gui -p ~/tmp/
 bindsym $mod+p exec --no-startup-id flameshot gui -p ~/tmp/
-bindsym $mod+F3 exec nemo
+bindsym $mod+F2 exec nemo
+bindsym $mod+F3 exec  ~/.config/i3/bin/launch_nemo_F3.sh #doesn't work if menubar is hidden
 # bindsym $mod+F3 exec pcmanfm-qt
 #bindsym $mod+p exec --no-startup-id pkill picom; exec notify-send 'picom is DEAD'
 bindsym $mod+Ctrl+p exec --no-startup-id picom ; exec notify-send 'picom is ALIVE'
