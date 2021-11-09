@@ -190,26 +190,35 @@ YADM() {
   NC='\033[0m' # No Color
 
   echo
-  echo -e "${GREEN}[+] YADM PULL${NC}"
+  echo -e "${GREEN}[+] YADM${NC}"
+  echo -n "Pull: "
   yadm pull;
   if [[ $EUID -ge 1000 ]]; then
+    echo -n "Commit: "
     yadm commit --short -am "auto-commit ${HOSTNAME}"
+    echo -ne "\nPush: "
     yadm push
   fi
 
   echo
-  echo -e "${GREEN}[+] PRIVYADM PULL${NC}"
+  echo -e "${GREEN}[+] PRIVYADM${NC}"
+  echo -n "Pull: "
   yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git pull
   if [[ $EUID -ge 1000 ]]; then
+    echo -n "Commit: "
     yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git commit --short -am "auto-commit ${HOSTNAME}"
+    echo -ne "\nPush: "
     yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git push
   fi
 
   if [[ $EUID -eq 0 ]]; then
     echo
-      echo -e "${RED}[+] SYSYADM PULL${NC}"
+      echo -e "${RED}[+] SYSYADM${NC}"
+      echo -n "Pull: "
       yadm --yadm-data /etc/yadm/ pull
+      echo -n "Commit: "
       yadm --yadm-data /etc/yadm/ commit --short -am "auto-commit ${HOSTNAME}"
+      echo -ne "\nPush: "
       yadm --yadm-data /etc/yadm/ push
   fi
 
@@ -224,6 +233,7 @@ YADM() {
 
   AUR_NOT_INSTALLED=$(cat ~/bin/yadm/arch/aur/{all,*${HOSTNAME}*} | egrep -v $META | eval $STRIP |  pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
   if [[ -n $AUR_NOT_INSTALLED ]]; then
+    echo
     echo -e "${RED}[+] MISSING AUR PACKAGES${NC}"
     echo $AUR_NOT_INSTALLED
   fi
