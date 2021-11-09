@@ -218,7 +218,13 @@ YADM() {
   META="base-devel|xorg-apps"
   PACMAN_NOT_INSTALLED=$(cat ~/bin/yadm/arch/pacman/{all,*${HOSTNAME}*} | egrep -v $META | eval $STRIP |  pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
   if [[ -n $PACMAN_NOT_INSTALLED ]]; then
-    echo -e "${RED}[+] INSTALL FOLLOWING PACKAGES${NC}"
+    echo -e "${RED}[+] MISSING PACMAN PACKAGES${NC}"
     echo $PACMAN_NOT_INSTALLED
+  fi
+
+  AUR_NOT_INSTALLED=$(cat ~/bin/yadm/arch/aur/{all,*${HOSTNAME}*} | egrep -v $META | eval $STRIP |  pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
+  if [[ -n $AUR_NOT_INSTALLED ]]; then
+    echo -e "${RED}[+] MISSING AUR PACKAGES${NC}"
+    echo $AUR_NOT_INSTALLED
   fi
 }
