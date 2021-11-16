@@ -39,15 +39,15 @@ if [[ -e /bin/zsh && "/bin/zsh" =~ "$DEFAULT_SHELL" ]]; then
   echo ""
 fi
 
-if [[ $CLASS != other ]]; then
-  echo -e "${GREEN}Mkdir${NC}"
-  mkdir -p $HOME/git
-  mkdir -p $HOME/tmp
+echo -e "${GREEN}Mkdir${NC}"
+mkdir -p $HOME/git
+mkdir -p $HOME/tmp
 
-  source ~/.profile
-  mkdir -p "$XDG_CACHE_HOME"/zsh
-  mkdir -p "$XDG_DATA_HOME"/zsh
-  mkdir -p "$XDG_CACHE_HOME"/nvim
+source ~/.profile
+mkdir -p "$XDG_CACHE_HOME"/zsh
+mkdir -p "$XDG_DATA_HOME"/zsh
+mkdir -p "$XDG_CACHE_HOME"/nvim
+if [[ $CLASS != other ]]; then
   mkdir -p "$XDG_DATA_HOME"/wineprefixes
 fi
 
