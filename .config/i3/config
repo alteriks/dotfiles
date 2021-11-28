@@ -120,6 +120,9 @@ bindsym $mod+Ctrl+8 move container to workspace $workspace8
 bindsym $mod+Ctrl+9 move container to workspace $workspace9
 bindsym $mod+Ctrl+0 move container to workspace $workspace10
 
+bindsym --whole-window $mod+button4 move container to workspace next; workspace next
+bindsym --whole-window $mod+button5 move container to workspace prev; workspace prev
+
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $workspace1; workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2; workspace $workspace2
@@ -170,10 +173,6 @@ disable_randr15 yes
 # The middle button toggles floating
 bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
-
-# The side buttons move the window around
-bindsym button9 move left
-bindsym button8 move right
 
 for_window [class="obsidian" title="TODO"] move to scratchpad, move position mouse
 bindsym $mod+o exec obsidian obsidian://open?vault=TODO; exec i3-msg '[class="obsidian"] [title="TODO"]' scratchpad show
