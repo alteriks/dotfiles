@@ -1,4 +1,6 @@
 #archlinux specific
+: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/zim}
+
 setopt NO_GLOBAL_RCS
 
 #ZSH according to XDG

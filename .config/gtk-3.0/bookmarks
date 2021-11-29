@@ -6,5 +6,6 @@ file:///home/alteriks/memo/rpi rpi
 file:///home/datastore/Moto/Jeep Jeep
 file:///home/alteriks/Downloads/RPi%20Pico RPi Pico
 sftp://moar/home/alteriks moar
+sftp://hal/home hal
 sftp://nebula/home nebula
 smb://192.168.131.167/users/hachiko/Downloads hachiko

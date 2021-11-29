@@ -1,208 +1,142 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-    if [[ -r "$P10K_CACHE_PROMPT=${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-      source "$P10K_CACHE_PROMPT=${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-    fi
+# Start configuration added by Zim install {{{
+#
+# User configuration sourced by interactive shells
+#
+: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/zim}
 
-export HOSTNAME=$(hostname)
+# -----------------
+# Zsh configuration
+# -----------------
 
-# https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
-ZLE_RPROMPT_INDENT=0
+#
+# History
+#
 
-source ${XDG_CONFIG_HOME}/zsh/aliases
-source ${XDG_CONFIG_HOME}/zsh/functions
-if [[ -e ${XDG_CONFIG_HOME}/zsh/privyzsh ]]; then
-  source ${XDG_CONFIG_HOME}/zsh/privyzsh
-fi
+# Remove older command from the history if a duplicate is to be added.
+setopt HIST_IGNORE_ALL_DUPS
 
-# https://github.com/zfsonlinux/grub/issues/5#issuecomment-325221448
-export ZPOOL_VDEV_NAME_PATH=YES
+#
+# Input/output
+#
 
-export LSB_RELEASE=$(lsb_release -is)
-if [[ "${LSB_RELEASE}" == 'ManjaroLinux' || "${LSB_RELEASE}" == 'ArchLinux' ]]; then
-  source ~/.config/zsh/archlinux
-elif [[ "${LSB_RELEASE}" == 'Ubuntu' ]]; then
-  source ~/.config/zsh/ubuntu
-fi
-# Disable globbing for URL arguments
-# https://superuser.com/questions/982110/how-can-i-disable-globbing-for-url-arguments-in-zsh
-# maybe function? 'noglob youtube-dl url?foo=bar' OR https://superuser.com/questions/649635/zsh-says-no-matches-found-when-trying-to-download-video-with-youtube-dl/1237124#1237124
-setopt NO_NOMATCH
+# Set editor default keymap to emacs (`-e`) or vi (`-v`)
+# bindkey -e
 
-#Disable Ctrl-S and Ctrl-Q on terminal, only on interactive shells
-if [[ -t 0 && $- = *i* ]]
-then
-  stty stop ''
-  stty start ''
-  stty -ixon
-  stty -ixoff
-fi
+# Prompt for spelling correction of commands.
+#setopt CORRECT
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.config/ohmyzsh
+# Customize spelling correction prompt.
+#SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 
-ZSH_CUSTOM=${ZSH}_custom
-#ZSH_THEME="alteriks"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Remove path separator from WORDCHARS.
+WORDCHARS=${WORDCHARS//[\/]}
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# -----------------
+# Zim configuration
+# -----------------
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Use degit instead of git as the default tool to install and update modules.
+#zstyle ':zim:zmodule' use 'degit'
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="false"
+# --------------------
+# Module configuration
+# --------------------
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+#
+# completion
+#
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+# Set a custom path for the completion dump file.
+# If none is provided, the default ${ZDOTDIR:-${HOME}}/.zcompdump is used.
+#zstyle ':zim:completion' dumpfile "${ZDOTDIR:-${HOME}}/.zcompdump-${ZSH_VERSION}"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd.mm.yyyy"
+#
+# git
+#
 
-ZSH_TMUX_FIXTERM_WITH_256COLOR="screen-256color"
+# Set a custom prefix for the generated aliases. The default prefix is 'G'.
+#zstyle ':zim:git' aliases-prefix 'g'
 
-plugins=(dircycle git git-prompt history-substring-search safe-paste systemd web-search)
+#
+# input
+#
 
-DEFAULT_USER="alteriks"
-#if [[ $UID -eq 1001 || $UID -eq 1000 ]]; then
-ZSH_TMUX_AUTOSTART=false
-ZSH_TMUX_AUTOQUIT=false
-#fi
-HIST_IGNORE_SPACE=0
+# Append `../` to your input for each `.` you type after an initial `..`
+#zstyle ':zim:input' double-dot-expand yes
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sdm:$PATH
+#
+# termtitle
+#
 
-source $ZSH/oh-my-zsh.sh
+# Set a custom terminal title format using prompt expansion escape sequences.
+# See http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
+# If none is provided, the default '%n@%m: %~' is used.
+#zstyle ':zim:termtitle' format '%1~'
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+#
+# zsh-autosuggestions
+#
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# Customize the style that the suggestions are shown with.
+# See https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#suggestion-highlight-style
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 
-bindkey "[[1;5D" backward-word
-bindkey "[[1;5C" forward-word
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-#for tmux
-bindkey "\e[1~" beginning-of-line
-bindkey "\e[4~" end-of-line
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
-bindkey "^[OD" backward-word
-bindkey "^[OC" forward-word
+#
+# zsh-syntax-highlighting
+#
 
-#Most servers don't know about terminal specifics (terminfo) TERM=xterm-kitty or TERM=tmux-256color
-#It' easier to change it for ssh than copy all terminfo (tic)
-#https://github.com/alacritty/alacritty/issues/1208#issuecomment-376697989
-alias ssh='TERM=xterm-256color \ssh'
+# Set what highlighters will be used.
+# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
-#TODO: bin/ssh_tmux_rename_window_test.sh
-if [[ -n $TMUX ]]; then
-  panewrap () {
-    SHELL_CMD=$1
-    if [[ "$SHELL_CMD" =~ ^ssh\  ]]; then
-      #echo ZZZZZ $SHELL_CMD
-      SHELL_CMD=$( echo $SHELL_CMD | sed 's/^ssh//' | egrep -o '\w+(\.(\w|\.)+)?')
-      #echo BBBBBB $SHELL_CMD
-    else
-      SHELL_CMD=${SHELL_CMD/ */}
-    fi
+# Customize the main highlighter styles.
+# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md#how-to-tweak-it
+#typeset -A ZSH_HIGHLIGHT_STYLES
+#ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
-    TMUX_LIST_PANES=$(tmux list-panes -t . -F '#T')
-    printf "\033]2;%s\033\\" "${SHELL_CMD}";
-    # awk #1 replaces newline with ＋, awk #2 strips last ＋
-    tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | awk -vRS="\n" -vORS=" ＋ " '1' | awk -F '＋ $' '{print $1}')"
-    #tmux rename-window -t . "$(tmux list-panes -t . -F '#T' | tr '\n' '＋')";
-  }
-  # don't show  frequent cmd: ls|cd|which
-  preexec_functions+=( panewrap )
-fi
+# ------------------
+# Initialize modules
+# ------------------
 
-#https://github.com/rupa/z
-if [[ -e ~/bin/z.sh ]];then
-  source ~/bin/z.sh
-elif [[ -e /usr/share/z/z.sh ]];then
-  source /usr/share/z/z.sh
-fi
-
-# ZSH VIM MODE
-if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
-  source ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh;
-  export KEYTIMEOUT=15
-  export MODE_CURSOR_VIINS="#ffffff blinking bar"
-  export MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
-  export MODE_CURSOR_VICMD="#bf00ff block"
-  export MODE_CURSOR_SEARCH="#ff00ff steady underline"
-  export MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady bar"
-  export MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
-fi
-
-# FZF managed by vimplug
-# Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic
-setopt no_share_history
-setopt INC_APPEND_HISTORY_TIME
-export HISTFILE=$XDG_DATA_HOME/zsh/history_$HOSTNAME
-if [[ -d /usr/share/fzf/ ]];then
-  source /usr/share/fzf/key-bindings.zsh
-  source /usr/share/fzf/completion.zsh
-  alias fzfp=fzf --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'
-  #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
-  export FZF_COMPLETION_TRIGGER=''
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
-  bindkey '^T' fzf-completion
-  bindkey '^I' $fzf_default_completion
-fi
-
-# broot --install
-if [[ -e $HOME/.config/broot/launcher/bash/br ]]; then
-  source $HOME/.config/broot/launcher/bash/br
-fi
-
-if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-  ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-  typeset -A ZSH_HIGHLIGHT_STYLES # In case it doesn't exist above.
-ZSH_HIGHLIGHT_STYLES=()
-  ZSH_HIGHLIGHT_STYLES[comment]='none'
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-  # https://github.com/zsh-users/zsh-syntax-highlighting/issues/295
-  # Remove sloowness when using with ohmyzsh
-  zstyle ':bracketed-paste-magic' active-widgets '.self-*'
-fi
-
-# smartcase tab completion
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
-
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-
-# TODO:
-# rg 'word1|word2|wordN'
-# if file matches loop over and match words
-function rgsearch() { rg -C 5 $1 |rg $2 }
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-# Display simple prompt if connection ssh connection is established
-# Can be overriden with setting $P10K_CUSTOM=yes when connecting. This needs .ssh/config `SetEnv P10K_CUSTOM=yes` and /etc/ssh/sshd_config `AcceptEnv LANG LC_* P10K_CUSTOM` set
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
-  if [[ $P10K_CUSTOM == 'yes' ]]; then
-    [[ ! -f ~/.config/zsh/.p10k.zsh_custom ]] || source ~/.config/zsh/.p10k.zsh_custom
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  # Download zimfw script if missing.
+  command mkdir -p ${ZIM_HOME}
+  if (( ${+commands[curl]} )); then
+    command curl -fsSL -o ${ZIM_HOME}/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   else
-    [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+    command wget -nv -O ${ZIM_HOME}/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   fi
-else
-  source ~/.config/zsh/.p10k.zsh_custom
 fi
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+source ${ZIM_HOME}/init.zsh
+
+# ------------------------------
+# Post-init module configuration
+# ------------------------------
+
+#
+# zsh-history-substring-search
+#
+
+
+# Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Bind up and down keys
+zmodload -F zsh/terminfo +p:terminfo
+if [[ -n ${terminfo[kcuu1]} && -n ${terminfo[kcud1]} ]]; then
+  bindkey ${terminfo[kcuu1]} history-substring-search-up
+  bindkey ${terminfo[kcud1]} history-substring-search-down
+fi
+
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+# }}} End configuration added by Zim install
+
+source ~/.config/zsh/.zshrc_generic

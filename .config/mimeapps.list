@@ -16,7 +16,7 @@ x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/rdp=org.remmina.Remmina.desktop
 x-scheme-handler/remmina=org.remmina.Remmina.desktop
 x-scheme-handler/spice=org.remmina.Remmina.desktop
-x-scheme-handler/tg=telegramdesktop.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-7N76C1.desktop
 x-scheme-handler/unknown=vivaldi-stable.desktop
 x-scheme-handler/vnc=org.remmina.Remmina.desktop
 x-scheme-handler/webcal=vivaldi-stable.desktop
@@ -24,6 +24,7 @@ x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 application/json=nvim.desktop
 image/gif=org.nomacs.ImageLounge.desktop
 text/x-nfo=org.xfce.mousepad.desktop
+image/webp=mpv.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
@@ -50,6 +51,8 @@ application/x-ms-dos-executable=wine.desktop;
 application/json=nvim.desktop;
 image/gif=org.nomacs.ImageLounge.desktop;
 text/x-nfo=org.xfce.mousepad.desktop;
+image/webp=mpv.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-7N76C1.desktop;
 
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;
