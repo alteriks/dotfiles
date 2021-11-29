@@ -31,12 +31,16 @@ echo -e "${GREEN}[+] yadm class:${NC}" $(yadm config local.class)
 echo ""
 
 DEFAULT_SHELL=$(grep $(id -un) /etc/passwd | awk -F: {'print $7'} )
-if [[ -e /bin/zsh && "/bin/zsh" !~ "$DEFAULT_SHELL" ]]; then
-  echo
-  echo -e "${GREEN}[+] Change shell${NC}"
-  echo
-  chsh -s /bin/zsh
-  echo ""
+if [[ -e /bin/zsh ]]; then
+  if [[ "/bin/zsh" =~ "$DEFAULT_SHELL" ]]; then
+    true
+  else
+    echo
+    echo -e "${GREEN}[+] Change shell${NC}"
+    echo
+    chsh -s /bin/zsh
+    echo ""
+  fi
 fi
 
 echo -e "${GREEN}Mkdir${NC}"
