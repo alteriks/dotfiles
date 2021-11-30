@@ -16,7 +16,6 @@ patchutils
 pkg-config
 pkgfile
 python-pip
-shellcheck
 yamllint
 
 # FONTS

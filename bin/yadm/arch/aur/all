@@ -11,6 +11,7 @@ protonvpn-cli-ng
 ripgrep-all
 safeeyes
 sanoid
+shellcheck-bin ## haskell hell updates
 spotify
 spectre-meltdown-checker
 todotxt-machine-git
