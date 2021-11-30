@@ -46,7 +46,7 @@
     </folder>
     <folder id="ihmt7-cwvfp" label="Dropbox" path="/home/alteriks/Dropbox" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL" introducedBy="">
+        <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
@@ -91,10 +91,10 @@
         <device id="LM72WO6-PIPIO2X-E3SIQ4L-QAYLJAA-WF7VAT4-I47AOLB-JNIY75H-SW47YQP" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL" introducedBy="">
+        <device id="MYQQEAR-DVB6W6X-REEJOYM-ASMR7HF-SOTHFZX-72RQ3OR-PEDJEW7-P6JC5QJ" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="MYQQEAR-DVB6W6X-REEJOYM-ASMR7HF-SOTHFZX-72RQ3OR-PEDJEW7-P6JC5QJ" introducedBy="">
+        <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
@@ -136,6 +136,9 @@
     </folder>
     <folder id="qcmiu-qrkyy" label="Vagrant" path="/home/alteriks/Vagrant" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
+        <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -175,7 +178,7 @@
     </folder>
     <folder id="qliwb-d2tgt" label="zsh_history" path="/home/alteriks/.local/share/zsh" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL" introducedBy="">
+        <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
@@ -217,7 +220,7 @@
     </folder>
     <folder id="rqgmm-vbhmr" label="git" path="/home/alteriks/git" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL" introducedBy="">
+        <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
@@ -259,6 +262,9 @@
     </folder>
     <folder id="t4chs-5gwwb" label="Downloads" path="/home/alteriks/Downloads" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
+        <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -394,17 +400,17 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL" name="nebula" compression="metadata" introducer="true" skipIntroductionRemovals="false" introducedBy="">
+    <device id="MYQQEAR-DVB6W6X-REEJOYM-ASMR7HF-SOTHFZX-72RQ3OR-PEDJEW7-P6JC5QJ" name="iphoneXS" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
-        <autoAcceptFolders>true</autoAcceptFolders>
+        <autoAcceptFolders>false</autoAcceptFolders>
         <maxSendKbps>0</maxSendKbps>
         <maxRecvKbps>0</maxRecvKbps>
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="MYQQEAR-DVB6W6X-REEJOYM-ASMR7HF-SOTHFZX-72RQ3OR-PEDJEW7-P6JC5QJ" name="iphoneXS" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+    <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" name="nebula" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
