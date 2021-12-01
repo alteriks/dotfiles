@@ -123,11 +123,19 @@ if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
   export MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
 fi
 
-# FZF managed by vimplug
-# Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic
+#
+# History
+#
+# Remove older command from the history if a duplicate is to be added.
+setopt HIST_IGNORE_ALL_DUPS
+export HISTSIZE=20000
 setopt no_share_history
 setopt INC_APPEND_HISTORY_TIME
 export HISTFILE=$XDG_DATA_HOME/zsh/history_$HOSTNAME
+h () {  fc -Dlim "*$@*" 1 }
+
+# FZF managed by vimplug
+# Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic
 if [[ -d /usr/share/fzf/ ]];then
   source /usr/share/fzf/key-bindings.zsh
   source /usr/share/fzf/completion.zsh
