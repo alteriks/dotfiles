@@ -189,14 +189,17 @@ YADM() {
   GREEN='\033[0;32m'
   NC='\033[0m' # No Color
 
+  if [[ $EUID -ge 1000 ]]; then
+    echo
+    echo -n "Commit: "
+    yadm commit --short
+    yadm commit -qam "auto-commit ${HOSTNAME}"
+  fi
   echo
   echo -e "${GREEN}[+] YADM${NC}"
   echo -n "Pull: "
   yadm pull;
   if [[ $EUID -ge 1000 ]]; then
-    echo -n "Commit: "
-    yadm commit --short
-    yadm commit -qam "auto-commit ${HOSTNAME}"
     echo -ne "\nPush: "
     yadm push
   fi
