@@ -191,7 +191,7 @@ YADM() {
 
   yadm_f() {
     if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]]; then
-      YADM_DIFF=$( yadm diff --name-status )
+      YADM_DIFF=$( yadm diff --yadm-data $YADM_DATA --name-status )
       if [ -n "$YADM_DIFF" ]; then
         echo -e "\nCommit: "
         echo $YADM_DIFF
@@ -239,18 +239,6 @@ YADM() {
       esac
 
   done
-
-  # if [[ $EUID -eq 0 ]]; then
-  #   echo
-  #     echo -e "${RED}[+] SYSYADM${NC}"
-  #     echo -n "Pull: "
-  #     yadm --yadm-data /etc/yadm/ pull
-  #     echo -n "Commit: "
-  #     yadm --yadm-data /etc/yadm/ diff --name-status
-  #     yadm --yadm-data /etc/yadm/ commit -qam "auto-commit ${HOSTNAME}"
-  #     echo -ne "\nPush: "
-  #     yadm --yadm-data /etc/yadm/ push
-  # fi
 
   echo
   source ~/bin/yadm/arch/functions

@@ -5,7 +5,7 @@
 # yadm 3.1  GIT_DIR=~/.local/share/yadm/repo.git
 # printf '%s\n%s' "3" "$YADM_VERSION" | sort -VC && YADM_DIR=~/.local/share/yadm/repo.git || YADM_DIR=~/.config/yadm/repo.git
 
-echo "!!! $YADM_HOOK_REPO !!! $YADM_HOOK_WORK !!!"
+# echo "!!! $YADM_HOOK_REPO !!! $YADM_HOOK_WORK !!!"
 if [ "$YADM_HOOK_REPO" == "$XDG_DATA_HOME/yadm/repo.git" ] && [ "$YADM_HOOK_WORK" == "$HOME" ]; then
   YADM_REPO_NAME="yadm"
 elif [ "$YADM_HOOK_REPO" == "$XDG_DATA_HOME/yadm/priv.git/repo.git" ] && [ "$YADM_HOOK_WORK" == "$HOME" ]; then
