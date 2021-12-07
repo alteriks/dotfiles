@@ -158,8 +158,8 @@
 .config/yadm	d	0755
 .config/yadm/bootstrap	f	0755
 .config/yadm/hooks	d	0755
-.config/yadm/hooks/post-pull	f	0755
-.config/yadm/hooks/pre-commit	f	0755
+.config/yadm/hooks/post_pull	f	0755
+.config/yadm/hooks/pre_commit	f	0755
 .config/yamllint	d	0755
 .config/yamllint/config	f	0644
 .config/yay	d	0755
@@ -182,6 +182,7 @@
 .config/zsh/zshrc	l	0664
 .github	d	0755
 .github/README.md	f	0644
+.github/git_store_meta	f	0644
 .github/hooks	d	0755
 .github/hooks/env	f	0644
 .github/hooks/post-checkout	f	0755
@@ -282,6 +283,7 @@ bin/yadm/debian/root_post.sh	f	0755
 bin/yadm/debian/root_pre.sh	f	0755
 bin/yadm/debian/user.sh	f	0755
 bin/yadm_test	f	0700
+bin/yadm_test2	f	0400
 bin/z.sh	f	0755
 bin/zfs-most-recent-snapshot.sh	f	0755
 bin/zfs-prune-snapshots	f	0755
