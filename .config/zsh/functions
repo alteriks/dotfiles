@@ -191,7 +191,7 @@ YADM() {
 
   if [[ $EUID -ge 1000 ]]; then
     echo
-    echo -ne "\nCommit: "
+    echo -e "\nCommit: "
     yadm diff --name-status
     yadm commit -qam "auto-commit ${HOSTNAME}"
   fi
