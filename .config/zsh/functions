@@ -202,6 +202,7 @@ YADM() {
     # Always pull
     echo
     echo -n "Pull: "
+    echo yadm $YADM_PARAMS pull;
     yadm $YADM_PARAMS pull;
 
     if [[ $EUID -ge 1000 ]]; then
