@@ -240,17 +240,17 @@ YADM() {
 
   done
 
-  if [[ $EUID -eq 0 ]]; then
-    echo
-      echo -e "${RED}[+] SYSYADM${NC}"
-      echo -n "Pull: "
-      yadm --yadm-data /etc/yadm/ pull
-      echo -n "Commit: "
-      yadm --yadm-data /etc/yadm/ diff --name-status
-      yadm --yadm-data /etc/yadm/ commit -qam "auto-commit ${HOSTNAME}"
-      echo -ne "\nPush: "
-      yadm --yadm-data /etc/yadm/ push
-  fi
+  # if [[ $EUID -eq 0 ]]; then
+  #   echo
+  #     echo -e "${RED}[+] SYSYADM${NC}"
+  #     echo -n "Pull: "
+  #     yadm --yadm-data /etc/yadm/ pull
+  #     echo -n "Commit: "
+  #     yadm --yadm-data /etc/yadm/ diff --name-status
+  #     yadm --yadm-data /etc/yadm/ commit -qam "auto-commit ${HOSTNAME}"
+  #     echo -ne "\nPush: "
+  #     yadm --yadm-data /etc/yadm/ push
+  # fi
 
   echo
   source ~/bin/yadm/arch/functions
