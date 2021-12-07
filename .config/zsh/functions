@@ -190,7 +190,12 @@ YADM() {
   NC='\033[0m' # No Color
 
   yadm_f() {
-    if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]]; then
+    if  [[ $EUID -ge 1000 ]] && [[ $1 == hammer ]]; then
+      continue
+    elsif [[ $EUID -eq 0 ]] && [[ $1 == hammer ]]
+      echo -e "${RED}[+] SYSYADM${NC}"
+    fi
+    if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]] && [[ $EUID -eq 0 ]]; then
       YADM_STATUS=$( yadm status --yadm-data $YADM_DATA --short )
       if [ -n "$YADM_STATUS" ]; then
         echo -e "\nCommit: "
@@ -205,7 +210,7 @@ YADM() {
     yadm --yadm-data $YADM_DATA pull;
 
     # if [[ $EUID -ge 1000 ]]; then
-    if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]]; then
+    if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]] && [[ $EUID -eq 0 ]]; then
       if [ -n "$YADM_STATUS" ]; then
         echo -ne "\nPush: "
         yadm --yadm-data $YADM_DATA push
@@ -232,7 +237,6 @@ YADM() {
 
       sysyadm)
         echo
-        echo -e "${RED}[+] SYSYADM${NC}"
         YADM_DATA=/etc/yadm
         yadm_f hammer
         ;;
