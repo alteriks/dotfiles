@@ -7,7 +7,6 @@ GIT_STORE_META=~/.github/git_store_meta
 # yadm 3.1  GIT_DIR=~/.local/share/yadm/repo.git
 # printf '%s\n%s' "3" "$YADM_VERSION" | sort -VC && YADM_DIR=~/.local/share/yadm/repo.git || YADM_DIR=~/.config/yadm/repo.git
 
-GIT_DIR=$YADM_DIR GIT_WORK_TREE=~/ ~/bin/git-store-meta.pl -t $GIT_STORE_META --store
 GIT_DIR=$YADM_HOOK_REPO \
   GIT_WORK_TREE=$YADM_HOOK_WORK \
   ~/bin/git-store-meta.pl \
