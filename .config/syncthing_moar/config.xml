@@ -380,6 +380,45 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
+    <folder id="zn3ip-h4cwh" label="Projects_Roche_Docs-win" path="/home/alteriks/Projects/Roche/Documents-win" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="T7NQM2L-CAXCR66-UK4Y5TZ-3YYJXX7-OGN3CBJ-3LULKHE-27JMZIW-D4DJBQE" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
     <device id="LBENTBY-JVYSMGA-HJBNY6Y-5VD5VF4-OCXTQEL-ZOA7NW5-TWOATNX-AMSUYQI" name="acs-ubu02" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL">
         <address>dynamic</address>
         <paused>false</paused>
@@ -411,6 +450,16 @@
         <remoteGUIPort>0</remoteGUIPort>
     </device>
     <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" name="nebula" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+        <untrusted>false</untrusted>
+        <remoteGUIPort>0</remoteGUIPort>
+    </device>
+    <device id="T7NQM2L-CAXCR66-UK4Y5TZ-3YYJXX7-OGN3CBJ-3LULKHE-27JMZIW-D4DJBQE" name="rwin" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
