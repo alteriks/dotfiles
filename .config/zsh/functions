@@ -191,10 +191,10 @@ YADM() {
 
   yadm_f() {
     if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]]; then
-      YADM_DIFF=$( yadm diff --yadm-data $YADM_DATA --name-status )
-      if [ -n "$YADM_DIFF" ]; then
+      YADM_STATUS=$( yadm status --yadm-data $YADM_DATA --short )
+      if [ -n "$YADM_STATUS" ]; then
         echo -e "\nCommit: "
-        echo $YADM_DIFF
+        echo $YADM_STATUS
         yadm --yadm-data $YADM_DATA commit -qam "auto-commit ${HOSTNAME}"
       fi
     fi
@@ -206,7 +206,7 @@ YADM() {
 
     # if [[ $EUID -ge 1000 ]]; then
     if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]]; then
-      if [ -n "$YADM_DIFF" ]; then
+      if [ -n "$YADM_STATUS" ]; then
         echo -ne "\nPush: "
         yadm --yadm-data $YADM_DATA push
       fi
