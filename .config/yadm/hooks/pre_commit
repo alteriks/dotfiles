@@ -1,14 +1,9 @@
 #!/bin/sh
 
-# YADM_VERSION=$( yadm --version | sed 's/[^0-9.]//g' )
-GIT_STORE_META=~/.github/git_store_meta
-
-# yadm 2.25 GIT_DIR=~/.config/yadm/repo.git
-# yadm 3.1  GIT_DIR=~/.local/share/yadm/repo.git
-# printf '%s\n%s' "3" "$YADM_VERSION" | sort -VC && YADM_DIR=~/.local/share/yadm/repo.git || YADM_DIR=~/.config/yadm/repo.git
+. ~/.config/yadm/hooks/common
 
 GIT_DIR=$YADM_HOOK_REPO \
   GIT_WORK_TREE=$YADM_HOOK_WORK \
   ~/bin/git-store-meta.pl \
-  -t ~/.github/git_store_meta \
+  -t $GIT_STORE_META \
   --store | egrep -v '^fields:|^flags:'

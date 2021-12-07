@@ -1,4 +1,0 @@
-# TODO: gitconfig?
-GIT_DIR=~/.local/share/yadm/repo.git
-GIT_WORK_TREE=~/
-GIT_STORE_META="~/.github/git_store_meta"
