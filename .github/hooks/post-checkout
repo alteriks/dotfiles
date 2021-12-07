@@ -9,6 +9,7 @@ sha_new=$2
 change_br=$3
 
 # apply metadata only when HEAD is changed
+#TODO: use ~/.github/hooks/env
 if [ ${sha_new} != ${sha_old} ]; then
     "$script" --apply -t ~/.github/git_store_meta
 fi
