@@ -1,6 +1,9 @@
 #!/bin/sh
 # when running the hook, cwd is the top level of working tree
 
+GIT_STORE_META="~/.github/git_store_meta"
+
+
 script=$(dirname "$0")/'git-store-meta.pl'
 [ ! -x "$script" ] && script='git-store-meta.pl'
 
@@ -8,7 +11,7 @@ is_squash=$1
 
 # apply metadata after a successful non-squash merge
 if [ $is_squash -eq 0 ]; then
-    "$script" --apply
+    "$script" --apply -t $GIT_STORE_META
 f#!/bin/sh
 # when running the hook, cwd is the top level of working tree
 
@@ -19,5 +22,5 @@ is_squash=$1
 
 # apply metadata after a successful non-squash merge
 if [ $is_squash -eq 0 ]; then
-    "$script" --apply
+    "$script" --apply -t $GIT_STORE_META
 fi
