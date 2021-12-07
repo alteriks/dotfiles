@@ -195,7 +195,7 @@ YADM() {
       if [ -n "$YADM_DIFF" ]; then
         echo -e "\nCommit: "
         echo $YADM_DIFF
-        yadm ${YADM_PARAMS} commit -qam "auto-commit ${HOSTNAME}"
+        yadm $YADM_PARAMS commit -qam "auto-commit ${HOSTNAME}"
       fi
     fi
 
@@ -222,7 +222,7 @@ YADM() {
 
       privyadm)
         echo -e "${GREEN}[+] PRIVYADM${NC}"
-        YADM_PARAMS='--yadm-data $XDG_DATA_HOME/yadm/priv.git/'
+        YADM_PARAMS=--yadm-data $XDG_DATA_HOME/yadm/priv.git/
         yadm_f
         ;;
 
