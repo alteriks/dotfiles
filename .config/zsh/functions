@@ -233,7 +233,7 @@ YADM() {
       sysyadm)
         echo
         echo -e "${RED}[+] SYSYADM${NC}"
-        YADM_DATA=--yadm-data /etc/yadm
+        YADM_DATA=/etc/yadm
         yadm_f hammer
         ;;
       esac
