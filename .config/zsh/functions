@@ -195,20 +195,19 @@ YADM() {
       if [ -n "$YADM_DIFF" ]; then
         echo -e "\nCommit: "
         echo $YADM_DIFF
-        yadm $YADM_PARAMS commit -qam "auto-commit ${HOSTNAME}"
+        yadm --yadm-data $YADM_DATA commit -qam "auto-commit ${HOSTNAME}"
       fi
     fi
 
     # Always pull
     echo
     echo -n "Pull: "
-    echo yadm $YADM_PARAMS pull;
-    yadm $YADM_PARAMS pull;
+    yadm --yadm-data $YADM_DATA pull;
 
     if [[ $EUID -ge 1000 ]]; then
       if [ -n "$YADM_DIFF" ]; then
         echo -ne "\nPush: "
-        yadm $YADM_PARAMS push
+        yadm --yadm-data $YADM_DATA push
       fi
     fi
   }
@@ -217,21 +216,21 @@ YADM() {
     case $YADM_REPO in
       yadm)
         echo -e "${GREEN}[+] YADM${NC}"
-        YADM_PARAMS=--yadm-data $XDG_DATA_HOME/yadm/repo.git/
-        echo "!!! $YADM_PARAMS !!!"
+        YADM_DATA=$XDG_DATA_HOME/yadm
+        echo "!!! $YADM_DATA !!!"
         yadm_f
         ;;
 
       privyadm)
         echo -e "${GREEN}[+] PRIVYADM${NC}"
-        YADM_PARAMS=--yadm-data $XDG_DATA_HOME/yadm/priv.git
-        echo "$YADM_PARAMS"
+        YADM_DATA=$XDG_DATA_HOME/yadm/priv.git
+        echo "$YADM_DATA"
         yadm_f
         ;;
 
       # sysyadm)
       #   echo -e "${RED}[+] SYSYADM${NC}"
-      #   YADM_PARAMS="--yadm-data /etc/yadm/"
+      #   YADM_DATA="--yadm-data /etc/yadm/"
       #   ;;
       esac
 
