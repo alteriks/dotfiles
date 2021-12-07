@@ -10,5 +10,5 @@ change_br=$3
 
 # apply metadata only when HEAD is changed
 if [ ${sha_new} != ${sha_old} ]; then
-    "$script" --apply
+    "$script" --apply -t ~/.github/git_store_meta
 fi
