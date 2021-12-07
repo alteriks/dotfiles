@@ -193,7 +193,7 @@ YADM() {
   echo -e "${GREEN}[+] YADM${NC}"
   if [[ $EUID -ge 1000 ]]; then
     YADM_DIFF=$( yadm diff --name-status )
-    if [ -n $YADM_DIFF ]; then
+    if [ -n "$YADM_DIFF" ]; then
       echo -e "\nCommit: "
       echo $YADM_DIFF
       yadm commit -qam "auto-commit ${HOSTNAME}"
