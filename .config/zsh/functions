@@ -190,7 +190,7 @@ YADM() {
   NC='\033[0m' # No Color
 
   yadm_f() {
-    if [[ $EUID -ge 1000 ] || [ $1 == hammer ]]; then
+    if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]]; then
       YADM_DIFF=$( yadm diff --name-status )
       if [ -n "$YADM_DIFF" ]; then
         echo -e "\nCommit: "
@@ -205,7 +205,7 @@ YADM() {
     yadm --yadm-data $YADM_DATA pull;
 
     # if [[ $EUID -ge 1000 ]]; then
-    if [[ $EUID -ge 1000 ] || [ $1 == hammer ]]; then
+    if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]]; then
       if [ -n "$YADM_DIFF" ]; then
         echo -ne "\nPush: "
         yadm --yadm-data $YADM_DATA push
