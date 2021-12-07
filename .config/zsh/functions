@@ -189,37 +189,50 @@ YADM() {
   GREEN='\033[0;32m'
   NC='\033[0m' # No Color
 
-
-  echo -e "${GREEN}[+] YADM${NC}"
-  if [[ $EUID -ge 1000 ]]; then
-    YADM_DIFF=$( yadm diff --name-status )
-    if [ -n "$YADM_DIFF" ]; then
-      echo -e "\nCommit: "
-      echo $YADM_DIFF
-      yadm commit -qam "auto-commit ${HOSTNAME}"
+  yadm_f() {
+    if [[ $EUID -ge 1000 ]]; then
+      YADM_DIFF=$( yadm diff --name-status )
+      if [ -n "$YADM_DIFF" ]; then
+        echo -e "\nCommit: "
+        echo $YADM_DIFF
+        echo yadm "$YADM_PARAMS" commit -qam "auto-commit ${HOSTNAME}"
+      fi
     fi
-  fi
-  echo
-  echo -n "Pull: "
-  yadm pull;
-  if [[ $EUID -ge 1000 ]]; then
-    if [ -n "$YADM_DIFF" ]; then
-      echo -ne "\nPush: "
-      yadm push
-    fi
-  fi
 
-  echo
-  echo -e "${GREEN}[+] PRIVYADM${NC}"
-  echo -n "Pull: "
-  yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git pull
-  if [[ $EUID -ge 1000 ]]; then
-    echo -n "Commit: "
-    yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git diff --name-status
-    yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git commit -qam "auto-commit ${HOSTNAME}"
-    echo -ne "\nPush: "
-    yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git push
-  fi
+    # Always pull
+    echo
+    echo -n "Pull: "
+    echo yadm "$YADM_PARAMS" pull;
+
+    if [[ $EUID -ge 1000 ]]; then
+      if [ -n "$YADM_DIFF" ]; then
+        echo -ne "\nPush: "
+        echo yadm "$YADM_PARAMS" push
+      fi
+    fi
+  }
+
+  for YADM_REPO in yadm privyadm sysyadm; do
+    case $YADM_REPO in
+      yadm)
+        echo -e "${GREEN}[+] YADM${NC}"
+        YADM_PARAMS=""
+        yadm_f
+        ;;
+
+      privyadm)
+        echo -e "${GREEN}[+] PRIVYADM${NC}"
+        YADM_PARAMS="--yadm-data $XDG_DATA_HOME/yadm/priv.git"
+        yadm_f
+        ;;
+
+      # sysyadm)
+      #   echo -e "${RED}[+] SYSYADM${NC}"
+      #   YADM_PARAMS="--yadm-data /etc/yadm/"
+      #   ;;
+      esac
+
+  done
 
   if [[ $EUID -eq 0 ]]; then
     echo

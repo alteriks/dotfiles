@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 . ~/.config/yadm/hooks/common
 
 GIT_DIR=$YADM_HOOK_REPO \
