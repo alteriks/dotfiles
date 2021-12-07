@@ -185,7 +185,6 @@
 .config/zsh/zshrc	l	0664
 .github	d	0755
 .github/README.md	f	0644
-.github/git_store_meta	f	0644
 .gitmodules	f	0600
 .local	d	0755
 .local/share	d	0755
