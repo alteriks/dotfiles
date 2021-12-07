@@ -6,4 +6,8 @@
 # yadm 3.1  GIT_DIR=~/.local/share/yadm/repo.git
 # printf '%s\n%s' "3" "$YADM_VERSION" | sort -VC && YADM_DIR=~/.local/share/yadm/repo.git || YADM_DIR=~/.config/yadm/repo.git
 
-GIT_DIR=$YADM_HOOK_REPO GIT_WORK_TREE=$YADM_HOOK_WORK ~/bin/git-store-meta.pl -t ~/.github/git_store_meta --apply --lazy
+GIT_DIR=$YADM_HOOK_REPO \
+  GIT_WORK_TREE=$YADM_HOOK_WORK \
+  ~/bin/git-store-meta.pl \
+  -t ~/.github/git_store_meta \
+  --apply --lazy | egrep -v '^fields:|^flags:'
