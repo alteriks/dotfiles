@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 # when running the hook, cwd is the top level of working tree
 
 script=$(dirname "$0")/'git-store-meta.pl'
