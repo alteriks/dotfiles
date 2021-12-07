@@ -190,7 +190,6 @@ YADM() {
   NC='\033[0m' # No Color
 
   if [[ $EUID -ge 1000 ]]; then
-    echo
     echo -e "\nCommit: "
     yadm diff --name-status
     yadm commit -qam "auto-commit ${HOSTNAME}"
