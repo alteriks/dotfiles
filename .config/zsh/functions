@@ -223,7 +223,7 @@ YADM() {
 
       privyadm)
         echo -e "${GREEN}[+] PRIVYADM${NC}"
-        YADM_PARAMS=--yadm-data $XDG_DATA_HOME/yadm/priv.git/
+        YADM_PARAMS=--yadm-data $XDG_DATA_HOME/yadm/priv.git
         yadm_f
         ;;
 
