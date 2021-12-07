@@ -203,8 +203,10 @@ YADM() {
   echo -n "Pull: "
   yadm pull;
   if [[ $EUID -ge 1000 ]]; then
-    echo -ne "\nPush: "
-    yadm push
+    if [ -n "$YADM_DIFF" ]; then
+      echo -ne "\nPush: "
+      yadm push
+    fi
   fi
 
   echo
