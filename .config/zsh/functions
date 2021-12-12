@@ -195,7 +195,7 @@ YADM() {
     elsif [[ $EUID -eq 0 ]] && [[ $1 == hammer ]]
       echo -e "${RED}[+] SYSYADM${NC}"
     fi
-    if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]] && [[ $EUID -eq 0 ]]; then
+    if [[ $1 == hammer ]] && [[ $EUID -eq 0 ]] || [[ $EUID -ge 1000 ]] ; then
       YADM_STATUS=$( yadm status --yadm-data $YADM_DATA --short )
       if [ -n "$YADM_STATUS" ]; then
         echo -e "\nCommit: "
