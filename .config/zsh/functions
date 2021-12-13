@@ -197,12 +197,12 @@ YADM() {
     fi
     ## logic p && q || r
     if [[ $1 == hammer ]] && [[ $EUID -eq 0 ]] || [[ $EUID -ge 1000 ]] ; then
-      # YADM_STATUS=$( yadm status --yadm-data $YADM_DATA --short )
-      # if [ -n "$YADM_STATUS" ]; then
+      YADM_STATUS=$( yadm status --yadm-data $YADM_DATA --short )
+      if [ -n "$YADM_STATUS" ]; then
         echo -e "\nCommit: "
-        # echo $YADM_STATUS
+        echo $YADM_STATUS
         yadm --yadm-data $YADM_DATA commit -qam "auto-commit ${HOSTNAME}"
-      # fi
+      fi
     fi
 
     # Always pull
@@ -210,8 +210,8 @@ YADM() {
     echo -n "Pull: "
     yadm --yadm-data $YADM_DATA pull;
 
-    # if [[ $EUID -ge 1000 ]]; then
-    if [[ $EUID -ge 1000 ]] || [[ $1 == hammer ]] && [[ $EUID -eq 0 ]]; then
+    ## logic p && q || r
+    if [[ $1 == hammer ]] && [[ $EUID -eq 0 ]] || [[ $EUID -ge 1000 ]] ; then
       if [ -n "$YADM_STATUS" ]; then
         echo -ne "\nPush: "
         yadm --yadm-data $YADM_DATA push
