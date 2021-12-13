@@ -197,7 +197,8 @@ YADM() {
     fi
     ## logic p && q || r
     if [[ $1 == hammer ]] && [[ $EUID -eq 0 ]] || [[ $EUID -ge 1000 ]] ; then
-      YADM_STATUS=$( yadm status --yadm-data $YADM_DATA --short )
+      # YADM_STATUS=$( yadm status --yadm-data $YADM_DATA --short )
+      YADM_STATUS=$( yadm --yadm-data $YADM_DATA status |egrep -v 'On branch master|(use "git push" to publish your local commits)|(use "git restore --staged <file>..." to unstage)' )
       if [ -n "$YADM_STATUS" ]; then
         echo -e "\nCommit: "
         echo $YADM_STATUS
