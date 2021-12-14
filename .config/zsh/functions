@@ -192,8 +192,7 @@ YADM() {
   yadm_f() {
     if  [[ $EUID -ge 1000 ]] && [[ $1 == hammer ]]; then
       continue
-    fi
-    if [[ $EUID -eq 0 ]] && [[ $1 == hammer ]]
+    elsif [[ $EUID -eq 0 ]] && [[ $1 == hammer ]]; then
       echo -e "${RED}[+] SYSYADM${NC}"
     fi
     ## logic p && q || r
