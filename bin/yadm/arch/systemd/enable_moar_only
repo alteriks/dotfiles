@@ -1,5 +1,7 @@
 autofs.service
 
+wol@enp39s0
+
 zfs-trim@pool.timer
 zfs-trim@bpool_xt5.timer
 zfs-trim@rpool_xt5.timer
