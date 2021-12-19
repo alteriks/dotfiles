@@ -1,3 +1,6 @@
+# used with hal nfsv4
+autofs
+
 looking-glass
 
 # used for ipad backup (idevicebackup2)

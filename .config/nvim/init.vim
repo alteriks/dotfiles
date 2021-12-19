@@ -37,6 +37,7 @@ Plug 'hoob3rt/lualine.nvim'
 "
 "Plug 'itchyny/lightline.vim'
 
+Plug 'gennaro-tedesco/nvim-jqx' " OR use ':%!jq .' its way faster
 
 Plug 'lambdalisue/suda.vim'
 " Automatically use sudo when permissions are lacking
