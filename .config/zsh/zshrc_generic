@@ -77,6 +77,11 @@ bindkey "^[[4~" end-of-line
 bindkey "^[OD" backward-word
 bindkey "^[OC" forward-word
 
+# disable run-help ctrl+home
+# bindkey -M emacs|rg run-help
+bindkey -r "^[H"
+bindkey -r "^[h"
+
 #Most servers don't know about terminal specifics (terminfo) TERM=xterm-kitty or TERM=tmux-256color
 #It' easier to change it for ssh than copy all terminfo (tic)
 #https://github.com/alacritty/alacritty/issues/1208#issuecomment-376697989
