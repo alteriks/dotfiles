@@ -142,10 +142,8 @@
 .config/screen/screenrc	f	0644
 .config/sway	d	0755
 .config/sway/config	f	0644
-.config/syncthing_moar	d	0700
-.config/syncthing_moar/config.xml	f	0600
-.config/syncthing_nebula	d	0755
-.config/syncthing_nebula/config.xml	f	0644
+.config/syncthing_moar	d	0755
+.config/syncthing_moar/config.xml	f	0644
 .config/termite	d	0755
 .config/termite/config	f	0644
 .config/tmux	d	0755
