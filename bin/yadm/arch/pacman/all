@@ -15,6 +15,7 @@ npm # needed for neovim language server
 patchutils
 pkg-config
 pkgfile
+python-j2cli # sanoid templates using jinja2
 python-pip
 yamllint
 
