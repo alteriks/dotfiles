@@ -1,4 +1,40 @@
 <configuration version="35">
+    <folder id="6fxqf-cgtf2" label="FotoVaria" path="/home/coldstore/FotoVaria/" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
     <folder id="cbvbt-xhwdy" label="Projects_Roche_rlc-ssh" path="/home/alteriks/Projects/Roche/rlc-ssh" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="D7KWFGD-ICFEXCC-Y4GXK7F-G6QUINQ-KDHAZUK-FSMO62E-DJVMK4T-HZ2CNAQ" introducedBy="">
@@ -35,21 +71,15 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="hmyfz-d2fzh" label="Projects_MC" path="/home/alteriks/Projects/MC" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="dptab-htybc" label="ebook" path="/home/coldstore/ebook" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="LBENTBY-JVYSMGA-HJBNY6Y-5VD5VF4-OCXTQEL-ZOA7NW5-TWOATNX-AMSUYQI" introducedBy="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL">
-            <encryptionPassword></encryptionPassword>
-        </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <minDiskFree unit="">0</minDiskFree>
+        <minDiskFree unit="%">1</minDiskFree>
         <versioning>
             <cleanupIntervalS>3600</cleanupIntervalS>
             <fsPath></fsPath>
@@ -62,7 +92,82 @@
         <ignoreDelete>false</ignoreDelete>
         <scanProgressIntervalS>0</scanProgressIntervalS>
         <pullerPauseS>0</pullerPauseS>
-        <maxConflicts>-1</maxConflicts>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="grcrf-peidp" label="Backup" path="/home/coldstore/Backup" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="hcarn-wmahb" label="Projects_MC_Docs" path="/home/alteriks/Projects/MC/Docs" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
         <disableSparseFiles>false</disableSparseFiles>
         <disableTempIndexes>false</disableTempIndexes>
         <paused>false</paused>
@@ -125,6 +230,78 @@
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="jnevz-2jt76" label="Virt" path="/home/coldstore/Virt" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="ngcdg-xcpom" label="Archiwum" path="/home/coldstore/Archiwum" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <minDiskFree unit="%">1</minDiskFree>
@@ -368,7 +545,7 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="uxhkn-vc9xx" label="MC" path="/home/alteriks/MC" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+    <folder id="ueijm-cltyw" label="ISO" path="/home/coldstore/ISO" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
@@ -405,7 +582,121 @@
         <blockPullOrder>standard</blockPullOrder>
         <copyRangeMethod>standard</copyRangeMethod>
         <caseSensitiveFS>false</caseSensitiveFS>
-        <junctionsAsDirs>true</junctionsAsDirs>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="upsf7-zrcrn" label="bin" path="/home/coldstore/bin" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="utqdy-eqca2" label="Projects_MC_Code" path="/home/alteriks/Projects/MC/Code" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="uyksv-mfer9" label="Foto" path="/home/coldstore/Foto" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
     <folder id="zi3tv-h5ttz" label="datastore" path="/home/datastore" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
