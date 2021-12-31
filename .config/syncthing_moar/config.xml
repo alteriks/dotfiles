@@ -4,6 +4,12 @@
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+<<<<<<< Updated upstream
+=======
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+>>>>>>> Stashed changes
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -43,37 +49,7 @@
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <minDiskFree unit="%">1</minDiskFree>
-        <versioning>
-            <cleanupIntervalS>3600</cleanupIntervalS>
-            <fsPath></fsPath>
-            <fsType>basic</fsType>
-        </versioning>
-        <copiers>0</copiers>
-        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
-        <hashers>0</hashers>
-        <order>random</order>
-        <ignoreDelete>false</ignoreDelete>
-        <scanProgressIntervalS>0</scanProgressIntervalS>
-        <pullerPauseS>0</pullerPauseS>
-        <maxConflicts>10</maxConflicts>
-        <disableSparseFiles>false</disableSparseFiles>
-        <disableTempIndexes>false</disableTempIndexes>
-        <paused>false</paused>
-        <weakHashThresholdPct>25</weakHashThresholdPct>
-        <markerName>.stfolder</markerName>
-        <copyOwnershipFromParent>false</copyOwnershipFromParent>
-        <modTimeWindowS>0</modTimeWindowS>
-        <maxConcurrentWrites>2</maxConcurrentWrites>
-        <disableFsync>false</disableFsync>
-        <blockPullOrder>standard</blockPullOrder>
-        <copyRangeMethod>standard</copyRangeMethod>
-        <caseSensitiveFS>false</caseSensitiveFS>
-        <junctionsAsDirs>false</junctionsAsDirs>
-    </folder>
-    <folder id="dptab-htybc" label="ebook" path="/home/coldstore/ebook" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
-        <filesystemType>basic</filesystemType>
-        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
@@ -107,9 +83,62 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
-    <folder id="grcrf-peidp" label="Backup" path="/home/coldstore/Backup" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+<<<<<<< Updated upstream
+    <folder id="dptab-htybc" label="ebook" path="/home/coldstore/ebook" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+=======
+    <folder id="dptab-htybc" label="ebook" path="/home/coldstore/ebook/" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+>>>>>>> Stashed changes
         <filesystemType>basic</filesystemType>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+<<<<<<< Updated upstream
+=======
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+>>>>>>> Stashed changes
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+<<<<<<< Updated upstream
+    <folder id="grcrf-peidp" label="Backup" path="/home/coldstore/Backup" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+=======
+    <folder id="grcrf-peidp" label="Backup" path="/home/coldstore/Backup/" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+>>>>>>> Stashed changes
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
@@ -148,12 +177,21 @@
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+<<<<<<< Updated upstream
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+=======
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+>>>>>>> Stashed changes
         <minDiskFree unit="%">1</minDiskFree>
         <versioning>
             <cleanupIntervalS>3600</cleanupIntervalS>
@@ -188,6 +226,9 @@
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
@@ -230,6 +271,90 @@
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="jnevz-2jt76" label="Virt" path="/home/coldstore/Virt/" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+    <folder id="ngcdg-xcpom" label="Archiwum" path="/home/coldstore/Archiwum/" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <minDiskFree unit="%">1</minDiskFree>
@@ -346,6 +471,9 @@
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -386,6 +514,9 @@
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
@@ -430,6 +561,9 @@
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -470,6 +604,9 @@
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
@@ -514,6 +651,9 @@
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -545,15 +685,19 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
+<<<<<<< Updated upstream
     <folder id="ueijm-cltyw" label="ISO" path="/home/coldstore/ISO" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+=======
+    <folder id="ueijm-cltyw" label="ISO" path="/home/coldstore/ISO/" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+>>>>>>> Stashed changes
         <filesystemType>basic</filesystemType>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <minDiskFree unit="%">1</minDiskFree>
@@ -584,6 +728,46 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
+    <folder id="upsf7-zrcrn" label="bin" path="/home/coldstore/bin/" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+        <filesystemType>basic</filesystemType>
+        <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <minDiskFree unit="%">1</minDiskFree>
+        <versioning>
+            <cleanupIntervalS>3600</cleanupIntervalS>
+            <fsPath></fsPath>
+            <fsType>basic</fsType>
+        </versioning>
+        <copiers>0</copiers>
+        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
+        <hashers>0</hashers>
+        <order>random</order>
+        <ignoreDelete>false</ignoreDelete>
+        <scanProgressIntervalS>0</scanProgressIntervalS>
+        <pullerPauseS>0</pullerPauseS>
+        <maxConflicts>10</maxConflicts>
+        <disableSparseFiles>false</disableSparseFiles>
+        <disableTempIndexes>false</disableTempIndexes>
+        <paused>false</paused>
+        <weakHashThresholdPct>25</weakHashThresholdPct>
+        <markerName>.stfolder</markerName>
+        <copyOwnershipFromParent>false</copyOwnershipFromParent>
+        <modTimeWindowS>0</modTimeWindowS>
+        <maxConcurrentWrites>2</maxConcurrentWrites>
+        <disableFsync>false</disableFsync>
+        <blockPullOrder>standard</blockPullOrder>
+        <copyRangeMethod>standard</copyRangeMethod>
+        <caseSensitiveFS>false</caseSensitiveFS>
+        <junctionsAsDirs>false</junctionsAsDirs>
+    </folder>
+<<<<<<< Updated upstream
     <folder id="upsf7-zrcrn" label="bin" path="/home/coldstore/bin" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
@@ -620,15 +804,24 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
+=======
+>>>>>>> Stashed changes
     <folder id="utqdy-eqca2" label="Projects_MC_Code" path="/home/alteriks/Projects/MC/Code" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+<<<<<<< Updated upstream
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
+=======
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+>>>>>>> Stashed changes
             <encryptionPassword></encryptionPassword>
         </device>
         <minDiskFree unit="%">1</minDiskFree>
@@ -659,15 +852,26 @@
         <caseSensitiveFS>false</caseSensitiveFS>
         <junctionsAsDirs>false</junctionsAsDirs>
     </folder>
+<<<<<<< Updated upstream
     <folder id="uyksv-mfer9" label="Foto" path="/home/coldstore/Foto" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+=======
+    <folder id="uyksv-mfer9" label="Foto" path="/home/coldstore/Foto/" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
+>>>>>>> Stashed changes
         <filesystemType>basic</filesystemType>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+<<<<<<< Updated upstream
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
+=======
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
+>>>>>>> Stashed changes
             <encryptionPassword></encryptionPassword>
         </device>
         <minDiskFree unit="%">1</minDiskFree>
@@ -701,6 +905,9 @@
     <folder id="zi3tv-h5ttz" label="datastore" path="/home/datastore" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
@@ -743,6 +950,9 @@
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
+        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
@@ -846,6 +1056,16 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
+    <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" name="moar" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+        <untrusted>false</untrusted>
+        <remoteGUIPort>0</remoteGUIPort>
+    </device>
     <device id="4AWQXON-WUUID4Z-QCUNKK3-4WWGSVJ-7WG24YX-K2L2OUH-D24FECV-RWQQ6QO" name="rlc-rwauvprlc0017" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
@@ -937,6 +1157,9 @@
         <folder id="" label="" path="~" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
             <filesystemType>basic</filesystemType>
             <device id="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW" introducedBy="">
+                <encryptionPassword></encryptionPassword>
+            </device>
+            <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
                 <encryptionPassword></encryptionPassword>
             </device>
             <minDiskFree unit="%">1</minDiskFree>
