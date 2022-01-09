@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Profile Firefox nebula.zt
+GenericName=Web Browser
+Exec=/usr/lib/firefox/firefox -P nebula.zt
+Icon=firefox
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+StartupWMClass=firefox
+Categories=Network;WebBrowser;
