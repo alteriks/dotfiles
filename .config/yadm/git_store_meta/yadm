@@ -112,6 +112,7 @@
 .config/mpv/mpv.conf	f	0644
 .config/mpv/scripts	d	0755
 .config/mpv/scripts/autosub.lua	f	0644
+.config/mpv/scripts/dynamic-crop.lua	f	0644
 .config/nitrogen	d	0755
 .config/nitrogen/nitrogen.cfg	f	0644
 .config/npm	d	0755
