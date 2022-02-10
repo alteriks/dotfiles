@@ -68,6 +68,7 @@ picom
 python-i3ipc
 redshift
 rofi
+solaar # logitech mouse + unifying receiver
 # termite
 veracrypt
 xclip
@@ -100,6 +101,7 @@ ethtool
 exfat-utils
 fd
 fzf
+fwupd # firmware update
 git
 hdparm
 htop
