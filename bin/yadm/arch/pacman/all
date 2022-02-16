@@ -148,6 +148,7 @@ strace
 stress
 sudo
 sysstat
+tsocks
 terraform
 tcpdump
 the_silver_searcher
