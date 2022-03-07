@@ -93,7 +93,7 @@ set $workspace5 "5:    "
 set $workspace6 "6:Photo"
 set $workspace7 "7:"
 set $workspace8 "8:"
-set $workspace9 "9:"
+set $workspace9 9: Games
 set $workspace10 "10:"
 
 # switch to workspace
