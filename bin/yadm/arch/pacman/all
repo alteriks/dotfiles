@@ -170,6 +170,7 @@ wol
 wpa_supplicant
 xorg-xev
 xsensors
+zbar # qr decoder
 zip
 zsh
 zsh-autosuggestions
