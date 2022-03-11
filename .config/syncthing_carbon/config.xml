@@ -91,6 +91,9 @@
         <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="667KAJN-RJICVL7-ABUNHBD-U5KFQ7F-XJ4TP3C-ZBTNIQE-RNPNK4K-R3XYTQD" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <minDiskFree unit="%">1</minDiskFree>
         <versioning>
             <cleanupIntervalS>0</cleanupIntervalS>
@@ -599,6 +602,16 @@
         <remoteGUIPort>0</remoteGUIPort>
     </device>
     <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" name="carbon" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+        <untrusted>false</untrusted>
+        <remoteGUIPort>0</remoteGUIPort>
+    </device>
+    <device id="667KAJN-RJICVL7-ABUNHBD-U5KFQ7F-XJ4TP3C-ZBTNIQE-RNPNK4K-R3XYTQD" name="carbon-win" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
