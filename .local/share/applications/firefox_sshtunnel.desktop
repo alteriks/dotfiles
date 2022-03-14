@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Profile Firefox proton
+GenericName=Web Browser
+Exec=/usr/lib/firefox/firefox -P sshtunnel
+Icon=firefox
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+StartupWMClass=firefox
+Categories=Network;WebBrowser;
