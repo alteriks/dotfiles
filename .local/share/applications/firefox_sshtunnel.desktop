@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Profile Firefox proton
+Name=Profile Firefox sshtunnel (port 1025)
 GenericName=Web Browser
 Exec=/usr/lib/firefox/firefox -P sshtunnel
 Icon=firefox

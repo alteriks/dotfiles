@@ -2,7 +2,7 @@
 Version=1.0
 Name=Profile Firefox boomfunk
 GenericName=Web Browser
-Exec=/usr/lib/firefox/firefox -P boomfunk
+Exec=sh -c "i3-msg 'workspace number \"7:    mc\"'; /usr/lib/firefox/firefox -P boomfunk"
 Icon=firefox
 Terminal=false
 X-MultipleArgs=false

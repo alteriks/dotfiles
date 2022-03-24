@@ -70,9 +70,10 @@ redshift
 rofi
 solaar # logitech mouse + unifying receiver
 # termite
+wmctrl # i3 + set_active_window_class.sh
 veracrypt
 xclip
-xdotool
+xdotool # i3 + set_active_window_class.sh
 xorg-apps
 xorg-server
 xprintidle
