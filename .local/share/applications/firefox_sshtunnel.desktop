@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
-Name=Profile Firefox boomfunk
+Name=Profile Firefox sshtunnel (port 1025)
 GenericName=Web Browser
-Exec=sh -c "i3-msg 'workspace number \"7:    mc\"'; /usr/lib/firefox/firefox -P boomfunk"
+Exec=/usr/lib/firefox/firefox -P sshtunnel
 Icon=firefox
 Terminal=false
 X-MultipleArgs=false
