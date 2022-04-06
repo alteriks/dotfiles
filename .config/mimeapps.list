@@ -26,6 +26,8 @@ image/gif=org.nomacs.ImageLounge.desktop
 text/x-nfo=org.xfce.mousepad.desktop
 image/webp=mpv.desktop
 x-scheme-handler/magnet=deluge.desktop
+video/x-matroska=mpv.desktop
+video/mp4=mpv.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
@@ -54,6 +56,8 @@ image/gif=org.nomacs.ImageLounge.desktop;
 text/x-nfo=org.xfce.mousepad.desktop;
 image/webp=mpv.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-7N76C1.desktop;
+video/x-matroska=mpv.desktop;
+video/mp4=mpv.desktop;
 
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;
