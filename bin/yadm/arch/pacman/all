@@ -168,6 +168,7 @@ usbutils
 usleep
 wget
 wireshark-cli
+wireshark-qt
 wol
 wpa_supplicant
 xorg-xev

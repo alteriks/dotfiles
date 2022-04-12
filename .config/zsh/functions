@@ -182,7 +182,7 @@ vagrant_prepare() {
       cp 00_template/base/Vagrantfile $1
     fi
     cd $1
-    echo "OS_BOX=$OS_BOX"
+    sed --in-place "s|^OS_BOX.*|OS_BOX = '$OS_BOX'|" Vagrantfile
     print -z vagrant up
   fi
 }
