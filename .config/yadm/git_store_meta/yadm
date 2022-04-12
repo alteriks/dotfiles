@@ -173,11 +173,13 @@
 .config/zsh/.zimrc	f	0644
 .config/zsh/.zshrc	f	0644
 .config/zsh/aliases	f	0644
+.config/zsh/alpine	f	0644
 .config/zsh/archlinux	f	0644
 .config/zsh/functions	f	0644
 .config/zsh/p10k.zsh	l	0664
 .config/zsh/p10k.zsh_custom	l	0664
 .config/zsh/profile	f	0644
+.config/zsh/rhel	f	0644
 .config/zsh/ubuntu	f	0644
 .config/zsh/zimrc	l	0664
 .config/zsh/zshrc	l	0664
