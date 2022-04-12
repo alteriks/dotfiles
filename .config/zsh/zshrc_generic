@@ -19,10 +19,24 @@ fi
 # https://github.com/zfsonlinux/grub/issues/5#issuecomment-325221448
 export ZPOOL_VDEV_NAME_PATH=YES
 
-export LSB_RELEASE=$(lsb_release -is)
-if [[ "${LSB_RELEASE}" == 'ManjaroLinux' || "${LSB_RELEASE}" == 'ArchLinux' ]]; then
+OS_RELEASE_ID=$(sed -n 's/^ID=\(.*\)/\1/p' /etc/os-release)
+case $OS_RELEASE_ID in
+  alpine)
+    source ~/.config/zsh/alpine
+    ;;
+  arch)
+    source ~/.config/zsh/archlinux
+    ;;
+  rocky)
+    source ~/.config/zsh/rhel
+    ;;
+  ubuntu)
+    source ~/.config/zsh/ubuntu
+    ;;
+esac
+if [[ "${OS_RELEASE_ID}" == 'arch' ]]; then
   source ~/.config/zsh/archlinux
-elif [[ "${LSB_RELEASE}" == 'Ubuntu' ]]; then
+elif [[ "${OS_RELEASE_ID}" == 'ubuntu' ]]; then
   source ~/.config/zsh/ubuntu
 fi
 # Disable globbing for URL arguments
