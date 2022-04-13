@@ -41,7 +41,7 @@ if command -v zsh &> /dev/null; then
     if command -v chsh &> /dev/null; then
       chsh -s /bin/zsh
     else
-      sed --in-place 's|\(root:.*:.*:.*:.*:.*:\).*$|\1:/bin/adash|' /etc/passwd
+      sed --in-place 's|\(root:.*:.*:.*:.*:.*:\).*$|\1:/bin/zsh|' /etc/passwd
     fi
     echo ""
   fi
