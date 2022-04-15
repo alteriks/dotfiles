@@ -121,6 +121,7 @@
 .config/nvim/autoload	d	0755
 .config/nvim/autoload/plug.vim	f	0644
 .config/nvim/init.vim	f	0644
+.config/nvim/plugins.vim	f	0644
 .config/ohmyzsh_custom	d	0755
 .config/ohmyzsh_custom/themes	d	0755
 .config/ohmyzsh_custom/themes/alteriks.zsh-theme##template	f	0644

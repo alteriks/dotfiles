@@ -151,16 +151,18 @@ h () {  fc -Dlim "*$@*" 1 }
 
 # FZF managed by vimplug
 # Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic
-if [[ -d /usr/share/fzf/ ]];then
+if [[ -f /usr/share/fzf/key-bindings.zsh ]];then
   source /usr/share/fzf/key-bindings.zsh
-  source /usr/share/fzf/completion.zsh || source /usr/share/zsh/site-functions/_fzf
+fi
+if [[ -f /usr/share/fzf/completion.zsh ]];then
+  source /usr/share/fzf/completion.zsh
+fi
   alias fzfp=fzf --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'
   #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
   export FZF_COMPLETION_TRIGGER=''
   export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
   bindkey '^T' fzf-completion
   bindkey '^I' $fzf_default_completion
-fi
 
 # broot --install
 if [[ -e $HOME/.config/broot/launcher/bash/br ]]; then
