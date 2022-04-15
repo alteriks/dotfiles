@@ -100,7 +100,7 @@ fi
 
 if command -v nvim >/dev/null 2>&1; then
   echo -e "${GREEN}[+] Bootstraping neovim"
-  nvim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+  nvim -u ~/.config/nvim/plugins.vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
   echo ""
 fi
 
