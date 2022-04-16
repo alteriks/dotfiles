@@ -149,7 +149,6 @@
 .config/termite/config	f	0644
 .config/tmux	d	0755
 .config/tmux/plugins	d	0755
-.config/tmux/tmux.conf##template	f	0644
 .config/tmux/tmux_powerline.conf	f	0644
 .config/tmuxinator	d	0755
 .config/tmuxinator/ipad.yml	f	0644
