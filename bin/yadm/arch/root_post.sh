@@ -11,6 +11,7 @@ mkdir -p /mnt/{1,2,luks,sdm,veracrypt,zpool}
 usermod -a -G uucp alteriks
 # Other groups
 usermod -a -G wheel,docker,audio,input,storage,video,sys,network,power,libvirt alteriks
+usermod -a -G wireshark alteriks
 # Autologin
 groupadd -r autologin || true
 gpasswd -a alteriks autologin

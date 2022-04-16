@@ -156,9 +156,23 @@ qrcode_utf8() {
 }
 
 vagrant_prepare() {
-  if [[ -z "$1" ]]; then
-    echo "No argument supplied"
+  if [[ -z "$2" ]]; then
+    echo "Use $0: <name> <vagrant_box>"
   else
+    case $2 in
+      archlinux)
+        export OS_BOX=nebula/archlinux
+        ;;
+      rocky)
+        export OS_BOX=nebula/rocky_8.5
+        ;;
+      ubuntu)
+        export OS_BOX=nebula/ubuntu_20.04
+        ;;
+      *)
+        echo "Use: archlinux/rocky/ubuntu"
+        ;;
+    esac
     cd ~/Vagrant/
     mkdir -p $1
     V_TEMPLATE=${1%%[0-9]*}
@@ -168,6 +182,7 @@ vagrant_prepare() {
       cp 00_template/base/Vagrantfile $1
     fi
     cd $1
+    sed --in-place "s|^OS_BOX.*|OS_BOX = '$OS_BOX'|" Vagrantfile
     print -z vagrant up
   fi
 }

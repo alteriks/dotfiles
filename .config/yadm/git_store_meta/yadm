@@ -121,6 +121,7 @@
 .config/nvim/autoload	d	0755
 .config/nvim/autoload/plug.vim	f	0644
 .config/nvim/init.vim	f	0644
+.config/nvim/plugins.vim	f	0644
 .config/ohmyzsh_custom	d	0755
 .config/ohmyzsh_custom/themes	d	0755
 .config/ohmyzsh_custom/themes/alteriks.zsh-theme##template	f	0644
@@ -148,6 +149,8 @@
 .config/termite	d	0755
 .config/termite/config	f	0644
 .config/tmux	d	0755
+.config/tmux/os_archlinux.conf	f	0644
+.config/tmux/os_other.conf	f	0644
 .config/tmux/plugins	d	0755
 .config/tmux/tmux_powerline.conf	f	0644
 .config/tmuxinator	d	0755
@@ -172,11 +175,13 @@
 .config/zsh/.zimrc	f	0644
 .config/zsh/.zshrc	f	0644
 .config/zsh/aliases	f	0644
+.config/zsh/alpine	f	0644
 .config/zsh/archlinux	f	0644
 .config/zsh/functions	f	0644
 .config/zsh/p10k.zsh	l	0664
 .config/zsh/p10k.zsh_custom	l	0664
 .config/zsh/profile	f	0644
+.config/zsh/rhel	f	0644
 .config/zsh/ubuntu	f	0644
 .config/zsh/zimrc	l	0664
 .config/zsh/zshrc	l	0664

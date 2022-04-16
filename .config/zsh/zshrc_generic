@@ -19,12 +19,22 @@ fi
 # https://github.com/zfsonlinux/grub/issues/5#issuecomment-325221448
 export ZPOOL_VDEV_NAME_PATH=YES
 
-export LSB_RELEASE=$(lsb_release -is)
-if [[ "${LSB_RELEASE}" == 'ManjaroLinux' || "${LSB_RELEASE}" == 'ArchLinux' ]]; then
-  source ~/.config/zsh/archlinux
-elif [[ "${LSB_RELEASE}" == 'Ubuntu' ]]; then
-  source ~/.config/zsh/ubuntu
-fi
+OS_RELEASE_ID=$(sed -n 's/^ID=\(.*\)/\1/p' /etc/os-release)
+case $OS_RELEASE_ID in
+  alpine)
+    source ~/.config/zsh/alpine
+    ;;
+  arch)
+    source ~/.config/zsh/archlinux
+    ;;
+  rocky)
+    source ~/.config/zsh/rhel
+    ;;
+  ubuntu)
+    source ~/.config/zsh/ubuntu
+    ;;
+esac
+
 # Disable globbing for URL arguments
 # https://superuser.com/questions/982110/how-can-i-disable-globbing-for-url-arguments-in-zsh
 # maybe function? 'noglob youtube-dl url?foo=bar' OR https://superuser.com/questions/649635/zsh-says-no-matches-found-when-trying-to-download-video-with-youtube-dl/1237124#1237124
@@ -141,16 +151,18 @@ h () {  fc -Dlim "*$@*" 1 }
 
 # FZF managed by vimplug
 # Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic
-if [[ -d /usr/share/fzf/ ]];then
+if [[ -f /usr/share/fzf/key-bindings.zsh ]];then
   source /usr/share/fzf/key-bindings.zsh
+fi
+if [[ -f /usr/share/fzf/completion.zsh ]];then
   source /usr/share/fzf/completion.zsh
+fi
   alias fzfp=fzf --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'
   #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
   export FZF_COMPLETION_TRIGGER=''
   export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
   bindkey '^T' fzf-completion
   bindkey '^I' $fzf_default_completion
-fi
 
 # broot --install
 if [[ -e $HOME/.config/broot/launcher/bash/br ]]; then
