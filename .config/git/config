@@ -29,7 +29,23 @@
 # [includeIf "gitdir:~/Development/work/"]
 #   path = .gitconfig-work.local
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  # pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta --true-color auto
+[delta]
+    features = decorations
+    side-by-side = true
+[delta "interactive"]
+    keep-plus-minus-markers = false
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+
+
 [diff-so-fancy]
 	rulerWidth = 47
 [color]
