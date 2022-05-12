@@ -1,5 +1,5 @@
 auditd
-chronyd
+#chronyd #WARN: conflict with harbor.lan/alteriks/chrony. what about systemd-timedated
 docker
 libvirtd
 lightdm

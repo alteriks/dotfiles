@@ -1,3 +1,5 @@
+chronyd #WARN: conflict with harbor.lan/alteriks/chrony. what about systemd-timedated
+
 zfs-trim@bpool_9rr.timer
 zfs-trim@rpool_9rr.timer
 zfs-scrub@bpool_9rr.timer
