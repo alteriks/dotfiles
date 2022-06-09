@@ -28,6 +28,7 @@ image/webp=mpv.desktop
 x-scheme-handler/magnet=deluge.desktop
 video/x-matroska=mpv.desktop
 video/mp4=mpv.desktop
+text/markdown=typora.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
@@ -43,7 +44,7 @@ image/png=nomacs.desktop;org.nomacs.ImageLounge.desktop;
 image/x-fuji-raf=org.nomacs.ImageLounge.desktop;
 image/x-fuji-raf=org.nomacs.ImageLounge.desktop;viewnior.desktop;
 inode/directory=mpv.desktop;
-text/markdown=markdown_previewer.desktop;
+text/markdown=org.gnome.meld.desktop;markdown_previewer.desktop;typora.desktop;
 text/plain=org.xfce.mousepad.desktop;org.pwmt.zathura.desktop;neovim.desktop;mousepad.desktop;
 text/x-pkgbuild=neovim.desktop;
 x-scheme-handler/rdp=org.remmina.Remmina.desktop;
