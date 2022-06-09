@@ -53,4 +53,7 @@ yt-dlp
 
 # notes
 obsidian
-typora
+typora-free
+
+# QR code send/receive files to phone, used by xplr
+qrcp-bin

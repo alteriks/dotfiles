@@ -157,6 +157,8 @@
 .config/tmuxinator	d	0755
 .config/tmuxinator/ipad.yml	f	0644
 .config/wgetrc	f	0644
+.config/xplr	d	0755
+.config/xplr/init.lua	f	0644
 .config/yadm	d	0755
 .config/yadm/bootstrap	f	0755
 .config/yadm/git_store_meta	d	0755

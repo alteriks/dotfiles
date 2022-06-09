@@ -18,6 +18,15 @@ dce() {
   docker-compose exec $NAME sh
 }
 
+dcenv() {
+  # Load env-file if it exists
+  if [[ -f env_$HOSTNAME ]]; then
+    dc_cmd="docker-compose --env-file env_$HOSTNAME"
+  else
+    dc_cmd="docker-compose"
+  fi
+}
+
 #https://superuser.com/questions/565443/generate-distribution-of-file-sizes-from-the-command-prompt/1100340#1100340
 filesizedistribution() {
   find . -type f -print0                                                   \
