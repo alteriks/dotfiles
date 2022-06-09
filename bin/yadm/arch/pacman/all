@@ -116,6 +116,7 @@ iperf3
 iptables-nft
 jq
 lftp
+lsd # ls deluxe
 lsb-release
 lshw
 lsof
@@ -177,6 +178,7 @@ xorg-xev
 xsensors
 zbar # qr decoder
 zip
+zoxide # rupa/z jump around replacement
 zsh
 zsh-autosuggestions
 zsh-completions
