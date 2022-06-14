@@ -199,7 +199,7 @@ let g:startify_bookmarks = [
 \ { 'i': '~/.config/i3/config'},
 \ { 'n': '~/.config/nvim/init.vim' },
 \ { 'p': '~/.config/zsh/privyzsh' },
-\ { 't': '~/.config/tmux/tmux.conf##template' },
+\ { 't': '~/.config/tmux/tmux.conf' },
 \ { 'z': '~/.config/zsh/.zshrc' },
 \ ]
 "TODO: create script which will parse txt/md file and create custom footer. See: startify-faq-11
