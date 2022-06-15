@@ -32,12 +32,12 @@ alias ansible-playbook="ansible-playbook -i hosts/default"
 
 # Docker stuff
 alias alpine-devel="docker run -it --rm alpine:3.13 sh"
-alias dcd='docker-compose down'
-alias dcl='docker-compose logs --tail=250 -f'
-alias dck='docker-compose kill'
-alias dcu='docker-compose up -d'
-alias dcp='docker-compose pull'
-alias dcr='docker-compose restart'
+alias dcd='dcenv; eval $dc_cmd down'
+alias dcl='dcenv; eval $dc_cmd logs --tail=250 -f'
+alias dck='dcenv; eval $dc_cmd kill'
+alias dcu='dcenv; eval $dc_cmd up -d'
+alias dcp='dcenv; eval $dc_cmd pull'
+alias dcr='dcenv; eval $dc_cmd restart'
 alias dps='docker ps --format "table {{.ID}}\\t{{.Image}}\\t{{.Status}}\\t{{.Names}}"'
 alias ctop='docker run --rm -ti --name=ctop -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'
 alias docker_ctop='docker run --rm -ti --name=ctop -v /var/run/docker.sock:/var/run/docker.sock quay.io/vektorlab/ctop:latest'

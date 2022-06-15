@@ -105,6 +105,7 @@ fd
 fzf
 fwupd # firmware update
 git
+git-delta # git diff
 git-delta
 hdparm
 htop
@@ -115,6 +116,7 @@ iperf3
 iptables-nft
 jq
 lftp
+lsd # ls deluxe
 lsb-release
 lshw
 lsof
@@ -135,6 +137,7 @@ openbsd-netcat
 p7zip
 packer
 pacman-contrib
+proxychains-ng
 python-neovim
 pv
 qemu
@@ -176,6 +179,7 @@ xorg-xev
 xsensors
 zbar # qr decoder
 zip
+zoxide # rupa/z jump around replacement
 zsh
 zsh-autosuggestions
 zsh-completions

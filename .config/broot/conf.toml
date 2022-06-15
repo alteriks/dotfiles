@@ -57,10 +57,10 @@ invocation = "open"
 key = "ctrl-o"
 execution = ":open_stay"
 
-[[verbs]]
-invocation = "home"
-key = "ctrl-H"
-execution = ":focus_user_home"
+# [[verbs]]
+# invocation = "home"
+# key = "ctrl-H"
+# execution = ":focus_user_home"
 
 [[verbs]]
 name = "view"

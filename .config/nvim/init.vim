@@ -199,7 +199,7 @@ let g:startify_bookmarks = [
 \ { 'i': '~/.config/i3/config'},
 \ { 'n': '~/.config/nvim/init.vim' },
 \ { 'p': '~/.config/zsh/privyzsh' },
-\ { 't': '~/.config/tmux/tmux.conf##template' },
+\ { 't': '~/.config/tmux/tmux.conf' },
 \ { 'z': '~/.config/zsh/.zshrc' },
 \ ]
 "TODO: create script which will parse txt/md file and create custom footer. See: startify-faq-11
@@ -629,6 +629,11 @@ let g:sandwich#recipes += [
 
 imap <space> <Plug>(PearTreeSpace)
 imap <s-tab> <Plug>(PearTreeJump)
+
+" Disable highlight after searching something? - https://www.reddit.com/r/vim/comments/v1od2t/disable_highlight_after_searching_something/
+nnoremap <C-l> :nohlsearch<CR><C-l>
+inoremap <C-l> <Cmd>:exe "normal \<C-l>"<CR>
+
 
 augroup AUTOSAVE
   au!

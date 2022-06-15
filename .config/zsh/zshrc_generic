@@ -119,12 +119,13 @@ alias ssh='TERM=xterm-256color \ssh'
 #   preexec_functions+=( panewrap )
 # fi
 
+#Use zoxide
 #https://github.com/rupa/z
-if [[ -e ~/bin/z.sh ]];then
-  source ~/bin/z.sh
-elif [[ -e /usr/share/z/z.sh ]];then
-  source /usr/share/z/z.sh
-fi
+# if [[ -e ~/bin/z.sh ]];then
+#   source ~/bin/z.sh
+# elif [[ -e /usr/share/z/z.sh ]];then
+#   source /usr/share/z/z.sh
+# fi
 
 # ZSH VIM MODE
 if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
