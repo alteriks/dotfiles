@@ -137,6 +137,7 @@ openbsd-netcat
 p7zip
 packer
 pacman-contrib
+proxychains-ng
 python-neovim
 pv
 qemu
