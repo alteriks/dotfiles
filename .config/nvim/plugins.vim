@@ -144,6 +144,7 @@ Plug 'tmsvg/pear-tree'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'Raimondi/delimitMate'
 Plug 'machakann/vim-sandwich'
+" Plug 'kylechui/nvim-surround'
 "
 "
 Plug 'machakann/vim-highlightedyank'
@@ -157,6 +158,8 @@ let g:highlightedyank_highlight_duration = 250
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua', { 'tag': '1.3.7' }
 
+" Go to last line when opening file
+Plug 'farmergreg/vim-lastplace'
 
 " Initialize plugin system
 call plug#end()

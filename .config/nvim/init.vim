@@ -608,24 +608,24 @@ cmap w!! w !sudo tee > /dev/null %
 
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%"))
 
-"Plug 'machakann/vim-sandwich'
-" if you have not copied default recipes
-let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
-"runtime macros/sandwich/keymasp/surround.vim
+" "Plug 'machakann/vim-sandwich'
+" " if you have not copied default recipes
+" let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+" "runtime macros/sandwich/keymasp/surround.vim
 
-" add spaces inside bracket
-let g:sandwich#recipes += [
-      \   {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
-      \   {'buns': ['[ ', ' ]'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['[']},
-      \   {'buns': ['( ', ' )'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['(']},
-      \   {'buns': ['{\s*', '\s*}'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['{']},
-      \   {'buns': ['\[\s*', '\s*\]'], 'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['[']},
-      \   {'buns': ['(\s*', '\s*)'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['(']},
-      \ ]
-" ``` code in markdown
-let g:sandwich#recipes += [
-      \    {'buns': ['```', '```'], 'input': ['```']}
-      \  ]
+" " add spaces inside bracket
+" let g:sandwich#recipes += [
+"       \   {'buns': ['{ ', ' }'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['{']},
+"       \   {'buns': ['[ ', ' ]'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['[']},
+"       \   {'buns': ['( ', ' )'], 'nesting': 1, 'match_syntax': 1, 'kind': ['add', 'replace'], 'action': ['add'], 'input': ['(']},
+"       \   {'buns': ['{\s*', '\s*}'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['{']},
+"       \   {'buns': ['\[\s*', '\s*\]'], 'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['[']},
+"       \   {'buns': ['(\s*', '\s*)'],   'nesting': 1, 'regex': 1, 'match_syntax': 1, 'kind': ['delete', 'replace', 'textobj'], 'action': ['delete'], 'input': ['(']},
+"       \ ]
+" " ``` code in markdown
+" let g:sandwich#recipes += [
+"       \    {'buns': ['```', '```'], 'input': ['```']}
+"       \  ]
 
 imap <space> <Plug>(PearTreeSpace)
 imap <s-tab> <Plug>(PearTreeJump)
@@ -633,7 +633,6 @@ imap <s-tab> <Plug>(PearTreeJump)
 " Disable highlight after searching something? - https://www.reddit.com/r/vim/comments/v1od2t/disable_highlight_after_searching_something/
 nnoremap <C-l> :nohlsearch<CR><C-l>
 inoremap <C-l> <Cmd>:exe "normal \<C-l>"<CR>
-
 
 augroup AUTOSAVE
   au!
@@ -663,3 +662,4 @@ require("bufferline").setup{}
   -- require'lspconfig'.pyls.setup{}
 EOF
 " endif
+"
