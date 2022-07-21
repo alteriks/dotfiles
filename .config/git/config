@@ -33,13 +33,14 @@
   pager = delta --true-color auto
 [delta]
     features = decorations
+    syntax-theme = 1337
     side-by-side = true
 [delta "interactive"]
     keep-plus-minus-markers = false
 [delta "decorations"]
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit
+    # commit-decoration-style = blue ol
+    # commit-style = raw
+    # file-style = omit
     hunk-header-decoration-style = blue box
     hunk-header-file-style = red
     hunk-header-line-number-style = "#067a00"

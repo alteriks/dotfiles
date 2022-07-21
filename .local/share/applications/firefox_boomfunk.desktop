@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Profile Firefox boomfunk
+Name=Firefox boomfunk
 GenericName=Web Browser
 Exec=sh -c "i3-msg 'workspace number \"7:    mc\"'; /usr/lib/firefox/firefox -P boomfunk"
 Icon=firefox

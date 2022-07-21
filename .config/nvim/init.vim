@@ -663,3 +663,9 @@ require("bufferline").setup{}
 EOF
 " endif
 "
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.9, 'highlight': 'Debug' } }
+let g:nnn#action = {
+      \ '<c-t>': 'tab split',
+      \ '<c-x>': 'split',
+      \ '<c-v>': 'vsplit' }
+let g:nnn#replace_netrw = 1

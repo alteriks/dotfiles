@@ -28,6 +28,7 @@ require("xpm").setup({
     'sayanarijit/fzf.xplr',
     'sayanarijit/dua-cli.xplr',
     'sayanarijit/icons.xplr',
+    'Junker/nuke.xplr',
     'sayanarijit/map.xplr',
     'sayanarijit/qrcp.xplr',
     'sayanarijit/zoxide.xplr',
@@ -42,3 +43,32 @@ require("qrcp").setup{
   send_options = "-i lan",
   receive_options = "-i lan",
 }
+
+require("nuke").setup{
+  pager = "less -R",
+  open = {
+    run_executables = false, -- default: false
+    custom = {
+      {extension = "jpg", command = "sxiv {}"},
+      {mime = "video/mp4", command = "vlc {}"},
+      {mime_regex = "^video/.*", command = "smplayer {}"},
+      {mime_regex = ".*", command = "xdg-open {}"}
+    }
+  },
+  view = {
+    show_line_numbers = true, -- default: false
+  },
+  smart_view = {
+    custom = {
+      {extension = "so", command = "ldd -r {} | less"},
+    }
+  }
+}
+
+  local key = xplr.config.modes.builtin.default.key_bindings.on_key
+  key.v = {
+    help = "nuke",
+    messages = {"PopMode", {SwitchModeCustom = "nuke"}}
+  }
+  key["f3"] = xplr.config.modes.custom.nuke.key_bindings.on_key.v
+  key["enter"] = xplr.config.modes.custom.nuke.key_bindings.on_key.o

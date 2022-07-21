@@ -135,6 +135,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 
 "Plug 'mcchrish/nnn.vim'
+Plug 'sayanarijit/xplr.vim'
 
 " TODO: checking faster loading times Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'

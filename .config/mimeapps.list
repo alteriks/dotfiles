@@ -29,6 +29,7 @@ x-scheme-handler/magnet=deluge.desktop
 video/x-matroska=mpv.desktop
 video/mp4=mpv.desktop
 text/markdown=typora.desktop
+image/svg+xml=org.gnome.gThumb.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
@@ -60,6 +61,7 @@ x-scheme-handler/tg=userapp-Telegram Desktop-7N76C1.desktop;userapp-Telegram Des
 video/x-matroska=mpv.desktop;
 video/mp4=mpv.desktop;
 application/x-shellscript=org.xfce.mousepad.desktop;
+image/svg+xml=org.gnome.gThumb.desktop;
 
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;
