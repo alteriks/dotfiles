@@ -7,6 +7,10 @@ include ~/.config/i3/window.conf
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
+# Ergodox
+set $hyper Ctrl+Shift+Mod1+Mod4
+set $meh Ctrl+Shift+Mod1
+
 set $i3config ~/.config/i3
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -95,6 +99,8 @@ set $workspace7 "7:    mc"
 set $workspace8 "8:  	Rock"
 set $workspace9 "9:    Rock"
 set $workspace10 "10:    Rock"
+set $workspace11 "11:   	"
+set $workspace12 "12:   	"
 
 # switch to workspace
 bindsym $mod+1 workspace number $workspace1
@@ -107,6 +113,8 @@ bindsym $mod+7 workspace number $workspace7
 bindsym $mod+8 workspace number $workspace8
 bindsym $mod+9 workspace number $workspace9
 bindsym $mod+0 workspace number $workspace10
+bindsym $hyper+1 workspace number $workspace11
+bindsym $hyper+2 workspace number $workspace12
 
 # move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $workspace1
@@ -266,13 +274,18 @@ assign [ class = "Zathura" ] workspace $workspace5
 bindsym Print exec --no-startup-id flameshot gui -p ~/tmp/
 bindsym $mod+p exec --no-startup-id flameshot gui -p ~/tmp/
 bindsym $mod+F2 exec nemo
+bindsym $meh+2 exec nemo
 bindsym $mod+F3 exec  ~/.config/i3/bin/launch_nemo_F3.sh #doesn't work if menubar is hidden
+bindsym $meh+3 exec  ~/.config/i3/bin/launch_nemo_F3.sh #doesn't work if menubar is hidden
 # bindsym $mod+F3 exec pcmanfm-qt
 #bindsym $mod+p exec --no-startup-id pkill picom; exec notify-send 'picom is DEAD'
 bindsym $mod+Ctrl+p exec --no-startup-id picom ; exec notify-send 'picom is ALIVE'
 #nvidia driver; causes HIGH CPU on nouveau
 #bindsym $mod+Ctrl+p exec --no-startup-id picom --config /dev/null --backend glx --xrender-sync-fence --experimental-backends; exec notify-send 'picom is ALIVE'
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+
+# Ergodox cheatsheet
+bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.png
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
