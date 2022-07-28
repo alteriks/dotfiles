@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# {
+  set -x
 
 #This was inspired by
 # https://gist.github.com/mikeboiko/b6e50210b4fb351b036f1103ea3c18a9
@@ -34,13 +36,13 @@ do
       tmux send-keys -t ${pane_process[0]} -X copy-pipe-and-cancel "xclip -in -sel secondary > /dev/null"
       PANE_COMMAND=$(tmux show-buffer | tr -d $TRIM_VALUE )
       #tmux delete-buffer
-      if [[ -z $PANE_COMMAND ]]; then 
+      if [[ -z $PANE_COMMAND ]]; then
         # $PANE_COMMAND is empty, so we can export $NEW_DISPLAY
         tmux send-keys -t ${pane_process[0]} " export DISPLAY=$NEW_DISPLAY" Enter
         tmux send-keys -t ${pane_process[0]} " " Enter
-      else 
+      else
         false
-      fi 
+      fi
    elif [[ "${pane_process[1]}" == *"python"* ]]; then
       tmux send-keys -t ${pane_process[0]} "import os; os.environ['DISPLAY']=\"$NEW_DISPLAY\"" Enter
    elif [[ "${pane_process[1]}" == *"vim"* ]]; then
@@ -48,3 +50,5 @@ do
       tmux send-keys -t ${pane_process[0]} ":let \$DISPLAY = \"$NEW_DISPLAY\"" Enter
    fi
 done
+exit 0
+# } > /tmp/tmux_update_display.log 2>&1
