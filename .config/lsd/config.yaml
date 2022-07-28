@@ -1,0 +1,9 @@
+date: relative
+blocks:
+  - permission
+  - links
+  - user
+  - group
+  - size
+  - date
+  - name
