@@ -146,10 +146,10 @@ fi
 setopt HIST_IGNORE_ALL_DUPS
 export HISTSIZE=40000
 export SAVEHIST=40000
+setopt EXTENDED_HISTORY
 setopt no_share_history
 setopt INC_APPEND_HISTORY_TIME
 export HISTFILE=$XDG_DATA_HOME/zsh/history_$HOSTNAME
-h () {  fc -Dlim "*$@*" 1 }
 
 # FZF managed by vimplug
 # Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic

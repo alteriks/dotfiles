@@ -21,6 +21,7 @@ yamllint
 
 # FONTS
 noto-fonts
+noto-fonts-emoji
 powerline-fonts
 terminus-font
 ttf-dejavu

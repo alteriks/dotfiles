@@ -58,6 +58,9 @@ git() {
   fi
 }
 
+
+history () {  fc -Dlim "*$@*" 1 }
+
 journalctl() {
   if [[ -n $@ ]]; then
     command journalctl "$@"
