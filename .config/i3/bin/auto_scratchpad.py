@@ -10,7 +10,8 @@ def workspace_args(s):
     """
     try:
         floating, name, class_name, instance, role, mark   = map(str, s.split(','))
-        return floating == 'True', name, class_name, instance, role, mark
+        # return floating == 'True', name, class_name, instance, role, mark
+        return floating , name, class_name, instance, role, mark
     except:
         raise argparse.ArgumentTypeError('Criteria must be ' \
                 'floating,name,class_name,instance,role,mark')
@@ -27,11 +28,16 @@ floating, names, classes, instances, roles, marks = zip(*args.criteria)
 
 i3 = i3ipc.Connection()
 last_matched = None
+last_matched_container = None
 
 def check_condition(container):
+
+    if (container == None):
+        return False
     """
     check if the container matches the specified criteria
     """
+    w_id = container.id
     w_name = container.name
     w_class = container.window_class
     w_instance = container.window_instance
@@ -41,20 +47,27 @@ def check_condition(container):
     w_urgent = container.urgent
     w_floating = container.floating
 
+    print(w_id,w_name,w_class,w_instance,w_role,w_marks,w_fullscreen,w_urgent,w_floating)
+
     for i in range(len(args.criteria)):
-        if (floating[i] == ('on' in w_floating)) and \
+        print(floating[i],w_floating)
+        # if (floating[i] == ('on' in w_floating)) and \
+        if (floating[i] == 'user_on') and \
                 (names[i] == '' or names[i] == w_name) and \
                 (classes[i] == '' or classes[i] == w_class) and \
                 (instances[i] == '' or instances[i] == w_instance) and \
                 (roles[i] == '' or roles[i] == w_role) and \
                 (marks[i] == '' or marks[i] in w_marks):
+            print('Truere')
             return True
+        print('falseeee')
+    print('\n')
     return False
 
 
-def move_to_scratchpad(w_id):
-    """ try to move window with con_id=w_id to scratchpad """
-    i3.command('[con_id=%s] move scratchpad' % (str(w_id)))
+def move_to_scratchpad(window_id):
+    """ try to move window with con_id=window_id to scratchpad """
+    i3.command('[con_id=%s] move scratchpad' % (str(window_id)))
 
 def on_window_focus(self, e):
     """
@@ -66,14 +79,20 @@ def on_window_focus(self, e):
     """
 
     global last_matched
-    w_id = e.container.id
+    global last_matched_container
+    window_id = e.container.id
 
-    if w_id != last_matched:
+    if window_id != last_matched:
+        if check_condition(last_matched_container):
+            print("tutaj")
         move_to_scratchpad(last_matched)
         last_matched = None
 
+
     if check_condition(e.container):
-        last_matched = w_id
+        last_matched_container = e.container
+        last_matched = window_id
+        print("last_matched: ",last_matched)
 
 
 # listen to focus event

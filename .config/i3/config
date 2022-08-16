@@ -215,7 +215,7 @@ bindsym Mod1+ctrl+k [class="KeePassXC"] scratchpad show, move position mouse
 for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
 for_window [class="KeePassXC" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
 for_window [class="KeePassXC" window_type="dialog"] move scratchpad, scratchpad show, focus, move position mouse
-for_window [class="KeePassXC" title="Generate Password"] scratchpad show, focus, move position mouse
+for_window [class="KeePassXC" title="Generate Password"] scratchpad show, focus, move position mouse, exec_always --no-startup-id pkill -f ,scratchpad-keepassxc,
 exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,scratchpad-keepassxc,, True,,KeePassXC,,,
 
 exec_always --no-startup-id xrdb -merge ~/.config/X11/Xresources
