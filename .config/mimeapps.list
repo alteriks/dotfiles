@@ -31,6 +31,7 @@ video/mp4=mpv.desktop
 text/markdown=typora.desktop
 image/svg+xml=org.gnome.gThumb.desktop
 x-scheme-handler/nozbe=Nozbe.desktop
+x-scheme-handler/mailspring=Mailspring.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
