@@ -95,6 +95,7 @@ bc
 bind-tools
 bridge-utils
 broot
+btop
 diff-so-fancy
 dmidecode
 dnsmasq
