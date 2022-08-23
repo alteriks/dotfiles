@@ -208,3 +208,14 @@ xplr.config.modes.builtin.action.key_bindings.on_key["!"].messages = {
   "ExplorePwdAsync",
   "PopMode",
 }
+
+xplr.config.modes.builtin.default.key_bindings.on_key.X = {
+  help = "open",
+  messages = {
+    {
+      BashExecSilently = [===[
+      xdg-open "${XPLR_FOCUS_PATH:?}"
+      ]===],
+    },
+  },
+}
