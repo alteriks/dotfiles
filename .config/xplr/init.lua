@@ -208,3 +208,14 @@ xplr.config.modes.builtin.action.key_bindings.on_key["!"].messages = {
   "ExplorePwdAsync",
   "PopMode",
 }
+
+
+-- icons
+local function blue(x)
+  return "\x1b[34m" .. x .. "\x1b[0m"
+end
+local function cyan(x)
+  return "\x1b[36m" .. x .. "\x1b[0m"
+end
+xplr.config.node_types.directory.meta.icon = blue "🗁 "
+xplr.config.node_types.file.meta.icon = cyan "🗋 "
