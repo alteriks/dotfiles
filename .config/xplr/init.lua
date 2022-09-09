@@ -209,6 +209,7 @@ xplr.config.modes.builtin.action.key_bindings.on_key["!"].messages = {
   "PopMode",
 }
 
+<<<<<<< HEAD
 
 -- icons
 local function blue(x)
@@ -219,3 +220,15 @@ local function cyan(x)
 end
 xplr.config.node_types.directory.meta.icon = blue "🗁 "
 xplr.config.node_types.file.meta.icon = cyan "🗋 "
+=======
+xplr.config.modes.builtin.default.key_bindings.on_key.X = {
+  help = "open",
+  messages = {
+    {
+      BashExecSilently = [===[
+      xdg-open "${XPLR_FOCUS_PATH:?}"
+      ]===],
+    },
+  },
+}
+>>>>>>> 88467ea75a3224cfb49520ab246c529f2a282364
