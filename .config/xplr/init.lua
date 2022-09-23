@@ -209,6 +209,18 @@ xplr.config.modes.builtin.action.key_bindings.on_key["!"].messages = {
   "PopMode",
 }
 
+<<<<<<< HEAD
+
+-- icons
+local function blue(x)
+  return "\x1b[34m" .. x .. "\x1b[0m"
+end
+local function cyan(x)
+  return "\x1b[36m" .. x .. "\x1b[0m"
+end
+xplr.config.node_types.directory.meta.icon = blue "🗁 "
+xplr.config.node_types.file.meta.icon = cyan "🗋 "
+=======
 xplr.config.modes.builtin.default.key_bindings.on_key.X = {
   help = "open",
   messages = {
@@ -219,3 +231,4 @@ xplr.config.modes.builtin.default.key_bindings.on_key.X = {
     },
   },
 }
+>>>>>>> 88467ea75a3224cfb49520ab246c529f2a282364

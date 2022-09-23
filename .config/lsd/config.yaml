@@ -7,3 +7,8 @@ blocks:
   - size
   - date
   - name
+    # == Icons ==
+icons:
+  when: auto
+  theme: unicode
+  separator: " "
