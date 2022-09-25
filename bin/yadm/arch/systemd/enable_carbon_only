@@ -10,3 +10,5 @@ intel-undervolt-loop
 NetworkManager
 NetworkManager-dispatcher ### autostarts vpn when not at home /etc/NetworkManager/dispatcher.d/10-vpn-up
 #tlp
+
+lenovo_fix # WARN: package is named throttled, after 0.10 systemd service will be called throttled
