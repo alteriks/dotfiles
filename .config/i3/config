@@ -181,6 +181,7 @@ disable_randr15 yes
 # The middle button toggles floating
 bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
+bindsym --whole-window $mod+m floating toggle
 
 for_window [class="obsidian" title="TODO"] move to scratchpad, move position mouse
 bindsym $mod+o exec obsidian obsidian://open?vault=TODO; exec i3-msg '[class="obsidian"] [title="TODO"]' scratchpad show
