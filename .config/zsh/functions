@@ -226,7 +226,7 @@ YADM() {
     ## logic p && q || r
     if [[ $1 == hammer ]] && [[ $EUID -eq 0 ]] || [[ $EUID -ge 1000 ]] ; then
       # YADM_STATUS=$( yadm status --yadm-data $YADM_DATA --short )
-      YADM_STATUS=$( yadm --yadm-data $YADM_DATA status |egrep -v 'On branch master|(use "git push" to publish your local commits)|(use "git restore --staged <file>..." to unstage)' )
+      YADM_STATUS=$( yadm --yadm-data $YADM_DATA status |grep -Ev 'On branch master|(use "git push" to publish your local commits)|(use "git restore --staged <file>..." to unstage)' )
       if [ -n "$YADM_STATUS" ]; then
         echo -e "\nCommit: "
         echo $YADM_STATUS
@@ -277,13 +277,13 @@ YADM() {
   echo
   source ~/bin/yadm/arch/functions
   META="base-devel|xorg-apps"
-  PACMAN_NOT_INSTALLED=$(cat ~/bin/yadm/arch/pacman/{all,*${HOSTNAME}*} | egrep -v $META | eval $STRIP |  pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
+  PACMAN_NOT_INSTALLED=$(cat ~/bin/yadm/arch/pacman/{all,*${HOSTNAME}*} | grep -Ev $META | eval $STRIP |  pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
   if [[ -n $PACMAN_NOT_INSTALLED ]]; then
     echo -e "${RED}[+] MISSING PACMAN PACKAGES${NC}"
     echo $PACMAN_NOT_INSTALLED
   fi
 
-  AUR_NOT_INSTALLED=$(cat ~/bin/yadm/arch/aur/{all,*${HOSTNAME}*} | egrep -v $META | eval $STRIP |  pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
+  AUR_NOT_INSTALLED=$(cat ~/bin/yadm/arch/aur/{all,*${HOSTNAME}*} | grep -Ev $META | eval $STRIP |  pacman -Qq - 1>/dev/null 2> >( grep error: | awk -F\' '{print $2}' ))
   if [[ -n $AUR_NOT_INSTALLED ]]; then
     echo
     echo -e "${RED}[+] MISSING AUR PACKAGES${NC}"
