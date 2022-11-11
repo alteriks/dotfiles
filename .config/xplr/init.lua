@@ -1,4 +1,14 @@
 version = "0.20.0"
+
+local home = os.getenv("HOME")
+package.path = home
+.. "/.config/xplr/plugins/?/init.lua;"
+.. home
+.. "/.config/xplr/plugins/?.lua;"
+.. package.path
+require("preview-tabbed").setup()
+
+
 -- The default layout without SortAndFilter
 --
 -- Type: [Layout](https://xplr.dev/en/layout)
@@ -75,6 +85,7 @@ require("xpm").setup({
     'sayanarijit/map.xplr',
     'sayanarijit/qrcp.xplr',
     'sayanarijit/zoxide.xplr',
+    'sayanarijit/dragon.xplr',
     -- 'sayanarijit/material-landscape.xplr',
   },
   auto_install = true,
@@ -208,6 +219,17 @@ xplr.config.modes.builtin.action.key_bindings.on_key["!"].messages = {
   "ExplorePwdAsync",
   "PopMode",
 }
+
+require("dragon").setup{
+  mode = "selection_ops",
+  key = "D",
+  drag_args = "",
+  drop_args = "",
+  keep_selection = false,
+  bin = "dragon-drop",
+}
+
+
 
 -- icons
 local function blue(x)
