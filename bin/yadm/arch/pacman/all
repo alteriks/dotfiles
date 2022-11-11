@@ -126,6 +126,7 @@ man-db
 man-pages
 mc
 minicom
+mosh
 mtr
 neovim
 net-tools
@@ -142,6 +143,7 @@ proxychains-ng
 python-neovim
 pv
 qemu
+rebuild-detector # checkrebuild https://github.com/maximbaz/rebuild-detector
 ripgrep
 rsync
 screen
