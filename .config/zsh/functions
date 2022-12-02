@@ -11,6 +11,11 @@ arpscan() {
   #RPiZ=B8:27:EB
 }
 
+cdl () {
+  cd "$@"
+  lsd
+}
+
 dce() {
   NAME=$(docker-compose ps --services | head -n1)
   NAME=${1:-$NAME}
@@ -289,4 +294,10 @@ YADM() {
     echo -e "${RED}[+] MISSING AUR PACKAGES${NC}"
     echo $AUR_NOT_INSTALLED
   fi
+}
+
+zl () {
+  # Use zoxide to jump and list
+  z "$@"
+  lsd
 }
