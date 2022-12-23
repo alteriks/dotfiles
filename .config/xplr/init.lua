@@ -1,12 +1,13 @@
 version = "0.20.0"
 
-local home = os.getenv("HOME")
-package.path = home
-.. "/.config/xplr/plugins/?/init.lua;"
-.. home
-.. "/.config/xplr/plugins/?.lua;"
-.. package.path
-require("preview-tabbed").setup()
+-- TODO: only on moar ;/
+-- local home = os.getenv("HOME")
+-- package.path = home
+-- .. "/.config/xplr/plugins/?/init.lua;"
+-- .. home
+-- .. "/.config/xplr/plugins/?.lua;"
+-- .. package.path
+-- require("preview-tabbed").setup()
 
 
 -- The default layout without SortAndFilter
