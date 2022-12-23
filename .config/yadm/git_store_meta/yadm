@@ -232,6 +232,13 @@
 .local/share/fonts/ter-powerline-x28n.pcf.gz	f	0644
 .local/share/fonts/ter-powerline-x32b.pcf.gz	f	0644
 .local/share/fonts/ter-powerline-x32n.pcf.gz	f	0644
+.local/share/jellyfinmediaplayer	d	0755
+.local/share/jellyfinmediaplayer/input.conf	f	0644
+.local/share/jellyfinmediaplayer/jellyfinmediaplayer.conf	f	0644
+.local/share/jellyfinmediaplayer/mpv.conf	f	0644
+.local/share/jellyfinmediaplayer/scripts	d	0755
+.local/share/jellyfinmediaplayer/scripts/autosub.lua	f	0644
+.local/share/jellyfinmediaplayer/scripts/dynamic-crop.lua	f	0644
 .profile	f	0644
 .zshenv	f	0644
 bin	d	0755
