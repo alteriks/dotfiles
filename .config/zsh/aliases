@@ -3,6 +3,7 @@
 
 alias lsd='lsd -l'
 alias lst='lsd -l --tree --depth 3'
+alias l='lsd -Al'
 alias ag='ag --hidden --ignore \.git'
 alias ansible-lint='ansible-lint -c ~/.config/ansible-lint/config'
 alias bc='bc -l'
