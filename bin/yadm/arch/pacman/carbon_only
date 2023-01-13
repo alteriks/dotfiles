@@ -2,5 +2,6 @@
 
 acpi_call-lts # battery thresholds
 fwupd
+os_prober # detects windows
 wireless_tools
 xorg-xbacklight
