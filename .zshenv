@@ -1,5 +1,5 @@
 #archlinux specific
-: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/zim}
+# : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/zim}
 
 setopt NO_GLOBAL_RCS
 
