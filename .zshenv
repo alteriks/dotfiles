@@ -1,4 +1,6 @@
 #archlinux specific
+
+# sometimes it would eval to ~/, but later it could eval to ~/.config/zsh/zim
 # : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/zim}
 
 setopt NO_GLOBAL_RCS
