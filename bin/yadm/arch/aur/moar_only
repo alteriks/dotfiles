@@ -7,7 +7,8 @@ looking-glass
 libimobiledevice-git
 
 # Ergodox flashing tool
-zsa-wally-bin
+# INFO: already in community repo
+# zsa-wally-bin
 
 # A Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more.
 mangohud

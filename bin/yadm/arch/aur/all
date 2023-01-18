@@ -9,7 +9,7 @@ nerd-fonts-terminus
 nerd-fonts-cascadia-code
 pacolog
 protonvpn-cli-ng
-ripgrep-all
+# ripgrep-all already in community repo
 # safeeyes
 sanoid
 shellcheck-bin ## haskell hell updates
@@ -47,10 +47,10 @@ dhtest
 # i3 autotiling https://github.com/nwg-piotr/autotiling
 autotiling-git
 
-yt-dlp
+# yt-dlp already in community repo
 
 # notes
-obsidian
+# obsidian already in community repo
 typora-free
 
 # QR code send/receive files to phone, used by xplr
@@ -66,3 +66,6 @@ qt-avif-image-plugin-libavif-git
 # Pandoc-bin executable only, without 750MB Haskell depends/makedepends
 # Used by ripgrep-all (rga) to grep .odt, .docx etc
 pandoc-bin
+
+# packer source plugin
+packer-builder-arm-git

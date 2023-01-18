@@ -65,6 +65,7 @@ mousepad
 nemo
 nemo-fileroller
 nitrogen
+obsidian
 pcmanfm-qt
 picom
 python-i3ipc
@@ -145,6 +146,7 @@ pv
 qemu
 rebuild-detector # checkrebuild https://github.com/maximbaz/rebuild-detector
 ripgrep
+ripgrep-all
 rsync
 screen
 smartmontools
