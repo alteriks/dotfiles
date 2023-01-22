@@ -69,3 +69,11 @@ pandoc-bin
 
 # packer source plugin
 packer-builder-arm-git
+
+# Eases downgrading packages in Arch Linux.
+# https://github.com/archlinux-downgrade/downgrade
+downgrade
+
+# A tool for Arch Linux package manager pacman to modify PKGBUILD automatically
+# https://github.com/ava1ar/customizepkg
+customizepkg
