@@ -183,9 +183,9 @@ bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
 bindsym --whole-window $mod+m floating toggle
 
-for_window [class="obsidian" title="TODO"] move to scratchpad, move position mouse
-bindsym $mod+o exec obsidian obsidian://open?vault=TODO; exec i3-msg '[class="obsidian"] [title="TODO"]' scratchpad show
-exec_always --no-startup-id obsidian obsidian://open?vault=TODO
+for_window [class="obsidian" title="memo"] move to scratchpad, move position mouse
+bindsym $mod+o exec obsidian obsidian://open?vault=memo; exec i3-msg '[class="obsidian"] [title="memo"]' scratchpad show
+# exec_always --no-startup-id obsidian obsidian://open?vault=TODO
 
 # for_window [class="Typora" title="typora_notepad.md"] move to scratchpad, move position mouse
 # bindsym $mod+i exec i3-msg '[class="Typora" title="typora_notepad.md"]' scratchpad show
