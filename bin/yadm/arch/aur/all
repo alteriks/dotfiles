@@ -3,10 +3,10 @@ keepass-diff
 gcal
 git-completion
 mbuffer
-nerd-fonts-dejavu-complete
-nerd-fonts-noto-sans-mono
-nerd-fonts-terminus
-nerd-fonts-cascadia-code
+# nerd-fonts-dejavu-complete Already in repo
+# nerd-fonts-noto-sans-mono Already in repo
+# nerd-fonts-terminus Already in repo
+# nerd-fonts-cascadia-code Already in repo
 pacolog
 protonvpn-cli-ng
 # ripgrep-all already in community repo

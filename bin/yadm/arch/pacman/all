@@ -24,9 +24,13 @@ noto-fonts
 noto-fonts-emoji
 powerline-fonts
 terminus-font
+ttf-cascadia-code-nerd
 ttf-dejavu
+ttf-dejavu-nerd
 ttf-font-awesome
 ttf-liberation
+ttf-noto-nerd
+ttf-terminus-nerd
 
 # MEDIA
 alsa-card-profiles
@@ -149,6 +153,7 @@ ripgrep
 ripgrep-all
 rsync
 screen
+sd # sed replacement
 smartmontools
 smbclient
 smem

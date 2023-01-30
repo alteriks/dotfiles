@@ -272,8 +272,8 @@ assign [ class = "calibre" ] workspace $workspace5
 assign [ class = "Zathura" ] workspace $workspace5
 
 # Start Applications
-bindsym Print exec --no-startup-id flameshot gui -p ~/tmp/
-bindsym $mod+p exec --no-startup-id flameshot gui -p ~/tmp/
+bindsym Print exec --no-startup-id flameshot gui
+bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+F2 exec nemo
 bindsym $meh+2 exec nemo
 bindsym $mod+F3 exec  ~/.config/i3/bin/launch_nemo_F3.sh #doesn't work if menubar is hidden
