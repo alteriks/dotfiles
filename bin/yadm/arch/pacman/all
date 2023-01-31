@@ -34,8 +34,8 @@ ttf-terminus-nerd
 
 # MEDIA
 alsa-card-profiles
-deluge
-deluge-gtk
+# deluge
+# deluge-gtk
 gimp
 handbrake
 mpv
@@ -215,7 +215,7 @@ freerdp
 libvncserver
 rdesktop
 remmina
-tigervnc
+# tigervnc
 
 # BROWSER
 chromium
