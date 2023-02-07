@@ -205,3 +205,5 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
 else
   source ~/.config/zsh/.p10k.zsh_custom
 fi
+
+export PAGER='less -r'

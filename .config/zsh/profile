@@ -64,6 +64,6 @@ export DIFFPROG="nvim -d"
 export EDITOR=nvim
 #export TERMINAL=kitty
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export PAGER=less
+#export PAGER="less -r" # ovveriden by zim to "less", so it is set later in ~/.config/zsh/zshrc_generic
 export BAT_PAGER="less -R"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always'"

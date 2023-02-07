@@ -6,4 +6,4 @@ GIT_DIR=$YADM_HOOK_REPO \
   GIT_WORK_TREE=$YADM_HOOK_WORK \
   ~/bin/git-store-meta.pl \
   -t $GIT_STORE_META \
-  --apply --lazy | egrep -v '^fields:|^flags:'
+  --apply --lazy | grep -Ev '^fields:|^flags:'

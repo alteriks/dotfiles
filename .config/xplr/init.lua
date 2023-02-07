@@ -17,8 +17,8 @@ xplr.config.layouts.builtin.default = {
   Horizontal = {
     config = {
       constraints = {
-        { Percentage = 70 },
-        { Percentage = 30 },
+        { Min = 55 },
+        { Length = 40 },
       },
     },
     splits = {
@@ -40,11 +40,13 @@ xplr.config.layouts.builtin.default = {
         Vertical = {
           config = {
             constraints = {
-              { Percentage = 30 },
+              { Length = 2 },
+              { Length = 6 },
               { Percentage = 70 },
             },
           },
           splits = {
+            "SortAndFilter",
             "Selection",
             "HelpMenu",
           },
@@ -53,6 +55,7 @@ xplr.config.layouts.builtin.default = {
     },
   },
 }
+
 
 local home = os.getenv("HOME")
 local xpm_path = home .. "/.local/share/xplr/dtomvan/xpm.xplr"
@@ -230,7 +233,11 @@ require("dragon").setup{
   bin = "dragon-drop",
 }
 
-
+xplr.config.general.initial_sorting = {
+    { sorter = "ByCanonicalIsDir", reverse = true },
+    { sorter = "ByLastModified", reverse = true },
+    -- { sorter = "ByIRelativePath", reverse = false },
+}
 
 -- icons
 local function blue(x)

@@ -24,14 +24,18 @@ noto-fonts
 noto-fonts-emoji
 powerline-fonts
 terminus-font
+ttf-cascadia-code-nerd
 ttf-dejavu
+ttf-dejavu-nerd
 ttf-font-awesome
 ttf-liberation
+ttf-noto-nerd
+ttf-terminus-nerd
 
 # MEDIA
 alsa-card-profiles
-deluge
-deluge-gtk
+# deluge
+# deluge-gtk
 gimp
 handbrake
 mpv
@@ -65,6 +69,7 @@ mousepad
 nemo
 nemo-fileroller
 nitrogen
+obsidian
 pcmanfm-qt
 picom
 python-i3ipc
@@ -109,6 +114,7 @@ fwupd # firmware update
 git
 git-delta # git diff
 git-delta
+glow # markdown reader https://github.com/charmbracelet/glow used as cat replacement (~/.config/zsh/functions)
 hdparm
 htop
 i7z
@@ -125,6 +131,7 @@ lsof
 man-db
 man-pages
 mc
+mdcat # markdown reader  used as cat replacement (~/.config/zsh/functions)
 minicom
 mosh
 mtr
@@ -145,8 +152,10 @@ pv
 qemu
 rebuild-detector # checkrebuild https://github.com/maximbaz/rebuild-detector
 ripgrep
+ripgrep-all
 rsync
 screen
+sd # sed replacement
 smartmontools
 smbclient
 smem
@@ -208,7 +217,7 @@ freerdp
 libvncserver
 rdesktop
 remmina
-tigervnc
+# tigervnc
 
 # BROWSER
 chromium

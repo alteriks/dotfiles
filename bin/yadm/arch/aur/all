@@ -3,13 +3,13 @@ keepass-diff
 gcal
 git-completion
 mbuffer
-nerd-fonts-dejavu-complete
-nerd-fonts-noto-sans-mono
-nerd-fonts-terminus
-nerd-fonts-cascadia-code
+# nerd-fonts-dejavu-complete Already in repo
+# nerd-fonts-noto-sans-mono Already in repo
+# nerd-fonts-terminus Already in repo
+# nerd-fonts-cascadia-code Already in repo
 pacolog
 protonvpn-cli-ng
-ripgrep-all
+# ripgrep-all already in community repo
 # safeeyes
 sanoid
 shellcheck-bin ## haskell hell updates
@@ -47,10 +47,10 @@ dhtest
 # i3 autotiling https://github.com/nwg-piotr/autotiling
 autotiling-git
 
-yt-dlp
+# yt-dlp already in community repo
 
 # notes
-obsidian
+# obsidian already in community repo
 typora-free
 
 # QR code send/receive files to phone, used by xplr
@@ -66,3 +66,14 @@ qt-avif-image-plugin-libavif-git
 # Pandoc-bin executable only, without 750MB Haskell depends/makedepends
 # Used by ripgrep-all (rga) to grep .odt, .docx etc
 pandoc-bin
+
+# packer source plugin
+packer-builder-arm-git
+
+# Eases downgrading packages in Arch Linux.
+# https://github.com/archlinux-downgrade/downgrade
+downgrade
+
+# A tool for Arch Linux package manager pacman to modify PKGBUILD automatically
+# https://github.com/ava1ar/customizepkg
+customizepkg
