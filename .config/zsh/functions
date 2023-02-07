@@ -13,8 +13,10 @@ arpscan() {
 
 cat () {
   # Opens markdown files in `glow` https://github.com/charmbracelet/glow
+  # TODO: check https://github.com/swsnr/mdcat it supports rendering images
   # Uses `bat` for other files
   # `cat` is used as fallback if either package is not installed
+  setopt nocasematch
   CHECKFILETYPE=$1
   if [ ${CHECKFILETYPE##*.} =~ 'md' ];then
     echo markdown;
@@ -32,6 +34,7 @@ cat () {
     # echo 'use cat';
     # cat $@
   fi
+  setopt casematch
 }
 
 cdl () {
