@@ -11,6 +11,29 @@ arpscan() {
   #RPiZ=B8:27:EB
 }
 
+cat () {
+  # Opens markdown files in `glow` https://github.com/charmbracelet/glow
+  # Uses `bat` for other files
+  # `cat` is used as fallback if either package is not installed
+  CHECKFILETYPE=$1
+  if [ ${CHECKFILETYPE##*.} =~ 'md' ];then
+    echo markdown;
+    if command -v glow &> /dev/null ;then
+      glow $@
+    else
+      cat $@
+    fi
+  else
+    if command -v bat &> /dev/null ;then
+      bat -pp $@
+    else
+      cat $@
+    fi
+    # echo 'use cat';
+    # cat $@
+  fi
+}
+
 cdl () {
   cd "$@"
   lsd

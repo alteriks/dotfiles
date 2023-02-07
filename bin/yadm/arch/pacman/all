@@ -114,6 +114,7 @@ fwupd # firmware update
 git
 git-delta # git diff
 git-delta
+glow # markdown reader https://github.com/charmbracelet/glow used as cat replacement (~/.config/zsh/functions)
 hdparm
 htop
 i7z
@@ -130,6 +131,7 @@ lsof
 man-db
 man-pages
 mc
+mdcat # markdown reader  used as cat replacement (~/.config/zsh/functions)
 minicom
 mosh
 mtr
