@@ -19,7 +19,6 @@ cat () {
   setopt nocasematch
   CHECKFILETYPE=$1
   if [ ${CHECKFILETYPE##*.} =~ 'md' ];then
-    echo markdown;
     if command -v glow &> /dev/null ;then
       glow $@
     else
@@ -31,8 +30,6 @@ cat () {
     else
       cat $@
     fi
-    # echo 'use cat';
-    # cat $@
   fi
   setopt casematch
 }
