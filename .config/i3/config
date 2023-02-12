@@ -183,6 +183,9 @@ bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
 bindsym --whole-window $mod+m floating toggle
 
+bindsym $mod+b exec kitty btop;
+for_window [class="kitty" title="btop"] floating enable, resize set 1250 950
+
 for_window [class="obsidian" title="memo"] move to scratchpad, move position mouse
 bindsym $mod+o exec obsidian obsidian://open?vault=memo; exec i3-msg '[class="obsidian"] [title="memo"]' scratchpad show
 # exec_always --no-startup-id obsidian obsidian://open?vault=TODO
@@ -290,7 +293,6 @@ bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.pn
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
 bindsym $mod+BackSpace workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+Tab		workspace next

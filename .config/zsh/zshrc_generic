@@ -207,3 +207,7 @@ else
 fi
 
 export PAGER='less -r'
+
+# Override noclobber /home/alteriks/.config/zsh/zim/modules/environment/init.zsh
+# NO_CLOBBER disallows > to overwrite existing files. Use >| or >! instead.
+setopt clobber
