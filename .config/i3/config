@@ -21,7 +21,7 @@ font pango:DejaVu Sans Mono for Powerline, Book 11
 floating_modifier $mod
 
 # start a terminal
-set $terminal kitty
+set $terminal kitty --single-instance
 bindsym $mod+Return exec HOSTNAME=$HOSTNAME $terminal
 bindsym --release $mod+Shift+Return exec HOSTNAME=$HOSTNAME $terminal --class kitty-floating
 
@@ -183,8 +183,8 @@ bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
 bindsym --whole-window $mod+m floating toggle
 
-bindsym $mod+b exec kitty btop;
-for_window [class="kitty" title="btop"] floating enable, resize set 1250 950
+bindsym $mod+b exec "kitty --single-instance -o confirm_os_window_close=0 --class=btop -1 btop; exit"
+for_window [class="btop" title="btop"] floating enable, resize set 1450 950
 
 for_window [class="obsidian" title="memo"] move to scratchpad, move position mouse
 bindsym $mod+o exec obsidian obsidian://open?vault=memo; exec i3-msg '[class="obsidian"] [title="memo"]' scratchpad show
@@ -226,7 +226,7 @@ exec_always --no-startup-id xrdb -merge ~/.config/X11/Xresources
 exec_always --no-startup-id ~/.config/i3/bin/setxkbmap.sh # moar also launches ~/.config/i3/bin/setxkbmap_inputplug.sh
 
 
-floating_maximum_size 1800 x 1200
+# floating_maximum_size 1800 x 1200
 floating_minimum_size 100 x 50
 focus_on_window_activation urgent
 force_display_urgency_hint 250 ms
