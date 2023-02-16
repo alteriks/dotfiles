@@ -5,11 +5,15 @@
 # output DP-1 pos 1969 0 res 3440x1440
 # output eDP-1 scale 1 pos 0 0 res 2560x1440
 # output DP-1  scale 1 pos 2560 0 res 3440x1440
-#output DP-1 pos 0 0 res 3840x1600@120Hz adaptive_sync off
-output DP-1 pos 0 0 res 3840x1600@144Hz adaptive_sync on
+output DP-1 pos 0 0 res 3840x1600@120Hz adaptive_sync off
+# output DP-1 pos 0 0 res 3840x1600@144Hz adaptive_sync on
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+
+# Ergodox
+set $hyper Ctrl+Shift+Mod1+Mod4
+set $meh Ctrl+Shift+Mod1
 
 set $i3config ~/.config/i3
 
@@ -21,8 +25,9 @@ font pango:DejaVu Sans Mono for Powerline, Book 11
 floating_modifier $mod
 
 # start a terminal
-set $terminal kitty
+set $terminal kitty --single-instance
 bindsym $mod+Return exec $terminal
+bindsym --release $mod+Shift+Return exec HOSTNAME=$HOSTNAME $terminal --class kitty-floating
 
 # kill focused window
 bindsym --release $mod+Shift+q exec xkill
@@ -31,9 +36,7 @@ bindsym $mod+F4 kill
 bindsym Mod1+F4 kill
 
 # start launcher
-bindsym $mod+o           exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
 bindsym $mod+space       exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
-bindsym $mod+F2          exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
 bindsym $mod+Shift+space exec --no-startup-id "rofi -modi calc -show calc -width -50 -no-show-match -no-sort | xclip -in -sel primary > /dev/null"
 bindsym $mod+i exec --no-startup-id "networkmanager_dmenu"
 
@@ -95,11 +98,13 @@ set $workspace3 "3:  	"
 set $workspace4 "4:  	"
 #set $workspace4 "4:VM"
 set $workspace5 "5:    "
-set $workspace6 "6:Photo"
-set $workspace7 "7:"
-set $workspace8 "8:"
-set $workspace9 "9:"
-set $workspace10 "10:"
+set $workspace6 "6:    mc"
+set $workspace7 "7:    mc"
+set $workspace8 "8:  	Rock"
+set $workspace9 "9:    Rock"
+set $workspace10 "10:    Rock"
+set $workspace11 "11:   	"
+set $workspace12 "12:   	"
 
 # switch to workspace
 bindsym $mod+1 workspace number $workspace1
@@ -112,6 +117,8 @@ bindsym $mod+7 workspace number $workspace7
 bindsym $mod+8 workspace number $workspace8
 bindsym $mod+9 workspace number $workspace9
 bindsym $mod+0 workspace number $workspace10
+bindsym $hyper+1 workspace number $workspace11
+bindsym $hyper+2 workspace number $workspace12
 
 # move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $workspace1
@@ -125,6 +132,9 @@ bindsym $mod+Ctrl+8 move container to workspace $workspace8
 bindsym $mod+Ctrl+9 move container to workspace $workspace9
 bindsym $mod+Ctrl+0 move container to workspace $workspace10
 
+bindsym --whole-window $mod+button4 move container to workspace next; workspace next
+bindsym --whole-window $mod+button5 move container to workspace prev; workspace prev
+
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $workspace1; workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2; workspace $workspace2
@@ -135,7 +145,7 @@ bindsym $mod+Shift+6 move container to workspace $workspace6; workspace $workspa
 bindsym $mod+Shift+7 move container to workspace $workspace7; workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8; workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9; workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace0; workspace $workspace0
+bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $workspace10
 
 # Move workspace to output
 bindsym $mod+Ctrl+h move workspace to output left
@@ -146,7 +156,7 @@ bindsym $mod+Ctrl+l move workspace to output right
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'swaymsg exit'"
 
 bindsym $mod+Escape exec --no-startup-id "~/bin/systemcontroll"
 
@@ -221,30 +231,30 @@ bar {
 bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
 
-# The side buttons move the window around
-bindsym button9 move left
-bindsym button8 move right
+bindsym $mod+b exec "kitty --single-instance -o confirm_os_window_close=0 --class=btop -1 btop; exit"
+for_window [class="btop" title="btop"] floating enable, resize set 1450 950
 
-# Border for all windows - 3 pixels, this rule must be above others, so it can be overriden
-#for_window [class=".*"] border pixel 3
+bindsym $mod+x exec "kitty --single-instance -o confirm_os_window_close=0 --class=xplr -1 xplr; exit"
+for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
+
+for_window [class="obsidian" title="memo"] move to scratchpad, move position mouse
+bindsym $mod+o exec obsidian obsidian://open?vault=memo; exec swaymsg '[class="obsidian"] [title="memo"]' scratchpad show
+# exec_always --no-startup-id obsidian obsidian://open?vault=TODO
+
+# for_window [class="Typora" title="typora_notepad.md"] move to scratchpad, move position mouse
+# bindsym $mod+i exec swaymsg '[class="Typora" title="typora_notepad.md"]' scratchpad show
+# exec_always --no-startup-id typora ~/tmp/typora_notepad.md
 
 for_window [instance="scratchpad-vim"] move to scratchpad
-bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
-#TODO: Wayland exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim
-
-for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpad
-#TODO: Wayland bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; exec i3-msg '[instance="scratchpad-notepad"]' scratchpad show
-#exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim
-
-# for_window [instance="scratchpad-notepad"] resize set 850 550, move to scratchpad
-# bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; [instance="scratchpad-notepad"] scratchpad show
-# #exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim
+# bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
+bindsym $mod+t exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim; exec swaymsg '[instance="scratchpad-vim"]' scratchpad show
+exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim
 
 for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
 bindsym $mod+c [instance="gnome-calculator"] scratchpad show
 #TODO: Wayland exec --no-startup-id gnome-calculator
 #TODO: Wayland exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,gnome-calculator,,
-#TODO: Wayland exec_always sleep 2 && i3-msg "[class="Gnome-calculator"] move position 1400px 600px resize set 450 550"
+#TODO: Wayland exec_always sleep 2 && swaymsg "[class="Gnome-calculator"] move position 1400px 600px resize set 450 550"
 #for_window [class="Gnome-calculator"] focus, floating enable
 #exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh gnome-calculator --name scratchpad-calculator
 
@@ -397,7 +407,7 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
+# bindsym $mod+b workspace back_and_forth
 bindsym $mod+BackSpace workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+Tab		workspace next
@@ -429,8 +439,8 @@ bindsym $mod+Ctrl+Left  workspace prev
 exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
 exec_always autotiling
 # Start on specific workspace
-#exec i3-msg 'exec --no-startup-id vivaldi-snapshot'
-exec --no-startup-id i3-msg 'workspace $workspace2; splith; exec $terminal'
+#exec swaymsg 'exec --no-startup-id vivaldi-snapshot'
+exec --no-startup-id swaymsg 'workspace $workspace2; splith; exec $terminal'
 #TODO: Wayland exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #nvidia driver; causes HIGH CPU on nouveau
 #exec --no-startup-id nitrogen --restore; sleep 1; picom --config /dev/null --backend glx --xrender-sync-fence --experimental-backends

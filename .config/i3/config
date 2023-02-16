@@ -186,6 +186,9 @@ bindsym --whole-window $mod+m floating toggle
 bindsym $mod+b exec "kitty --single-instance -o confirm_os_window_close=0 --class=btop -1 btop; exit"
 for_window [class="btop" title="btop"] floating enable, resize set 1450 950
 
+bindsym $mod+x exec "kitty --single-instance -o confirm_os_window_close=0 --class=xplr -1 xplr; exit"
+for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
+
 for_window [class="obsidian" title="memo"] move to scratchpad, move position mouse
 bindsym $mod+o exec obsidian obsidian://open?vault=memo; exec i3-msg '[class="obsidian"] [title="memo"]' scratchpad show
 # exec_always --no-startup-id obsidian obsidian://open?vault=TODO
