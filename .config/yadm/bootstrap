@@ -20,7 +20,7 @@ elif [[ "$HOSTNAME" == "nebula" ]]; then
   OS_TYPE=arch
 elif [[ "$HOSTNAME" == "lordjim" ]]; then
   CLASS=rpi
-  OS_TYPE=debian
+  #OS_TYPE=debian
 else
   CLASS=other
 fi
@@ -30,20 +30,22 @@ yadm config local.class $CLASS
 echo -e "${GREEN}[+] yadm class:${NC}" $(yadm config local.class)
 echo ""
 
-DEFAULT_SHELL=$(grep $(id -un) /etc/passwd | awk -F: {'print $7'} )
-if command -v zsh &> /dev/null; then
-  if [[ "/bin/zsh" =~ $DEFAULT_SHELL ]]; then
-    true
-  else
-    echo
-    echo -e "${GREEN}[+] Change shell${NC}"
-    echo
-    if command -v chsh &> /dev/null; then
-      chsh -s /bin/zsh
+if [[ BOOTSTRAP_QUICK -eq 0 ]]; then
+  DEFAULT_SHELL=$(grep $(id -un) /etc/passwd | awk -F: {'print $7'} )
+  if command -v zsh &> /dev/null; then
+    if [[ "/bin/zsh" =~ $DEFAULT_SHELL ]]; then
+      true
     else
-      sed --in-place 's|\(root:.*:.*:.*:.*:.*:\).*$|\1:/bin/zsh|' /etc/passwd
+      echo
+      echo -e "${GREEN}[+] Change shell${NC}"
+      echo
+      if command -v chsh &> /dev/null; then
+        chsh -s /bin/zsh
+      else
+        sed --in-place 's|\(root:.*:.*:.*:.*:.*:\).*$|\1:/bin/zsh|' /etc/passwd
+      fi
+      echo ""
     fi
-    echo ""
   fi
 fi
 
