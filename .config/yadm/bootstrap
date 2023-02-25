@@ -2,7 +2,8 @@
 
 set -eo pipefail
 
-: ${BOOTSTRAP_QUICK:=0}
+: "${BOOTSTRAP_QUICK:=0}"
+print BOOTSTRAP_QUICK="$BOOTSTRAP_QUICK"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
