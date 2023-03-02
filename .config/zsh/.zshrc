@@ -136,4 +136,5 @@ bindkey -M vicmd 'j' history-substring-search-down
 source ~/.config/zsh/zshrc_generic
 
 # Better rupa/z in rust
-eval "$(zoxide init zsh)"
+# eval "$(zoxide init zsh)"
+source ~/.config/zsh/zoxide.zsh

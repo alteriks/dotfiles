@@ -18,18 +18,23 @@ cat () {
   # `cat` is used as fallback if either package is not installed
   setopt nocasematch
   CHECKFILETYPE=$1
-  if [ ${CHECKFILETYPE##*.} =~ 'md' ];then
+
+  if [[ ! -f "$1" ]]; then
+      /bin/cat $@
+  elif [ ${CHECKFILETYPE##*.} =~ 'md' ];then
     if command -v glow &> /dev/null ;then
       glow $@
     else
-      cat $@
+      /bin/cat $@
     fi
-  else
+  elif [[ -f "$CHECKFILETYPE" ]];then
     if command -v bat &> /dev/null ;then
       bat -pp $@
     else
-      cat $@
+      /bin/cat $@
     fi
+  else
+      /bin/cat $@
   fi
   setopt casematch
 }

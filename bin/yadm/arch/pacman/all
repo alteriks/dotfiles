@@ -46,7 +46,7 @@ pulsemixer
 vlc
 
 # GUI
-alacritty
+# alacritty
 arandr
 dunst
 engrampa
@@ -55,7 +55,7 @@ gnome-calculator
 gparted
 gpick
 gthumb
-i3-gaps
+i3
 i3status-rust
 keepassxc
 kitty
@@ -101,6 +101,7 @@ bind-tools
 bridge-utils
 broot
 btop
+chafa # image viewer in kitty
 diff-so-fancy
 dmidecode
 dnsmasq
@@ -146,6 +147,7 @@ openbsd-netcat
 p7zip
 packer
 pacman-contrib
+perl-anyevent-i3 # i3-layout-manager dependency
 proxychains-ng
 python-neovim
 pv

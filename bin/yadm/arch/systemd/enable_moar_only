@@ -18,3 +18,7 @@ syncoid.timer
 
 xrdp.service
 xrdp-sesman.service
+
+# Use shelly plug to power off/on monitor
+suspend@monitor.service
+resume@monitor.service

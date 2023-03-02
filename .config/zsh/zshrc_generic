@@ -120,14 +120,6 @@ alias ssh='TERM=xterm-256color \ssh'
 #   preexec_functions+=( panewrap )
 # fi
 
-#Use zoxide
-#https://github.com/rupa/z
-# if [[ -e ~/bin/z.sh ]];then
-#   source ~/bin/z.sh
-# elif [[ -e /usr/share/z/z.sh ]];then
-#   source /usr/share/z/z.sh
-# fi
-
 # ZSH VIM MODE
 if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
   source ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh;
@@ -212,3 +204,29 @@ export PAGER='less -r'
 # Override noclobber /home/alteriks/.config/zsh/zim/modules/environment/init.zsh
 # NO_CLOBBER disallows > to overwrite existing files. Use >| or >! instead.
 setopt clobber
+
+#
+# fzf-tab
+#
+# Fix [%F{yellow}-- subcommand --%f %F{yellow}-- file --%f](https://user-images.githubusercontent.com/15178513/137610652-c0432c67-e563-4f31-93b0-3240e8f0e245.png) https://github.com/Aloxaf/fzf-tab/issues/234
+zstyle -d ':completion:*' format
+zstyle ':completion:*:descriptions' format '[%d]'
+
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:lsd:*' fzf-preview 'lsd -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:l:*' fzf-preview 'lsd -1 --color=always $realpath'
+
+# use ',' to go back and '.' to go forward https://github.com/Aloxaf/fzf-tab/pull/183
+zstyle ':fzf-tab:*' switch-group ',' '.'
+
+# show systemd unit status
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+
+# give a preview of commandline arguments when completing `kill`
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview \
+  '[[ $group == "[process ID]" ]] && ps --pid=$word -o cmd --no-headers -w -w'
+zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap

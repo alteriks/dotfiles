@@ -190,6 +190,7 @@
 .config/zsh/rhel	f	0644
 .config/zsh/ubuntu	f	0644
 .config/zsh/zimrc	l	0664
+.config/zsh/zoxide.zsh	f	0644
 .config/zsh/zshrc	l	0664
 .config/zsh/zshrc_generic	f	0755
 .github	d	0755

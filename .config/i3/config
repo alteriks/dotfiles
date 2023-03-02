@@ -197,14 +197,14 @@ bindsym $mod+o exec obsidian obsidian://open?vault=memo; exec i3-msg '[class="ob
 # bindsym $mod+i exec i3-msg '[class="Typora" title="typora_notepad.md"]' scratchpad show
 # exec_always --no-startup-id typora ~/tmp/typora_notepad.md
 
-for_window [instance="scratchpad-vim"] move to scratchpad
-# bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
-bindsym $mod+t exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim; exec i3-msg '[instance="scratchpad-vim"]' scratchpad show
-exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim
+# for_window [instance="scratchpad-vim"] move to scratchpad
+# # bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
+# bindsym $mod+t exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim; exec i3-msg '[instance="scratchpad-vim"]' scratchpad show
+# exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim
 
-for_window [instance="scratchpad-notepad"] resize set 950 650, move to scratchpad
-bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; exec i3-msg '[instance="scratchpad-notepad"]' scratchpad show
-exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim ~/tmp/notepad
+# for_window [instance="scratchpad-notepad"] resize set 950 650, move to scratchpad
+# bindsym $mod+n exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim; exec i3-msg '[instance="scratchpad-notepad"]' scratchpad show
+# exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-notepad nvim ~/tmp/notepad
 
 for_window [class="gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
 bindsym $mod+c [class="gnome-calculator"] scratchpad show
@@ -295,7 +295,7 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.png
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
+# workspace_auto_back_and_forth yes
 bindsym $mod+BackSpace workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 bindsym $mod+Tab		workspace next

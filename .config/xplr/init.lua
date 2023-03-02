@@ -108,9 +108,11 @@ require("nuke").setup{
   open = {
     run_executables = false, -- default: false
     custom = {
-      {extension = "jpg", command = "sxiv {}"},
-      {mime = "video/mp4", command = "vlc {}"},
-      {mime_regex = "^video/.*", command = "smplayer {}"},
+      -- {mime = "video/mp4", command = "mpv {}"},
+      {mime_regex = "^video/.*", command = "mpv {} -wid $(xdotool getactivewindow)"},
+      {mime_regex = "^image/.*", command = "chafa -C on {}; bash -c \"read -r -p 'Press any button...' -n 1 -s\""},
+      -- {mime_regex = "^image/.*", command = "chafa  {}; sleep 2"},
+      -- {extension = "jpg", command = "chafa {}"},
       {mime_regex = ".*", command = "xdg-open {}"}
     }
   },
