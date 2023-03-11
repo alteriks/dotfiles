@@ -1,8 +1,9 @@
 # vi: ft=toml
-theme = "modern"
+[theme]
+theme = "dracula"
 
 [icons]
-name = "awesome"
+icons = "awesome6"
 
 {% if yadm.class == "laptop" %}
 [[block]]
@@ -51,28 +52,29 @@ interval = "once"
 [[block]]
 block = "disk_space"
 path = "/home/alteriks"
-alias = "home"
+format = " $icon $path - $available "
 info_type = "available"
-unit = "GB"
+# unit = "GB"
 interval = 60
 
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "/"
+format = " $icon $path - $available "
 info_type = "available"
-unit = "GB"
+# unit = "GB"
 interval = 60
 
 [[block]]
 block = "memory"
-display_type = "memory"
+# display_type = "memory"
 # format_mem = "{Mup}%"
 # format_swap = "{SUp}%"
 
 [[block]]
 block = "cpu"
-interval = 10
+# format = " $icon $barchart $utilization "
+
 
 #[[block]]
 #block = "load"
@@ -93,5 +95,15 @@ block = "sound"
 [[block]]
 block = "time"
 interval = 60
-format = "%a %d/%m %R"
-on_click = "/home/alteriks/.config/i3/bin/i3status-rust_rofi-calendar"
+# format = "%a %d/%m %R"
+# full = " $icon $timestamp.datetime(f:'%a %Y-%m-%d %R %Z', l:fr_BE) "
+
+# on_click = "/home/alteriks/.config/i3/bin/i3status-rust_rofi-calendar"
+[[block]]
+block = "uptime"
+interval = 3600 # update every hour
+
+[[block]]
+block = "tea_timer"
+format = " $icon {$minutes:$seconds |}"
+done_cmd = "notify-send 'Timer Finished'"

@@ -157,7 +157,7 @@ ripgrep
 ripgrep-all
 rsync
 screen
-sd # sed replacement
+sd # sed replacement, also used by xplr
 smartmontools
 smbclient
 smem
@@ -168,13 +168,14 @@ strace
 stress
 sudo
 sysstat
-tsocks
-terraform
 tcpdump
+terraform
 the_silver_searcher
 time
 tmux
+trash-cli # python to manage freedesktop trash, used by xplr
 tree
+tsocks
 turbostat
 udiskie
 udisks2

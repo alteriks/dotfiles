@@ -51,10 +51,7 @@ autotiling-git
 
 # notes
 # obsidian already in community repo
-typora-free
-
-# QR code send/receive files to phone, used by xplr
-qrcp-bin
+# typora-free
 
 # Python library and CLI tool for searching and downloading subtitles. autosub-mpv dependency
 subliminal
@@ -83,3 +80,8 @@ ioztat
 
 # ZFS
 httm
+
+# xplr drag and drop
+dragon-drop
+# QR code send/receive files to phone, used by xplr
+qrcp-bin

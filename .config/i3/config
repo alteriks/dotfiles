@@ -101,6 +101,7 @@ set $workspace9 "9:    Rock"
 set $workspace10 "10:    Rock"
 set $workspace11 "11:   	"
 set $workspace12 "12:   	"
+set $workspace99 "99"
 
 # switch to workspace
 bindsym $mod+1 workspace number $workspace1
@@ -115,6 +116,7 @@ bindsym $mod+9 workspace number $workspace9
 bindsym $mod+0 workspace number $workspace10
 bindsym $hyper+1 workspace number $workspace11
 bindsym $hyper+2 workspace number $workspace12
+bindsym $hyper+9 workspace number $workspace99
 
 # move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $workspace1
@@ -176,7 +178,7 @@ bindsym --release $mod+F7 exec ~/.config/i3/bin/rofi_autorandr.sh
 #}
 
 #https://github.com/i3/i3/issues/2936
-disable_randr15 yes
+# disable_randr15 yes
 
 # The middle button toggles floating
 bindsym button2 floating toggle
@@ -189,8 +191,9 @@ for_window [class="btop" title="btop"] floating enable, resize set 1450 950
 bindsym $mod+x exec "kitty --single-instance -o confirm_os_window_close=0 --class=xplr -1 xplr; exit"
 for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
 
-for_window [class="obsidian" title="memo"] move to scratchpad, move position mouse
-bindsym $mod+o exec obsidian obsidian://open?vault=memo; exec i3-msg '[class="obsidian"] [title="memo"]' scratchpad show
+for_window [class="obsidian"] move to scratchpad, move position mouse
+exec --no-startup-id i3-msg 'workspace $workspace99; splith; exec $terminal obsidian obsidian://open?vault=memo'
+bindsym $mod+o exec i3-msg '[class="obsidian"]' scratchpad show
 # exec_always --no-startup-id obsidian obsidian://open?vault=TODO
 
 # for_window [class="Typora" title="typora_notepad.md"] move to scratchpad, move position mouse
@@ -275,7 +278,7 @@ assign [ class = "Gimp-.*" ] workspace $workspace4
 assign [ class = "Remmina" ] workspace $workspace4
 
 assign [ class = "calibre" ] workspace $workspace5
-assign [ class = "Zathura" ] workspace $workspace5
+# assign [ class = "Zathura" ] workspace $workspace5
 
 # Start Applications
 bindsym Print exec --no-startup-id flameshot gui
@@ -293,6 +296,10 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 
 # Ergodox cheatsheet
 bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.png
+
+
+bindsym $meh+s exec tdrop -ma -w -4 -x 3 -y25 -s dropdown kitty --class kitty-tdrop
+for_window [class="^kitty-tdrop$"] floating enable
 
 # workspace back and forth (with/without active container)
 # workspace_auto_back_and_forth yes
@@ -343,6 +350,9 @@ exec --no-startup-id blueman-applet
 
 exec_always --no-startup-id ~/bin/fix_xcursor
 #exec_always --no-startup-id exec i3wsr
+
+# Steam windows&vivaldi brakes workstyle (https://github.com/pierrechevalier83/workstyle)
+#exec_always --no-startup-id exec workstyle
 
 #############################
 ### settings for i3-gaps: ###

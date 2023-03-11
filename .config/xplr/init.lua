@@ -1,68 +1,14 @@
 version = "0.20.0"
 
--- TODO: only on moar ;/
--- local home = os.getenv("HOME")
--- package.path = home
--- .. "/.config/xplr/plugins/?/init.lua;"
--- .. home
--- .. "/.config/xplr/plugins/?.lua;"
--- .. package.path
--- require("preview-tabbed").setup()
-
-
--- The default layout without SortAndFilter
---
--- Type: [Layout](https://xplr.dev/en/layout)
-xplr.config.layouts.builtin.default = {
-  Horizontal = {
-    config = {
-      constraints = {
-        { Min = 55 },
-        { Length = 40 },
-      },
-    },
-    splits = {
-      {
-        Vertical = {
-          config = {
-            constraints = {
-              { Min = 1 },
-              { Length = 3 },
-            },
-          },
-          splits = {
-            "Table",
-            "InputAndLogs",
-          },
-        },
-      },
-      {
-        Vertical = {
-          config = {
-            constraints = {
-              { Length = 2 },
-              { Length = 6 },
-              { Percentage = 70 },
-            },
-          },
-          splits = {
-            "SortAndFilter",
-            "Selection",
-            "HelpMenu",
-          },
-        },
-      },
-    },
-  },
-}
-
-
 local home = os.getenv("HOME")
 local xpm_path = home .. "/.local/share/xplr/dtomvan/xpm.xplr"
+local xplr_config = home .. "/.config/xplr"
 local xpm_url = "https://github.com/dtomvan/xpm.xplr"
 
 package.path = package.path
   .. ";"
+  .. xplr_config
+  .. "/?.lua;"
   .. xpm_path
   .. "/?.lua;"
   .. xpm_path
@@ -82,181 +28,32 @@ require("xpm").setup({
     -- Let xpm manage itself
     'dtomvan/xpm.xplr',
 
-    'sayanarijit/fzf.xplr',
-    'sayanarijit/dua-cli.xplr',
-    'sayanarijit/icons.xplr',
+    'alteriks/trash-cli.xplr',
     'Junker/nuke.xplr',
+    'sayanarijit/dragon.xplr',
+    'sayanarijit/dual-pane.xplr',
+    'sayanarijit/dua-cli.xplr',
+    'sayanarijit/fzf.xplr',
+    'sayanarijit/icons.xplr',
     'sayanarijit/map.xplr',
+    'sayanarijit/tri-pane.xplr',
     'sayanarijit/qrcp.xplr',
     'sayanarijit/zoxide.xplr',
-    'sayanarijit/dragon.xplr',
-    -- 'sayanarijit/material-landscape.xplr',
   },
   auto_install = true,
   auto_cleanup = true,
 })
 
-require("qrcp").setup{
-  mode = "default",
-  key = "Q",
-  send_options = "-i lan",
-  receive_options = "-i lan",
-}
-
-require("nuke").setup{
-  pager = "less -R",
-  open = {
-    run_executables = false, -- default: false
-    custom = {
-      -- {mime = "video/mp4", command = "mpv {}"},
-      {mime_regex = "^video/.*", command = "mpv {} -wid $(xdotool getactivewindow)"},
-      {mime_regex = "^image/.*", command = "chafa -C on {}; bash -c \"read -r -p 'Press any button...' -n 1 -s\""},
-      -- {mime_regex = "^image/.*", command = "chafa  {}; sleep 2"},
-      -- {extension = "jpg", command = "chafa {}"},
-      {mime_regex = ".*", command = "xdg-open {}"}
-    }
-  },
-  view = {
-    show_line_numbers = true, -- default: false
-  },
-  smart_view = {
-    custom = {
-      {extension = "so", command = "ldd -r {} | less"},
-    }
-  }
-}
-
-  local key = xplr.config.modes.builtin.default.key_bindings.on_key
-  key.v = {
-    help = "nuke",
-    messages = {"PopMode", {SwitchModeCustom = "nuke"}}
-  }
-  key["f3"] = xplr.config.modes.custom.nuke.key_bindings.on_key.v
-  key["enter"] = xplr.config.modes.custom.nuke.key_bindings.on_key.o
-  -- Copied from /usr/share/xplr/examples/init.lua, without help = "XXXX"
-  key.G = {
-    messages = {
-      "PopMode",
-      "FocusLast",
-    },
-  }
-  key.down = {
-    messages = {
-      "FocusNext",
-    },
-  }
-  key.j = {
-    messages = {
-      "FocusNext",
-    },
-  }
-  key.up = {
-    messages = {
-      "FocusPrevious",
-    },
-  }
-  key.k = {
-    messages = {
-      "FocusPrevious",
-    },
-  }
-  key.right = {
-    messages = {
-      "Enter",
-    },
-  }
-  key.l = {
-    messages = {
-      "Enter",
-    },
-  }
-  key.left = {
-    messages = {
-      "Back",
-    },
-  }
-  key.h = {
-    messages = {
-      "Back",
-    },
-  }
-
-require("zoxide").setup{
-  mode = "default",
-  key = "z",
-}
-
--- ("material-landscape") theme
-xplr.config.general.default_ui.prefix = " "
-xplr.config.general.default_ui.suffix = ""
-
-xplr.config.general.focus_ui.prefix = "▸"
-xplr.config.general.focus_ui.suffix = ""
-xplr.config.general.focus_ui.style.fg = { Rgb = { 170, 150, 130} }
-xplr.config.general.focus_ui.style.bg = { Rgb = { 50, 50, 50} }
-xplr.config.general.focus_ui.style.add_modifiers = { "Bold" }
-
-xplr.config.general.selection_ui.prefix = " "
-xplr.config.general.selection_ui.suffix = ""
-xplr.config.general.selection_ui.style.fg = { Rgb = { 70, 70, 70} }
-xplr.config.general.selection_ui.style.add_modifiers = { "Bold", "CrossedOut" }
-
-xplr.config.general.focus_selection_ui.prefix = "▸"
-xplr.config.general.focus_selection_ui.suffix = ""
-xplr.config.general.focus_selection_ui.style.fg = { Rgb = { 170, 150, 130 } }
-xplr.config.general.focus_selection_ui.style.bg = { Rgb = { 50, 50, 50 } }
-xplr.config.general.focus_selection_ui.style.add_modifiers = { "Bold", "CrossedOut" }
-
-xplr.config.general.sort_and_filter_ui.separator.format = " » "
-xplr.config.general.sort_and_filter_ui.separator.style.add_modifiers = { "Bold", "Reversed" }
-
-xplr.config.general.panel_ui.default.title.style.bg = { Rgb = {170, 150, 130} }
-xplr.config.general.panel_ui.default.title.style.fg = { Rgb = {40, 40, 40} }
-xplr.config.general.panel_ui.default.title.style.add_modifiers = { "Bold" }
-xplr.config.general.panel_ui.default.style.fg = { Rgb = { 170, 150, 130 } }
-xplr.config.general.panel_ui.default.style.bg = { Rgb = { 33, 33, 33 } }
-xplr.config.general.panel_ui.default.borders = {}
-xplr.config.general.panel_ui.table.style.bg = { Rgb = { 26, 26, 26 } }
+require("pluginconfig")
+require("theme")
+require("layout")
+require("bookmark")
+require("keybind")
 
 xplr.config.general.enable_mouse = true
-
-xplr.config.modes.builtin.action.key_bindings.on_key["!"].messages = {
-  { Call = { command = "zsh", args = { "-i" } } },
-  "ExplorePwdAsync",
-  "PopMode",
-}
-
-require("dragon").setup{
-  mode = "selection_ops",
-  key = "D",
-  drag_args = "",
-  drop_args = "",
-  keep_selection = false,
-  bin = "dragon-drop",
-}
 
 xplr.config.general.initial_sorting = {
     { sorter = "ByCanonicalIsDir", reverse = true },
     { sorter = "ByLastModified", reverse = true },
     -- { sorter = "ByIRelativePath", reverse = false },
-}
-
--- icons
-local function blue(x)
-  return "\x1b[34m" .. x .. "\x1b[0m"
-end
-local function cyan(x)
-  return "\x1b[36m" .. x .. "\x1b[0m"
-end
-xplr.config.node_types.directory.meta.icon = blue "🗁 "
-xplr.config.node_types.file.meta.icon = cyan "🗋 "
-xplr.config.modes.builtin.default.key_bindings.on_key.X = {
-  help = "open",
-  messages = {
-    {
-      BashExecSilently = [===[
-      xdg-open "${XPLR_FOCUS_PATH:?}"
-      ]===],
-    },
-  },
 }
