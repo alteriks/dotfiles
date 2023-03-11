@@ -12,7 +12,7 @@ libimobiledevice-git
 
 # A Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more.
 mangohud
-lib32-mangohud
+#lib32-mangohud
 
 # Used to launch ultrawide mods
 protontricks

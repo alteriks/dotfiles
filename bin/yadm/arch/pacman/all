@@ -55,7 +55,7 @@ gnome-calculator
 gparted
 gpick
 gthumb
-i3
+i3-wm
 i3status-rust
 keepassxc
 kitty
@@ -63,7 +63,7 @@ libheif
 lightdm-gtk-greeter
 lightdm-webkit-theme-litarvan
 lightdm-webkit2-greeter
-lxqt-archiver
+#lxqt-archiver
 meld
 mousepad
 nemo
