@@ -39,7 +39,8 @@ xplr.config.modes.custom.bookmark = {
             BashExec0 = [===[
               PTH=$(cat "${XPLR_BOOKMARK_FILE:?}" | fzf --no-sort)
               if [ "$PTH" ]; then
-                "$XPLR" -m 'FocusPath: %q' "$PTH"
+                PTH=$(echo $PTH | awk -F ': ' '{print $2}')
+                "$XPLR" -m 'ChangeDirectory: %q' "$PTH"
               fi
             ]===],
           },
@@ -67,3 +68,5 @@ xplr.config.modes.custom.bookmark = {
     },
   },
 }
+local key = xplr.config.modes.builtin.default.key_bindings.on_key
+key["ctrl-g"] = xplr.config.modes.custom.bookmark.key_bindings.on_key.g

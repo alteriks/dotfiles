@@ -163,6 +163,7 @@
 .config/wgetrc	f	0644
 .config/xplr	d	0755
 .config/xplr/bookmark.lua	f	0644
+.config/xplr/history.lua	f	0644
 .config/xplr/init.lua	f	0644
 .config/xplr/keybind.lua	f	0644
 .config/xplr/layout.lua	f	0644

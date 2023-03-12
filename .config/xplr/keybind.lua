@@ -120,6 +120,18 @@ key["page-down"] = {
     "ScrollDown",
   },
 }
+key["{"] = {
+  -- help = "scroll up half",
+  messages = {
+    "ScrollUpHalf",
+  },
+}
+key["}"] = {
+  -- help = "scroll down half",
+  messages = {
+    "ScrollDownHalf",
+  },
+}
 key["~"] = {
   -- help = "go home",
   messages = {
@@ -136,11 +148,21 @@ key.q ={
     "Quit",
   },
 }
+key["ctrl-d"] = {
+  messages = {
+    "ScrollDownHalf",
+  },
+}
 key["ctrl-r"] = {
   -- help = "refresh screen",
   messages = {
     "ClearScreen",
     "ExplorePwd", -- also rescan dir
+  },
+}
+key["ctrl-u"] = {
+  messages = {
+    "ScrollUpHalf",
   },
 }
 --

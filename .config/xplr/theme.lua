@@ -39,3 +39,32 @@ local function cyan(x)
 end
 xplr.config.node_types.directory.meta.icon = blue "🗁 "
 xplr.config.node_types.file.meta.icon = cyan "🗋 "
+-- 
+xplr.config.node_types.extension.db = { meta = { icon = " " } }
+xplr.config.node_types.extension.json = { meta = { icon = " " } }
+-- xplr.config.node_types.extension.html = { meta = { icon = " " } }
+xplr.config.node_types.extension.md = { meta = { icon = " " } }
+xplr.config.node_types.extension.lua = { meta = { icon = " " } }
+xplr.config.node_types.extension.png = { meta = { icon = " " } }
+xplr.config.node_types.extension.pdf = { meta = { icon = " " }, style = { fg = "Blue" } }
+xplr.config.node_types.extension.py = { meta = { icon = " " } }
+xplr.config.node_types.extension.rs = { meta = { icon = "🦀" } }
+
+xplr.config.node_types.mime_essence = {
+  image = {
+    -- image/*
+    ["*"] = { meta = { icon = " " } }
+  },
+}
+xplr.config.node_types.mime_essence = {
+  text = {
+    -- text/*
+    ["html"] = { meta = { icon = " " } }
+  },
+}
+xplr.config.node_types.mime_essence = {
+  video = {
+    -- video/*
+    ["*"] = { meta = { icon = " " } }
+  },
+}

@@ -45,10 +45,11 @@ require("xpm").setup({
 })
 
 require("pluginconfig")
+require("keybind")
 require("theme")
 require("layout")
 require("bookmark")
-require("keybind")
+require("history")
 
 xplr.config.general.enable_mouse = true
 

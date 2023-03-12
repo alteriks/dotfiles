@@ -234,3 +234,7 @@ zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=do
 
 zstyle ':fzf-tab:*' fzf-bindings 'space:accept' #Press 'space' to accept
 zstyle ':fzf-tab:*' accept-line enter #Press 'enter' to accept and run a suggestion in one keystroke.
+
+# export PATHMARKS_FILE=~/.config/zsh/bookmarks
+export FZF_MARKS_FILE=~/.config/zsh/bookmarks
+export XPLR_BOOKMARK_FILE=$FZF_MARKS_FILE

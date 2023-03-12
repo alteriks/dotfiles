@@ -2,6 +2,7 @@
 # -------
 # Modules
 # -------
+zmodule urbainvaes/fzf-marks
 
 zmodule romkatv/powerlevel10k --use degit
 # zmodule zdharma/fast-syntax-highlighting

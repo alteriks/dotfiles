@@ -27,6 +27,7 @@ alias vim=nvim
 alias vimdiff='nvim -d'
 alias vpn_my_ip="curl --socks5 127.0.0.1:1080 https://ipinfo.io/"
 alias windows="rdesktop -r disk:local=/home/alteriks -u alteriks -d NT_DOMAIN -k pl -g 1920x1172 10.3.102.19"
+alias x="xplr"
 
 # Ansible stuff
 alias ansible="ansible -i hosts/default"
