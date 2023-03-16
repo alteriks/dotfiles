@@ -10,14 +10,14 @@ xplr.config.general.focus_ui.style.add_modifiers = { "Bold" }
 
 xplr.config.general.selection_ui.prefix = " "
 xplr.config.general.selection_ui.suffix = ""
-xplr.config.general.selection_ui.style.fg = { Rgb = { 70, 70, 70} }
-xplr.config.general.selection_ui.style.add_modifiers = { "Bold", "CrossedOut" }
+xplr.config.general.selection_ui.style.fg = { Rgb = { 170, 250, 130 } }
+xplr.config.general.selection_ui.style.add_modifiers = { "Bold"}
 
 xplr.config.general.focus_selection_ui.prefix = "▸"
 xplr.config.general.focus_selection_ui.suffix = ""
-xplr.config.general.focus_selection_ui.style.fg = { Rgb = { 170, 150, 130 } }
+xplr.config.general.focus_selection_ui.style.fg = { Rgb = { 70, 240, 70 } }
 xplr.config.general.focus_selection_ui.style.bg = { Rgb = { 50, 50, 50 } }
-xplr.config.general.focus_selection_ui.style.add_modifiers = { "Bold", "CrossedOut" }
+xplr.config.general.focus_selection_ui.style.add_modifiers = { "Bold" }
 
 xplr.config.general.sort_and_filter_ui.separator.format = " » "
 xplr.config.general.sort_and_filter_ui.separator.style.add_modifiers = { "Bold", "Reversed" }

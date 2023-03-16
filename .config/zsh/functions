@@ -46,7 +46,8 @@ cdl () {
 
 dce() {
   NAME=$(docker-compose ps --services | head -n1)
-  NAME=${1:-$NAME}
+  CMD=${1:-sh}
+  NAME=${2:-$NAME}
   echo "docker-compose exec $NAME sh"
   docker-compose exec $NAME sh
 }

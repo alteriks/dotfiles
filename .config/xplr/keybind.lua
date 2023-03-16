@@ -14,12 +14,17 @@ xplr.config.modes.builtin.action.key_bindings.on_key["#"] = {
   },
 }
 
+-- Disable fullscreen HelpMenu
+xplr.config.modes.builtin.action.layout = nil
+xplr.config.modes.builtin.delete.layout = nil
+xplr.config.modes.builtin.switch_layout.layout = nil
+
 -- The builtin go to path mode.
 --
 -- Type: [Mode](https://xplr.dev/en/mode)
 xplr.config.modes.builtin.go_to = {
   name = "go to",
-  layout = "HelpMenu",
+  -- layout = "HelpMenu",
   key_bindings = {
     on_key = {
       ["f"] = {
