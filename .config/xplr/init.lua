@@ -1,4 +1,4 @@
-version = "0.20.0"
+version = "0.21.0"
 
 local home = os.getenv("HOME")
 local xpm_path = home .. "/.local/share/xplr/dtomvan/xpm.xplr"
@@ -27,6 +27,11 @@ require("xpm").setup({
   plugins = {
     -- Let xpm manage itself
     'dtomvan/xpm.xplr',
+    { 'dtomvan/extra-icons.xplr',
+      after = function()
+          xplr.config.general.table.row.cols[2] = { format = "custom.icons_dtomvan_col_1" }
+      end
+    },
 
     'alteriks/trash-cli.xplr',
     'Junker/nuke.xplr',
@@ -34,11 +39,13 @@ require("xpm").setup({
     'sayanarijit/dual-pane.xplr',
     'sayanarijit/dua-cli.xplr',
     'sayanarijit/fzf.xplr',
-    'sayanarijit/icons.xplr',
+    -- 'sayanarijit/icons.xplr',
     'sayanarijit/map.xplr',
     'sayanarijit/tri-pane.xplr',
     'sayanarijit/qrcp.xplr',
     'sayanarijit/zoxide.xplr',
+
+    'prncss-xyz/icons.xplr',
   },
   auto_install = true,
   auto_cleanup = true,
