@@ -66,7 +66,7 @@ xplr.config.general.panel_ui.default.borders = {}
 xplr.config.general.panel_ui.table.style.bg = { Rgb = { 26, 26, 26 } }
 -- xplr.config.general.selection_ui.prefix = " » "
 xplr.config.general.selection_ui.prefix = "»"
-xplr.config.general.selection_ui.suffix = ""
+xplr.config.general.selection_ui.suffix = "«"
 xplr.config.general.selection_ui.style.fg = { Rgb = { 170, 250, 130 } }
 xplr.config.general.selection_ui.style.bg = { Rgb = { 50, 50, 50 } }
 xplr.config.general.selection_ui.style.add_modifiers = { "Bold"}
