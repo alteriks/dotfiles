@@ -5,4 +5,5 @@ extends: relaxed
 rules:
   line-length: disable
   truthy:
+    check-keys: false
     allowed-values: ["yes", "no", "true", "false"]

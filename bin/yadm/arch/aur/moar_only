@@ -1,7 +1,7 @@
 # used with hal nfsv4
 autofs
 
-looking-glass
+# looking-glass
 
 # used for ipad backup (idevicebackup2)
 libimobiledevice-git
@@ -11,7 +11,7 @@ libimobiledevice-git
 # zsa-wally-bin
 
 # A Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more.
-mangohud
+# mangohud
 #lib32-mangohud
 
 # Used to launch ultrawide mods
