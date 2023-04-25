@@ -1,9 +1,11 @@
 # vim ft=sh
 
 
+# List files
 alias lsd='lsd -l'
 alias lst='lsd -l --tree --depth 3'
 alias l='lsd -Al'
+
 alias ag='ag --hidden --ignore \.git'
 alias ansible-lint='ansible-lint -c ~/.config/ansible-lint/config'
 alias bc='bc -l'
@@ -22,9 +24,6 @@ alias step="step-cli"
 alias sudo='sudo ' #https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 alias todo="todo.sh -d $HOME/.config/todo/todo.cfg"
 alias todotxt-machine="todotxt-machine --config ~/.config/todo/todotxt-machinerc"
-alias vi=nvim
-alias vim=nvim
-alias vimdiff='nvim -d'
 alias vpn_my_ip="curl --socks5 127.0.0.1:1080 https://ipinfo.io/"
 alias windows="rdesktop -r disk:local=/home/alteriks -u alteriks -d NT_DOMAIN -k pl -g 1920x1172 10.3.102.19"
 alias x="xplr"
@@ -50,6 +49,11 @@ alias docker_lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.so
 alias dive="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v  "$(pwd)":"$(pwd)" -w "$(pwd)" -v "$HOME/.dive.yaml":"$HOME/.dive.yaml" wagoodman/dive:latest"
 alias docker_dive="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v  "$(pwd)":"$(pwd)" -w "$(pwd)" -v "$HOME/.dive.yaml":"$HOME/.dive.yaml" wagoodman/dive:latest"
 
+# Nvim
+alias lazy="NVIM_APPNAME=nvim_lazy nvim"
+alias vi=nvim
+alias vim=nvim
+alias vimdiff='nvim -d'
 
 # YADM
 alias yadm_store_meta="GIT_DIR=$XDG_DATA_HOME/yadm/repo.git GIT_WORK_TREE=~/ ~/bin/git-store-meta.pl -t ~/.github/git_store_meta"
