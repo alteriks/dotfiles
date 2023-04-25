@@ -1,6 +1,8 @@
 # vi: ft=toml
 [theme]
 theme = "dracula"
+[theme.overrides]
+separator=""
 
 [icons]
 icons = "awesome6"
@@ -12,7 +14,7 @@ device = "intel_backlight"
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage} {time} {power}"
+format = " $icon $percentage {$time }$power.eng(w:3) "
 {% endif %}
 
 {% if yadm.class == "workstation" %}
