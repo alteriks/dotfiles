@@ -5,5 +5,5 @@ extends: relaxed
 rules:
   line-length: disable
   truthy:
-    check-keys: false
+    check-keys: false # https://github.com/adrienverge/yamllint/issues/158
     allowed-values: ["yes", "no", "true", "false"]
