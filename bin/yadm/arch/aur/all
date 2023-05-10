@@ -85,3 +85,6 @@ httm
 dragon-drop
 # QR code send/receive files to phone, used by xplr
 qrcp-bin
+
+# xplr swallow zathura
+i3-swallow-git
