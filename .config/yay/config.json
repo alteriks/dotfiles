@@ -17,7 +17,6 @@
 	"answerupgrade": "None",
 	"gitbin": "git",
 	"gpgbin": "gpg",
-	"gpgflags": "",
 	"mflags": "",
 	"sortby": "votes",
 	"searchby": "name-desc",
