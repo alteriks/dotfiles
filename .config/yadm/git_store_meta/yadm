@@ -179,6 +179,8 @@
 .config/tmux/tmux_powerline.conf	f	0644
 .config/tmuxinator	d	0755
 .config/tmuxinator/ipad.yml	f	0644
+.config/waybar	d	0755
+.config/waybar/config	f	0644
 .config/wgetrc	f	0644
 .config/xplr	d	0755
 .config/xplr/bookmark.lua	f	0644
