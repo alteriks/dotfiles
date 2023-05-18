@@ -5,6 +5,10 @@ set $swayconfig ~/.config/sway
 set $HOSTNAME `hostname`
 include $swayconfig/$HOSTNAME.conf
 
+# INFO: Import environment variables from 50-systemd-user.conf, Required for xdg-desktop-portal-wlr, flameshot
+# https://wiki.archlinux.org/title/Sway#Configuration
+include /etc/sway/config.d/*
+
 input "type:keyboard" {
     xkb_layout pl
     xkb_options caps:escape,kpdl:dot
@@ -44,7 +48,8 @@ bindsym $mod+F4 kill
 bindsym Mod1+F4 kill
 
 # start launcher
-bindsym $mod+space       exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
+# bindsym $mod+space       exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
+bindsym $mod+space       exec --no-startup-id "fuzzel"
 
 # change focus
 focus_wrapping yes
@@ -353,6 +358,16 @@ exec --no-startup-id nm-applet --indicator
 #BUG: exec --no-startup-id blueman-applet
 
 # Lock
+<<<<<<< HEAD
+=======
+
+exec_always --no-startup-id xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' 0.2
+exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.55
+exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
+
+# exec_always --no-startup-id xset s 1800 60
+# exec_always --no-startup-id xset dpms 1700 1700 1700
+>>>>>>> d7a3a882e11706fd4ef414b35de71f8130daacfb
 #exec --no-startup-id xss-lock ~/.config/i3/bin/i3lock-color-git.sh
 #exec_always --no-startup-id xss-lock -n ~/bin/dim-screen.sh -- /home/alteriks/.config/i3/bin/i3lock-color-git.sh
 #TODO: Wayland exec_always --no-startup-id light-locker --lock-after-screensaver=60
