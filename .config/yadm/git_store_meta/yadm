@@ -164,7 +164,9 @@
 .config/screen	d	0755
 .config/screen/screenrc	f	0644
 .config/sway	d	0755
+.config/sway/carbon.conf	f	0644
 .config/sway/config	f	0644
+.config/sway/moar.conf	f	0644
 .config/syncthing_carbon	d	0700
 .config/syncthing_carbon/config.xml	f	0644
 .config/termite	d	0755
