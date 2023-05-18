@@ -220,9 +220,6 @@ zstyle ':fzf-tab:complete:lsd:*' fzf-preview 'lsd -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:l:*' fzf-preview 'lsd -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:ls:*' fzf-preview 'lsd -1 --color=always $realpath'
 
-# use ',' to go back and '.' to go forward https://github.com/Aloxaf/fzf-tab/pull/183
-zstyle ':fzf-tab:*' switch-group ',' '.'
-
 # show systemd unit status
 zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
 
@@ -232,8 +229,13 @@ zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview \
   '[[ $group == "[process ID]" ]] && ps --pid=$word -o cmd --no-headers -w -w -e'
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:5:wrap
 
+# FZF key-bindings
 zstyle ':fzf-tab:*' fzf-bindings 'space:accept' #Press 'space' to accept
 zstyle ':fzf-tab:*' accept-line enter #Press 'enter' to accept and run a suggestion in one keystroke.
+zstyle ':fzf-tab:*' continuous-trigger '/' #Press '/' to accept suggestion and run another
+# use ',' to go back and '.' to go forward https://github.com/Aloxaf/fzf-tab/pull/183
+zstyle ':fzf-tab:*' switch-group ',' '.'
+
 
 # export PATHMARKS_FILE=~/.config/zsh/bookmarks
 export FZF_MARKS_FILE=~/.config/zsh/bookmarks
