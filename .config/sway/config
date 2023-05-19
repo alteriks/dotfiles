@@ -80,13 +80,13 @@ bindsym $mod+Shift+f fullscreen toggle
 #bindsym $mod+f [urgent=latest] focus
 
 # split orientation
-bindsym $mod+bar split h; exec notify-send 'sway: tile horizontally'
-bindsym $mod+minus splitv; exec notify-send 'sway: tile vertically'
+bindsym $mod+bar split h; exec notify-send 'i3: tile horizontally'
+bindsym $mod+minus splitv; exec notify-send 'i3: tile vertically'
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking; exec notify-send 'sway: stacking layout'
-bindsym $mod+w layout tabbed; exec notify-send 'sway: tabbed layout'
-bindsym $mod+e layout toggle split; exec notify-send 'sway: tabbed split'
+bindsym $mod+s layout stacking; exec notify-send 'i3: stacking layout'
+bindsym $mod+w layout tabbed; exec notify-send 'i3: tabbed layout'
+bindsym $mod+e layout toggle split; exec notify-send 'i3: tabbed split'
 
 #TODO: toggle tiling / floating
 #bindsym $mod+Shift+space floating toggle
@@ -100,18 +100,19 @@ bindsym $mod+Shift+P focus parent
 bindsym $mod+Shift+C focus child
 
 ## WORKSPACE (U+202F) - " "
-set $workspace1 1
-set $workspace2 2
-set $workspace3 3
-set $workspace4 4
-set $workspace5 5
-set $workspace6 6
-set $workspace7 7
-set $workspace8 8
-set $workspace9 9
-set $workspace10 10
-set $workspace11 11
-set $workspace12 12
+set $workspace1 "1:   	"
+set $workspace2 "2:   	"
+set $workspace3 "3:  	"
+set $workspace4 "4:  	"
+#set $workspace4 "4:VM"
+set $workspace5 "5:    "
+set $workspace6 "6:    mc"
+set $workspace7 "7:    mc"
+set $workspace8 "8:  	Rock"
+set $workspace9 "9:    Rock"
+set $workspace10 "10:    Rock"
+set $workspace11 "11:   	"
+set $workspace12 "12:   	"
 
 # switch to workspace
 bindsym $mod+1 workspace number $workspace1
@@ -159,17 +160,19 @@ bindsym $mod+Ctrl+h move workspace to output left
 bindsym $mod+Ctrl+l move workspace to output right
 
 # reload the configuration file
+#bindsym $mod+Shift+C reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r reload
-# exit sway (logs you out of your X session)
-bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -b 'Yes, exit sway' 'swaymsg exit'"
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'swaymsg exit'"
 
 bindsym $mod+Escape exec --no-startup-id "~/bin/systemcontroll"
 
 
-bindsym $mod+F10 exec $HOME/.screenlayout/laptop.sh
-bindsym --release $mod+F7 exec ~/.config/i3/bin/rofi_autorandr.sh
+# bindsym $mod+F10 exec $HOME/.screenlayout/laptop.sh
+# bindsym --release $mod+F7 exec ~/.config/i3/bin/rofi_autorandr.sh
 
-exec waybar
+exec waybar -c ~/config/waybar/$HOSTNAME.jsonc
 
 # The middle button toggles floating
 bindsym button2 floating toggle
@@ -181,8 +184,8 @@ for_window [class="btop" title="btop"] floating enable, resize set 1450 950
 bindsym $mod+x exec "kitty --single-instance -o confirm_os_window_close=0 --class=xplr -1 xplr; exit"
 for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
 
-bindsym $mod+o exec swaymsg [class="obsidian"] move position mouse, exec swaymsg [class="obsidian"] scratchpad show || exec obsidian obsidian://open?vault=memo
-for_window [class="obsidian"] move scratchpad, [class="obsidian"] scratchpad show
+bindsym $mod+o exec swaymsg [app_id="obsidian"] move position mouse, exec swaymsg [app_id="obsidian"] scratchpad show || exec obsidian obsidian://open?vault=memo
+for_window [app_id="obsidian"] move scratchpad, [app_id="obsidian"] scratchpad show
 
 for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
 bindsym $mod+c [instance="gnome-calculator"] scratchpad show
@@ -318,8 +321,8 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left  workspace prev
 
 # Autostart applications
-exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
-exec_always autotiling
+# exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
+# exec_always autotiling
 # Start on specific workspace
 #exec swaymsg 'exec --no-startup-id vivaldi-snapshot'
 exec --no-startup-id swaymsg 'workspace $workspace2; splith; exec $terminal'
@@ -331,10 +334,14 @@ exec --no-startup-id nm-applet --indicator
 #BUG: exec --no-startup-id blueman-applet
 
 # Lock
+#exec --no-startup-id xss-lock ~/.config/i3/bin/i3lock-color-git.sh
+#exec_always --no-startup-id xss-lock -n ~/bin/dim-screen.sh -- /home/alteriks/.config/i3/bin/i3lock-color-git.sh
 #TODO: Wayland exec_always --no-startup-id light-locker --lock-after-screensaver=60
+#set $lock ~/.config/i3/pixelate_lock.sh
+#TODO: Wayland set $lock $i3config/i3lock-color-git.sh
 
 # exec --no-startup-id safeeyes
-exec_always --no-startup-id systemctl --user restart barriers@0.0.0.0.service
+# exec_always --no-startup-id systemctl --user restart barriers@0.0.0.0.service
 
 #############################
 ### settings for i3-gaps: ###
