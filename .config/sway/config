@@ -172,7 +172,7 @@ bindsym $mod+Escape exec --no-startup-id "~/bin/systemcontroll"
 # bindsym $mod+F10 exec $HOME/.screenlayout/laptop.sh
 # bindsym --release $mod+F7 exec ~/.config/i3/bin/rofi_autorandr.sh
 
-exec waybar
+exec waybar -c ~/config/waybar/$HOSTNAME.jsonc
 
 # The middle button toggles floating
 bindsym button2 floating toggle
@@ -184,8 +184,8 @@ for_window [class="btop" title="btop"] floating enable, resize set 1450 950
 bindsym $mod+x exec "kitty --single-instance -o confirm_os_window_close=0 --class=xplr -1 xplr; exit"
 for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
 
-bindsym $mod+o exec swaymsg [class="obsidian"] move position mouse, exec swaymsg [class="obsidian"] scratchpad show || exec obsidian obsidian://open?vault=memo
-for_window [class="obsidian"] move scratchpad, [class="obsidian"] scratchpad show
+bindsym $mod+o exec swaymsg [app_id="obsidian"] move position mouse, exec swaymsg [app_id="obsidian"] scratchpad show || exec obsidian obsidian://open?vault=memo
+for_window [app_id="obsidian"] move scratchpad, [app_id="obsidian"] scratchpad show
 
 for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
 bindsym $mod+c [instance="gnome-calculator"] scratchpad show
