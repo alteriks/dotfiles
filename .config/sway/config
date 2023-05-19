@@ -2,7 +2,16 @@
 
 set $swayconfig ~/.config/sway
 set $HOSTNAME `hostname`
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod Mod4
+
+# Ergodox
+set $hyper Ctrl+Shift+Mod1+Mod4
+set $meh Ctrl+Shift+Mod1
+
 include $swayconfig/$HOSTNAME.conf
+include $swayconfig/window.conf
+include $swayconfig/scratchpad.conf
 
 # INFO: Import environment variables from 50-systemd-user.conf, Required for xdg-desktop-portal-wlr, flameshot
 # https://wiki.archlinux.org/title/Sway#Configuration
@@ -13,19 +22,9 @@ input "type:keyboard" {
     xkb_options caps:escape,kpdl:dot
 }
 
-# Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod4
-
-# Ergodox
-set $hyper Ctrl+Shift+Mod1+Mod4
-set $meh Ctrl+Shift+Mod1
-
 
 # Ergodox cheatsheet
 bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.png
-
-bindsym $meh+s exec tdrop -ma -w -4 -x 3 -y25 -s dropdown kitty --class kitty-tdrop
-for_window [class="^kitty-tdrop$"] floating enable
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -46,10 +45,9 @@ bindsym $mod+F4 kill
 bindsym Mod1+F4 kill
 
 # start launcher
-# bindsym $mod+space       exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
-# bindsym $mod+space       exec --no-startup-id "fuzzel"
+# bindsym $mod+space       exec "fuzzel"
 exec albert
-bindsym $mod+space       exec albert show
+bindsym $mod+space       exec albert toggle
 bindsym $meh+space       exec albert show 'system '
 
 # change focus
@@ -58,6 +56,7 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym $mod+semicolon focus mode_toggle
 
 # alternatively, you can use the cursor keys:
 # Brakes Previos/Next page in web browser history
@@ -92,31 +91,24 @@ bindsym $mod+s layout stacking; exec notify-send 'i3: stacking layout'
 bindsym $mod+w layout tabbed; exec notify-send 'i3: tabbed layout'
 bindsym $mod+e layout toggle split; exec notify-send 'i3: tabbed split'
 
-#TODO: toggle tiling / floating
-#bindsym $mod+Shift+space floating toggle
-bindsym $mod+ctrl+space focus mode_toggle
-#TODO: Wayland bindsym $mod+/ focus mode_toggle
-
 # focus the parent container
 bindsym $mod+Shift+P focus parent
 
 # focus the child container
 bindsym $mod+Shift+C focus child
 
-## WORKSPACE (U+202F) - " "
-set $workspace1 "1:   	"
-set $workspace2 "2:   	"
-set $workspace3 "3:  	"
-set $workspace4 "4:  	"
-#set $workspace4 "4:VM"
-set $workspace5 "5:    "
-set $workspace6 "6:    mc"
-set $workspace7 "7:    mc"
-set $workspace8 "8:  	Rock"
-set $workspace9 "9:    Rock"
-set $workspace10 "10:    Rock"
-set $workspace11 "11:   	"
-set $workspace12 "12:   	"
+set $workspace1 1
+set $workspace2 2
+set $workspace3 3
+set $workspace4 4
+set $workspace5 5
+set $workspace6 6
+set $workspace7 7
+set $workspace8 8
+set $workspace9 9
+set $workspace10 10
+set $workspace11 11
+set $workspace12 12
 
 # switch to workspace
 bindsym $mod+1 workspace number $workspace1
@@ -163,20 +155,12 @@ bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $worksp
 bindsym $mod+Ctrl+h move workspace to output left
 bindsym $mod+Ctrl+l move workspace to output right
 
-# reload the configuration file
-#bindsym $mod+Shift+C reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r reload
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'swaymsg exit'"
-
-bindsym $mod+Escape exec --no-startup-id "~/bin/systemcontroll"
-
-
-# bindsym $mod+F10 exec $HOME/.screenlayout/laptop.sh
-# bindsym --release $mod+F7 exec ~/.config/i3/bin/rofi_autorandr.sh
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
 exec waybar -c ~/config/waybar/$HOSTNAME.jsonc
+bindsym $mod+question exec sway-prop
+for_window [app_id="sway-prop"] floating enable, resize set 400 1100
 
 # The middle button toggles floating
 bindsym button2 floating toggle
@@ -188,75 +172,10 @@ for_window [class="btop" title="btop"] floating enable, resize set 1450 950
 bindsym $mod+x exec "kitty --single-instance -o confirm_os_window_close=0 --class=xplr -1 xplr; exit"
 for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
 
-bindsym $mod+o exec swaymsg [app_id="obsidian"] move position mouse, exec swaymsg [app_id="obsidian"] scratchpad show || exec obsidian obsidian://open?vault=memo
-for_window [app_id="obsidian"] move scratchpad, [app_id="obsidian"] scratchpad show
-
-for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
-bindsym $mod+c [instance="gnome-calculator"] scratchpad show
-#TODO: Wayland exec --no-startup-id gnome-calculator
-#TODO: Wayland exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,gnome-calculator,,
-#TODO: Wayland exec_always sleep 2 && swaymsg "[class="Gnome-calculator"] move position 1400px 600px resize set 450 550"
-#for_window [class="Gnome-calculator"] focus, floating enable
-#exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh gnome-calculator --name scratchpad-calculator
-
-bindsym Mod1+ctrl+k exec swaymsg [app_id="org.keepassxc.KeePassXC"] move position mouse, exec swaymsg [app_id="org.keepassxc.KeePassXC"] scratchpad show || exec keepassxc
-for_window [app_id="org.keepassxc.KeePassXC"] move scratchpad, [app_id="org.keepassxc.KeePassXC"] scratchpad show
-
-#xprop |rg WM_CLASS
-#WM_CLASS(STRING) = "XXXXXXX", "YYYYYYY"
-#XXXXXXX - instance, YYYYYYY - class
-#for_window [class="calibre-gui" title="Are you sure?"] border none
-
-floating_maximum_size 1800 x 1200
-floating_minimum_size 100 x 50
-for_window [class="(?i)zathura"] focus
-for_window [class="Arandr"] floating enable, border normal
-for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
-for_window [class="firefox" title="Page Info"] border normal, floating enable
-for_window [class="flameshot" title="Configuration"] sticky enable, border normal, floating enable #Flameshot
-for_window [class="Mousepad"] border normal, focus, floating enable
-for_window [class="Nm-connection-editor"] border normal, focus, floating enable
-for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
-for_window [class="Pavucontrol"] floating enable, border normal, focus, resize set 850 500
-for_window [class="RimWorldLinux"] focus
-for_window [class="Mojosetup"] floating enable, border none, focus #gog installer
-for_window [class="Safeeyes"] floating enable, border none, focus,
-for_window [class="Veracrypt"] sticky enable, border normal, focus, floating enable
-for_window [title=" on QEMU/KVM"] border normal, focus, floating enable
-for_window [title="Bluetooth Adapters"] sticky enable, border normal, focus, floating enable
-for_window [title="Bluetooth Devices"] sticky enable, border normal, focus, floating enable
-for_window [title="Open With"] sticky enable, border normal, floating enable #Flameshot
-for_window [title="Open database"] sticky enable, border normal
-for_window [title="Piper"] sticky enable, border normal, focus, floating enable
-for_window [title="Solaar"] sticky enable, border normal, focus, floating enable
-for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floating enable
-for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
-for_window [window_type="dialog"] sticky enable, border normal
-
-for_window  [class="calibre" title="calibre - Preferences"] border normal, sticky disable,
+# floating_maximum_size 1800 x 1200
+floating_minimum_size 400 x 250
 focus_on_window_activation urgent
 force_display_urgency_hint 250 ms
-
-
-for_window  [class="Nemo" title="Edit Bookmarks"] border normal, sticky disable, floating enable
-for_window  [class="Nemo" title="File Management Preferences"] border normal, sticky disable, floating enable
-
-# STEAM
-#for_window [class="Steam" title="^(?!Steam)$"]  border normal, focus, floating enable
-# https://github.com/ValveSoftware/steam-for-linux/issues/1040
-for_window [class="^Steam$" title="^Friends$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
-
-# doesn't work anymore assign [ class="^Spotify$" ] workspace 1
-for_window [class="Spotify"] move to workspace $workspace1
 
 #TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
 
@@ -298,8 +217,8 @@ assign [ class = "calibre" ] workspace $workspace5
 assign [ class = "Zathura" ] workspace $workspace5
 
 # Start Applications
-bindsym Print exec --no-startup-id flameshot gui -p ~/tmp/
-bindsym $mod+p exec --no-startup-id flameshot gui -p ~/tmp/
+bindsym Print exec flameshot gui -p ~/tmp/
+bindsym $mod+p exec flameshot gui -p ~/tmp/
 bindsym $mod+F3 exec nemo
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
@@ -308,14 +227,14 @@ workspace_auto_back_and_forth yes
 # bindsym $mod+b workspace back_and_forth
 bindsym $mod+BackSpace workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
-bindsym $mod+Tab		workspace next
-bindsym $mod+Shift+Tab		workspace prev
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/bin/pavolume +10% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/bin/pavolume -10% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/bin/pavolume toggle # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec ~/.config/i3/bin/pavolume +10% #increase sound volume
+bindsym XF86AudioLowerVolume exec ~/.config/i3/bin/pavolume -10% #decrease sound volume
+bindsym XF86AudioMute exec ~/.config/i3/bin/pavolume toggle # mute sound
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -328,18 +247,18 @@ bindsym $mod+Ctrl+Left  workspace prev
 # exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
 # exec_always autotiling
 # Start on specific workspace
-exec --no-startup-id swaymsg 'workspace $workspace2; splith; exec $terminal'
-#TODO: Wayland exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec swaymsg 'workspace $workspace2; splith; exec $terminal'
+#TODO: Wayland exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #nvidia driver; causes HIGH CPU on nouveau
-exec --no-startup-id /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
-exec --no-startup-id nm-applet --indicator
-#exec --no-startup-id xfce4-power-manager
-#BUG: exec --no-startup-id blueman-applet
+exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
+exec nm-applet --indicator
+#exec xfce4-power-manager
+#BUG: exec blueman-applet
 
 # Lock
-#TODO: Wayland exec_always --no-startup-id light-locker --lock-after-screensaver=60
+#TODO: Wayland exec_always light-locker --lock-after-screensaver=60
 
-# exec_always --no-startup-id systemctl --user restart barriers@0.0.0.0.service
+# exec_always systemctl --user restart barriers@0.0.0.0.service
 
 #############################
 ### settings for i3-gaps: ###

@@ -287,7 +287,7 @@ bindsym $mod+F2 exec nemo
 bindsym $meh+2 exec nemo
 bindsym $mod+F3 exec  ~/.config/i3/bin/launch_nemo_F3.sh #doesn't work if menubar is hidden
 bindsym $meh+3 exec  ~/.config/i3/bin/launch_nemo_F3.sh #doesn't work if menubar is hidden
-# bindsym $mod+F3 exec pcmanfm-qt
+
 #bindsym $mod+p exec --no-startup-id pkill picom; exec notify-send 'picom is DEAD'
 bindsym $mod+Ctrl+p exec --no-startup-id picom ; exec notify-send 'picom is ALIVE'
 #nvidia driver; causes HIGH CPU on nouveau
