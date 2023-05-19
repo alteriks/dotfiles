@@ -100,19 +100,18 @@ bindsym $mod+Shift+P focus parent
 bindsym $mod+Shift+C focus child
 
 ## WORKSPACE (U+202F) - " "
-set $workspace1 "1:   	"
-set $workspace2 "2:   	"
-set $workspace3 "3:  	"
-set $workspace4 "4:  	"
-#set $workspace4 "4:VM"
-set $workspace5 "5:    "
-set $workspace6 "6:    mc"
-set $workspace7 "7:    mc"
-set $workspace8 "8:  	Rock"
-set $workspace9 "9:    Rock"
-set $workspace10 "10:    Rock"
-set $workspace11 "11:   	"
-set $workspace12 "12:   	"
+set $workspace1 1
+set $workspace2 2
+set $workspace3 3
+set $workspace4 4
+set $workspace5 5
+set $workspace6 6
+set $workspace7 7
+set $workspace8 8
+set $workspace9 9
+set $workspace10 10
+set $workspace11 11
+set $workspace12 12
 
 # switch to workspace
 bindsym $mod+1 workspace number $workspace1
