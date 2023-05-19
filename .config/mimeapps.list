@@ -5,11 +5,11 @@ application/x-mimearchive=vivaldi-stable.desktop
 application/x-remmina=org.remmina.Remmina.desktop
 image/jpeg=org.nomacs.ImageLounge.desktop
 image/png=org.nomacs.ImageLounge.desktop
-text/html=vivaldi-stable.desktop
+text/html=firefox_nebula_zt.desktop
 text/plain=org.xfce.mousepad.desktop
 x-scheme-handler/about=vivaldi-stable.desktop
-x-scheme-handler/http=vivaldi-stable.desktop
-x-scheme-handler/https=vivaldi-stable.desktop
+x-scheme-handler/http=firefox_nebula_zt.desktop
+x-scheme-handler/https=firefox_nebula_zt.desktop
 x-scheme-handler/mailto=vivaldi-stable.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/postman=Postman.desktop
@@ -32,6 +32,13 @@ text/markdown=typora.desktop
 image/svg+xml=org.gnome.gThumb.desktop
 x-scheme-handler/nozbe=Nozbe.desktop
 x-scheme-handler/mailspring=Mailspring.desktop
+x-scheme-handler/chrome=firefox_nebula_zt.desktop
+application/x-extension-htm=firefox_nebula_zt.desktop
+application/x-extension-html=firefox_nebula_zt.desktop
+application/x-extension-shtml=firefox_nebula_zt.desktop
+application/xhtml+xml=firefox_nebula_zt.desktop
+application/x-extension-xhtml=firefox_nebula_zt.desktop
+application/x-extension-xht=firefox_nebula_zt.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
@@ -64,6 +71,16 @@ video/x-matroska=mpv.desktop;
 video/mp4=mpv.desktop;
 application/x-shellscript=org.xfce.mousepad.desktop;
 image/svg+xml=org.gnome.gThumb.desktop;
+x-scheme-handler/http=firefox_nebula_zt.desktop;
+x-scheme-handler/https=firefox_nebula_zt.desktop;
+x-scheme-handler/chrome=firefox_nebula_zt.desktop;
+text/html=firefox_nebula_zt.desktop;
+application/x-extension-htm=firefox_nebula_zt.desktop;
+application/x-extension-html=firefox_nebula_zt.desktop;
+application/x-extension-shtml=firefox_nebula_zt.desktop;
+application/xhtml+xml=firefox_nebula_zt.desktop;
+application/x-extension-xhtml=firefox_nebula_zt.desktop;
+application/x-extension-xht=firefox_nebula_zt.desktop;
 
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;
