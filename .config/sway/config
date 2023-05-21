@@ -158,7 +158,7 @@ bindsym $mod+Ctrl+l move workspace to output right
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
-exec waybar -c ~/config/waybar/$HOSTNAME.jsonc
+exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc
 bindsym $mod+question exec sway-prop
 for_window [app_id="sway-prop"] floating enable, resize set 400 1100
 
@@ -217,8 +217,8 @@ assign [ class = "calibre" ] workspace $workspace5
 assign [ class = "Zathura" ] workspace $workspace5
 
 # Start Applications
-bindsym Print exec flameshot gui -p ~/tmp/
-bindsym $mod+p exec flameshot gui -p ~/tmp/
+# bindsym Print exec flameshot gui -p ~/tmp/
+# bindsym $mod+p exec flameshot gui -p ~/tmp/
 bindsym $mod+F3 exec nemo
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
@@ -246,10 +246,8 @@ bindsym $mod+Ctrl+Left  workspace prev
 # Autostart applications
 # exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
 # exec_always autotiling
-# Start on specific workspace
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'
 #TODO: Wayland exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#nvidia driver; causes HIGH CPU on nouveau
 exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
 exec nm-applet --indicator
 #exec xfce4-power-manager

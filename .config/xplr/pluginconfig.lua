@@ -30,7 +30,8 @@ require("nuke").setup({
 			{
 				-- Wayland doesn't support xdotool, so it's best to use tabbed
 				mime_regex = "^image/.*",
-				command = 'export FILE=$(basename "$XPLR_FOCUS_PATH"); ~/.config/i3/bin/i3-tabbed.py mpv --input-conf=~/.config/mpv/input_images.conf --no-config --no-terminal --image-display-duration=inf $(fd --maxdepth=1 | grep "$FILE" --after-context=999)',
+				-- command = 'export FILE=$(basename "$XPLR_FOCUS_PATH"); ~/.config/i3/bin/i3-tabbed.py mpv --input-conf=~/.config/mpv/input_images.conf --no-config --no-terminal --image-display-duration=inf $(fd --maxdepth=1 | grep "$FILE" --after-context=999)',
+				command = '~/.config/i3/bin/i3-tabbed.py mpv --config-dir=$HOME/.config/mvi/ --no-terminal {}',
 			},
 			-- {
 			-- 	mime_regex = "^image/.*",
