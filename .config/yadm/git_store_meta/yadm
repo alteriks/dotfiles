@@ -69,6 +69,7 @@
 .config/btop	d	0755
 .config/btop/btop.conf	f	0644
 .config/dircolors	f	0644
+.config/electron-flags.conf	f	0644
 .config/git	d	0755
 .config/git/config	f	0644
 .config/gnupg	d	0700

@@ -13,6 +13,7 @@ alias bc='bc -l'
 alias cls='clear && echo -en "[3J"'
 alias curl_zt="curl -x socks5h://localhost:5555"
 alias ipinfo="curl ipinfo.io"
+alias mvi="mpv --config-dir=$HOME/.config/mvi/"
 alias nvidia-settings="nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings"
 alias open='xdg-open $1 2>/dev/null'
 alias pushd=' pushd'

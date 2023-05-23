@@ -74,3 +74,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always'"
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 	export MOZ_ENABLE_WAYLAND=1
 fi
+
+# If running from tty1 start sway
+[ "$(tty)" = "/dev/tty1" ] && exec ~/bin/launch_sway.sh

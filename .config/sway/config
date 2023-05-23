@@ -159,7 +159,7 @@ bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
 exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc
-bindsym $mod+question exec sway-prop
+bindsym $mod+question exec ~/bin/sway-prop
 for_window [app_id="sway-prop"] floating enable, resize set 400 1100
 
 # The middle button toggles floating
@@ -216,11 +216,10 @@ assign [ class = "Remmina" ] workspace $workspace4
 assign [ class = "calibre" ] workspace $workspace5
 assign [ class = "Zathura" ] workspace $workspace5
 
-# Start Applications
-# bindsym Print exec flameshot gui -p ~/tmp/
-# bindsym $mod+p exec flameshot gui -p ~/tmp/
+bindsym Print exec flameshot gui -p ~/tmp/
+bindsym $mod+p exec flameshot gui -p ~/tmp/
 bindsym $mod+F3 exec nemo
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -243,9 +242,11 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left  workspace prev
 
+
 # Autostart applications
 # exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
 # exec_always autotiling
+exec multibg-sway ~/tmp/swaybg
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'
 #TODO: Wayland exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
