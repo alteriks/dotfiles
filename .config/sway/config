@@ -162,6 +162,8 @@ exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc
 bindsym $mod+question exec ~/bin/sway-prop
 for_window [app_id="sway-prop"] floating enable, resize set 400 1100
 
+exec GTK_THEME=Adwaita:dark swaync -s ~/.config/swaync/style.css -c ~/.config/swaync/config.jsonc
+
 # The middle button toggles floating
 bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
