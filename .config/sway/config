@@ -22,7 +22,6 @@ input "type:keyboard" {
     xkb_options caps:escape,kpdl:dot
 }
 
-
 # Ergodox cheatsheet
 bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.png
 
@@ -51,7 +50,6 @@ bindsym $mod+space       exec albert toggle
 bindsym $meh+space       exec albert show 'system '
 
 # change focus
-focus_wrapping yes
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -158,7 +156,14 @@ bindsym $mod+Ctrl+l move workspace to output right
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
-exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc
+# exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -b bar-0
+bar {
+  swaybar_command waybar
+  position top
+  mode hide
+  modifier Mod4
+}
+
 bindsym $mod+question exec ~/bin/sway-prop
 for_window [app_id="sway-prop"] floating enable, resize set 400 1100
 
@@ -168,16 +173,14 @@ exec GTK_THEME=Adwaita:dark swaync -s ~/.config/swaync/style.css -c ~/.config/sw
 bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
 
-bindsym $mod+b exec "kitty --single-instance -o confirm_os_window_close=0 --class=btop -1 btop; exit"
+bindsym $mod+b exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=btop btop; exit"
 for_window [class="btop" title="btop"] floating enable, resize set 1450 950
 
-bindsym $mod+x exec "kitty --single-instance -o confirm_os_window_close=0 --class=xplr -1 xplr; exit"
+bindsym $mod+x exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=xplr xplr; exit"
 for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
 
 # floating_maximum_size 1800 x 1200
 floating_minimum_size 400 x 250
-focus_on_window_activation urgent
-force_display_urgency_hint 250 ms
 
 #TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
 
@@ -199,10 +202,13 @@ hide_edge_borders none
 
 #Focus
 focus_follows_mouse yes
-#focus_on_window_activation urgent
+focus_wrapping yes
+# focus_on_window_activation none
+focus_on_window_activation urgent
+force_display_urgency_hint 3000 ms
+
 
 #xprop WM_CLASS = instance,class
-assign [ class = "Steam" ] workspace $workspace1
 assign [ title = "Deluge" ] workspace $workspace1
 assign [ class = "RimWorldLinux" ] workspace $workspace1
 assign [ class = "Thunar" ] workspace $workspace1
@@ -250,7 +256,7 @@ bindsym $mod+Ctrl+Left  workspace prev
 # exec_always autotiling
 exec multibg-sway ~/tmp/swaybg
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'
-#TODO: Wayland exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
 exec nm-applet --indicator
 #exec xfce4-power-manager
@@ -271,7 +277,3 @@ gaps outer -4
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
-
-# Smart borders (draw borders around container only if it is not the only container on this workspace)
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-#smart_borders no_gaps

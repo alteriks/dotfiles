@@ -5,3 +5,4 @@
 local opt = vim.opt
 
 opt.spelllang = { "pl", "en" }
+opt.wrap = true

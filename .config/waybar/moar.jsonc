@@ -1,6 +1,8 @@
 // set ft=jsonc
 {
   "include": "~/.config/waybar/default.jsonc",
+  "bar_id": "bar-0",
+  "ipc": true,
   // "modules-right": [ "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
   "modules-right": [
     "idle_inhibitor",

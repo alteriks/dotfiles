@@ -46,7 +46,7 @@ if [[ "$1" || -t 1 ]]; then
 	cat "$TMP"
 	# I prefer to popup a terminal eg:
 	if type kitty &>/dev/null; then
-		kitty --single-instance --class sway-prop bat --paging=always --style=plain $TMP
+		kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class sway-prop bat --paging=always --style=plain $TMP
 		sleep 10
 	else
 		# ... but sway doesn't have anything like i3-sensible-terminal.
