@@ -25,8 +25,6 @@ input "type:keyboard" {
 # Ergodox cheatsheet
 bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.png
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 font pango:DejaVu Sans Mono for Powerline, Book 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -156,13 +154,13 @@ bindsym $mod+Ctrl+l move workspace to output right
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
-# exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -b bar-0
-bar {
-  swaybar_command waybar
-  position top
-  mode hide
-  modifier Mod4
-}
+exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -s ~/.config/waybar/style.css
+# bar {
+#   swaybar_command waybar
+#   position top
+#   mode hide
+#   modifier Mod4
+# }
 
 bindsym $mod+question exec ~/bin/sway-prop
 for_window [app_id="sway-prop"] floating enable, resize set 400 1100
