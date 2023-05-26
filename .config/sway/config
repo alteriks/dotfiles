@@ -22,18 +22,50 @@ input "type:keyboard" {
     xkb_options caps:escape,kpdl:dot
 }
 
-# Ergodox cheatsheet
-bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.png
-
 font pango:DejaVu Sans Mono for Powerline, Book 11
+
+# Set inner/outer gaps
+gaps inner 6
+gaps outer -4
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# floating_maximum_size 1800 x 1200
+floating_minimum_size 400 x 250
+
+#TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
+
+## class                 border  backgr. text    indicator
+#client.focused_inactive #4F99D3 #4F99D3 #151718 #9FCA56
+client.focused #9FCA56 #9FCA56 #151718 #A074C4
+client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
+client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
+
+workspace_layout default
+#workspace_layout default|stacking|tabbed
+
+# Normal windows should use small borders, floating should have tab title
+default_border pixel 3
+default_floating_border normal
+
+# Hide borders
+hide_edge_borders none
+
+#Focus
+focus_follows_mouse yes
+focus_wrapping yes
+# focus_on_window_activation none
+focus_on_window_activation urgent
+force_display_urgency_hint 3000 ms
+
 # start a terminal
-set $terminal kitty --single-instance
-bindsym $mod+Return exec $terminal
-bindsym --release $mod+Shift+Return exec HOSTNAME=$HOSTNAME $terminal --class kitty-floating
+set $terminal HOSTNAME=$HOSTNAME kitty --single-instance --instance-group kitty
+bindsym $mod+Return exec HOSTNAME=$HOSTNAME /usr/bin/kitty --single-instance --instance-group kitty
+bindsym $mod+Shift+Return exec $terminal --class kitty-floating
 
 # kill focused window
 bindsym --release $mod+Shift+q exec xkill
@@ -43,7 +75,6 @@ bindsym Mod1+F4 kill
 
 # start launcher
 # bindsym $mod+space       exec "fuzzel"
-exec albert
 bindsym $mod+space       exec albert toggle
 bindsym $meh+space       exec albert show 'system '
 
@@ -119,6 +150,14 @@ bindsym $mod+9 workspace number $workspace9
 bindsym $mod+0 workspace number $workspace10
 bindsym $hyper+1 workspace number $workspace11
 bindsym $hyper+2 workspace number $workspace12
+bindsym $hyper+3 workspace number $workspace13
+bindsym $hyper+4 workspace number $workspace14
+bindsym $hyper+5 workspace number $workspace15
+bindsym $hyper+6 workspace number $workspace16
+bindsym $hyper+7 workspace number $workspace17
+bindsym $hyper+8 workspace number $workspace18
+bindsym $hyper+9 workspace number $workspace19
+bindsym $hyper+0 workspace number $workspace20
 
 # move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $workspace1
@@ -154,57 +193,18 @@ bindsym $mod+Ctrl+l move workspace to output right
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
-exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -s ~/.config/waybar/style.css
-# bar {
-#   swaybar_command waybar
-#   position top
-#   mode hide
-#   modifier Mod4
-# }
-
 bindsym $mod+question exec ~/bin/sway-prop
-for_window [app_id="sway-prop"] floating enable, resize set 400 1100
-
-exec GTK_THEME=Adwaita:dark swaync -s ~/.config/swaync/style.css -c ~/.config/swaync/config.jsonc
+for_window [app_id="kitty_sway-prop"] floating enable, resize set 400 1100
 
 # The middle button toggles floating
 bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
 
-bindsym $mod+b exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=btop btop; exit"
-for_window [class="btop" title="btop"] floating enable, resize set 1450 950
+bindsym $mod+b exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_btop btop; exit"
+for_window [app_id="kitty_btop"] floating enable, resize set 1450 950
 
-bindsym $mod+x exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=xplr xplr; exit"
-for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
-
-# floating_maximum_size 1800 x 1200
-floating_minimum_size 400 x 250
-
-#TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
-
-## class                 border  backgr. text    indicator
-#client.focused_inactive #4F99D3 #4F99D3 #151718 #9FCA56
-client.focused #9FCA56 #9FCA56 #151718 #A074C4
-client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
-client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
-
-workspace_layout default
-#workspace_layout default|stacking|tabbed
-
-# Normal windows should use small borders, floating should have tab title
-default_border pixel 3
-default_floating_border normal
-
-# Hide borders
-hide_edge_borders none
-
-#Focus
-focus_follows_mouse yes
-focus_wrapping yes
-# focus_on_window_activation none
-focus_on_window_activation urgent
-force_display_urgency_hint 3000 ms
-
+bindsym $mod+x exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_xplr xplr; exit"
+for_window [app_id="kitty_xplr"] floating enable, resize set 1450 950
 
 #xprop WM_CLASS = instance,class
 assign [ title = "Deluge" ] workspace $workspace1
@@ -241,6 +241,9 @@ bindsym XF86AudioLowerVolume exec ~/.config/i3/bin/pavolume -10% #decrease sound
 bindsym XF86AudioMute exec ~/.config/i3/bin/pavolume toggle # mute sound
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
+# Ergodox cheatsheet
+bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.png
+
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
 
@@ -248,30 +251,18 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left  workspace prev
 
-
 # Autostart applications
 # exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
 # exec_always autotiling
+exec GTK_THEME=Adwaita:dark swaync -s ~/.config/swaync/style.css -c ~/.config/swaync/config.jsonc
+exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -s ~/.config/waybar/style.css
 exec multibg-sway ~/tmp/swaybg
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
-exec nm-applet --indicator
+exec albert
 #exec xfce4-power-manager
 #BUG: exec blueman-applet
 
 # Lock
 #TODO: Wayland exec_always light-locker --lock-after-screensaver=60
-
-# exec_always systemctl --user restart barriers@0.0.0.0.service
-
-#############################
-### settings for i3-gaps: ###
-#############################
-
-# Set inner/outer gaps
-gaps inner 6
-gaps outer -4
-
-# Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
