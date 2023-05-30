@@ -124,7 +124,7 @@ ip() {
 }
 
 pacman_update_ignoredpkg() {
-  IGNOREDPKG=$( /bin/cat /etc/pacman.d/ignorepkg/all.conf /etc/pacman.d/ignorepkg/${HOSTNAME}.conf | awk -F' = ' '{ print $2 }' ORS=' ' )
+  IGNOREDPKG=$( /bin/cat /etc/pacman.d/ignorepkg/all.conf /etc/pacman.d/ignorepkg/${HOSTNAME}.conf | grep -vF \# | awk -F' = ' '{ print $2 }' ORS=' ' )
   sudo http_proxy=squid.lan:3128 ftp_proxy=squid.lan:3128 https_proxy=squid.lan:4128 pacman -Syu $(echo $IGNOREDPKG)
 }
 
