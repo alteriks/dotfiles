@@ -9,6 +9,9 @@ set $mod Mod4
 set $hyper Ctrl+Shift+Mod1+Mod4
 set $meh Ctrl+Shift+Mod1
 
+set $sway_icon /home/datastore/FotoVaria/Icon/swaywm.png
+set $notify_sway notify-send -u low -e -t 1000 -a sway -i /home/datastore/FotoVaria/Icon/swaywm.png
+
 include $swayconfig/$HOSTNAME.conf
 include $swayconfig/window.conf
 include $swayconfig/scratchpad.conf
@@ -110,13 +113,14 @@ bindsym $mod+Shift+f fullscreen toggle
 #bindsym $mod+f [urgent=latest] focus
 
 # split orientation
-bindsym $mod+bar split h; exec notify-send 'i3: tile horizontally'
-bindsym $mod+minus splitv; exec notify-send 'i3: tile vertically'
+bindsym $mod+bar split h; exec $notify_sway 'tile horizontally'
+bindsym $mod+backslash split h; exec $notify_sway 'tile horizontally'
+bindsym $mod+minus splitv; exec $notify_sway 'tile vertically'
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking; exec notify-send 'i3: stacking layout'
-bindsym $mod+w layout tabbed; exec notify-send 'i3: tabbed layout'
-bindsym $mod+e layout toggle split; exec notify-send 'i3: tabbed split'
+bindsym $mod+s layout stacking; exec $notify_sway 'stacking layout'
+bindsym $mod+w layout tabbed; exec $notify_sway 'tabbed layout'
+bindsym $mod+e layout toggle split; exec $notify_sway 'tabbed split'
 
 # focus the parent container
 bindsym $mod+Shift+P focus parent
@@ -251,10 +255,13 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left  workspace prev
 
+bindsym $mod+n exec swaync-client -t
+
 # Autostart applications
 # exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
 # exec_always autotiling
 exec GTK_THEME=Adwaita:dark swaync -s ~/.config/swaync/style.css -c ~/.config/swaync/config.jsonc
+
 exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -s ~/.config/waybar/style.css
 exec multibg-sway ~/tmp/swaybg
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'

@@ -4,6 +4,7 @@
   "positionY": "top",
   "control-center-positionX": "left",
   "control-center-positionY": "top",
+  "control-center-margin-left": 10,
   "notification-icon-size": 64,
   "notification-body-image-height": 100,
   "notification-body-image-width": 200,
@@ -31,6 +32,11 @@
       "state": "muted",
       "urgency": "Low",
       "app-name": "Spotify"
+    },
+    "sway": {
+      "state": "transient",
+      "urgency": "Low",
+      "app-name": "sway"
     }
   },
   "widgets": [
@@ -72,6 +78,7 @@
       "subsystem": "leds"
     },
     "volume": {
+      "show-per-app": true,
       "label": ""
     },
     "menubar#label": {

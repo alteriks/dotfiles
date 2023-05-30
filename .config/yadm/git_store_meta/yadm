@@ -111,7 +111,7 @@
 .config/libvirt/libvirt.conf	f	0644
 .config/lsd	d	0755
 .config/lsd/config.yaml	f	0644
-.config/mimeapps.list	f	0600
+.config/mimeapps.list	f	0644
 .config/mpv	d	0755
 .config/mpv/input.conf	f	0644
 .config/mpv/input_images.conf	f	0644
@@ -189,6 +189,7 @@
 .config/sway/carbon.conf	f	0644
 .config/sway/config	f	0644
 .config/sway/moar.conf	f	0644
+.config/sway/window.conf_X	f	0644
 .config/swaync	d	0755
 .config/swaync/config.jsonc	f	0644
 .config/swaync/style.css	f	0644

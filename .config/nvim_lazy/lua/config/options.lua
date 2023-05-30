@@ -6,3 +6,6 @@ local opt = vim.opt
 
 opt.spelllang = { "pl", "en" }
 opt.wrap = true
+
+-- If echasnovski/mini.comment can't use computed LSP ts_context_commentstring then use this:
+opt.commentstring = "# %s"
