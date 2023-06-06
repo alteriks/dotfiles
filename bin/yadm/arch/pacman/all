@@ -45,6 +45,17 @@ pulseaudio-bluetooth
 pulsemixer
 vlc
 
+# Wayland
+polkit-gnome
+qt6-wayland
+slurp # select a region in a Wayland compositor
+swaync
+wayvnc
+wl-clipboard
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
+
 # GUI
 # alacritty
 arandr
@@ -70,7 +81,7 @@ nemo
 nemo-fileroller
 nitrogen
 obsidian
-pcmanfm-qt
+#pcmanfm-qt replaced by nemo/xplr
 picom
 python-i3ipc
 redshift

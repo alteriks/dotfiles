@@ -1,0 +1,20 @@
+# vim: set ft=swayconfig:
+#xprop |rg WM_CLASS
+#WM_CLASS(STRING) = "XXXXXXX", "YYYYYYY"
+#XXXXXXX - instance, YYYYYYY - class
+
+#for_window [class="calibre-gui" title="Are you sure?"] border none
+#for_window [class="Arandr"] floating enable
+
+# Trello
+for_window [class="Trello"] move to workspace $workspace1
+for_window [instance="crx_malaccbehepoilclgpafieiapgfmoabm"] move to workspace $workspace1
+
+#for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
+#for_window [class="RimWorldLinux"] focus
+#for_window [class="Typora"] floating enable, border pixel 2
+#for_window [class="Vivaldi-*"] border pixel 3
+#for_window [class="Safeeyes"] floating enable, border none
+#for_window [class="Veracrypt"] sticky enable, border normal floating enable
+#for_window [class="Pavucontrol"] floating enable, border normal, focus, resize set 850 500
+#for_window [class="Nm-connection-editor"] border normal, focus, floating enable

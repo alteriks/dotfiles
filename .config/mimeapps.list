@@ -16,7 +16,7 @@ x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/rdp=org.remmina.Remmina.desktop
 x-scheme-handler/remmina=org.remmina.Remmina.desktop
 x-scheme-handler/spice=org.remmina.Remmina.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-37EJZ1.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/unknown=vivaldi-stable.desktop
 x-scheme-handler/vnc=org.remmina.Remmina.desktop
 x-scheme-handler/webcal=vivaldi-stable.desktop
@@ -32,6 +32,13 @@ text/markdown=typora.desktop
 image/svg+xml=org.gnome.gThumb.desktop
 x-scheme-handler/nozbe=Nozbe.desktop
 x-scheme-handler/mailspring=Mailspring.desktop
+x-scheme-handler/chrome=firefox_nebula_zt.desktop
+application/x-extension-htm=firefox_nebula_zt.desktop
+application/x-extension-html=firefox_nebula_zt.desktop
+application/x-extension-shtml=firefox_nebula_zt.desktop
+application/xhtml+xml=firefox_nebula_zt.desktop
+application/x-extension-xhtml=firefox_nebula_zt.desktop
+application/x-extension-xht=firefox_nebula_zt.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
@@ -59,11 +66,21 @@ application/json=nvim.desktop;
 image/gif=org.nomacs.ImageLounge.desktop;
 text/x-nfo=org.xfce.mousepad.desktop;
 image/webp=mpv.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-7N76C1.desktop;userapp-Telegram Desktop-2IICO1.desktop;userapp-Telegram Desktop-37EJZ1.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-7N76C1.desktop;userapp-Telegram Desktop-2IICO1.desktop;userapp-Telegram Desktop-37EJZ1.desktop;org.telegram.desktop.desktop;
 video/x-matroska=mpv.desktop;
 video/mp4=mpv.desktop;
 application/x-shellscript=org.xfce.mousepad.desktop;
 image/svg+xml=org.gnome.gThumb.desktop;
+x-scheme-handler/http=firefox_nebula_zt.desktop;
+x-scheme-handler/https=firefox_nebula_zt.desktop;
+x-scheme-handler/chrome=firefox_nebula_zt.desktop;
+text/html=firefox_nebula_zt.desktop;
+application/x-extension-htm=firefox_nebula_zt.desktop;
+application/x-extension-html=firefox_nebula_zt.desktop;
+application/x-extension-shtml=firefox_nebula_zt.desktop;
+application/xhtml+xml=firefox_nebula_zt.desktop;
+application/x-extension-xhtml=firefox_nebula_zt.desktop;
+application/x-extension-xht=firefox_nebula_zt.desktop;
 
 [MIME Cache]
 application/pdf=org.pwmt.zathura.desktop;

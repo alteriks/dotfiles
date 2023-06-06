@@ -44,8 +44,8 @@ ventoy-bin
 # dhcp client tester+spoofer
 dhtest
 
-# i3 autotiling https://github.com/nwg-piotr/autotiling
-autotiling-git
+# i3/sway autotiling https://github.com/nwg-piotr/autotiling
+autotiling
 
 # yt-dlp already in community repo
 
@@ -88,3 +88,5 @@ qrcp-bin
 
 # xplr swallow zathura
 i3-swallow-git
+
+albert

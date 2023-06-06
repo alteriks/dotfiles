@@ -1,13 +1,7 @@
 # i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# output eDP-1 scale 1.3 pos 0 0 res 2560x1440
-# output DP-1 pos 1969 0 res 3440x1440
-# output eDP-1 scale 1 pos 0 0 res 2560x1440
-# output DP-1  scale 1 pos 2560 0 res 3440x1440
-output DP-1 pos 0 0 res 3840x1600@120Hz adaptive_sync off
-# output DP-1 pos 0 0 res 3840x1600@144Hz adaptive_sync on
-
+set $swayconfig ~/.config/sway
+set $HOSTNAME `hostname`
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
@@ -15,19 +9,90 @@ set $mod Mod4
 set $hyper Ctrl+Shift+Mod1+Mod4
 set $meh Ctrl+Shift+Mod1
 
-set $i3config ~/.config/i3
+set $sway_icon /home/datastore/FotoVaria/Icon/swaywm.png
+set $notify_sway notify-send -u low -e -t 1000 -a sway -i /home/datastore/FotoVaria/Icon/swaywm.png
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+set $workspace1 1
+set $workspace2 2
+set $workspace3 3
+set $workspace4 4
+set $workspace5 5
+set $workspace6 6
+set $workspace7 7
+set $workspace8 8
+set $workspace9 9
+set $workspace10 10
+set $workspace11 11
+set $workspace12 12
+set $workspace13 13
+set $workspace14 14
+set $workspace15 15
+set $workspace16 16
+set $workspace17 17
+set $workspace18 18
+set $workspace19 19
+set $workspace20 20
+
+
+
+# include $swayconfig/vars.conf
+include $swayconfig/$HOSTNAME.conf
+include $swayconfig/window.conf
+include $swayconfig/scratchpad.conf
+
+# INFO: Import environment variables from 50-systemd-user.conf, Required for xdg-desktop-portal-wlr, flameshot
+# https://wiki.archlinux.org/title/Sway#Configuration
+include /etc/sway/config.d/*
+
+input "type:keyboard" {
+    xkb_layout pl
+    xkb_options caps:escape,kpdl:dot
+}
+
 font pango:DejaVu Sans Mono for Powerline, Book 11
+
+# Set inner/outer gaps
+gaps inner 6
+gaps outer -4
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# floating_maximum_size 1800 x 1200
+floating_minimum_size 400 x 250
+
+#TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
+
+## class                 border  backgr. text    indicator
+#client.focused_inactive #4F99D3 #4F99D3 #151718 #9FCA56
+client.focused #9FCA56 #9FCA56 #151718 #A074C4
+client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
+client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
+
+workspace_layout default
+#workspace_layout default|stacking|tabbed
+
+# Normal windows should use small borders, floating should have tab title
+default_border pixel 3
+default_floating_border normal
+
+# Hide borders
+hide_edge_borders none
+
+#Focus
+focus_follows_mouse yes
+focus_wrapping yes
+# focus_on_window_activation none
+focus_on_window_activation urgent
+force_display_urgency_hint 3000 ms
+
 # start a terminal
-set $terminal kitty --single-instance
-bindsym $mod+Return exec $terminal
-bindsym --release $mod+Shift+Return exec HOSTNAME=$HOSTNAME $terminal --class kitty-floating
+set $terminal HOSTNAME=$HOSTNAME kitty --single-instance --instance-group kitty
+bindsym $mod+Return exec HOSTNAME=$HOSTNAME /usr/bin/kitty --single-instance --instance-group kitty
+bindsym $mod+Shift+Return exec $terminal --class kitty-floating
 
 # kill focused window
 bindsym --release $mod+Shift+q exec xkill
@@ -36,16 +101,18 @@ bindsym $mod+F4 kill
 bindsym Mod1+F4 kill
 
 # start launcher
-bindsym $mod+space       exec --no-startup-id "rofi -modi combi -show combi -width -80 -levenshtein-sort -combi-modi window,drun"
-bindsym $mod+Shift+space exec --no-startup-id "rofi -modi calc -show calc -width -50 -no-show-match -no-sort | xclip -in -sel primary > /dev/null"
-bindsym $mod+i exec --no-startup-id "networkmanager_dmenu"
+# bindsym $mod+space       exec "fuzzel"
+bindsym $mod+space       exec albert toggle
+bindsym $meh+space       exec albert show 'system s'
+bindsym $meh+c          exec wl-paste | cb copy
+bindsym $meh+x          exec cb paste | wl-copy
 
 # change focus
-focus_wrapping yes
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym $mod+semicolon focus mode_toggle
 
 # alternatively, you can use the cursor keys:
 # Brakes Previos/Next page in web browser history
@@ -72,18 +139,14 @@ bindsym $mod+Shift+f fullscreen toggle
 #bindsym $mod+f [urgent=latest] focus
 
 # split orientation
-bindsym $mod+bar split h; exec notify-send 'i3: tile horizontally'
-bindsym $mod+minus splitv; exec notify-send 'i3: tile vertically'
+bindsym $mod+bar split h; exec $notify_sway 'tile horizontally'
+bindsym $mod+backslash split h; exec $notify_sway 'tile horizontally'
+bindsym $mod+minus splitv; exec $notify_sway 'tile vertically'
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking; exec notify-send 'i3: stacking layout'
-bindsym $mod+w layout tabbed; exec notify-send 'i3: tabbed layout'
-bindsym $mod+e layout toggle split; exec notify-send 'i3: tabbed split'
-
-#TODO: toggle tiling / floating
-#bindsym $mod+Shift+space floating toggle
-bindsym $mod+ctrl+space focus mode_toggle
-#TODO: Wayland bindsym $mod+/ focus mode_toggle
+bindsym $mod+s layout stacking; exec $notify_sway 'stacking layout'
+bindsym $mod+w layout tabbed; exec $notify_sway 'tabbed layout'
+bindsym $mod+e layout toggle split; exec $notify_sway 'tabbed split'
 
 # focus the parent container
 bindsym $mod+Shift+P focus parent
@@ -91,297 +154,29 @@ bindsym $mod+Shift+P focus parent
 # focus the child container
 bindsym $mod+Shift+C focus child
 
-## WORKSPACE (U+202F) - " "
-set $workspace1 "1:   	"
-set $workspace2 "2:   	"
-set $workspace3 "3:  	"
-set $workspace4 "4:  	"
-#set $workspace4 "4:VM"
-set $workspace5 "5:    "
-set $workspace6 "6:    mc"
-set $workspace7 "7:    mc"
-set $workspace8 "8:  	Rock"
-set $workspace9 "9:    Rock"
-set $workspace10 "10:    Rock"
-set $workspace11 "11:   	"
-set $workspace12 "12:   	"
-
-# switch to workspace
-bindsym $mod+1 workspace number $workspace1
-bindsym $mod+2 workspace number $workspace2
-bindsym $mod+3 workspace number $workspace3
-bindsym $mod+4 workspace number $workspace4
-bindsym $mod+5 workspace number $workspace5
-bindsym $mod+6 workspace number $workspace6
-bindsym $mod+7 workspace number $workspace7
-bindsym $mod+8 workspace number $workspace8
-bindsym $mod+9 workspace number $workspace9
-bindsym $mod+0 workspace number $workspace10
-bindsym $hyper+1 workspace number $workspace11
-bindsym $hyper+2 workspace number $workspace12
-
-# move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $workspace1
-bindsym $mod+Ctrl+2 move container to workspace $workspace2
-bindsym $mod+Ctrl+3 move container to workspace $workspace3
-bindsym $mod+Ctrl+4 move container to workspace $workspace4
-bindsym $mod+Ctrl+5 move container to workspace $workspace5
-bindsym $mod+Ctrl+6 move container to workspace $workspace6
-bindsym $mod+Ctrl+7 move container to workspace $workspace7
-bindsym $mod+Ctrl+8 move container to workspace $workspace8
-bindsym $mod+Ctrl+9 move container to workspace $workspace9
-bindsym $mod+Ctrl+0 move container to workspace $workspace10
-
-bindsym --whole-window $mod+button4 move container to workspace next; workspace next
-bindsym --whole-window $mod+button5 move container to workspace prev; workspace prev
-
-# Move to workspace with focused container
-bindsym $mod+Shift+1 move container to workspace $workspace1; workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2; workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3; workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4; workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5; workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6; workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7; workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8; workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9; workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $workspace10
 
 # Move workspace to output
 bindsym $mod+Ctrl+h move workspace to output left
 bindsym $mod+Ctrl+l move workspace to output right
 
-# reload the configuration file
-#bindsym $mod+Shift+C reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'swaymsg exit'"
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'"
 
-bindsym $mod+Escape exec --no-startup-id "~/bin/systemcontroll"
-
-
-bindsym $mod+F10 exec $HOME/.screenlayout/laptop.sh
-bindsym --release $mod+F7 exec ~/.config/i3/bin/rofi_autorandr.sh
-#set $displayMode "Set display mode [w]ork [l]aptop [h]ome"
-#bindsym --release $mod+F7 mode $displayMode
-#mode $displayMode {
-#    bindsym w exec "\
-#                ~/bin/screenlayout/3externalmonitors.sh"; \
-#                mode "default"
-#    bindsym h exec "\
-#                ~/bin/screenlayout/fujitsu+predator.sh"; \
-#                mode "default"
-#    bindsym l exec "\
-#                ~/bin/screenlayout/laptopscreen.sh"; \
-#                mode "default"
-#
-#    bindsym Return mode "default"
-#    bindsym Escape mode "default"
-#}
-
-#https://github.com/i3/i3/issues/2936
-#TODO: Wayland disable_randr15 yes
-
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#    status_command    i3status
-#    position          top
-#    mode              hide
-#    workspace_buttons yes
-#    tray_output       none
-#
-#    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#
-#    colors {
-#        background #000000
-#        statusline #ffffff
-#
-#        focused_workspace  #ffffff #285577
-#        active_workspace   #ffffff #333333
-#        inactive_workspace #888888 #222222
-#        urgent_workspace   #ffffff #900000
-#    }
-#}
-bar {
-  mode dock
-  position top
-  #font pango:DejaVu Sans Mono, FontAwesome 11
-  font pango:DejaVu Sans Mono for Powerline, Book 11
-  status_command i3status-rs ~/.config/i3/i3status-rust.toml
-
-  # Colors
-    colors {
-         background #282828
-         statusline #ebdbb2
-         separator  #756d59
-
-                            #border backgr. text
-
-         focused_workspace  #676d3d #99B938 #282828
-         active_workspace   #323232 #5f676a #ebdbb2
-         inactive_workspace #323232 #323232 #888888
-         urgent_workspace   #333333 #900000 #ffffff
-  }
-}
+bindsym $mod+question exec ~/bin/sway-prop
+for_window [app_id="kitty_sway-prop"] floating enable, resize set 400 1100
 
 # The middle button toggles floating
 bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
 
-bindsym $mod+b exec "kitty --single-instance -o confirm_os_window_close=0 --class=btop -1 btop; exit"
-for_window [class="btop" title="btop"] floating enable, resize set 1450 950
+bindsym $mod+b exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_btop btop; exit"
+for_window [app_id="kitty_btop"] floating enable, resize set 1450 950
 
-bindsym $mod+x exec "kitty --single-instance -o confirm_os_window_close=0 --class=xplr -1 xplr; exit"
-for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
-
-for_window [class="obsidian" title="memo"] move to scratchpad, move position mouse
-bindsym $mod+o exec obsidian obsidian://open?vault=memo; exec swaymsg '[class="obsidian"] [title="memo"]' scratchpad show
-# exec_always --no-startup-id obsidian obsidian://open?vault=TODO
-
-# for_window [class="Typora" title="typora_notepad.md"] move to scratchpad, move position mouse
-# bindsym $mod+i exec swaymsg '[class="Typora" title="typora_notepad.md"]' scratchpad show
-# exec_always --no-startup-id typora ~/tmp/typora_notepad.md
-
-for_window [instance="scratchpad-vim"] move to scratchpad
-# bindsym $mod+t [instance="scratchpad-vim"] scratchpad show
-bindsym $mod+t exec ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim; exec swaymsg '[instance="scratchpad-vim"]' scratchpad show
-exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh $terminal --name scratchpad-vim nvim -S ~/memo/TODO/_session.vim
-
-for_window [class="Gnome-calculator"] move position 1400px 600px, resize set 450 550, move to scratchpad, move to scratchpad
-bindsym $mod+c [instance="gnome-calculator"] scratchpad show
-#TODO: Wayland exec --no-startup-id gnome-calculator
-#TODO: Wayland exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,gnome-calculator,,
-#TODO: Wayland exec_always sleep 2 && swaymsg "[class="Gnome-calculator"] move position 1400px 600px resize set 450 550"
-#for_window [class="Gnome-calculator"] focus, floating enable
-#exec --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh gnome-calculator --name scratchpad-calculator
-
-# Launch keepassxc and name window scratchpad-keepassxc
-#TODO: Wayland exec_always --no-startup-id ~/.config/i3/bin/launch_and_rename_windowname.sh keepassxc -name scratchpad-keepassxc
-#bindsym Mod1+ctrl+k [instance="scratchpad-keepassxc"] scratchpad show
-#move position mouse https://www.reddit.com/r/i3wm/comments/5j11sd/more_mouse_warping/
-#TODO: Wayland bindsym Mod1+ctrl+k [class="KeePassXC"] scratchpad show, move position mouse
-#TODO: Wayland for_window [instance="scratchpad-keepassxc" title="KeePassXC$" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
-#TODO: Wayland for_window [class="KeePassXC" window_type="normal"] move scratchpad, scratchpad show, move position 1400px 600px, resize set 900 700, move to scratchpad
-#TODO: Wayland for_window [class="KeePassXC" window_type="dialog"] move scratchpad, scratchpad show, focus
-#TODO: Wayland exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,,scratchpad-keepassxc,,
-#TODO: Wayland exec_always --no-startup-id ~/.config/i3/bin/auto_scratchpad.py True,,KeePassXC,,,
-#bindsym Mod4+k [instance="scratchpad-keepassxc"] scratchpad show, move position mouse
-#for_window [class=".*"] move position center
-#for_window [class="KeePassXC"] sticky enable, border normal, focus, floating enable
-#BUG:exec_always --no-startup-id xrdb -merge ~/.config/X11/Xresources
-exec xrdb -load ~/.config/X11/Xresources_wayland
-
-exec_always --no-startup-id setxkbmap -layout pl -option 'caps:escape' -option terminate:ctrl_alt_bksp -option kpdl:dot
-
-#xprop |rg WM_CLASS
-#WM_CLASS(STRING) = "XXXXXXX", "YYYYYYY"
-#XXXXXXX - instance, YYYYYYY - class
-#for_window [class="calibre-gui" title="Are you sure?"] border none
-
-
-floating_maximum_size 1800 x 1200
-floating_minimum_size 100 x 50
-for_window [class="(?i)zathura"] focus
-for_window [class="Arandr"] floating enable, border normal
-for_window [class="Lxappearance"] floating enable, border normal, focus, resize set 850 500
-for_window [class="firefox" title="Page Info"] border normal, floating enable
-for_window [class="flameshot" title="Configuration"] sticky enable, border normal, floating enable #Flameshot
-for_window [class="Mousepad"] border normal, focus, floating enable
-for_window [class="Nm-connection-editor"] border normal, focus, floating enable
-for_window [class="Nitrogen"] sticky enable, border normal, focus, floating enable
-for_window [class="Pavucontrol"] floating enable, border normal, focus, resize set 850 500
-for_window [class="RimWorldLinux"] focus
-for_window [class="Mojosetup"] floating enable, border none, focus #gog installer
-for_window [class="Safeeyes"] floating enable, border none, focus,
-for_window [class="Veracrypt"] sticky enable, border normal, focus, floating enable
-for_window [title=" on QEMU/KVM"] border normal, focus, floating enable
-for_window [title="Bluetooth Adapters"] sticky enable, border normal, focus, floating enable
-for_window [title="Bluetooth Devices"] sticky enable, border normal, focus, floating enable
-for_window [title="Open With"] sticky enable, border normal, floating enable #Flameshot
-for_window [title="Open database"] sticky enable, border normal
-for_window [title="Piper"] sticky enable, border normal, focus, floating enable
-for_window [title="Solaar"] sticky enable, border normal, focus, floating enable
-for_window [title="YubiKey Manager"] sticky enable, border normal, focus, floating enable
-for_window [title="Yubico Authenticator"] sticky enable, border normal, focus, floating enable
-for_window [window_type="dialog"] sticky enable, border normal
-
-for_window  [class="calibre" title="calibre - Preferences"] border normal, sticky disable,
-focus_on_window_activation urgent
-force_display_urgency_hint 250 ms
-
-
-for_window  [class="Nemo" title="Edit Bookmarks"] border normal, sticky disable, floating enable
-for_window  [class="Nemo" title="File Management Preferences"] border normal, sticky disable, floating enable
-
-# STEAM
-#for_window [class="Steam" title="^(?!Steam)$"]  border normal, focus, floating enable
-# https://github.com/ValveSoftware/steam-for-linux/issues/1040
-for_window [class="^Steam$" title="^Friends$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
-
-# doesn't work anymore assign [ class="^Spotify$" ] workspace 1
-for_window [class="Spotify"] move to workspace $workspace1
-
-#TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
-
-## class                 border  backgr. text    indicator
-#client.focused_inactive #4F99D3 #4F99D3 #151718 #9FCA56
-client.focused #9FCA56 #9FCA56 #151718 #A074C4
-client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
-client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
-
-# BEGIN docked_work
-# END docked_work
-
-# BEGIN docked_home
-#workspace $workspace1 output DP3
-#workspace $workspace2 output HDMI2
-#workspace $workspace3 output HDMI2
-#workspace $workspace4 output HDMI2
-#workspace $workspace5 output DP3
-# END docked_home
-
-workspace_layout default
-#workspace_layout default|stacking|tabbed
-
-# Screen lock
-bindsym Ctrl+Mod1+l exec xset s activate
-
-# Media keys
-#bindsym XF86AudioPlay exec $i3config/musickeys.sh toggle
-#bindsym XF86AudioStop exec $i3config/musickeys.sh stop
-#bindsym XF86AudioNext exec $i3config/musickeys.sh next
-#bindsym XF86AudioPrev exec $i3config/musickeys.sh prev
-
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-bindsym XF86MonBrightnessUp   exec xbacklight -inc 5
-
-# Normal windows should use small borders, floating should have tab title
-default_border pixel 3
-default_floating_border normal
-
-# Hide borders
-hide_edge_borders none
-
-#Focus
-focus_follows_mouse yes
-#focus_on_window_activation urgent
+bindsym $mod+x exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_xplr xplr; exit"
+for_window [app_id="kitty_xplr"] floating enable, resize set 1450 950
 
 #xprop WM_CLASS = instance,class
-assign [ class = "Steam" ] workspace $workspace1
 assign [ title = "Deluge" ] workspace $workspace1
-assign [ class = "RimWorldLinux" ] workspace $workspace1
 assign [ class = "Thunar" ] workspace $workspace1
 
 assign [ class = "termite" ] workspace $workspace2
@@ -395,32 +190,27 @@ assign [ class = "Remmina" ] workspace $workspace4
 assign [ class = "calibre" ] workspace $workspace5
 assign [ class = "Zathura" ] workspace $workspace5
 
-# Start Applications
-bindsym Print exec --no-startup-id flameshot gui -p ~/tmp/
-bindsym $mod+p exec --no-startup-id flameshot gui -p ~/tmp/
-bindsym $mod+F3 exec pcmanfm-qt
-#bindsym $mod+p exec --no-startup-id pkill picom; exec notify-send 'picom is DEAD'
-bindsym $mod+Ctrl+p exec --no-startup-id picom ; exec notify-send 'picom is ALIVE'
-#nvidia driver; causes HIGH CPU on nouveau
-#bindsym $mod+Ctrl+p exec --no-startup-id picom --config /dev/null --backend glx --xrender-sync-fence --experimental-backends; exec notify-send 'picom is ALIVE'
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym Print exec flameshot gui
+bindsym $mod+p exec flameshot gui
+bindsym $mod+F3 exec nemo
+# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
 # bindsym $mod+b workspace back_and_forth
 bindsym $mod+BackSpace workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
-bindsym $mod+Tab		workspace next
-bindsym $mod+Shift+Tab		workspace prev
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/bin/pavolume +10% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/bin/pavolume -10% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/bin/pavolume toggle # mute sound
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% #decrease sound volume
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume exec ~/.config/i3/bin/pavolume +10% #increase sound volume
+bindsym XF86AudioLowerVolume exec ~/.config/i3/bin/pavolume -10% #decrease sound volume
+bindsym XF86AudioMute exec ~/.config/i3/bin/pavolume toggle # mute sound
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Ergodox cheatsheet
+bindsym $meh+e exec /usr/bin/nomacs -m frameless -f memo/ergodox/ergodox_base.png
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -429,181 +219,23 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left  workspace prev
 
+bindsym $mod+n exec swaync-client -t
+
 # Autostart applications
-#exec --no-startup-id ~/.config/i3/tray
-#exec --no-startup-id redshift-gtk
-#exec --no-startup-id pulseaudio -D
-#exec --no-startup-id feh --bg-max ~/moonraker.jpg ~/fear-and-loathing.jpg ~/dirtyharry.jpg
-#exec_always --no-startup-id numlockx on
+# exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
+# exec_always autotiling
+exec GTK_THEME=Adwaita:dark swaync -s ~/.config/swaync/style.css -c ~/.config/swaync/config.jsonc
 
-exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
-exec_always autotiling
-# Start on specific workspace
-#exec swaymsg 'exec --no-startup-id vivaldi-snapshot'
-exec --no-startup-id swaymsg 'workspace $workspace2; splith; exec $terminal'
-#TODO: Wayland exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#nvidia driver; causes HIGH CPU on nouveau
-#exec --no-startup-id nitrogen --restore; sleep 1; picom --config /dev/null --backend glx --xrender-sync-fence --experimental-backends
-#BUG: exec_always --no-startup-id nitrogen --restore
-#BUG: exec --no-startup-id /usr/bin/udiskie -NtA
-#BUG: exec --no-startup-id nm-applet
-#exec --no-startup-id xfce4-power-manager
-#BUG: exec --no-startup-id blueman-applet
-
-exec_always --no-startup-id ~/bin/fix_xcursor
-#exec_always --no-startup-id exec i3wsr
-
+exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -s ~/.config/waybar/style.css
+exec multibg-sway ~/tmp/swaybg
+exec swaymsg 'workspace $workspace2; splith; exec $terminal'
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
+exec albert
+#exec xfce4-power-manager
+#BUG: exec blueman-applet
 
 # Lock
+#TODO: Wayland exec_always light-locker --lock-after-screensaver=60
 
-exec_always --no-startup-id xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' 0.2
-exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.55
-exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
-
-exec_always --no-startup-id xset s 1800 60
-exec_always --no-startup-id xset dpms 1700 1700 1700
-#exec --no-startup-id xss-lock ~/.config/i3/bin/i3lock-color-git.sh
-#exec_always --no-startup-id xss-lock -n ~/bin/dim-screen.sh -- /home/alteriks/.config/i3/bin/i3lock-color-git.sh
-#TODO: Wayland exec_always --no-startup-id light-locker --lock-after-screensaver=60
-#set $lock ~/.config/i3/pixelate_lock.sh
-#TODO: Wayland set $lock $i3config/i3lock-color-git.sh
-
-# exec --no-startup-id safeeyes
-exec_always --no-startup-id systemctl --user restart barriers@0.0.0.0.service
-
-#############################
-### settings for i3-gaps: ###
-#############################
-
-# Set inner/outer gaps
-gaps inner 6
-gaps outer -4
-
-# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
-# gaps inner all set 10
-# gaps outer all plus 5
-
-# Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
-
-# Smart borders (draw borders around container only if it is not the only container on this workspace)
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-#smart_borders no_gaps
-
-
-################ NOT USED ANYMORE ################
-##
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
-mode "focused" {
-
-  # hardcoded focus keybindings
-  bindsym f [class="(?i)firefox"] focus; mode "default"
-  bindsym t [class="(?i)termite"] focus
-  bindsym v [class="(?i)vivaldi"] focus
-  bindsym z [class="(?i)zathura"] focus
-
-  # keybindings for marking and jumping to clients
-  bindsym a exec i3-input -F 'mark %s' -P 'Mark name: '
-  bindsym g exec i3-input -F '[con_mark=%s] focus' -P 'Go to mark: '
-
-  # Assign marks to keys 1-5
-  bindsym Shift+1 mark mark1
-  bindsym Shift+2 mark mark2
-  bindsym Shift+3 mark mark3
-  bindsym Shift+4 mark mark4
-  bindsym Shift+5 mark mark5
-
-  # Jump to clients marked 1-5
-  bindsym 1 [con_mark="mark1"] focus
-  bindsym 2 [con_mark="mark2"] focus
-  bindsym 3 [con_mark="mark3"] focus
-  bindsym 4 [con_mark="mark4"] focus
-  bindsym 5 [con_mark="mark5"] focus
-
-  # Exit to the default mode
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-bindsym $mod+m mode "focused"
-
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-#set $printScreenMode "Take PrintScreen [f]ull [a]ctivewindow [s]election [d]elay"
-#bindsym --release Print mode $printScreenMode
-#mode $printScreenMode {
-#    bindsym f exec "\
-#                scrot -e 'mv $f ~/Pictures/'"; \
-#                mode "default"
-#    bindsym a exec "\
-#                scrot -ue 'mv $f ~/Pictures/'"; \
-#                mode "default"
-#    bindsym --release s exec "\
-#                scrot -s -e 'mv $f ~/Pictures/'"; \
-#                mode "default"
-#    bindsym d exec "\
-#                scrot -cd 3 -e 'mv $f ~/Pictures/'"; \
-#                mode "default"
-#
-#    bindsym Return mode "default"
-#    bindsym Escape mode "default"
-#}
-#
+bindsym $meh+v exec swaymsg [app_id="vivaldi"] focus || exec vivaldi-stable

@@ -26,7 +26,12 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
+  ui = {
+    size = { width = 0.7, height = 0.7 },
+    border = "rounded",
+  },
+  -- install = { colorscheme = { "tokyonight", "habamax" } },
+  install = { colorscheme = { "habamax" } },
   checker = { enabled = false }, -- automatically check for plugin updates
   performance = {
     rtp = {
@@ -34,9 +39,9 @@ require("lazy").setup({
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
