@@ -158,11 +158,11 @@
 .config/nvim_lazy/lua	d	0755
 .config/nvim_lazy/lua/config	d	0755
 .config/nvim_lazy/lua/config/autocmds.lua	f	0644
-.config/nvim_lazy/lua/config/clipboard.lua	f	0644
 .config/nvim_lazy/lua/config/keymaps.lua	f	0644
 .config/nvim_lazy/lua/config/lazy.lua	f	0644
 .config/nvim_lazy/lua/config/options.lua	f	0644
 .config/nvim_lazy/lua/plugins	d	0755
+.config/nvim_lazy/lua/plugins/clipboard.lua	f	0644
 .config/nvim_lazy/lua/plugins/core.lua	f	0644
 .config/nvim_lazy/lua/plugins/editor.lua	f	0644
 .config/nvim_lazy/lua/plugins/example.lua	f	0644
