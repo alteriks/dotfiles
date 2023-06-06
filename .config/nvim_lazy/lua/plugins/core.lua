@@ -3,6 +3,14 @@ return {
   -- disable leap and flit
   -- { "ggandor/leap.nvim", enabled = false },
   { "tiagovla/scope.nvim", opts = {} },
+  {
+    "ojroques/nvim-osc52",
+    opts = {
+      max_length = 0, -- Maximum length of selection (0 for no limit)
+      silent = false, -- Disable message on successful copy
+      trim = false, -- Trim surrounding whitespaces before copy
+    },
+  },
 
   { "ggandor/flit.nvim", enabled = false },
   {

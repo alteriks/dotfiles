@@ -15,8 +15,8 @@ vim.keymap.set("n", "L", "$", { desc = "Go to the end of the line" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv==kgvo<esc>=kgvo", { desc = "move highlighted text down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv==jgvo<esc>=jgvo", { desc = "move highlighted text up" })
 
-vim.keymap.set("n", "<Left>", "<cmd>:bprevious<cr>")
-vim.keymap.set("n", "<Right>", "<cmd>:bnext<cr>")
+-- vim.keymap.set("n", "<Left>", "<cmd>:bprevious<cr>")
+-- vim.keymap.set("n", "<Right>", "<cmd>:bnext<cr>")
 
 vim.keymap.set("n", "<Leader>o", "o<ESC>", { desc = "Insert newline above and return to NORMAL" })
 vim.keymap.set("n", "<Leader>O", "O<ESC>", { desc = "Insert newline below and return to NORMAL" })
@@ -49,3 +49,7 @@ vim.keymap.set({ "n", "x", "o" }, "X", "<Plug>(leap-backward-till)")
 -- vim.keymap.set("", "T", function()
 --   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
 -- end, { remap = true })
+--
+vim.keymap.set("n", "<leader>c", require("osc52").copy_operator, { expr = true })
+vim.keymap.set("n", "<leader>cc", "<leader>c_", { remap = true })
+vim.keymap.set("v", "<leader>c", require("osc52").copy_visual)
