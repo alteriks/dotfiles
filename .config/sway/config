@@ -103,7 +103,9 @@ bindsym Mod1+F4 kill
 # start launcher
 # bindsym $mod+space       exec "fuzzel"
 bindsym $mod+space       exec albert toggle
-bindsym $meh+space       exec albert show 'system '
+bindsym $meh+space       exec albert show 'system s'
+bindsym $meh+c          exec wl-paste | cb copy
+bindsym $meh+x          exec cb paste | wl-copy
 
 # change focus
 bindsym $mod+h focus left
@@ -188,8 +190,8 @@ assign [ class = "Remmina" ] workspace $workspace4
 assign [ class = "calibre" ] workspace $workspace5
 assign [ class = "Zathura" ] workspace $workspace5
 
-bindsym Print exec flameshot gui -p ~/tmp/
-bindsym $mod+p exec flameshot gui -p ~/tmp/
+bindsym Print exec flameshot gui
+bindsym $mod+p exec flameshot gui
 bindsym $mod+F3 exec nemo
 # bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
@@ -235,3 +237,5 @@ exec albert
 
 # Lock
 #TODO: Wayland exec_always light-locker --lock-after-screensaver=60
+
+bindsym $meh+v exec swaymsg [app_id="vivaldi"] focus || exec vivaldi-stable

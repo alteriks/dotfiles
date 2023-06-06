@@ -163,6 +163,7 @@
 .config/nvim_lazy/lua/config/options.lua	f	0644
 .config/nvim_lazy/lua/plugins	d	0755
 .config/nvim_lazy/lua/plugins/core.lua	f	0644
+.config/nvim_lazy/lua/plugins/editor.lua	f	0644
 .config/nvim_lazy/lua/plugins/example.lua	f	0644
 .config/nvim_lazy/stylua.toml	f	0644
 .config/ohmyzsh_custom	d	0755

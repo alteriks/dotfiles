@@ -1,7 +1,9 @@
 -- https://github.com/LazyVim/LazyVim/issues/524
 return {
   -- disable leap and flit
-  { "ggandor/leap.nvim", enabled = false },
+  -- { "ggandor/leap.nvim", enabled = false },
+  { "tiagovla/scope.nvim", opts = {} },
+
   { "ggandor/flit.nvim", enabled = false },
   {
     "echasnovski/mini.jump",
