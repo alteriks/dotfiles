@@ -210,6 +210,7 @@
 .config/tmuxinator/ipad.yml	f	0644
 .config/waybar	d	0755
 .config/waybar/carbon.jsonc	f	0644
+.config/waybar/default.jsonc	f	0644
 .config/waybar/hal.jsonc	f	0644
 .config/waybar/moar.jsonc	f	0644
 .config/waybar/style.css	f	0644
