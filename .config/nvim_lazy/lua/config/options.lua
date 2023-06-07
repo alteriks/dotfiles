@@ -9,3 +9,6 @@ opt.wrap = true
 
 -- If echasnovski/mini.comment can't use computed LSP ts_context_commentstring then use this:
 opt.commentstring = "# %s"
+
+local lazy_core = require("lazy.core.config").options
+lazy_core.lockfile = vim.fn.stdpath("config") .. "/lazy-lock_" .. vim.fn.hostname() .. ".json"
