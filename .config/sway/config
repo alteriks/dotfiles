@@ -227,7 +227,7 @@ bindsym $mod+n exec swaync-client -t
 exec GTK_THEME=Adwaita:dark swaync -s ~/.config/swaync/style.css -c ~/.config/swaync/config.jsonc
 
 exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -s ~/.config/waybar/style.css
-exec multibg-sway ~/tmp/swaybg
+exec multibg-sway ~/.config/swaybg
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
