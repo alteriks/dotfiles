@@ -107,6 +107,8 @@
 .config/kitty	d	0755
 .config/kitty/kitty.conf	f	0644
 .config/kitty/moar.conf	f	0644
+.config/kitty/solarized_dark.conf	f	0644
+.config/kitty/tokyonight_storm.conf	f	0644
 .config/libvirt	d	0700
 .config/libvirt/libvirt.conf	f	0644
 .config/lsd	d	0755
