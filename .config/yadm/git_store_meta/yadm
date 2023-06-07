@@ -154,6 +154,7 @@
 .config/nvim_lazy/LICENSE	f	0644
 .config/nvim_lazy/README.md	f	0644
 .config/nvim_lazy/init.lua	f	0644
+.config/nvim_lazy/lazy-lock_hal.json	f	0644
 .config/nvim_lazy/lazy-lock_moar.json	f	0644
 .config/nvim_lazy/lua	d	0755
 .config/nvim_lazy/lua/config	d	0755
