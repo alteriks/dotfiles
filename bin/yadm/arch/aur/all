@@ -90,6 +90,7 @@ qrcp-bin
 i3-swallow-git
 
 albert # launcher
+qt6-wayland # albert dependency
 swaync # notification centre
 kooha # record screencast
 showmethekey # show typed keys for screencast

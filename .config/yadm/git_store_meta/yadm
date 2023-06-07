@@ -192,6 +192,7 @@
 .config/sway/carbon.conf	f	0644
 .config/sway/config	f	0644
 .config/sway/moar.conf	f	0644
+.config/sway/window.conf	f	0644
 .config/sway/window.conf_X	f	0644
 .config/swaync	d	0755
 .config/swaync/config.jsonc	f	0644
