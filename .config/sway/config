@@ -239,3 +239,5 @@ exec albert
 #TODO: Wayland exec_always light-locker --lock-after-screensaver=60
 
 bindsym $meh+v exec swaymsg [app_id="vivaldi"] focus || exec vivaldi-stable
+bindsym $meh+b exec swaymsg [app_id="firefox_boomfunk"] focus || exec sh -c 'MOZ_ENABLE_WAYLAND=1 /usr/lib/firefox/firefox -P boomfunk --name firefox_boomfunk'
+for_window [app_id="firefox_boomfunk"] move to workspace $workspace7, focus

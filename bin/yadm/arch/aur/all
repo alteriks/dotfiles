@@ -44,9 +44,6 @@ ventoy-bin
 # dhcp client tester+spoofer
 dhtest
 
-# i3/sway autotiling https://github.com/nwg-piotr/autotiling
-autotiling
-
 # yt-dlp already in community repo
 
 # notes
@@ -96,3 +93,5 @@ kooha # record screencast
 showmethekey # show typed keys for screencast
 hyprpicker-git # color picker
 multibg-sway # wallpaper per workspace/monitor
+autotiling # i3/sway autotiling https://github.com/nwg-piotr/autotiling
+
