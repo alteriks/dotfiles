@@ -175,21 +175,6 @@ for_window [app_id="kitty_btop"] floating enable, resize set 1450 950
 bindsym $mod+x exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_xplr xplr; exit"
 for_window [app_id="kitty_xplr"] floating enable, resize set 1450 950
 
-#xprop WM_CLASS = instance,class
-assign [ title = "Deluge" ] workspace $workspace1
-assign [ class = "Thunar" ] workspace $workspace1
-
-assign [ class = "termite" ] workspace $workspace2
-
-assign [ class = "Opera" ] workspace $workspace3
-assign [ class = "Vivaldi" ] workspace $workspace3
-
-assign [ class = "Gimp-.*" ] workspace $workspace4
-assign [ class = "Remmina" ] workspace $workspace4
-
-assign [ class = "calibre" ] workspace $workspace5
-assign [ class = "Zathura" ] workspace $workspace5
-
 bindsym Print exec flameshot gui
 bindsym $mod+p exec flameshot gui
 bindsym $mod+F3 exec nemo
@@ -223,7 +208,6 @@ bindsym $mod+n exec swaync-client -t
 
 # Autostart applications
 # exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
-# exec_always autotiling
 exec GTK_THEME=Adwaita:dark swaync -s ~/.config/swaync/style.css -c ~/.config/swaync/config.jsonc
 
 exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -s ~/.config/waybar/style.css
