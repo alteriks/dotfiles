@@ -169,14 +169,9 @@ for_window [app_id="kitty_sway-prop"] floating enable, resize set 400 1100
 bindsym button2 floating toggle
 bindsym --whole-window $mod+button2 floating toggle
 
-bindsym $mod+b exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_btop btop; exit"
-for_window [app_id="kitty_btop"] floating enable, resize set 1450 950
-
-bindsym $mod+x exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_xplr xplr; exit"
-for_window [app_id="kitty_xplr"] floating enable, resize set 1450 950
-
+exec flameshot
 bindsym Print exec flameshot gui
-bindsym $mod+p exec flameshot gui
+bindsym --no-repeat $mod+p exec flameshot gui
 bindsym $mod+F3 exec nemo
 # bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
@@ -225,3 +220,10 @@ exec albert
 bindsym $meh+v exec swaymsg [app_id="vivaldi"] focus || exec vivaldi-stable
 bindsym $meh+b exec swaymsg [app_id="firefox_boomfunk"] focus || exec sh -c 'MOZ_ENABLE_WAYLAND=1 /usr/lib/firefox/firefox -P boomfunk --name firefox_boomfunk'
 for_window [app_id="firefox_boomfunk"] move to workspace $workspace7, focus
+
+bindsym $mod+x exec swaymsg [app_id="kitty_xplr"] focus || exec sh -c "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_xplr xplr; exit"
+for_window [app_id="kitty_xplr"] floating enable, resize set 1450 950
+
+bindsym $mod+b exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_btop btop; exit"
+for_window [app_id="kitty_btop"] floating enable, resize set 1450 950
+

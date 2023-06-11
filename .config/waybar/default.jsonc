@@ -56,10 +56,10 @@
     "format": "<span style=\"italic\">{}</span>"
   },
   "sway/scratchpad": {
-    "format": "{icon} {count}",
-    "show-empty": false,
+    "format": "{count}  {icon} ",
+    "show-empty": true,
     "format-icons": [
-      "",
+      "",
       ""
     ],
     "tooltip": true,

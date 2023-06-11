@@ -130,6 +130,10 @@ if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
   export MODE_CURSOR_SEARCH="#ff00ff steady underline"
   export MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady bar"
   export MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
+elif [[ -e ~/.config/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]]; then
+  source ~/.config/zsh-vi-mode/zsh-vi-mode.plugin.zsh;
+  export ZVM_VI_SURROUND_BINDKEY=$ZVM_READKEY_ENGINE_ZLE
+  export ZVM_VI_SURROUND_BINDKEY=s-prefix
 fi
 
 #

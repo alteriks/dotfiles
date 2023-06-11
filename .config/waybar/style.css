@@ -58,7 +58,7 @@ window#waybar.solo {
 
 /* // scratchpad */
 .modules-left > widget:last-child {
-    padding: 3px 12px 0px 5px;
+    /* padding: 3px 12px 0px 5px; */
   /* background-color: transparent; */
 
 }
