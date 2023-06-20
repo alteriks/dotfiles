@@ -3,7 +3,7 @@
 	url = https://github.com/ohmyzsh/ohmyzsh
 [submodule ".config/zsh-vim-mode"]
 	path = .config/zsh-vim-mode
-	url = https://github.com/softmoth/zsh-vim-mode
+	url = https://gitea.alt.lan/alteriks/zsh-vim-mode
 [submodule ".config/tmux/plugins/tpm"]
 	path = .config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
