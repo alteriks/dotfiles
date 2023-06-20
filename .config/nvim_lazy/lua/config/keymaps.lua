@@ -28,8 +28,8 @@ vim.keymap.set("n", "<Leader>_", ":botright split<CR>", { desc = "" })
 
 vim.keymap.set("n", "<c-z>", "", { desc = "Disable suspend with Ctrl+z" })
 
-vim.keymap.set({ "n", "x", "o" }, "x", "<Plug>(leap-forward-till)")
-vim.keymap.set({ "n", "x", "o" }, "X", "<Plug>(leap-backward-till)")
+-- vim.keymap.set({ "n", "x", "o" }, "x", "<Plug>(leap-forward-till)")
+-- vim.keymap.set({ "n", "x", "o" }, "X", "<Plug>(leap-backward-till)")
 
 -- HOP
 -- local hop = require("hop")

@@ -4,7 +4,7 @@
   "positionY": "top",
   "control-center-positionX": "left",
   "control-center-positionY": "top",
-  "control-center-margin-left": 10,
+  "control-center-margin-left": 5,
   "notification-icon-size": 64,
   "notification-body-image-height": 100,
   "notification-body-image-width": 200,
@@ -13,7 +13,7 @@
   "timeout-critical": 0,
   "fit-to-screen": false,
   "control-center-width": 500,
-  "control-center-height": 600,
+  "control-center-height": 800,
   "notification-window-width": 500,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
@@ -21,12 +21,12 @@
   "hide-on-clear": true,
   "hide-on-action": true,
   "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    }
-  },
+  // "scripts": {
+  //   "example-script": {
+  //     "exec": "echo 'Do something...'",
+  //     "urgency": "Normal"
+  //   }
+  // },
   "notification-visibility": {
     "example-name": {
       "state": "muted",
@@ -40,10 +40,6 @@
     }
   },
   "widgets": [
-    "menubar#label",
-    "buttons-grid",
-    "backlight",
-    "backlight#KB",
     "volume",
     "mpris",
     "title",
@@ -61,70 +57,15 @@
     },
     "label": {
       "max-lines": 1,
-      "text": "Controll Center"
+      "text": "Control Center"
     },
     "mpris": {
       "image-size": 96,
       "image-radius": 12
     },
-    "backlight": {
-      "label": "",
-      "device": "intel_backlight",
-      "min": 10
-    },
-    "backlight#KB": {
-      "label": " ",
-      "device": "asus::kbd_backlight",
-      "subsystem": "leds"
-    },
     "volume": {
       "show-per-app": true,
-      "label": ""
-    },
-    "menubar#label": {
-      "menu#power-buttons": {
-        "label": " X ",
-        "position": "left",
-        "actions": [
-          {
-            "label": " Reboot",
-            "command": "systemctl reboot"
-          },
-          {
-            "label": " Lock",
-            "command": "swaylock -f --image ~/.config/wallpapers/snow_woods.jpg"
-          },
-          {
-            "label": " Logout",
-            "command": "swaymsg exit"
-          },
-          {
-            "label": " Shut down",
-            "command": "systemctl poweroff"
-          }
-        ]
-      },
-      "buttons#topbar-buttons": {
-        "position": "left",
-        "actions": [
-          {
-            "label": "",
-            "command": "grim"
-          }
-        ]
-      }
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": "直",
-          "command": "~/.config/rofi/rofi-wifi-menu.sh"
-        },
-        {
-          "label": "",
-          "command": "~/.config/rofi/rofi-bluetooth"
-        }
-      ]
+      "label": "VOLUME "
     }
   }
 }

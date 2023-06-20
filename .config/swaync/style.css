@@ -42,7 +42,7 @@
   background: green;
   padding: 6px;
   border-radius: 12px;
-} */
+}
 
 .critical {
   background: @noti-urgent;
@@ -161,6 +161,9 @@
 
 .control-center {
   background-color: @noti-bg-alt;
+  border-radius: 12px;
+    background-clip: border-box;
+  padding: 4px;
 }
 
 .control-center-list {
@@ -254,81 +257,8 @@
 .widget-volume {
   background-color: @noti-bg;
   padding: 4px 8px 8px 8px;
-  margin: 0px 8px 8px 8px;
+  margin: 8px 8px 8px 8px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
-}
-
-.widget-backlight {
-  background-color: @noti-bg;
-  padding: 8px 8px 4px 8px;
-  margin: 8px 8px 0px 8px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.KB {
-  padding: 4px 8px 4px 8px;
-  margin: 0px 8px 0px 8px;
-  border-radius: 0;
-}
-
-.power-buttons{
-  background-color: @noti-bg;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 12px;
-}
-
-
-.power-buttons>button {
-  background: transparent;
-  border: none;
-}
-
-.power-buttons>button:hover {
-  background: @noti-bg-hover;
-}
-
-.widget-menubar>box>.menu-button-bar>button{
-  border: none;
-  background: transparent;
-}
-
-.topbar-buttons>button{
-  border: none;
-  background: transparent;
-}
-
-.widget-buttons-grid{
-  padding: 8px;
-  margin: 8px;
-  border-radius: 12px;
-  background-color: @noti-bg;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button{
-  background: @noti-bg;
-  border-radius: 12px;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @noti-bg-hover;
-}
-
-.powermode-buttons{
-  background-color: @noti-bg;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 12px;
-}
-
-.powermode-buttons>button {
-  background: transparent;
-  border: none;
-}
-
-.powermode-buttons>button:hover {
-  background: @noti-bg-hover;
 }
 

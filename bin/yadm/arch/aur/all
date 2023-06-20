@@ -44,9 +44,6 @@ ventoy-bin
 # dhcp client tester+spoofer
 dhtest
 
-# i3/sway autotiling https://github.com/nwg-piotr/autotiling
-autotiling
-
 # yt-dlp already in community repo
 
 # notes
@@ -89,4 +86,16 @@ qrcp-bin
 # xplr swallow zathura
 i3-swallow-git
 
-albert
+albert # launcher
+chayang # dims monitor before swaylock kicks in
+qt6-wayland # albert dependency
+swaync # notification centre
+kooha # record screencast
+swaylock
+swayosd-git
+showmethekey # show typed keys for screencast
+hyprpicker-git # color picker
+multibg-sway # wallpaper per workspace/monitor
+autotiling # i3/sway autotiling https://github.com/nwg-piotr/autotiling
+
+xpadneo-dkms-git

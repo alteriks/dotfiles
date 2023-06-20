@@ -46,6 +46,10 @@ return {
   -- },
 
   {
+    "chrisbra/Recover.vim",
+    lazy = true,
+  },
+  {
     "akinsho/bufferline.nvim",
     opts = {
       highlights = {
