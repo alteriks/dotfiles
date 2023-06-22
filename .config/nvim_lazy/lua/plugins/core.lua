@@ -1,7 +1,6 @@
 -- https://github.com/LazyVim/LazyVim/issues/524
 return {
   -- disable leap and flit
-  -- { "ggandor/leap.nvim", enabled = false },
   { "tiagovla/scope.nvim", opts = {} },
   {
     "ojroques/nvim-osc52",
@@ -14,17 +13,45 @@ return {
 
   { "ggandor/flit.nvim", enabled = false },
   {
-    "echasnovski/mini.jump",
-    version = false,
-    enabled = true,
-    mappings = {
-      forward = "f",
-      backward = "F",
-      forward_till = "t",
-      backward_till = "T",
-      repeat_jump = ";",
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+    opts = {
+      { highlight = { label = { current = true } } },
+    },
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          -- default options: exact mode, multi window, all directions, with a backdrop
+          require("flash").jump()
+        end,
+      },
+      {
+        "S",
+        mode = { "o", "x" },
+        function()
+          require("flash").treesitter()
+        end,
+      },
     },
   },
+  -- TODO: folke/flash
+  -- {
+  --   "echasnovski/mini.jump",
+  --   version = false,
+  --   enabled = true,
+  --   mappings = {
+  --     forward = "f",
+  --     backward = "F",
+  --     forward_till = "t",
+  --     backward_till = "T",
+  --     repeat_jump = ";",
+  --   },
+  -- },
+  -- TODO: folke/flash
+  { "ggandor/leap.nvim", enabled = false },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)

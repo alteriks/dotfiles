@@ -5,7 +5,8 @@
     #   source "$P10K_CACHE_PROMPT=${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
     # fi
 
-export HOSTNAME=$(hostname)
+# Already in ./profile
+# export HOSTNAME=$(hostname)
 
 # https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
 ZLE_RPROMPT_INDENT=0
