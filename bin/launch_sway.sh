@@ -6,5 +6,9 @@ export QT_QPA_PLATFORM=wayland
 export XDG_CURRENT_DESKTOP=sway
 # export XDG_CURRENT_DESKTOP=sway:GNOME
 export XDG_SESSION_DESKTOP=sway
-exec sway -V >/tmp/sway.log 2>&1
+
+TMPDIR=$(mktemp -d)
+LOG="$TMPDIR/sway.log"
+echo "[+] Launch sway, loging to $LOG"
+exec sway -V >"$LOG" 2>&1
 # exec sway -d > /tmp/sway.log 2>&1
