@@ -11,81 +11,80 @@ echo -e "${RED}$SHELL${NC}"
 
 HOSTNAME=$(hostname)
 if [[ "$HOSTNAME" == "carbon" ]]; then
-  CLASS=laptop
-  OS_TYPE=arch
+	CLASS=laptop
+	OS_TYPE=arch
 elif [[ "$HOSTNAME" == "moar" ]]; then
-  CLASS=workstation
-  OS_TYPE=arch
+	CLASS=workstation
+	OS_TYPE=arch
 elif [[ "$HOSTNAME" == "nebula" ]]; then
-  CLASS=server
-  OS_TYPE=arch
+	CLASS=server
+	OS_TYPE=arch
 elif [[ "$HOSTNAME" == "lordjim" ]]; then
-  CLASS=rpi
-  #OS_TYPE=debian
+	CLASS=rpi
+	#OS_TYPE=debian
 else
-  CLASS=other
+	CLASS=other
 fi
-
 
 yadm config local.class $CLASS
 echo -e "${GREEN}[+] yadm class:${NC}" $(yadm config local.class)
 echo ""
 
 if [[ BOOTSTRAP_QUICK -eq 0 ]]; then
-  DEFAULT_SHELL=$(grep $(id -un) /etc/passwd | awk -F: {'print $7'} )
-  if command -v zsh &> /dev/null; then
-    if [[ "/bin/zsh" =~ $DEFAULT_SHELL ]]; then
-      true
-    else
-      echo
-      echo -e "${GREEN}[+] Change shell${NC}"
-      echo
-      if command -v chsh &> /dev/null; then
-        chsh -s /bin/zsh
-      else
-        sed --in-place 's|\(root:.*:.*:.*:.*:.*:\).*$|\1:/bin/zsh|' /etc/passwd
-      fi
-      echo ""
-    fi
-  fi
+	DEFAULT_SHELL=$(grep $(id -un) /etc/passwd | awk -F: {'print $7'})
+	if command -v zsh &>/dev/null; then
+		if [[ "/bin/zsh" =~ $DEFAULT_SHELL ]]; then
+			true
+		else
+			echo
+			echo -e "${GREEN}[+] Change shell${NC}"
+			echo
+			if command -v chsh &>/dev/null; then
+				chsh -s /bin/zsh
+			else
+				sed --in-place 's|\(root:.*:.*:.*:.*:.*:\).*$|\1:/bin/zsh|' /etc/passwd
+			fi
+			echo ""
+		fi
+	fi
 fi
 
 echo -e "${GREEN}Mkdir${NC}"
-mkdir -p "$HOME/git"
-mkdir -p "$HOME/tmp"
+mkdir -vp "$HOME/git"
+mkdir -vp "$HOME/tmp"
 
 source "$HOME/.profile"
-mkdir -p "$XDG_CACHE_HOME"/zsh
-mkdir -p "$XDG_DATA_HOME"/zsh
-mkdir -p "$XDG_CACHE_HOME"/nvim
+mkdir -vp "$XDG_CACHE_HOME"/zsh
+mkdir -vp "$XDG_DATA_HOME"/zsh
+mkdir -vp "$XDG_CACHE_HOME"/nvim
 if [[ $CLASS != other ]]; then
-  mkdir -p "$XDG_DATA_HOME"/wineprefixes
+	mkdir -vp "$XDG_DATA_HOME"/wineprefixes
 fi
 
 if [[ $CLASS != other && $EUID -ge 1000 ]]; then
-  echo
-  #TODO: from list git clone/pull
+	echo
+	#TODO: from list git clone/pull
 fi
 
 if [[ $CLASS != other && BOOTSTRAP_QUICK -eq 0 ]]; then
-  echo
-  echo -e "${GREEN}[+] Installing packages (pacman)${NC}"
-  echo
-  sudo ~/bin/yadm/${OS_TYPE}/root_pre.sh
+	echo
+	echo -e "${GREEN}[+] Installing packages (pacman)${NC}"
+	echo
+	sudo ~/bin/yadm/${OS_TYPE}/root_pre.sh
 
-  echo
-  echo -e "${GREEN}[+] Installing packages (yay)${NC}"
-  echo
-  # Temporary copy so #1000 can execute script from known place
-  #cp ~/bin/yadm/${OS_TYPE}/user.sh /tmp
-  sudo -u '#1000' ~/bin/yadm/${OS_TYPE}/user.sh
-  #rm -f /tmp/user.sh
+	echo
+	echo -e "${GREEN}[+] Installing packages (yay)${NC}"
+	echo
+	# Temporary copy so #1000 can execute script from known place
+	#cp ~/bin/yadm/${OS_TYPE}/user.sh /tmp
+	sudo -u '#1000' ~/bin/yadm/${OS_TYPE}/user.sh
+	#rm -f /tmp/user.sh
 
-  echo
-  echo -e "${GREEN}[+] PostInstall as root${NC}"
-  echo
-  sudo ~/bin/yadm/${OS_TYPE}/root_post.sh
-  echo ""
+	echo
+	echo -e "${GREEN}[+] PostInstall as root${NC}"
+	echo
+	sudo ~/bin/yadm/${OS_TYPE}/root_post.sh
+	echo ""
 fi
 
 # Because Git submodule commands cannot operate without a work tree, they must
@@ -97,21 +96,21 @@ yadm submodule update --recursive --init
 echo ""
 
 if [[ $CLASS != rpi && $CLASS != other && $EUID -ge 1000 ]]; then
-  echo -e "${GREEN}[+] Updating the yadm repo origin URL${NC}"
-  yadm remote set-url origin "git@github.com:alteriks/dotfiles.git"
-  echo ""
+	echo -e "${GREEN}[+] Updating the yadm repo origin URL${NC}"
+	yadm remote set-url origin "git@github.com:alteriks/dotfiles.git"
+	echo ""
 fi
 
 if command -v nvim >/dev/null 2>&1; then
-  echo -e "${GREEN}[+] Bootstraping neovim"
-  nvim -u ~/.config/nvim/plugins.vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
-  # TODO: lazyvim
-  # nvim --headless '+Lazy! sync' +qa
-  echo ""
+	echo -e "${GREEN}[+] Bootstraping neovim"
+	nvim -u ~/.config/nvim/plugins.vim '+PlugUpdate' '+PlugClean!' '+PlugUpdate' '+qall'
+	# TODO: lazyvim
+	# nvim --headless '+Lazy! sync' +qa
+	echo ""
 fi
 
 if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
-  echo -e "${GREEN}[+] Automatic tpm installation${NC}"
-  ~/.config/tmux/plugins/tpm/bin/install_plugins
-  echo ""
+	echo -e "${GREEN}[+] Automatic tpm installation${NC}"
+	~/.config/tmux/plugins/tpm/bin/install_plugins
+	echo ""
 fi

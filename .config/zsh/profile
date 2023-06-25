@@ -63,17 +63,22 @@ eval "$(dircolors "$XDG_CONFIG_HOME"/dircolors)"
 #export BROWSER=/usr/bin/palemoon
 
 export DIFFPROG="nvim -d"
-export EDITOR=nvim
+export EDITOR="NVIM_APPNAME=nvim_lazy nvim"
 #export TERMINAL=kitty
 export QT_QPA_PLATFORMTHEME="qt5ct"
 #export PAGER="less -r" # ovveriden by zim to "less", so it is set later in ~/.config/zsh/zshrc_generic
 export BAT_PAGER="less -R"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always'"
 
-# Wayland fixes
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-	export MOZ_ENABLE_WAYLAND=1
-fi
+export HOSTNAME="$(hostname)"
+if [[ "$HOSTNAME" == "moar" ]]; then
+	# Wayland fixes
+	if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
+		export MOZ_ENABLE_WAYLAND=1
+	fi
 
-# If running from tty1 start sway
-[ "$(tty)" = "/dev/tty1" ] && exec ~/bin/launch_sway.sh
+	# If running from tty1 start sway
+	if [[ "$(tty)" == "/dev/tty1" ]]; then
+		exec ~/bin/launch_sway.sh
+	fi
+fi

@@ -260,7 +260,7 @@
 .config/zsh/zshrc_generic	f	0755
 .github	d	0755
 .github/README.md	f	0644
-.gitmodules	f	0600
+.gitmodules	f	0644
 .local	d	0755
 .local/share	d	0755
 .local/share/fonts	d	0755

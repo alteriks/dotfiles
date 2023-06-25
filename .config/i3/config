@@ -192,7 +192,7 @@ bindsym $mod+x exec "kitty --single-instance -o confirm_os_window_close=0 --clas
 for_window [class="xplr" title="xplr"] floating enable, resize set 1450 950
 
 for_window [class="obsidian"] move to scratchpad, move position mouse
-exec --no-startup-id i3-msg 'workspace $workspace99; splith; exec $terminal obsidian obsidian://open?vault=memo'
+exec --no-startup-id i3-msg 'workspace $workspace99; splith; exec $terminal obsidian obsidian://open?vault=TODO'
 bindsym $mod+o exec i3-msg '[class="obsidian"]' scratchpad show
 # exec_always --no-startup-id obsidian obsidian://open?vault=TODO
 
