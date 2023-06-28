@@ -115,7 +115,7 @@ journalctl() {
 
 ip() {
   if [[ -n $@ ]]; then
-    command ip "$@"
+    command ip -c "$@"
   else
     # only IPv4, cut every third line
     # command ip -c -4 a | sed '0~3d'
