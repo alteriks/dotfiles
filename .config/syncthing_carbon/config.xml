@@ -431,50 +431,6 @@
             <maxTotalSize>0</maxTotalSize>
         </xattrFilter>
     </folder>
-    <folder id="njrpw-2fhx7" label="vivaldi" path="/home/alteriks/.config/vivaldi/vivaldi_moar" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
-        <filesystemType>basic</filesystemType>
-        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <minDiskFree unit="%">1</minDiskFree>
-        <versioning>
-            <cleanupIntervalS>3600</cleanupIntervalS>
-            <fsPath></fsPath>
-            <fsType>basic</fsType>
-        </versioning>
-        <copiers>0</copiers>
-        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
-        <hashers>0</hashers>
-        <order>random</order>
-        <ignoreDelete>false</ignoreDelete>
-        <scanProgressIntervalS>0</scanProgressIntervalS>
-        <pullerPauseS>0</pullerPauseS>
-        <maxConflicts>10</maxConflicts>
-        <disableSparseFiles>false</disableSparseFiles>
-        <disableTempIndexes>false</disableTempIndexes>
-        <paused>false</paused>
-        <weakHashThresholdPct>25</weakHashThresholdPct>
-        <markerName>.stfolder</markerName>
-        <copyOwnershipFromParent>false</copyOwnershipFromParent>
-        <modTimeWindowS>0</modTimeWindowS>
-        <maxConcurrentWrites>2</maxConcurrentWrites>
-        <disableFsync>false</disableFsync>
-        <blockPullOrder>standard</blockPullOrder>
-        <copyRangeMethod>standard</copyRangeMethod>
-        <caseSensitiveFS>false</caseSensitiveFS>
-        <junctionsAsDirs>false</junctionsAsDirs>
-        <syncOwnership>false</syncOwnership>
-        <sendOwnership>false</sendOwnership>
-        <syncXattrs>false</syncXattrs>
-        <sendXattrs>false</sendXattrs>
-        <xattrFilter>
-            <maxSingleEntrySize>1024</maxSingleEntrySize>
-            <maxTotalSize>4096</maxTotalSize>
-        </xattrFilter>
-    </folder>
     <folder id="nnpj5-yalvc" label="memo" path="/home/alteriks/memo" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="2" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="LM72WO6-PIPIO2X-E3SIQ4L-QAYLJAA-WF7VAT4-I47AOLB-JNIY75H-SW47YQP" introducedBy="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL">
@@ -636,6 +592,9 @@
         <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW">
             <encryptionPassword></encryptionPassword>
         </device>
+        <device id="T6NKDED-DR3XJO4-UGPP4SV-27QBI7Y-NZOZH5R-AGRYHVI-26KTOO2-SQ2VMA5" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -784,56 +743,6 @@
     <folder id="uyksv-mfer9" label="Foto" path="/home/coldstore/Foto" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
         <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" introducedBy="">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <minDiskFree unit="%">1</minDiskFree>
-        <versioning>
-            <cleanupIntervalS>3600</cleanupIntervalS>
-            <fsPath></fsPath>
-            <fsType>basic</fsType>
-        </versioning>
-        <copiers>0</copiers>
-        <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
-        <hashers>0</hashers>
-        <order>random</order>
-        <ignoreDelete>false</ignoreDelete>
-        <scanProgressIntervalS>0</scanProgressIntervalS>
-        <pullerPauseS>0</pullerPauseS>
-        <maxConflicts>10</maxConflicts>
-        <disableSparseFiles>false</disableSparseFiles>
-        <disableTempIndexes>false</disableTempIndexes>
-        <paused>false</paused>
-        <weakHashThresholdPct>25</weakHashThresholdPct>
-        <markerName>.stfolder</markerName>
-        <copyOwnershipFromParent>false</copyOwnershipFromParent>
-        <modTimeWindowS>0</modTimeWindowS>
-        <maxConcurrentWrites>2</maxConcurrentWrites>
-        <disableFsync>false</disableFsync>
-        <blockPullOrder>standard</blockPullOrder>
-        <copyRangeMethod>standard</copyRangeMethod>
-        <caseSensitiveFS>false</caseSensitiveFS>
-        <junctionsAsDirs>false</junctionsAsDirs>
-        <syncOwnership>false</syncOwnership>
-        <sendOwnership>false</sendOwnership>
-        <syncXattrs>false</syncXattrs>
-        <sendXattrs>false</sendXattrs>
-        <xattrFilter>
-            <maxSingleEntrySize>0</maxSingleEntrySize>
-            <maxTotalSize>0</maxTotalSize>
-        </xattrFilter>
-    </folder>
-    <folder id="wgusw-w5ehg" label="vivaldi_syncthing_session" path="/home/alteriks/.config/vivaldi/syncthing_session" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
-        <filesystemType>basic</filesystemType>
-        <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
@@ -1039,6 +948,16 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
+    <device id="T6NKDED-DR3XJO4-UGPP4SV-27QBI7Y-NZOZH5R-AGRYHVI-26KTOO2-SQ2VMA5" name="lordjim" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+        <untrusted>false</untrusted>
+        <remoteGUIPort>0</remoteGUIPort>
+    </device>
     <device id="T7NQM2L-CAXCR66-UK4Y5TZ-3YYJXX7-OGN3CBJ-3LULKHE-27JMZIW-D4DJBQE" name="rwin-rwamw034257" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
@@ -1112,7 +1031,7 @@
     <gui enabled="true" tls="false" debugging="false">
         <address>127.0.0.1:8384</address>
         <apikey>we9W9mzLAjaYCKRiTg3ryk7FZf73AbHq</apikey>
-        <theme>dark</theme>
+        <theme>carbon_green</theme>
     </gui>
     <ldap></ldap>
     <options>
@@ -1152,7 +1071,7 @@
         <setLowPriority>true</setLowPriority>
         <maxFolderConcurrency>0</maxFolderConcurrency>
         <crashReportingURL>https://crash.syncthing.net/newcrash</crashReportingURL>
-        <crashReportingEnabled>true</crashReportingEnabled>
+        <crashReportingEnabled>false</crashReportingEnabled>
         <stunKeepaliveStartS>180</stunKeepaliveStartS>
         <stunKeepaliveMinS>20</stunKeepaliveMinS>
         <stunServer>default</stunServer>
@@ -1163,6 +1082,12 @@
         <connectionLimitEnough>0</connectionLimitEnough>
         <connectionLimitMax>0</connectionLimitMax>
         <insecureAllowOldTLSVersions>false</insecureAllowOldTLSVersions>
+        <connectionPriorityTcpLan>10</connectionPriorityTcpLan>
+        <connectionPriorityQuicLan>20</connectionPriorityQuicLan>
+        <connectionPriorityTcpWan>30</connectionPriorityTcpWan>
+        <connectionPriorityQuicWan>40</connectionPriorityQuicWan>
+        <connectionPriorityRelay>50</connectionPriorityRelay>
+        <connectionPriorityUpgradeThreshold>0</connectionPriorityUpgradeThreshold>
     </options>
     <defaults>
         <folder id="" label="" path="~" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
