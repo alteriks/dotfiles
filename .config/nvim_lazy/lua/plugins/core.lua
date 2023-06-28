@@ -1,6 +1,5 @@
 -- https://github.com/LazyVim/LazyVim/issues/524
 return {
-  -- disable leap and flit
   { "tiagovla/scope.nvim", opts = {} },
   {
     "ojroques/nvim-osc52",

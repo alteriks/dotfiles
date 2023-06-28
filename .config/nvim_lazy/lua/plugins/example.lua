@@ -30,6 +30,15 @@ return {
   -- disable trouble
   { "folke/trouble.nvim", enabled = false },
 
+  -- replace pair plugin
+  -- { "echasnovski/mini.pairs", enabled = false },
+  -- {
+  --   "windwp/nvim-autopairs",
+  --   enabled = true,
+  --   event = "InsertEnter",
+  --   opts = {}, -- this is equalent to setup({}) function},
+  -- },
+
   -- add symbols-outline
   {
     "simrat39/symbols-outline.nvim",
@@ -169,8 +178,8 @@ return {
     opts = function(_, opts)
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
-          "tsx",
-          "typescript",
+        "tsx",
+        "typescript",
       })
     end,
   },

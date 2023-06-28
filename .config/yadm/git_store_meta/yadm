@@ -15,6 +15,7 @@
 .config/X11/Xresources##template	f	0644
 .config/alacritty	d	0755
 .config/alacritty/alacritty.yml	f	0644
+.config/albert.conf	f	0644
 .config/ansible-lint	d	0755
 .config/ansible-lint/config	f	0644
 .config/autorandr	d	0755

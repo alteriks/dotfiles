@@ -66,10 +66,13 @@ floating_minimum_size 400 x 250
 
 #TODO: https://wiki.archlinux.org/index.php/I3#Save_and_restore_the_window_layout
 
-## class                 border  backgr. text    indicator
-#client.focused_inactive #4F99D3 #4F99D3 #151718 #9FCA56
+set $clear #ffffff00
+
+# class                  border   background  text     indicator  child_border
+client.focused_inactive  #333333  #5f676a     #ffffff  #484e50    $clear
+client.unfocused         #333333  #222222     #888888  #292d2e    $clear
 client.focused #9FCA56 #9FCA56 #151718 #A074C4
-client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
+# client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
 client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
 
 workspace_layout default
