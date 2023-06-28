@@ -71,7 +71,11 @@ export BAT_PAGER="less -R"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always'"
 
 export HOSTNAME="$(hostname)"
+<<<<<<< HEAD
 if [[ "$HOSTNAME" == "moar" && "$USER" == "alteriks" ]]; then
+=======
+if [[ "$HOSTNAME" == "moar" || "$HOSTNAME" == "carbon" ]]; then
+>>>>>>> 4af44a6398ece3e44d0eddc17959226384efab23
 	# Wayland fixes
 	if [[ "$XDG_SESSION_TYPE" == "wayland" ]]; then
 		export MOZ_ENABLE_WAYLAND=1
