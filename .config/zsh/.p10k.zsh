@@ -35,7 +35,7 @@ case $HOSTNAME in
   lordjim)
     typeset -g HOSTNAME_COLOR='#EA8B07'
     typeset -g HOSTNAME_FG_COLOR='#804D07'
-    typeset -g HOSTNAME_CUSTOM_ICON='D'
+    typeset -g HOSTNAME_CUSTOM_ICON='A'
     ;;
 
   *)
