@@ -69,6 +69,8 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 #export PAGER="less -r" # ovveriden by zim to "less", so it is set later in ~/.config/zsh/zshrc_generic
 export BAT_PAGER="less -R"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always'"
+# https://github.com/sharkdp/bat/issues/2568#issuecomment-1636575384
+export MANROFFOPT="-c"
 
 export HOSTNAME="$(hostname)"
 if [[ "$USER" == "alteriks" ]]; then
