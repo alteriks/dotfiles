@@ -44,6 +44,7 @@ pasystray
 pulseaudio-bluetooth
 pulsemixer
 vlc
+realtime-privileges # needed by pipewire
 
 # Wayland
 polkit-gnome

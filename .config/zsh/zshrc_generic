@@ -246,3 +246,6 @@ zstyle ':fzf-tab:*' switch-group ',' '.'
 # export PATHMARKS_FILE=~/.config/zsh/bookmarks
 export FZF_MARKS_FILE=~/.config/zsh/bookmarks
 export XPLR_BOOKMARK_FILE=$FZF_MARKS_FILE
+
+# https://github.com/sharkdp/bat/issues/2568#issuecomment-1636575384
+export MANROFFOPT="-c"
