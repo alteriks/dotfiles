@@ -433,12 +433,6 @@
     </folder>
     <folder id="nnpj5-yalvc" label="memo" path="/home/alteriks/memo" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="2" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="LM72WO6-PIPIO2X-E3SIQ4L-QAYLJAA-WF7VAT4-I47AOLB-JNIY75H-SW47YQP" introducedBy="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <device id="MYQQEAR-DVB6W6X-REEJOYM-ASMR7HF-SOTHFZX-72RQ3OR-PEDJEW7-P6JC5QJ" introducedBy="">
-            <encryptionPassword></encryptionPassword>
-        </device>
         <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -592,7 +586,7 @@
         <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" introducedBy="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW">
             <encryptionPassword></encryptionPassword>
         </device>
-        <device id="T6NKDED-DR3XJO4-UGPP4SV-27QBI7Y-NZOZH5R-AGRYHVI-26KTOO2-SQ2VMA5" introducedBy="">
+        <device id="PT6OZB4-6BWXREQ-HD45HLR-6TAHDEN-GHEVWMW-GFTWL23-GL7U4WC-K7Y65QE" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
@@ -907,36 +901,6 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="LBENTBY-JVYSMGA-HJBNY6Y-5VD5VF4-OCXTQEL-ZOA7NW5-TWOATNX-AMSUYQI" name="acs-ubu02" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL">
-        <address>dynamic</address>
-        <paused>false</paused>
-        <autoAcceptFolders>false</autoAcceptFolders>
-        <maxSendKbps>0</maxSendKbps>
-        <maxRecvKbps>0</maxRecvKbps>
-        <maxRequestKiB>0</maxRequestKiB>
-        <untrusted>false</untrusted>
-        <remoteGUIPort>0</remoteGUIPort>
-    </device>
-    <device id="LM72WO6-PIPIO2X-E3SIQ4L-QAYLJAA-WF7VAT4-I47AOLB-JNIY75H-SW47YQP" name="iPad" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="LOWURTH-RPGKM3A-G5GX4G3-GNNHBDI-7WUCJXX-FPNYODD-L5SHBI5-VZGSXQL">
-        <address>dynamic</address>
-        <paused>false</paused>
-        <autoAcceptFolders>false</autoAcceptFolders>
-        <maxSendKbps>0</maxSendKbps>
-        <maxRecvKbps>0</maxRecvKbps>
-        <maxRequestKiB>0</maxRequestKiB>
-        <untrusted>false</untrusted>
-        <remoteGUIPort>0</remoteGUIPort>
-    </device>
-    <device id="MYQQEAR-DVB6W6X-REEJOYM-ASMR7HF-SOTHFZX-72RQ3OR-PEDJEW7-P6JC5QJ" name="iphoneXS" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
-        <address>dynamic</address>
-        <paused>false</paused>
-        <autoAcceptFolders>false</autoAcceptFolders>
-        <maxSendKbps>0</maxSendKbps>
-        <maxRecvKbps>0</maxRecvKbps>
-        <maxRequestKiB>0</maxRequestKiB>
-        <untrusted>false</untrusted>
-        <remoteGUIPort>0</remoteGUIPort>
-    </device>
     <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" name="nebula" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW">
         <address>dynamic</address>
         <paused>false</paused>
@@ -948,7 +912,7 @@
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
     </device>
-    <device id="T6NKDED-DR3XJO4-UGPP4SV-27QBI7Y-NZOZH5R-AGRYHVI-26KTOO2-SQ2VMA5" name="lordjim" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+    <device id="PT6OZB4-6BWXREQ-HD45HLR-6TAHDEN-GHEVWMW-GFTWL23-GL7U4WC-K7Y65QE" name="lordjim" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
