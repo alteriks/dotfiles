@@ -21,7 +21,7 @@ require("xpm").setup({
 		},
 
 		"alteriks/trash-cli.xplr",
-		"Junker/nuke.xplr",
+		"alteriks/nuke.xplr",
 		"sayanarijit/dragon.xplr",
 		"sayanarijit/dual-pane.xplr",
 		"sayanarijit/dua-cli.xplr",
