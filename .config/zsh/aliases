@@ -54,10 +54,10 @@ alias docker_dive="docker run --rm -it -v /var/run/docker.sock:/var/run/docker.s
 
 # Nvim
 alias lazy="NVIM_APPNAME=nvim_lazy nvim"
-alias vi="NVIM_APPNAME=nvim_lazy nvim"
-alias vim="NVIM_APPNAME=nvim_lazy nvim"
-alias nvim="NVIM_APPNAME=nvim_lazy nvim"
-alias vimdiff="NVIM_APPNAME=nvim_lazy nvim -d"
+alias vi="nvim"
+alias vim="nvim"
+#alias nvim="NVIM_APPNAME=nvim_lazy nvim"
+alias vimdiff="nvim -d"
 alias nvchad="NVIM_APPNAME=nvim_nvchad /usr/bin/nvim"
 
 # YADM

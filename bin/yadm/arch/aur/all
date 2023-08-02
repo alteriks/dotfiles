@@ -102,3 +102,5 @@ xpadneo-dkms-git
 
 # multiplatform builder
 docker-buildx
+
+rasdaemon # eccram
