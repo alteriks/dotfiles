@@ -4,6 +4,7 @@
 # List files
 alias lsd='lsd -l'
 alias lst='lsd -l --tree --depth 3'
+alias ltr='lsd -ltr'
 alias l='lsd -Al'
 
 alias ag='ag --hidden --ignore \.git'
