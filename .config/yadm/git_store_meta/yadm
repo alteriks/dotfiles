@@ -162,6 +162,7 @@
 .config/nvim/lua/config/lazy.lua	f	0644
 .config/nvim/lua/config/options.lua	f	0644
 .config/nvim/lua/plugins	d	0755
+.config/nvim/lua/plugins/colorscheme.lua	f	0644
 .config/nvim/lua/plugins/core.lua	f	0644
 .config/nvim/lua/plugins/editor.lua	f	0644
 .config/nvim/lua/plugins/example.lua	f	0644
