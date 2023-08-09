@@ -1,9 +1,6 @@
 <configuration version="37">
     <folder id="cbvbt-xhwdy" label="Projects_Roche_rlc-ssh" path="/home/alteriks/Projects/Roche/rlc-ssh" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="D7KWFGD-ICFEXCC-Y4GXK7F-G6QUINQ-KDHAZUK-FSMO62E-DJVMK4T-HZ2CNAQ" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-            <encryptionPassword></encryptionPassword>
-        </device>
         <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -242,12 +239,6 @@
     </folder>
     <folder id="jf3td-utyuz" label="Projects_Roche_Docs-rlc" path="/home/alteriks/Projects/Roche/Documents-rlc" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="D7KWFGD-ICFEXCC-Y4GXK7F-G6QUINQ-KDHAZUK-FSMO62E-DJVMK4T-HZ2CNAQ" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <device id="T7NQM2L-CAXCR66-UK4Y5TZ-3YYJXX7-OGN3CBJ-3LULKHE-27JMZIW-D4DJBQE" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-            <encryptionPassword></encryptionPassword>
-        </device>
         <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -830,12 +821,6 @@
     </folder>
     <folder id="zn3ip-h4cwh" label="Projects_Roche_Docs-win" path="/home/alteriks/Projects/Roche/Documents-win" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="D7KWFGD-ICFEXCC-Y4GXK7F-G6QUINQ-KDHAZUK-FSMO62E-DJVMK4T-HZ2CNAQ" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <device id="T7NQM2L-CAXCR66-UK4Y5TZ-3YYJXX7-OGN3CBJ-3LULKHE-27JMZIW-D4DJBQE" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-            <encryptionPassword></encryptionPassword>
-        </device>
         <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -882,16 +867,6 @@
         </xattrFilter>
     </folder>
     <device id="C2NBXQT-CDKPBBC-KIQVYCQ-BSH3Z4T-U4FAWDD-4STOX4E-XOREWEN-VBDQTQQ" name="acs-ubu02" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-        <address>dynamic</address>
-        <paused>false</paused>
-        <autoAcceptFolders>false</autoAcceptFolders>
-        <maxSendKbps>0</maxSendKbps>
-        <maxRecvKbps>0</maxRecvKbps>
-        <maxRequestKiB>0</maxRequestKiB>
-        <untrusted>false</untrusted>
-        <remoteGUIPort>0</remoteGUIPort>
-    </device>
-    <device id="D7KWFGD-ICFEXCC-Y4GXK7F-G6QUINQ-KDHAZUK-FSMO62E-DJVMK4T-HZ2CNAQ" name="rlc-rwauvprlc0017" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
         <address>dynamic</address>
         <paused>false</paused>
         <autoAcceptFolders>false</autoAcceptFolders>
