@@ -104,7 +104,7 @@ acpi
 arch-install-scripts
 archiso
 asciinema
-autorandr
+# autorandr
 autossh
 bashtop
 bat
