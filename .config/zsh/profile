@@ -63,7 +63,7 @@ eval "$(dircolors "$XDG_CONFIG_HOME"/dircolors)"
 #export BROWSER=/usr/bin/palemoon
 
 export DIFFPROG="nvim -d"
-export EDITOR="NVIM_APPNAME=nvim_lazy nvim"
+export EDITOR="nvim"
 #export TERMINAL=kitty
 export QT_QPA_PLATFORMTHEME="qt5ct"
 #export PAGER="less -r" # ovveriden by zim to "less", so it is set later in ~/.config/zsh/zshrc_generic

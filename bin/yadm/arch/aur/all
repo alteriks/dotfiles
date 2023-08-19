@@ -13,7 +13,7 @@ protonvpn-cli-ng
 # safeeyes
 sanoid
 shellcheck-bin ## haskell hell updates
-spotify
+# spotify
 spectre-meltdown-checker
 # todotxt-machine-git
 tmux-xpanes
@@ -102,3 +102,9 @@ xpadneo-dkms-git
 
 # multiplatform builder
 docker-buildx
+
+rasdaemon # eccram
+
+noti # send notification after CLI completed to telegram/pushbullet/etc
+
+subnetcalc # CIDR calculator
