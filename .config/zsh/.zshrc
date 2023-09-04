@@ -138,3 +138,6 @@ source ~/.config/zsh/zshrc_generic
 # Better rupa/z in rust
 # eval "$(zoxide init zsh)"
 source ~/.config/zsh/zoxide.zsh
+
+# pacman -S direnv
+eval "$(direnv hook zsh)"
