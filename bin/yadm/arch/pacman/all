@@ -115,6 +115,7 @@ broot
 btop
 chafa # image viewer in kitty
 diff-so-fancy
+direnv # use .envrc to load env for companyA or companyB
 dmidecode
 dnsmasq
 dua-cli
@@ -243,3 +244,7 @@ vivaldi-ffmpeg-codecs
 # iPhone USB tethering
 libimobiledevice
 usbmuxd
+
+# k8s
+kubectl
+helm
