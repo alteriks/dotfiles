@@ -213,7 +213,7 @@ exec multibg-sway ~/.config/swaybg
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
-exec albert
+exec_always albert
 #exec xfce4-power-manager
 #BUG: exec blueman-applet
 
