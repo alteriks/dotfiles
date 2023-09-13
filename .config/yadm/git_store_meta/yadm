@@ -84,6 +84,7 @@
 .config/i3/bin	d	0755
 .config/i3/bin/auto_scratchpad.py	f	0755
 .config/i3/bin/i3-switch-if-workspace-empty	f	0755
+.config/i3/bin/i3-tabbed.py	f	0755
 .config/i3/bin/i3lock-color-git.sh	f	0755
 .config/i3/bin/i3status-rust_rofi-calendar	f	0755
 .config/i3/bin/launch_and_rename_windowname.sh	f	0755
