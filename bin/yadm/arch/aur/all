@@ -55,7 +55,7 @@ subliminal
 
 # Plugin for heif/heic image format for nomacs
 qt-heif-image-plugin
-qt-avif-image-plugin-libavif-git
+# qt-avif-image-plugin-libavif-git
 
 # Pandoc-bin executable only, without 750MB Haskell depends/makedepends
 # Used by ripgrep-all (rga) to grep .odt, .docx etc

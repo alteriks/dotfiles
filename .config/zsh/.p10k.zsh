@@ -82,7 +82,7 @@ esac
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
-    # direnv                  # direnv status (https://direnv.net/)
+    direnv                  # direnv status (https://direnv.net/)
     # asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     # anaconda                # conda environment (https://conda.io/)
@@ -1331,11 +1331,21 @@ esac
   #   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_VISUAL_IDENTIFIER_EXPANSION='⭐'
   #   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_CONTENT_EXPANSION='> ${P9K_CONTENT} <'
   typeset -g POWERLEVEL9K_KUBECONTEXT_CLASSES=(
-      # '*prod*'  PROD    # These values are examples that are unlikely
-      # '*test*'  TEST    # to match your needs. Customize them as needed.
+      '*prod*'  PROD    # These values are examples that are unlikely
+      '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=7
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND=5
+  typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_FOREGROUND=#EEEEEE
+  # typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND=#82AAFF
+  typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_BACKGROUND=#BF2F33
+  typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_VISUAL_IDENTIFIER_EXPANSION=' ⏣ '
+
+  typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_FOREGROUND=#111111
+  typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_BACKGROUND=#a1e330
+  typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_VISUAL_IDENTIFIER_EXPANSION=' ⏣ '
+
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=#EEEEEE
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND=#1e8de3
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION=' ⏣ '
   # typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   # Use POWERLEVEL9K_KUBECONTEXT_CONTENT_EXPANSION to specify the content displayed by kubecontext
