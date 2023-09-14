@@ -35,13 +35,12 @@ ttf-terminus-nerd
 
 # MEDIA
 alsa-card-profiles
-# deluge
-# deluge-gtk
 gimp
 mpv
 nomacs
-pasystray
-pulseaudio-bluetooth
+pavucontrol
+pipewire-pulse 
+pipewire-audio
 pulsemixer
 vlc
 realtime-privileges # needed by pipewire
@@ -52,6 +51,7 @@ qt6-wayland
 slurp # select a region in a Wayland compositor
 swaync
 wayvnc
+wl-mirror
 wl-clipboard
 xdg-desktop-portal
 xdg-desktop-portal-gtk
@@ -115,6 +115,7 @@ broot
 btop
 chafa # image viewer in kitty
 diff-so-fancy
+direnv # use .envrc to load env for companyA or companyB
 dmidecode
 dnsmasq
 dua-cli
@@ -243,3 +244,7 @@ vivaldi-ffmpeg-codecs
 # iPhone USB tethering
 libimobiledevice
 usbmuxd
+
+# k8s
+kubectl
+helm

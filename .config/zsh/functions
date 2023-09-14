@@ -6,7 +6,7 @@ arpscan() {
     DEFAULT_ROUTE=$(ip route show default 0.0.0.0/0 | awk '{print $3}')
     ARPSCAN_NET=${DEFAULT_ROUTE}/24
   fi
-  sudo nmap -sP $ARPSCAN_NET | awk '/Nmap scan report for/{printf $5;}/MAC Address:/{print " => "$3" "$4$5$6$7$8;}' | sort -t . -k1,1 -k2,2 -k 3,3n -k 4,4n
+  sudo nmap -nsP $ARPSCAN_NET | awk '/Nmap scan report for/{printf $5;}/MAC Address:/{print " => "$3" "$4$5$6$7$8;}' | sort -t . -k1,1 -k2,2 -k 3,3n -k 4,4n
   #RPi4=DC:A6:32
   #RPiZ=B8:27:EB
 }

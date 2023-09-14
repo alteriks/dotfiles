@@ -108,3 +108,5 @@ rasdaemon # eccram
 noti # send notification after CLI completed to telegram/pushbullet/etc
 
 subnetcalc # CIDR calculator
+
+git-credential-keepassxc # glue git + keepass

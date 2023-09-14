@@ -69,10 +69,11 @@ floating_minimum_size 400 x 250
 set $clear #ffffff00
 
 # class                  border   background  text     indicator  child_border
-client.focused_inactive  #333333  #5f676a     #ffffff  #484e50    $clear
-client.unfocused         #333333  #222222     #888888  #292d2e    $clear
-client.focused #9FCA56 #9FCA56 #151718 #A074C4
-# client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
+# client.focused_inactive  #333333  #5f676a     #ffffff  #484e50    $clear
+# client.unfocused         #333333  #222222     #888888  #292d2e    $clear
+client.focused #c5ff61 #c5ff61 #151718 #A074C4
+client.focused_inactive  #c9c9c9  #c9c9c9     #c9c9c9
+client.unfocused #1f2326 #1f2326 #c9c9c9
 client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
 
 workspace_layout default
@@ -213,7 +214,7 @@ exec multibg-sway ~/.config/swaybg
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
-exec albert
+exec_always albert
 #exec xfce4-power-manager
 #BUG: exec blueman-applet
 
