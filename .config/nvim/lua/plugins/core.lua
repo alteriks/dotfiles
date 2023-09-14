@@ -1,5 +1,6 @@
 -- https://github.com/LazyVim/LazyVim/issues/524
 return {
+  { "towolf/vim-helm" },
   { "tiagovla/scope.nvim", opts = {} },
   {
     "ojroques/nvim-osc52",
