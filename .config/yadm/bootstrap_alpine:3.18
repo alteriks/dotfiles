@@ -24,7 +24,7 @@ source "$HOME/.profile"
 
 if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
 	echo -e "${GREEN}[+] Automatic tpm installation${NC}"
-	sed -i '' 's|local string_path.*|local string_path="$HOME/.config/tmux/plugins/"|' ~/.config/tmux/plugins/tpm/scripts/helpers/plugin_functions.sh
+	sed -i '' 's@local string_path.*@local string_path="$HOME/.config/tmux/plugins/"@' ~/.config/tmux/plugins/tpm/scripts/helpers/plugin_functions.sh
 	~/.config/tmux/plugins/tpm/bin/install_plugins
 	echo ""
 fi
