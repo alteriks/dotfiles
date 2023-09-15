@@ -3,10 +3,13 @@
 set -eo pipefail
 
 : "${BOOTSTRAP_QUICK:=0}"
-echo BOOTSTRAP_QUICK="$BOOTSTRAP_QUICK"
+
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
+echo
+echo "${GREEN}BOOTSTRAP_QUICK=""$BOOTSTRAP_QUICK{$NC}"
+echo
 echo -e "${RED}$SHELL${NC}"
 
 echo -e "${GREEN}Mkdir${NC}"
