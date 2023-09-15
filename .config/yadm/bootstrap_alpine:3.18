@@ -22,6 +22,6 @@ echo ""
 
 if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
 	echo -e "${GREEN}[+] Automatic tpm installation${NC}"
-	~/.config/tmux/plugins/tpm/bin/install_plugins
+	zsh -c ~/.config/tmux/plugins/tpm/bin/install_plugins
 	echo ""
 fi
