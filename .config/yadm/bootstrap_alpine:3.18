@@ -2,7 +2,8 @@
 
 set -eo pipefail
 
-./common
+YADM_DIRNAME="$HOME/.config/yadm/"
+.${YADM_DIRNAME}/common
 
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
