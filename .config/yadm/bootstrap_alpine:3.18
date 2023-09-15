@@ -3,7 +3,7 @@
 set -eo pipefail
 
 YADM_DIRNAME="$HOME/.config/yadm"
-${YADM_DIRNAME}/common
+source ${YADM_DIRNAME}/common
 
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
@@ -20,8 +20,10 @@ echo ""
 # 	echo ""
 # fi
 
+source "$HOME/.profile"
+
 if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
 	echo -e "${GREEN}[+] Automatic tpm installation${NC}"
-	zsh -ic ~/.config/tmux/plugins/tpm/bin/install_plugins
+	~/.config/tmux/plugins/tpm/bin/install_plugins
 	echo ""
 fi
