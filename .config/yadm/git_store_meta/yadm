@@ -231,6 +231,8 @@
 .config/xplr/theme.lua	f	0644
 .config/yadm	d	0755
 .config/yadm/bootstrap	f	0755
+.config/yadm/bootstrap_alpine:3.18	f	0755
+.config/yadm/common	f	0755
 .config/yadm/git_store_meta	d	0755
 .config/yadm/git_store_meta/yadm	f	0644
 .config/yadm/hooks	d	0755

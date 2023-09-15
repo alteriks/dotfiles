@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -eo pipefail
+
+./common
+
+# Because Git submodule commands cannot operate without a work tree, they must
+# be run from within $HOME (assuming this is the root of your dotfiles)
+cd "$HOME"
+
+echo -e "${GREEN}[+] Init submodules${NC}"
+yadm submodule update --recursive --init
+echo ""
+
+if command -v nvim >/dev/null 2>&1; then
+	echo -e "${GREEN}[+] Bootstraping neovim"
+	# TODO: lazyvim
+	nvim --headless '+Lazy! sync' +qa
+	echo ""
+fi
+
+if [[ -e ~/.config/tmux/plugins/tpm/bin/install_plugins ]]; then
+	echo -e "${GREEN}[+] Automatic tpm installation${NC}"
+	~/.config/tmux/plugins/tpm/bin/install_plugins
+	echo ""
+fi
