@@ -267,6 +267,8 @@
 .gitmodules	f	0600
 .local	d	0755
 .local/share	d	0755
+.local/share/applications	d	0755
+.local/share/applications/Vikunja.desktop	f	0755
 .local/share/fonts	d	0755
 .local/share/fonts/DejaVu Sans Mono Bold Oblique for Powerline.ttf	f	0644
 .local/share/fonts/DejaVu Sans Mono Bold for Powerline.ttf	f	0644

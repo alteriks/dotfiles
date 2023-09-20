@@ -1,0 +1,31 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Vikunja
+# sh -c "i3-msg 'workspace number \"7:  <U+F0AC>  mc\"'
+Exec=sh -c "swaymsg 'workspace 1; exec /usr/bin/chromium --profile-directory=Default --app-id=ccilfnddfkflecikdejipgjehfkhjjai'"
+Icon=chrome-ccilfnddfkflecikdejipgjehfkhjjai-Default
+StartupWMClass=crx_ccilfnddfkflecikdejipgjehfkhjjai
+Actions=Namespaces-And-Projects-Overview;Overview;Tasks-Next-Month;Tasks-Next-Week;Teams-Overview
+
+[Desktop Action Namespaces-And-Projects-Overview]
+Name=Namespaces And Projects Overview
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=ccilfnddfkflecikdejipgjehfkhjjai --app-launch-url-for-shortcuts-menu-item=https://vikunja.alt.lan/namespaces
+
+[Desktop Action Overview]
+Name=Overview
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=ccilfnddfkflecikdejipgjehfkhjjai --app-launch-url-for-shortcuts-menu-item=https://vikunja.alt.lan/
+
+[Desktop Action Tasks-Next-Month]
+Name=Tasks Next Month
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=ccilfnddfkflecikdejipgjehfkhjjai --app-launch-url-for-shortcuts-menu-item=https://vikunja.alt.lan/tasks/by/month
+
+[Desktop Action Tasks-Next-Week]
+Name=Tasks Next Week
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=ccilfnddfkflecikdejipgjehfkhjjai --app-launch-url-for-shortcuts-menu-item=https://vikunja.alt.lan/tasks/by/week
+
+[Desktop Action Teams-Overview]
+Name=Teams Overview
+Exec=/usr/bin/chromium --profile-directory=Default --app-id=ccilfnddfkflecikdejipgjehfkhjjai --app-launch-url-for-shortcuts-menu-item=https://vikunja.alt.lan/teams
