@@ -5,6 +5,8 @@
 [push]
   default = simple
   gpgsign = false
+  autoSetupRemote = true
+
 [gitreview]
   username = KrzysztofDajka
 
