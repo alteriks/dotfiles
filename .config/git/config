@@ -5,6 +5,8 @@
 [push]
   default = simple
   gpgsign = false
+  autoSetupRemote = true
+
 [gitreview]
   username = KrzysztofDajka
 
@@ -23,11 +25,8 @@
 #	template = ~/.stCommitMsg
 [pull]
   rebase = false
-# TODO:
-# [include]
-#   path = .gitconfig-personal.local
-# [includeIf "gitdir:~/Development/work/"]
-#   path = .gitconfig-work.local
+[include]
+  path = ~/.config/git/config_privyadm
 [core]
   # pager = diff-so-fancy | less --tabs=4 -RFX
   pager = delta --true-color auto
@@ -65,3 +64,5 @@
 	whitespace = red reverse
 [init]
 	defaultBranch = master
+[credential]
+	helper = keepassxc --git-groups
