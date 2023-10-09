@@ -12,3 +12,5 @@ icons:
   when: auto
   theme: unicode
   separator: " "
+sorting:
+  dir-grouping: first

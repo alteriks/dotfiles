@@ -14,7 +14,7 @@
     "sway/scratchpad"
   ],
   "modules-center": [
-    "sway/window",
+    "sway/window"
   ],
   "custom/notification": {
     "tooltip": false,
@@ -39,7 +39,9 @@
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "format": "{index}: {icon}",
+    //    "format": "{index}: {icon} {name}",
+    "format": "{name}: {icon}",
+    //"format": "{index}: {value} - {name}",
     "format-icons": {
       "1": "",
       "2": "",
@@ -49,7 +51,11 @@
       "19": "",
       "urgent": "",
       "focused": "",
-      "default": ""
+      "default": "",
+      "high-priority-named": [
+        "1",
+        "2"
+      ]
     }
   },
   "sway/mode": {

@@ -87,7 +87,7 @@ default_floating_border normal
 hide_edge_borders none
 
 #Focus
-focus_follows_mouse yes
+focus_follows_mouse always
 focus_wrapping yes
 # focus_on_window_activation none
 focus_on_window_activation urgent
@@ -225,7 +225,8 @@ bindsym $meh+v exec swaymsg [app_id="vivaldi"] focus || exec vivaldi-stable
 bindsym $meh+b exec swaymsg [app_id="firefox_boomfunk"] focus || exec sh -c 'MOZ_ENABLE_WAYLAND=1 /usr/lib/firefox/firefox -P boomfunk --name firefox_boomfunk'
 for_window [app_id="firefox_boomfunk"] move to workspace $workspace7, focus
 
-bindsym $mod+x exec swaymsg [app_id="kitty_xplr"] focus || exec sh -c "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_xplr zsh -ic 'xplr; exit'"
+bindsym $mod+x exec swaymsg [app_id="kitty_xplr"] focus || exec sh -c "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_xplr zsh -c 'xplr; exit'"
+# bindsym $mod+x exec swaymsg [app_id="kitty_xplr"] focus || exec sh -c "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_xplr zsh -ic 'xplr; exit'"
 for_window [app_id="kitty_xplr"] floating enable, resize set 1450 950
 
 bindsym $mod+b exec "kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class=kitty_btop btop; exit"

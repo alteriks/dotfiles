@@ -39,6 +39,7 @@ application/x-extension-shtml=firefox_nebula_zt.desktop
 application/xhtml+xml=firefox_nebula_zt.desktop
 application/x-extension-xhtml=firefox_nebula_zt.desktop
 application/x-extension-xht=firefox_nebula_zt.desktop
+x-scheme-handler/lens=OpenLens.desktop
 
 [Added Associations]
 application/octet-stream=mousepad.desktop;
