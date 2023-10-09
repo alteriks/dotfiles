@@ -341,3 +341,15 @@ zl () {
   z "$@"
   lsd
 }
+
+history_all () {
+  print -z -- \
+  $(~/bin/merge_all_history.pl |\
+  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} ${FZF_DEFAULT_OPTS-} --scheme=history" fzf --tac --print-query |\
+  perl -p -e 's/\w+: //')
+  } 
+
+zle     -N            history_all
+bindkey -M emacs '^T' history_all
+bindkey -M vicmd '^T' history_all
+bindkey -M viins '^T' history_all
