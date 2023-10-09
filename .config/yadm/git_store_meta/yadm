@@ -321,6 +321,7 @@ bin/iommu.sh	f	0755
 bin/launch_sway.sh	f	0755
 bin/lib	d	0755
 bin/lib/DiffHighlight.pm	f	0644
+bin/merge_all_history.pl	f	0755
 bin/monitor_brightness.sh	f	0755
 bin/storage-benchmark.sh	f	0755
 bin/stressberry.sh	f	0755
