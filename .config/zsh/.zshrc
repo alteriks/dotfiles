@@ -3,7 +3,7 @@
 # User configuration sourced by interactive shells
 #
 # : ${ZIM_HOME=${ZDOTDIR:-${HOME}}//zim}
-: ${ZIM_HOME=${HOME}/.config/zim}
+: ${ZIM_HOME=${HOME}/.config/zsh-zim}
 
 # -----------------
 # Zsh configuration
