@@ -242,14 +242,11 @@ zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=do
 # FZF key-bindings
 zstyle ':fzf-tab:*' fzf-bindings 'space:accept' #Press 'space' to accept
 zstyle ':fzf-tab:*' accept-line enter #Press 'enter' to accept and run a suggestion in one keystroke.
+zstyle ':fzf-tab:*' print-query alt-enter # use the currently entered user input as the final completion output
 zstyle ':fzf-tab:*' continuous-trigger '/' #Press '/' to accept suggestion and run another
 # use ',' to go back and '.' to go forward https://github.com/Aloxaf/fzf-tab/pull/183
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
-
-# export PATHMARKS_FILE=~/.config/zsh/bookmarks
-export FZF_MARKS_FILE=~/.config/zsh/bookmarks
-export XPLR_BOOKMARK_FILE=$FZF_MARKS_FILE
 
 # https://github.com/sharkdp/bat/issues/2568#issuecomment-1636575384
 export MANROFFOPT="-c"
