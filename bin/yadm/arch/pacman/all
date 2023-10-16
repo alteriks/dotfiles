@@ -129,8 +129,10 @@ git
 git-delta # git diff
 git-delta
 glow # markdown reader https://github.com/charmbracelet/glow used as cat replacement (~/.config/zsh/functions)
+ghostscript # ps2pdf useful for decrypting pdfs
 hdparm
 htop
+hyperfine
 i7z
 inetutils
 inotify-tools
