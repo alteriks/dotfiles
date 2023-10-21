@@ -2,10 +2,7 @@
 
 set -eo pipefail
 
-sudo /bin/bash -c 'cat <<EOF >/etc/resolv.conf
-nameserver 192.168.1.2
-search lan alt.lan dyn.lan
-EOF'
+sudo chsh -s /bin/zsh alteriks
 
 YADM_DIRNAME="$HOME/.config/yadm"
 source ${YADM_DIRNAME}/common
@@ -18,12 +15,12 @@ echo -e "${GREEN}[+] Init submodules${NC}"
 yadm submodule update --recursive --init
 echo ""
 
-# if command -v nvim >/dev/null 2>&1; then
-# 	echo -e "${GREEN}[+] Bootstraping neovim"
-# 	# TODO: lazyvim
-# 	nvim --headless '+Lazy! sync' +qa
-# 	echo ""
-# fi
+if command -v nvim >/dev/null 2>&1; then
+	echo -e "${GREEN}[+] Bootstraping neovim"
+	# TODO: lazyvim
+	NVIM_APPNAME=nvim_mvim nvim --headless '+Lazy! sync' +qa
+	echo ""
+fi
 
 source "$HOME/.profile"
 

@@ -235,6 +235,7 @@
 .config/yadm/bootstrap	f	0755
 .config/yadm/bootstrap_alpine:3.18	f	0755
 .config/yadm/bootstrap_ubuntu:22.04	f	0755
+.config/yadm/bootstrap_ubuntu_22.04_handmade	f	0755
 .config/yadm/common	f	0755
 .config/yadm/git_store_meta	d	0755
 .config/yadm/git_store_meta/yadm	f	0644
