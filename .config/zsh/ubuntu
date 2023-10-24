@@ -26,7 +26,6 @@ if [[ -f ~/.config/fzf/shell/key-bindings.zsh ]];then
   export FZF_COMPLETION_TRIGGER=''
   export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
   bindkey '^T' fzf-completion
-  bindkey '^I' $fzf_default_completion
 fi
 if [[ -f ~/.config/fzf/shell/completion.zsh ]];then
   source ~/.config/fzf/shell/completion.zsh
