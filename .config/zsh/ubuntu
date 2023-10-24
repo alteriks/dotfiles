@@ -25,11 +25,11 @@ step-cli-ca() {
 # git clone --depth 1 https://github.com/junegunn/fzf.git ~/.config/fzf
 if [[ -f ~/.config/fzf/shell/key-bindings.zsh ]];then
   source ~/.config/fzf/shell/key-bindings.zsh
-  #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
-  export FZF_COMPLETION_TRIGGER=''
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
-  bindkey '^T' fzf-completion
 fi
 if [[ -f ~/.config/fzf/shell/completion.zsh ]];then
   source ~/.config/fzf/shell/completion.zsh
 fi
+#Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
+# export FZF_COMPLETION_TRIGGER=''
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+bindkey '^T' fzf-completion

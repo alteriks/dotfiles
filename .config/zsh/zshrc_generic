@@ -137,16 +137,16 @@ export HISTFILE=$XDG_DATA_HOME/zsh/history_$HOSTNAME
 # Has to be loaded after zsh-vim-mode, so ctrl+r uses fzf magic
 if [[ -f /usr/share/fzf/key-bindings.zsh ]];then
   source /usr/share/fzf/key-bindings.zsh
-  #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
-  export FZF_COMPLETION_TRIGGER=''
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
-  bindkey '^T' fzf-completion
-  # bindkey '^I' $fzf_default_completion
 fi
 if [[ -f /usr/share/fzf/completion.zsh ]];then
   source /usr/share/fzf/completion.zsh
 fi
   alias fzfp=fzf --preview '(bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -500'
+  #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
+  export FZF_COMPLETION_TRIGGER=''
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+  bindkey '^T' fzf-completion
+  bindkey '^I' $fzf_default_completion
 
 # broot --install
 if [[ -e $HOME/.config/broot/launcher/bash/br ]]; then
