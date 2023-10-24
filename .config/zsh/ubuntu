@@ -20,6 +20,9 @@ step-cli-ca() {
   cp /data/docker/step/certs/${1}* $PWD
 }
 
+# Ubuntu 22.04 has old fzf package, so we download from 23.10
+# Also minimized doesn't have everything so let's clone Instead
+# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.config/fzf
 if [[ -f ~/.config/fzf/shell/key-bindings.zsh ]];then
   source ~/.config/fzf/shell/key-bindings.zsh
   #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
