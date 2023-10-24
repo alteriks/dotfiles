@@ -19,3 +19,15 @@ step-cli-ca() {
   docker exec -it step_ca step ca certificate --provisioner-password-file=/home/step/secrets/password $1 certs/$1.crt certs/$1.key --not-after=17520h
   cp /data/docker/step/certs/${1}* $PWD
 }
+
+if [[ -f ~/.config/fzf/shell/key-bindings.zsh ]];then
+  source ~/.config/fzf/shell/key-bindings.zsh
+  #Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
+  export FZF_COMPLETION_TRIGGER=''
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+  bindkey '^T' fzf-completion
+  bindkey '^I' $fzf_default_completion
+fi
+if [[ -f ~/.config/fzf/shell/completion.zsh ]];then
+  source ~/.config/fzf/shell/completion.zsh
+fi
