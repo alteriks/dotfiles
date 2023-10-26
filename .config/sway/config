@@ -19,7 +19,7 @@ set $workspace4 4
 set $workspace5 5:5: jenkins
 set $workspace6 6
 set $workspace7 7
-set $workspace8 8
+set $workspace8 8:8: evolution
 set $workspace9 9
 set $workspace10 10
 set $workspace11 11
@@ -27,11 +27,11 @@ set $workspace12 12
 set $workspace13 13
 set $workspace14 14
 set $workspace15 15
-set $workspace16 16
-set $workspace17 17
-set $workspace18 18
-set $workspace19 19
-set $workspace20 20
+set $workspace16 16:16: proxmox
+set $workspace17 17:16: proxmox-web
+set $workspace18 18:18: k8s
+set $workspace19 19:19: k8s-web
+set $workspace20 20:20: openlens
 
 
 
