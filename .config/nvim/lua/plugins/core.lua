@@ -1,5 +1,32 @@
 -- https://github.com/LazyVim/LazyVim/issues/524
 return {
+
+  -- replace pair plugin
+  { "echasnovski/mini.pairs", enabled = false },
+  {
+    "windwp/nvim-autopairs",
+    enabled = true,
+    event = "InsertEnter",
+    disable_in_replace_mode = false,
+    opts = {
+      enable_check_bracket_line = true,
+      -- change default fast_wrap
+      fast_wrap = {
+        map = "<M-e>",
+        chars = { "{", "[", "(", '"', "'" },
+        pattern = [=[[%'%"%>%]%)%}%,]]=],
+        end_key = "$",
+        before_key = "h",
+        after_key = "l",
+        cursor_pos_before = true,
+        keys = "qwertyuiopzxcvbnmasdfghjkl",
+        manual_position = true,
+        highlight = "Search",
+        highlight_grey = "Comment",
+      },
+      -- map_c_w = true,
+    },
+  },
   {
     "mikesmithgh/kitty-scrollback.nvim",
     enabled = true,
@@ -26,18 +53,7 @@ return {
   },
 
   { "ggandor/flit.nvim", enabled = false },
-  -- {
-  --   "echasnovski/mini.jump",
-  --   version = false,
-  --   enabled = true,
-  --   mappings = {
-  --     forward = "f",
-  --     backward = "F",
-  --     forward_till = "t",
-  --     backward_till = "T",
-  --     repeat_jump = ";",
-  --   },
-  -- },
+  --
   -- TODO: folke/flash
   { "ggandor/leap.nvim", enabled = false },
   {

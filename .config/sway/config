@@ -18,7 +18,7 @@ set $workspace3 3
 set $workspace4 4
 set $workspace5 5:5: jenkins
 set $workspace6 6
-set $workspace7 7
+set $workspace7 7:7: firefox
 set $workspace8 8:8: evolution
 set $workspace9 9
 set $workspace10 10
@@ -28,10 +28,11 @@ set $workspace13 13
 set $workspace14 14
 set $workspace15 15
 set $workspace16 16:16: proxmox
-set $workspace17 17:16: proxmox-web
+set $workspace17 17:17: proxmox-web
 set $workspace18 18:18: k8s
 set $workspace19 19:19: k8s-web
 set $workspace20 20:20: openlens
+set $jellyfin    50:50: jellyfin
 
 
 
@@ -106,8 +107,9 @@ bindsym Mod1+F4 kill
 
 # start launcher
 # bindsym $mod+space       exec "fuzzel"
-bindsym $mod+space       exec albert toggle
-bindsym $meh+space       exec albert show 'system s'
+# bindsym $mod+space       exec albert toggle
+# bindsym $meh+space       exec albert show 'system s'
+bindsym $mod+space       exec fuzzel
 bindsym $meh+c          exec wl-paste | cb copy
 bindsym $meh+x          exec cb paste | wl-copy
 
@@ -215,7 +217,7 @@ exec multibg-sway ~/.config/swaybg
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/udiskie --no-notify --tray --no-automount --file-manager="kitty xplr"
-exec_always albert
+# exec_always albert
 #exec xfce4-power-manager
 #BUG: exec blueman-applet
 
