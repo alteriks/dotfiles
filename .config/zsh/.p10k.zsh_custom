@@ -35,6 +35,20 @@ case $HOSTNAME in
     typeset -g HOSTNAME_FG_COLOR='#804D07'
     ;;
 
+  pkpik)
+    typeset -g HOSTNAME_COLOR='#FFCE30'
+    typeset -g HOSTNAME_FG_COLOR=0
+    ;;
+
+  k8s-cp*)
+    typeset -g HOSTNAME_COLOR='#840B39'
+    typeset -g HOSTNAME_FG_COLOR='#EBB300'
+    ;;
+  k8s-worker*)
+    typeset -g HOSTNAME_COLOR='#B70034'
+    typeset -g HOSTNAME_FG_COLOR='#EBB300'
+    ;;
+
   *)
     typeset -g HOSTNAME_COLOR='#FA59FF'
     typeset -g HOSTNAME_FG_COLOR='#C81ACD'
