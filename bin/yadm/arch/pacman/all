@@ -127,7 +127,6 @@ fzf
 fwupd # firmware update
 git
 git-delta # git diff
-git-delta
 glow # markdown reader https://github.com/charmbracelet/glow used as cat replacement (~/.config/zsh/functions)
 ghostscript # ps2pdf useful for decrypting pdfs
 hdparm
@@ -139,6 +138,7 @@ inotify-tools
 iperf3
 iptables-nft
 jq
+lazygit
 lftp
 lsd # ls deluxe
 lsb-release
