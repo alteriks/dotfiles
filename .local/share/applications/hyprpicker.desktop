@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Hyprpicker
+GenericName=Color picker
+Exec=hyprpicker -a
+Icon=gpick
+Terminal=false
+X-MultipleArgs=false
+Type=Application

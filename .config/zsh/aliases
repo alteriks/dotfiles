@@ -19,6 +19,7 @@ alias lg="lazygit"
 alias mvi="mpv --config-dir=$HOME/.config/mvi/"
 alias nvidia-settings="nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings"
 alias open='xdg-open $1 2>/dev/null'
+alias ocr_copy='grim -g "$(slurp)" - | tesseract -l "eng+pol" stdin stdout | wl-copy'
 alias pushd=' pushd'
 alias pacman_show_modified="pacman -Qii | awk '/^MODIFIED/ {print $2}'"
 alias rg="rg --smart-case --no-ignore"
