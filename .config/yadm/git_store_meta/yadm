@@ -328,6 +328,7 @@ bin/merge_all_history.pl	f	0755
 bin/monitor_brightness.sh	f	0755
 bin/storage-benchmark.sh	f	0755
 bin/stressberry.sh	f	0755
+bin/sway-print-tree	f	0755
 bin/sway-prop	f	0755
 bin/systemcontroll	f	0755
 bin/terminal	d	0755

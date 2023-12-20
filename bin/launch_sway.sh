@@ -1,4 +1,7 @@
 #!/bin/bash
+# INFO: SDL_VIDEODRIVER=wayland brakes some steam games ie BG3
+# Use `env --unset=SDL_VIDEODRIVER %command%`
+# https://github.com/ValveSoftware/Proton/issues/4243#issuecomment-1753491255
 export SDL_VIDEODRIVER=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_QPA_PLATFORM=wayland
