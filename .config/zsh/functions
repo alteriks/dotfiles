@@ -53,11 +53,18 @@ dce() {
 }
 
 dcenv() {
+  if ! command -v docker-compose &> /dev/null; then
+    dockercompose_bin=docker-compose
+  else
+    dockercompose_bin="docker compose"
+  fi
+
+
   # Load env-file if it exists
   if [[ -f env_$HOSTNAME ]]; then
-    dc_cmd="docker-compose --env-file env_$HOSTNAME"
+    dc_cmd="$dockercompose_bin --env-file env_$HOSTNAME"
   else
-    dc_cmd="docker-compose"
+    dc_cmd="$dockercompose_bin"
   fi
 }
 
