@@ -33,7 +33,7 @@ return {
     lazy = true,
     cmd = { "KittyScrollbackGenerateKittens", "KittyScrollbackCheckHealth" },
     -- version = '*', -- latest stable version, may have breaking changes if major version changed
-    version = "^1.0.0", -- pin major version, include fixes and features that do not have breaking changes
+    version = "^4.0.0", -- pin major version, include fixes and features that do not have breaking changes
     opts = { number = true },
     config = function()
       require("kitty-scrollback").setup()

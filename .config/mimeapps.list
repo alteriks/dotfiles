@@ -40,7 +40,7 @@ x-scheme-handler/spice=org.remmina.Remmina.desktop;
 x-scheme-handler/tg=org.telegram.desktop.desktop;
 x-scheme-handler/unknown=vivaldi-stable.desktop;
 x-scheme-handler/vnc=org.remmina.Remmina.desktop;
-x-scheme-handler/webcal=vivaldi-stable.desktop;
+x-scheme-handler/webcal=vivaldi-stable.desktop
 [Added Associations]
 application/json=nvim.desktop;
 application/octet-stream=mousepad.desktop;
