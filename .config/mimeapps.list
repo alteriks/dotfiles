@@ -24,7 +24,7 @@ video/mp4=mpv.desktop;
 video/x-matroska=mpv.desktop;
 x-scheme-handler/about=vivaldi-stable.desktop;
 x-scheme-handler/chrome=firefox_nebula_zt.desktop;
-x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop;
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 x-scheme-handler/http=vivaldi-stable.desktop;
 x-scheme-handler/https=vivaldi-stable.desktop;
 x-scheme-handler/lens=OpenLens.desktop
@@ -40,7 +40,7 @@ x-scheme-handler/spice=org.remmina.Remmina.desktop;
 x-scheme-handler/tg=org.telegram.desktop.desktop;
 x-scheme-handler/unknown=vivaldi-stable.desktop;
 x-scheme-handler/vnc=org.remmina.Remmina.desktop;
-x-scheme-handler/webcal=vivaldi-stable.desktop;
+x-scheme-handler/webcal=vivaldi-stable.desktop
 [Added Associations]
 application/json=nvim.desktop;
 application/octet-stream=mousepad.desktop;
