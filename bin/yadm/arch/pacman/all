@@ -202,6 +202,7 @@ unzip
 usbutils
 usleep
 wget
+wireguard-tools
 wireshark-cli
 wireshark-qt
 wol
