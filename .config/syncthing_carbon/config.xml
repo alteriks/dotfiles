@@ -721,13 +721,7 @@
     </folder>
     <folder id="utqdy-eqca2" label="Projects_MC_Code" path="/home/alteriks/Projects/MC/Code" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
-        <device id="C2NBXQT-CDKPBBC-KIQVYCQ-BSH3Z4T-U4FAWDD-4STOX4E-XOREWEN-VBDQTQQ" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-            <encryptionPassword></encryptionPassword>
-        </device>
         <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-            <encryptionPassword></encryptionPassword>
-        </device>
-        <device id="4AWQXON-WUUID4Z-QCUNKK3-4WWGSVJ-7WG24YX-K2L2OUH-D24FECV-RWQQ6QO" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
             <encryptionPassword></encryptionPassword>
         </device>
         <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" introducedBy="">
@@ -913,16 +907,6 @@
             <maxTotalSize>0</maxTotalSize>
         </xattrFilter>
     </folder>
-    <device id="C2NBXQT-CDKPBBC-KIQVYCQ-BSH3Z4T-U4FAWDD-4STOX4E-XOREWEN-VBDQTQQ" name="acs-ubu02" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
-        <address>dynamic</address>
-        <paused>false</paused>
-        <autoAcceptFolders>false</autoAcceptFolders>
-        <maxSendKbps>0</maxSendKbps>
-        <maxRecvKbps>0</maxRecvKbps>
-        <maxRequestKiB>0</maxRequestKiB>
-        <untrusted>false</untrusted>
-        <remoteGUIPort>0</remoteGUIPort>
-    </device>
     <device id="OUR4OHQ-OKK6WNB-PZMONPH-NSF3X2K-JXY5RP2-SZVM34E-TM6IQCI-G4THXAG" name="nebula" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="U6VWYKM-C47XHFM-32CA3WW-ARWRVTD-CE7QCW5-5MCUI2B-K5LIBI7-GUN32QW">
         <address>dynamic</address>
         <paused>false</paused>
@@ -933,6 +917,7 @@
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
     </device>
     <device id="PT6OZB4-6BWXREQ-HD45HLR-6TAHDEN-GHEVWMW-GFTWL23-GL7U4WC-K7Y65QE" name="lordjim" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
@@ -943,6 +928,7 @@
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
     </device>
     <device id="T7NQM2L-CAXCR66-UK4Y5TZ-3YYJXX7-OGN3CBJ-3LULKHE-27JMZIW-D4DJBQE" name="rwin-rwamw034257" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
@@ -953,6 +939,7 @@
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
     </device>
     <device id="VDF7IV4-TJT3K7N-3YKESSH-PDINN5P-PAV5VUJ-X5UOWFF-RIRRJO3-E5LRFAV" name="moar" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
         <address>dynamic</address>
@@ -963,6 +950,7 @@
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
     </device>
     <device id="3OUPBDF-2MOOKZT-PVOCL5P-TGPXAPO-WEAVVXP-U5XA3HR-WEOO7Q6-TS7WJQK" name="Elcia" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
@@ -973,6 +961,7 @@
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
     </device>
     <device id="4AWQXON-WUUID4Z-QCUNKK3-4WWGSVJ-7WG24YX-K2L2OUH-D24FECV-RWQQ6QO" name="MPCA35F4F" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
@@ -983,6 +972,7 @@
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
     </device>
     <device id="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV" name="hal" compression="metadata" introducer="true" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
@@ -993,6 +983,7 @@
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
     </device>
     <device id="54WAPG6-ASSGLTV-RWQJ4K3-M462MFN-SZSWTS6-6UAJDFB-D2LB2LM-TPBGTQK" name="carbon" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
@@ -1003,6 +994,7 @@
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
     </device>
     <device id="667KAJN-RJICVL7-ABUNHBD-U5KFQ7F-XJ4TP3C-ZBTNIQE-RNPNK4K-R3XYTQD" name="carbon-win" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="47CD2I2-MKUBFDA-RFKPMQX-2HG6DXW-WHTZMLA-VUYKVDM-UZ754XD-KRUDVAV">
         <address>dynamic</address>
@@ -1013,8 +1005,9 @@
         <maxRequestKiB>0</maxRequestKiB>
         <untrusted>false</untrusted>
         <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
     </device>
-    <gui enabled="true" tls="false" debugging="false">
+    <gui enabled="true" tls="false" debugging="false" sendBasicAuthPrompt="false">
         <address>127.0.0.1:8384</address>
         <apikey>we9W9mzLAjaYCKRiTg3ryk7FZf73AbHq</apikey>
         <theme>carbon_green</theme>
@@ -1126,6 +1119,7 @@
             <maxRequestKiB>0</maxRequestKiB>
             <untrusted>false</untrusted>
             <remoteGUIPort>0</remoteGUIPort>
+            <numConnections>0</numConnections>
         </device>
         <ignores></ignores>
     </defaults>

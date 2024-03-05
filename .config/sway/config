@@ -177,6 +177,7 @@ bindsym --whole-window $mod+button2 floating toggle
 exec flameshot
 bindsym Print exec flameshot gui
 bindsym --no-repeat $mod+p exec flameshot gui
+bindsym --no-repeat $meh+p exec grim -g "$(slurp -o -c '#ff0000ff')" - | satty --copy-command wl-copy --early-exit --initial-tool rectangle --filename -
 bindsym $mod+F3 exec nemo
 # bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
@@ -211,7 +212,7 @@ bindsym $mod+n exec swaync-client -t
 # exec_always ~/.config/i3/bin/i3-switch-if-workspace-empty
 exec GTK_THEME=Adwaita:dark swaync -s ~/.config/swaync/style.css -c ~/.config/swaync/config.jsonc
 
-exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -s ~/.config/waybar/style.css
+exec waybar -c ~/.config/waybar/$HOSTNAME.jsonc -s ~/.config/waybar/style.css | tee tmp/waybar.log
 exec multibg-sway ~/.config/swaybg
 exec swaymsg 'workspace $workspace2; splith; exec $terminal'
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

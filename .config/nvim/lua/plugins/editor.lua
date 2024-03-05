@@ -1,4 +1,13 @@
 return {
+  -- override nvim-cmp and add cmp-emoji
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = { "hrsh7th/cmp-emoji" },
+    ---@param opts cmp.ConfigSchema
+    opts = function(_, opts)
+      table.insert(opts.sources, { name = "emoji" })
+    end,
+  },
   {
     "lewis6991/gitsigns.nvim",
     opts = {
@@ -23,28 +32,6 @@ return {
       add_default_mappings = true,
     },
   },
-  -- --   leap.add_default_mappings(true)
-  -- -- opts = {
-  --   vim.keymap.set({ "x", "o" }, x, "<Plug>(leap-forward-till)"),
-  -- },
-  -- },
-  -- {
-  --   "echasnovski/mini.comment",
-  --   event = "VeryLazy",
-  --   opts = {
-  --     options = {
-  --       custom_commentstring = function()
-  --         return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
-  --       end,
-  --     },
-  --   },
-  -- },
-
-  -- {
-  --   "phaazon/hop.nvim",
-  --   opts = {},
-  -- },
-
   {
     "chrisbra/Recover.vim",
     lazy = true,
@@ -68,34 +55,6 @@ return {
         },
         -- numbers = "both",
         diagnostics = "nvim_lsp", -- show  1  12 indicators in bufferline
-
-        -- groups = {
-        --   options = {
-        --     toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
-        --   },
-        --   items = {
-        --     {
-        --       name = "Tests", -- Mandatory
-        --       highlight = { underline = true, sp = "blue" }, -- Optional
-        --       priority = 2, -- determines where it will appear relative to other groups (Optional)
-        --       icon = "", -- Optional
-        --       matcher = function(buf) -- Mandatory
-        --         return buf.name:match("%_test") or buf.name:match("%_spec")
-        --       end,
-        --     },
-        --     {
-        --       name = "Docs",
-        --       highlight = { underline = true, sp = "green" },
-        --       auto_close = false, -- whether or not close this group if it doesn't contain the current buffer
-        --       matcher = function(buf)
-        --         return buf.name:match("%.md") or buf.name:match("%.txt")
-        --       end,
-        --       separator = { -- Optional
-        --         style = require("bufferline.groups").separator.tab,
-        --       },
-        --     },
-        --   },
-        -- },
       },
     },
   },

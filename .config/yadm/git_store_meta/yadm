@@ -167,7 +167,6 @@
 .config/nvim/lua/plugins/colorscheme.lua	f	0644
 .config/nvim/lua/plugins/core.lua	f	0644
 .config/nvim/lua/plugins/editor.lua	f	0644
-.config/nvim/lua/plugins/example.lua	f	0644
 .config/nvim/stylua.toml	f	0644
 .config/nvim_orig	d	0755
 .config/nvim_orig/autoload	d	0755
