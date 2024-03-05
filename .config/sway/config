@@ -106,8 +106,7 @@ bindsym $mod+F4 kill
 bindsym Mod1+F4 kill
 
 # start launcher
-# bindsym $mod+space       exec "fuzzel"
-bindsym $mod+space       exec albert toggle
+# bindsym $mod+space       exec albert toggle
 # bindsym $meh+space       exec albert show 'system s'
 # bindsym $mod+space       exec fuzzel
 bindsym $meh+c          exec wl-paste | cb copy
