@@ -1,2 +1,3 @@
 # vim ft=sh
 
+alias pacman_orphans="pacman -Qtdq | sudo pacman -Rnsc -"
