@@ -12,8 +12,7 @@ arpscan() {
 }
 
 cat () {
-  # Opens markdown files in `glow` https://github.com/charmbracelet/glow
-  # TODO: check https://github.com/swsnr/mdcat it supports rendering images
+  # Opens markdown files in `mdcat` https://github.com/swsnr/mdcat
   # Uses `bat` for other files
   # `cat` is used as fallback if either package is not installed
   setopt nocasematch
@@ -22,8 +21,8 @@ cat () {
   if [[ ! -f "$1" ]]; then
       /bin/cat $@
   elif [ ${CHECKFILETYPE##*.} =~ 'md' ];then
-    if command -v glow &> /dev/null ;then
-      glow $@
+    if command -v mdcat &> /dev/null ;then
+      mdcat $@
     else
       /bin/cat $@
     fi
