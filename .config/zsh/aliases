@@ -8,7 +8,6 @@ alias ltr='lsd -ltr'
 alias l='lsd -Al'
 
 alias ag='ag --hidden --ignore \.git'
-alias ansible-lint='ansible-lint -c ~/.config/ansible-lint/config'
 alias bc='bc -l'
 # alias cat="bat -pp"
 alias cls='clear && echo -en "[3J"'
@@ -36,8 +35,9 @@ alias x="xplr"
 
 # Ansible stuff
 alias ansible="ansible -i hosts/default"
-alias ansible-inventory="ansible-inventory -i hosts/default"
-alias ansible-playbook="ansible-playbook -i hosts/default"
+alias ansible-inventory="ansible-inventory -i hosts/"
+alias ansible-playbook="ansible-playbook -i hosts/"
+alias ansible-lint='ansible-lint -c ~/.config/ansible-lint/config'
 
 # Docker stuff
 alias alpine-devel="docker run -it --rm alpine:3.13 sh"
