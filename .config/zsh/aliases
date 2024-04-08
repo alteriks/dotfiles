@@ -34,7 +34,7 @@ alias windows="rdesktop -r disk:local=/home/alteriks -u alteriks -d NT_DOMAIN -k
 alias x="xplr"
 
 # Ansible stuff
-alias ansible="ansible -i hosts/default"
+alias ansible="ansible -i hosts/"
 alias ansible-inventory="ansible-inventory -i hosts/"
 alias ansible-playbook="ansible-playbook -i hosts/"
 alias ansible-lint='ansible-lint -c ~/.config/ansible-lint/config'
