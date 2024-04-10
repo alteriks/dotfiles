@@ -61,7 +61,7 @@ dcenv() {
 
   # Load env-file if it exists
   if [[ -f env_$HOSTNAME ]]; then
-    dc_cmd="$dockercompose_bin --env-file env_$HOSTNAME"
+    dc_cmd="$dockercompose_bin --env-file .env --env-file env_$HOSTNAME "
   else
     dc_cmd="$dockercompose_bin"
   fi
