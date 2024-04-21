@@ -1,5 +1,15 @@
 -- https://github.com/LazyVim/LazyVim/issues/524
 return {
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters = {
+        ansible_lint = {
+          args = { "-c", "~/.config/ansible-lint/config" },
+        },
+      },
+    },
+  },
 
   -- replace pair plugin
   { "echasnovski/mini.pairs", enabled = false },
@@ -43,14 +53,14 @@ return {
   { "mandos/nvim-helm" },
   -- https://www.reddit.com/r/neovim/comments/12ub997/how_to_prevent_yaml_ls_from_attaching_to_helm/
   { "tiagovla/scope.nvim", opts = {} },
-  {
-    "ojroques/nvim-osc52",
-    opts = {
-      max_length = 0, -- Maximum length of selection (0 for no limit)
-      silent = false, -- Disable message on successful copy
-      trim = false, -- Trim surrounding whitespaces before copy
-    },
-  },
+  -- {
+  --   "ojroques/nvim-osc52",
+  --   opts = {
+  --     max_length = 0, -- Maximum length of selection (0 for no limit)
+  --     silent = false, -- Disable message on successful copy
+  --     trim = false, -- Trim surrounding whitespaces before copy
+  --   },
+  -- },
 
   { "ggandor/flit.nvim", enabled = false },
   --

@@ -50,6 +50,6 @@ vim.keymap.set("n", "<c-z>", "", { desc = "Disable suspend with Ctrl+z" })
 --   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
 -- end, { remap = true })
 --
-vim.keymap.set("n", "<leader>c", require("osc52").copy_operator, { expr = true })
+-- vim.keymap.set("n", "<leader>c", require("osc52").copy_operator, { expr = true })
 vim.keymap.set("n", "<leader>cc", "<leader>c_", { remap = true })
-vim.keymap.set("v", "<leader>c", require("osc52").copy_visual)
+-- vim.keymap.set("v", "<leader>c", require("osc52").copy_visual)
