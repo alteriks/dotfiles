@@ -1,0 +1,20 @@
+# vim ft=sh
+alias fd="fdfind"
+alias tmux="tmux -f ~/.config/tmux/tmux.conf"
+alias vim="NVIM_APPNAME=nvim_mvim nvim"
+alias docker-compose="docker compose"
+
+# Ubuntu 22.04 has old fzf package, so we download from 23.10
+# Also minimized doesn't have everything so let's clone Instead
+# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.config/fzf
+if [[ -f ~/.config/fzf/shell/key-bindings.zsh ]];then
+  source ~/.config/fzf/shell/key-bindings.zsh
+fi
+if [[ -f ~/.config/fzf/shell/completion.zsh ]];then
+  source ~/.config/fzf/shell/completion.zsh
+fi
+#Instead of using TAB key with a trigger sequence (**<TAB>) complete with ^T
+# export FZF_COMPLETION_TRIGGER=''
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+bindkey '^T' fzf-completion
+bindkey '^I' fzf-tab-complete

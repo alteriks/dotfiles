@@ -247,6 +247,9 @@ case $OS_RELEASE_ID in
   arch)
     source ~/.config/zsh/archlinux
     ;;
+  debian)
+    source ~/.config/zsh/debian
+    ;;
   rocky)
     source ~/.config/zsh/rhel
     ;;
