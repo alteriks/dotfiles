@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # YADM_VERSION=$( yadm --version | sed 's/[^0-9.]//g' )
 # yadm 2.25 GIT_DIR=~/.config/yadm/repo.git
@@ -7,15 +7,15 @@
 
 # echo "!!! $YADM_HOOK_REPO !!! $YADM_HOOK_WORK !!!"
 if [ "$YADM_HOOK_REPO" == "$XDG_DATA_HOME/yadm/repo.git" ] && [ "$YADM_HOOK_WORK" == "$HOME" ]; then
-  YADM_REPO_NAME="yadm"
-  export GIT_STORE_META="$XDG_CONFIG_HOME/yadm/git_store_meta/$YADM_REPO_NAME"
+	YADM_REPO_NAME="yadm"
+	export GIT_STORE_META="$XDG_CONFIG_HOME/yadm/git_store_meta/$YADM_REPO_NAME"
 elif [ "$YADM_HOOK_REPO" == "$XDG_DATA_HOME/yadm/priv.git/repo.git" ] && [ "$YADM_HOOK_WORK" == "$HOME" ]; then
-  YADM_REPO_NAME="privyadm"
-  export GIT_STORE_META="$XDG_CONFIG_HOME/yadm/git_store_meta/$YADM_REPO_NAME"
+	YADM_REPO_NAME="privyadm"
+	export GIT_STORE_META="$XDG_CONFIG_HOME/yadm/git_store_meta/$YADM_REPO_NAME"
 elif [ "$YADM_HOOK_REPO" == "/etc/yadm/repo.git" ] && [ "$YADM_HOOK_WORK" == "/etc" ]; then
-  YADM_REPO_NAME="sysyadm"
-  export GIT_STORE_META="/etc/yadm/git_store_meta/$YADM_REPO_NAME"
+	YADM_REPO_NAME="sysyadm"
+	export GIT_STORE_META="/etc/yadm/git_store_meta/$YADM_REPO_NAME"
 else
-  echo '[!] "$YADM_HOOK_REPO" or "$YADM_HOOK_WORK" not defined.'
-  exit 1
+	echo '[!] "$YADM_HOOK_REPO" or "$YADM_HOOK_WORK" not defined.'
+	exit 1
 fi

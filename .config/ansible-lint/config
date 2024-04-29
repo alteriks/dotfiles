@@ -7,3 +7,4 @@ skip_list:
   - command-instead-of-shell  # Use shell only when shell functionality is required
   - meta-incorrect  # meta/main.yml default values should be changed
   - meta-no-info  # meta/main.yml should contain relevant info
+  - '503' # https://github.com/ansible/ansible-lint/issues/419

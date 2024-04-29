@@ -140,4 +140,6 @@ source ~/.config/zsh/zshrc_generic
 source ~/.config/zsh/zoxide.zsh
 
 # pacman -S direnv
-eval "$(direnv hook zsh)"
+if command -v direnv &> /dev/null ;then
+  eval "$(direnv hook zsh)"
+fi

@@ -270,6 +270,8 @@
 .config/zsh/aliases	f	0644
 .config/zsh/alpine	f	0644
 .config/zsh/archlinux	f	0644
+.config/zsh/debian	f	0644
+.config/zsh/debian_packages.sh	f	0755
 .config/zsh/functions	f	0644
 .config/zsh/p10k.zsh	l	0664
 .config/zsh/p10k.zsh_custom	l	0664
