@@ -178,6 +178,7 @@
 .config/nvim_nvchad/lua/configs	d	0755
 .config/nvim_nvchad/lua/configs/conform.lua	f	0644
 .config/nvim_nvchad/lua/configs/lazy.lua	f	0644
+.config/nvim_nvchad/lua/configs/lint.lua	f	0644
 .config/nvim_nvchad/lua/configs/lspconfig.lua	f	0644
 .config/nvim_nvchad/lua/mappings.lua	f	0644
 .config/nvim_nvchad/lua/options.lua	f	0644
