@@ -38,11 +38,27 @@ map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
+--gitsigns
+map("n", "]h", ":Gitsigns next_hunk<CR>", { desc = "Next Hunk" })
+map("n", "[h", ":Gitsigns prev_hunk<CR>", { desc = "Prev Hunk" })
+map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", { desc = "Stage Hunk" })
+map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", { desc = "Reset Hunk" })
+map("n", "<leader>ghS", ":Gitsigns stage_buffer<CR>", { desc = "Stage Buffer" })
+map("n", "<leader>ghu", ":Gitsigns undo_stage_hunk<CR>", { desc = "Undo Stage Hunk" })
+map("n", "<leader>ghR", ":Gitsigns reset_buffer<CR>", { desc = "Reset Buffer" })
+map("n", "<leader>ghp", ":Gitsigns preview_hunk_inline<CR>", { desc = "Preview Hunk Inline" })
+map("n", "<leader>ghb", ":Gitsigns blame_line<CR>", { desc = "Blame Line" })
+map("n", "<leader>ghd", ":Gitsigns diffthis<CR>", { desc = "Diff This" })
+map("n", "<leader>ghD", ":Gitsigns diffthis ~<CR>", { desc = "Diff This ~" })
+map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "GitSigns Select Hunk" })
+
 -- splits
 map("n", "<Leader>\\", ":vsplit<CR>", { desc = "Vertical split" })
 map("n", "<Leader>|", ":botright vsplit<CR>", { desc = "Bottom split" })
 map("n", "<Leader>-", ":split<CR>", { desc = "Horizontal split" })
 map("n", "<Leader>_", ":botright split<CR>", { desc = "Right split" })
+
+map("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
 -- selfexplanatory
 map("n", "<c-z>", "", { desc = "Disable suspend with Ctrl+z" })
@@ -55,7 +71,7 @@ local diagnostic_goto = function(next, severity)
   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
   severity = severity and vim.diagnostic.severity[severity] or nil
   return function()
-    go({ severity = severity })
+    go { severity = severity }
   end
 end
 map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
@@ -65,4 +81,3 @@ map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
 map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
-

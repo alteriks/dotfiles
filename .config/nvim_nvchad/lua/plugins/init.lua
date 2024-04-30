@@ -35,6 +35,22 @@ return {
       require "configs.lint"
     end,
   },
+  -- Ansible filedetect + run
+  {
+    "mfussenegger/nvim-ansible",
+    lazy = false, -- without it plugin isn't loaded in time
+    -- config = function()
+    --   require "configs.lint"
+    -- end,
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
 
   {
     "norcalli/nvim-colorizer.lua",
@@ -52,7 +68,6 @@ return {
     },
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
