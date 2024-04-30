@@ -1,4 +1,4 @@
-#--theme="Solarized (dark)"
-
+# Themes changed by darkman on carbon
+# See: ./darkman_theme ~/.local/share/dark-mode.d/ ~/.local/share/light-mode.d/
 # Use ".gitignore"-style highlighting for ".ignore" files
 --map-syntax ".ignore:Git Ignore"

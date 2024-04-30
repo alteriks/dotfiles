@@ -61,6 +61,7 @@ xdg-desktop-portal-wlr
 # alacritty
 arandr
 dunst
+darkman # changes themes light/dark based on sun
 engrampa
 flameshot
 gnome-calculator

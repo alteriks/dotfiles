@@ -28,7 +28,7 @@ cat () {
     fi
   elif [[ -f "$CHECKFILETYPE" ]];then
     if command -v bat &> /dev/null ;then
-      bat -pp $@
+      bat -pp --theme="$(/bin/cat ~/.config/bat/darkman_theme||/bin/cat ~/.config/bat/default_theme)" $@
     else
       /bin/cat $@
     fi
