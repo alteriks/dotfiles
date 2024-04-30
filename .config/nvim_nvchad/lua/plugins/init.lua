@@ -1,3 +1,5 @@
+--
+-- function needed by "f-person/auto-dark-mode.nvim",
 local function set_theme(name)
   local cur_theme = require("nvconfig").ui.theme
   require("nvchad.utils").replace_word(cur_theme, name)

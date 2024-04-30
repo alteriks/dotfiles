@@ -23,14 +23,14 @@
 local lint_progress = function()
   local linters = require("lint").get_running()
   if #linters == 0 then
-      return "󰦕"
+    return "󰦕"
   end
   return "󱉶 " .. table.concat(linters, ", ")
 end
 
 require("lint").linters_by_ft = {
-  ansible = {'ansible_lint'},
-  ["yaml.ansible"] = {'ansible_lint'},
+  ansible = { "ansible_lint" },
+  ["yaml.ansible"] = { "ansible_lint" },
   javascript = { "eslint_d" },
   javascriptreact = { "eslint_d" },
   -- markdown = {'vale',},
@@ -38,22 +38,25 @@ require("lint").linters_by_ft = {
   typescriptreact = { "eslint_d" },
 }
 
-require('lint').linters.ansible_lint = {
-  cmd = '/usr/bin/ansible-lint',
-  args = { '-p', '--nocolor', '-c', '/home/alteriks/.config/ansible-lint/config' },
+require("lint").linters.ansible_lint = {
+  cmd = "/usr/bin/ansible-lint",
+  args = { "-p", "--nocolor", "-c", "/home/alteriks/.config/ansible-lint/ansible-lint.yml" },
   ignore_exitcode = true,
-  parser = require('lint.parser').from_errorformat('%f:%l: %m', {
-    source = 'ansible-lint',
-    severity = vim.diagnostic.severity.INFO
-  })
+  parser = require("lint.parser").from_errorformat("%f:%l: %m", {
+    source = "ansible-lint",
+    severity = vim.diagnostic.severity.INFO,
+  }),
 }
 
 vim.keymap.set("n", "<leader>Ll", function()
-    require("lint").try_lint()
-  end, { desc = "Trigger linting for current file" })
+  require("lint").try_lint()
+end, { desc = "Trigger linting for current file" })
 
-vim.api.nvim_create_autocmd({ "BufReadPost", "FileReadPost", "BufWinEnter", "BufWritePost","TextChanged","TextChangedI" }, {
-  callback = function()
-    require("lint").try_lint()
-  end,
-})
+vim.api.nvim_create_autocmd(
+  { "BufReadPost", "FileReadPost", "BufWinEnter", "BufWritePost", "TextChanged", "TextChangedI" },
+  {
+    callback = function()
+      require("lint").try_lint()
+    end,
+  }
+)
