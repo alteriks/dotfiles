@@ -16,6 +16,10 @@ return {
   },
 
   {
+    "tpope/vim-repeat",
+    event = "VeryLazy",
+  },
+  {
     "f-person/auto-dark-mode.nvim",
     event = "VeryLazy",
     config = {
