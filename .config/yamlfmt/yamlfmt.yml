@@ -1,0 +1,8 @@
+---
+# Used as conform.nvim YAML formatter
+# https://github.com/google/yamlfmt/blob/main/docs/config-file.md#configuration-1
+# Can also be used as pre-commit https://github.com/google/yamlfmt/blob/main/docs/pre-commit.md#pre-commit
+formatter:
+  type: basic
+  include_document_start: true
+  retain_line_breaks_single: true

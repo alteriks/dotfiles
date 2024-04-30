@@ -257,6 +257,8 @@
 .config/yadm/hooks/common	f	0755
 .config/yadm/hooks/post_pull	f	0755
 .config/yadm/hooks/pre_commit	f	0755
+.config/yamlfmt	d	0755
+.config/yamlfmt/yamlfmt.yml	f	0644
 .config/yamllint	d	0755
 .config/yamllint/config	f	0644
 .config/yay	d	0755

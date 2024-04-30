@@ -20,12 +20,16 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "ansible-language-server",
-        "ansiblels",
+        "ansible-language-server", -- Old name, new brand https://github.com/ansible/vscode-ansible
         "ansible-lint",
+        "ansiblels",
+        "lua-language-server",
         "prettier",
+        "markdown-toc", -- Markdown Table of Contents #TODO: 
+        "markdown-oxide", --  
+        "shfmt", -- Shell formatter - /home/alteriks/.local/share/nvim_nvchad/mason/bin/shfmt -h
+        "stylua",
+        "yamlfmt",
       },
     },
   },
