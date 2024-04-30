@@ -15,10 +15,15 @@ return {
     end,
   },
 
+  -- Used by plugins with '.' repeat
+  -- ie lewis6991/gitsigns.nvim - ghs (Git Hunk Stage) can be repeated with '.'
   {
     "tpope/vim-repeat",
     event = "VeryLazy",
   },
+
+  -- Watches darkman (dbus org.freedesktop.impl.portal.desktop.darkman)
+  -- for theme changes
   {
     "f-person/auto-dark-mode.nvim",
     event = "VeryLazy",
@@ -41,6 +46,7 @@ return {
       require "configs.lint"
     end,
   },
+
   -- Ansible filedetect + run
   {
     "mfussenegger/nvim-ansible",
@@ -49,6 +55,7 @@ return {
     --   require "configs.lint"
     -- end,
   },
+
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
@@ -58,11 +65,15 @@ return {
     },
   },
 
+  -- Hex color codes in html/css etc
   {
     "norcalli/nvim-colorizer.lua",
     event = "VeryLazy",
   },
 
+  -- Highlight:
+  -- 'TODO:'
+  -- etc
   {
     "folke/todo-comments.nvim",
     event = "VeryLazy",
