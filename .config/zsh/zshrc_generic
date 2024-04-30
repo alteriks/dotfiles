@@ -104,7 +104,9 @@ alias ssh='TERM=xterm-256color \ssh'
 if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
   source ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh;
   export KEYTIMEOUT=15
-  export MODE_CURSOR_VIINS="#ffffff blinking bar"
+  # export MODE_CURSOR_VIINS="#ffffff blinking bar"
+  unset MODE_CURSOR_DEFAULT # default value brakes kitty+darkman theme
+  unset MODE_CURSOR_VIINS # default value brakes kitty+darkman theme
   export MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
   export MODE_CURSOR_VICMD="#bf00ff block"
   export MODE_CURSOR_SEARCH="#ff00ff steady underline"
