@@ -7,6 +7,26 @@ return {
     end,
   },
 
+  {
+    "mfussenegger/nvim-lint",
+    events = { 'BufWritePre', "BufWritePost", "BufReadPost", "InsertLeave" },
+    event = "VeryLazy",
+    config = function()
+      require "configs.lint"
+    end,
+  },
+
+  {
+  "folke/todo-comments.nvim",
+  event = "VeryLazy",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+    }
+  },
+
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",

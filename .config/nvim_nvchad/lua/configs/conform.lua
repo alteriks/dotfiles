@@ -1,3 +1,5 @@
+-- https://github.com/stevearc/conform.nvim
+-- Format file - ie cut trailing spaces, empty lines, conform to common readability
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
