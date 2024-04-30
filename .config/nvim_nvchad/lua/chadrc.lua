@@ -6,7 +6,15 @@ local M = {}
 
 M.ui = {
 	theme = "onedark",
+  theme_toggle = { "onedark", "one_light" },
+  -- transparency = true,
 
+  telescope = { style = "bordered" }, -- borderless / bordered
+
+  statusline = {
+    theme = "default",
+    separator_style= "round",
+  },
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
