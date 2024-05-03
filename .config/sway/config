@@ -96,7 +96,9 @@ force_display_urgency_hint 3000 ms
 
 # start a terminal
 set $terminal HOSTNAME=$HOSTNAME kitty --single-instance --instance-group kitty
-bindsym $mod+Return exec HOSTNAME=$HOSTNAME /usr/bin/kitty --single-instance --instance-group kitty
+# single instance dies when screen is disconnected on carbon
+# bindsym $mod+Return exec HOSTNAME=$HOSTNAME /usr/bin/kitty --single-instance --instance-group kitty
+bindsym $mod+Return exec HOSTNAME=$HOSTNAME /usr/bin/kitty
 bindsym $mod+Shift+Return exec $terminal --class kitty-floating
 
 # kill focused window

@@ -2,7 +2,15 @@ return {
   defaults = { lazy = true },
   install = { colorscheme = { "nvchad" } },
 
+  change_detection = {
+    notify = false,
+  },
+
+  lockfile = vim.fn.stdpath "config" .. "/lazy-lock_" .. vim.fn.hostname() .. ".json",
+
   ui = {
+    border = "rounded",
+    backdrop = 100,
     icons = {
       ft = "",
       lazy = "󰂠 ",

@@ -3,15 +3,18 @@ vim.g.mapleader = " "
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-
 if not vim.loop.fs_stat(lazypath) then
   local repo = "https://github.com/folke/lazy.nvim.git"
   vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
-
 vim.opt.rtp:prepend(lazypath)
 
-local lazy_config = require "configs.lazy"
+local override_lazysettings = {
+  change_detection = {
+    notify = false,
+  },
+}
+local lazy_config = vim.tbl_deep_extend("force", require "configs.lazy", override_lazysettings)
 
 -- load plugins
 require("lazy").setup({
@@ -29,7 +32,7 @@ require("lazy").setup({
 }, lazy_config)
 
 -- load theme
-dofile(vim.g.base46_cache .. "defaults")
+-- dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require "nvchad.autocmds"
