@@ -37,7 +37,7 @@ alias x="xplr"
 alias ansible="ansible -i hosts/"
 alias ansible-inventory="ansible-inventory -i hosts/"
 alias ansible-playbook="ansible-playbook -i hosts/"
-alias ansible-lint='ansible-lint -c ~/.config/ansible-lint/config'
+alias ansible-lint='ansible-lint -c ~/.config/ansible-lint/ansible-lint.yml'
 
 # Docker stuff
 alias alpine-devel="docker run -it --rm alpine:3.13 sh"

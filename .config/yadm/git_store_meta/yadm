@@ -16,7 +16,7 @@
 .config/alacritty	d	0755
 .config/alacritty/alacritty.yml	f	0644
 .config/ansible-lint	d	0755
-.config/ansible-lint/config	f	0644
+.config/ansible-lint/ansible-lint.yml	f	0644
 .config/autorandr	d	0755
 .config/autorandr/3_external_monitors	d	0755
 .config/autorandr/3_external_monitors/config	f	0644
@@ -298,6 +298,7 @@
 .local/share/dark-mode.d	d	0755
 .local/share/dark-mode.d/bat.sh	f	0755
 .local/share/dark-mode.d/kitty.sh	f	0755
+.local/share/dark-mode.d/lsd.sh	f	0755
 .local/share/fonts	d	0755
 .local/share/fonts/DejaVu Sans Mono Bold Oblique for Powerline.ttf	f	0644
 .local/share/fonts/DejaVu Sans Mono Bold for Powerline.ttf	f	0644
@@ -336,6 +337,7 @@
 .local/share/light-mode.d	d	0755
 .local/share/light-mode.d/bat.sh	f	0755
 .local/share/light-mode.d/kitty.sh	f	0755
+.local/share/light-mode.d/lsd.sh	f	0755
 .profile	f	0644
 .zshenv	f	0644
 bin	d	0755

@@ -1,3 +1,4 @@
+---
 date: relative
 blocks:
   - permission
@@ -7,10 +8,21 @@ blocks:
   - size
   - date
   - name
-    # == Icons ==
+  # == Icons ==
 icons:
   when: auto
   theme: unicode
   separator: " "
 sorting:
   dir-grouping: first
+
+color:
+  # When to colorize the output.
+  # When "classic" is set, this is set to "never".
+  # Possible values: never, auto, always
+  when: auto
+  # How to colorize the output.
+  # When "classic" is set, this is set to "no-color".
+  # Possible values: default, custom
+  # When "custom" is set, lsd will look in the config directory for `colors.yaml`.
+  theme: custom
