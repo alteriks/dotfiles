@@ -10,10 +10,11 @@ export XDG_CURRENT_DESKTOP=sway
 # export XDG_CURRENT_DESKTOP=sway:GNOME
 export XDG_SESSION_DESKTOP=sway
 
-[[ -d "/tmp/run/$USER" ]] && rm -rf "/tmp/run/$USER"
-mkdir -p "/tmp/run/$USER"
-chmod 0700 "/tmp/run/$USER"
-XDG_RUNTIME_DIR="/tmp/run/$USER"
+#FIXME: WTF?!
+# [[ -d "/tmp/run/$USER" ]] && rm -rf "/tmp/run/$USER"
+# mkdir -p "/tmp/run/$USER"
+# chmod 0700 "/tmp/run/$USER"
+# XDG_RUNTIME_DIR="/tmp/run/$USER"
 
 TMPDIR=$(mktemp -d)
 LOG="$TMPDIR/sway.log"
