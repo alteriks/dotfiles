@@ -5,15 +5,27 @@
 local M = {}
 
 M.ui = {
-  theme = "onedark",
-  theme_toggle = { "onedark", "onedark" },
+  theme = 'onedark',
+  theme_toggle = { 'ayu_light', 'onedark' },
   -- transparency = true,
 
-  telescope = { style = "bordered" },
+  telescope = { style = 'bordered' },
 
   statusline = {
-    theme = "default",
-    separator_style = "round",
+    order = {
+      'mode',
+      'file',
+      'git',
+      -- '%=',
+      -- 'lsp_msg',
+      '%=',
+      'diagnostics',
+      'lsp',
+      'cwd',
+      'cursor',
+    },
+    theme = 'default',
+    separator_style = 'default',
   },
   -- hl_override = {
   -- 	Comment = { italic = true },

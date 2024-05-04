@@ -38,7 +38,7 @@ map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result
 map("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 -- new file
-map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" }) -- TODO: change mapping
+map("n", "<leader>nf", "<cmd>enew<cr>", { desc = "New [F]ile" }) -- TODO: change mapping
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
@@ -61,7 +61,7 @@ map("n", "<leader>ghD", ":Gitsigns diffthis ~<CR>", { desc = "Diff This ~" })
 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "GitSigns Select Hunk" })
 
 -- splits
-map("n", "<Leader>\\", ":vsplit<CR>", { desc = "which_key_ignore"}) -- Vertical split
+map("n", "<Leader>\\", ":vsplit<CR>", { desc = "which_key_ignore" }) -- Vertical split
 map("n", "<Leader>|", ":botright vsplit<CR>", { desc = "which_key_ignore" }) -- Bottom split
 map("n", "<Leader>-", ":split<CR>", { desc = "which_key_ignore" }) --Horizontal split
 map("n", "<Leader>_", ":botright split<CR>", { desc = "which_key_ignore" }) --Right split
