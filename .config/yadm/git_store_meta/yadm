@@ -107,7 +107,8 @@
 .config/irb	d	0755
 .config/irb/irbrc	f	0644
 .config/kitty	d	0755
-.config/kitty/kitty.conf	f	0644
+.config/kitty/.gitignore	f	0644
+.config/kitty/kitty_main.conf	f	0644
 .config/kitty/moar.conf	f	0644
 .config/kitty/solarized_dark.conf	f	0644
 .config/kitty/tokyonight_day.conf	f	0644

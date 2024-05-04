@@ -18,7 +18,9 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_BIN_HOME=$HOME/.local/bin
 export XDG_LIB_HOME=$HOME/.local/lib
 export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_DIRS=$XDG_DATA_DIRS:$XDG_DATA_HOME
+# This doesn't work. When set in profile it doesn't get appended later with OS values.
+# Setting it wrong brakes many apps ie albert/waybar
+# export XDG_DATA_DIRS=$XDG_DATA_DIRS:$XDG_DATA_HOME
 
 # ZSH according to XDG
 export ZDOTDIR=$HOME/.config/zsh
@@ -74,10 +76,13 @@ export EDITOR="nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 #export PAGER="less -r" # ovveriden by zim to "less", so it is set later in ~/.config/zsh/zshrc_generic
 export BAT_PAGER="less -R"
+# Darkman brakes setting themes with MANPAGER when using bat
 # export MANPAGER="sh -c 'col -bx | bat -l man -p --paging=always'"
-export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=\"$(/bin/cat ~/.config/bat/darkman_theme || /bin/cat ~/.config/bat/default_theme)\"'"
+# MANPAGER="sh -c 'col -bx | bat -l man -p --theme=\"$(/bin/cat ~/.config/bat/darkman_theme || /bin/cat ~/.config/bat/default_theme)\"'"
+# export MANPAGER
 
-export HOSTNAME="$(hostname)"
+HOSTNAME="$(hostname)"
+export HOSTNAME
 if [[ "$USER" == "alteriks" ]]; then
 	if [[ "$HOSTNAME" == "moar" || "$HOSTNAME" == "carbon" ]]; then
 		# Wayland fixes
