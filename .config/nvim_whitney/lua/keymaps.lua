@@ -43,9 +43,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 local map = vim.keymap.set
 
--- save file when in INSERT/VISUAL/NORMAL/SELECT
-map({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
-
 -- Move Lines with Alt in NORMAL/INSERT/VISUAL
 map('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'Move Down' })
 map('n', '<A-k>', '<cmd>m .-2<cr>==', { desc = 'Move Up' })
@@ -84,15 +81,15 @@ map('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 -- new file
 map('n', '<leader>nf', '<cmd>enew<cr>', { desc = 'New [F]ile' })
 
--- save file
-map({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
-
 --keywordprg
 map('n', '<leader>K', '<cmd>norm! K<cr>', { desc = 'Keywordprg' })
 
 -- better indenting
 map('v', '<', '<gv')
 map('v', '>', '>gv')
+
+-- save file when in INSERT/VISUAL/NORMAL/SELECT
+map({ 'i', 'n', 'x', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
 -- quit
 map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })

@@ -176,6 +176,33 @@ return {
     -- ft = "yaml.ansible",
   },
 
+  {
+    'vhyrro/luarocks.nvim',
+    priority = 1001, -- this plugin needs to run before anything else
+    opts = {
+      rocks = { 'magick' },
+    },
+  },
+  {
+    '3rd/image.nvim',
+    dependencies = { 'luarocks.nvim' },
+    -- config = function()
+    --   -- ...
+    -- end,
+    opts = {
+      backend = 'kitty',
+      integrations = {
+        markdown = {
+          enabled = true,
+          clear_in_insert_mode = false,
+          download_remote_images = true,
+          only_render_image_at_cursor = false,
+          filetypes = { 'markdown', 'vimwiki' }, -- markdown extensions (ie. quarto) can go here
+        },
+      },
+    },
+  },
+
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
