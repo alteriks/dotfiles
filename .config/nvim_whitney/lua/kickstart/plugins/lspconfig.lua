@@ -1,8 +1,10 @@
 -- vim: ts=2 sts=2 sw=2 et
-dofile(vim.g.base46_cache .. 'lsp')
+-- dofile(vim.g.base46_cache .. 'lsp')
 return {
   { -- LSP Configuration & Plugins
-    event = 'VeryLazy',
+    -- FIXME: when nvim-lspconfig is set to VeryLazy servers aren't installed automatically
+    -- event = 'VeryLazy',
+    event = 'LazyFile',
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim

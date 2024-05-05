@@ -1,7 +1,8 @@
+require("kickstart.util").lazy_file()
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    event = 'VeryLazy',
+    event = 'LazyFile', 'VeryLazy',
     build = ':TSUpdate',
     opts = {
       ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },

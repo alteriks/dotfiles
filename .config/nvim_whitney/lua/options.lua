@@ -71,6 +71,9 @@ vim.opt.cursorlineopt = 'both'
 -- TODO: verify o.commentstring
 vim.opt.commentstring = '# %s' -- default if filetype is not set and Comment.nvim cannot use computed LSP ts_context_commentstring
 
+-- disable nvim intro
+vim.opt.shortmess:append 'sI'
+
 -- spell checking on specific filetypes
 vim.opt.spelllang = { 'pl', 'en' }
 vim.api.nvim_create_autocmd('FileType', {

@@ -171,7 +171,8 @@ return {
   },
   { -- Ansible filedetect + run
     'mfussenegger/nvim-ansible',
-    lazy = false, -- without it plugin isn't loaded in time
+    event = 'LazyFile',
+    -- lazy = false, -- without it plugin isn't loaded in time
     -- ft = "yaml.ansible",
   },
 
