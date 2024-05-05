@@ -182,6 +182,7 @@
 .config/nvim_whitney/doc/kickstart.txt	f	0644
 .config/nvim_whitney/init.lua	f	0644
 .config/nvim_whitney/lazy-lock_carbon.json	f	0644
+.config/nvim_whitney/lazy-lock_moar.json	f	0644
 .config/nvim_whitney/lua	d	0755
 .config/nvim_whitney/lua/chadrc.lua	f	0644
 .config/nvim_whitney/lua/custom	d	0755
@@ -208,6 +209,7 @@
 .config/nvim_whitney/lua/kickstart/plugins/tokyonight.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/treesitter.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/which-key.lua	f	0644
+.config/nvim_whitney/lua/kickstart/util.lua	f	0644
 .config/nvim_whitney/lua/lazy-bootstrap.lua	f	0644
 .config/nvim_whitney/lua/lazy-plugins.lua	f	0644
 .config/nvim_whitney/lua/options.lua	f	0644
