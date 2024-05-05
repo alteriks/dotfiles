@@ -21,6 +21,7 @@ return {
       { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
+      dofile(vim.g.base46_cache .. 'lsp')
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.

@@ -114,7 +114,7 @@ map('n', '<leader>fo', '<cmd>Telescope oldfiles<CR>', { desc = 'Recent files - [
 map('n', '<leader>th', '<cmd>Telescope themes<CR>', { desc = 'nvchad [th]emes' })
 map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'git [c]ommits' })
 map('n', '<leader>gs', '<cmd>Telescope git_status<CR>', { desc = 'git [s]tatus' })
-map('n', '<leader>fz', require('telescope').extensions.zoxide.list, { desc = '[z]oxide jump' })
+-- map('n', '<leader>fz', require('telescope').extensions.zoxide.list, { desc = '[z]oxide jump' })
 
 -- nvimtree
 -- TODO:disable <leader>e, it's easier to change window using <C-j>
