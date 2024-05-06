@@ -70,6 +70,7 @@ alias privyadm_store_meta="GIT_DIR=$XDG_DATA_HOME/yadm/repo.git GIT_WORK_TREE=~/
 alias sysyadm_store_meta="GIT_DIR=/etc/yadm/repo.git GIT_WORK_TREE=/etc ~/bin/git-store-meta.pl -t ~/.github/git_store_meta"
 alias privyadm="yadm --yadm-data $XDG_DATA_HOME/yadm/priv.git"
 alias sysyadm="sudo yadm --yadm-data /etc/yadm"
+alias lgy="lazygit -ucd ~/.local/share/yadm/lazygit -w ~ -g ~/.local/share/yadm/repo.git"
 
 # zfs/httm
 alias httm_preview="httm --preview -s $@"
