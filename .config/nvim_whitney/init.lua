@@ -9,10 +9,8 @@ vim.g.maplocalleader = ' '
 require 'options'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
+-- [[ Also configure and install plugins ]]
 require 'lazy-bootstrap'
-
--- [[ Configure and install plugins ]]
--- require 'lazy-plugins' -- INFO: already imported in bootstrap - `import = 'lazy-plugins',`
 
 -- [[ Basic Keymaps ]]
 -- Many plugins have their own way of configuring key mappings
