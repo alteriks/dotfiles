@@ -1,0 +1,9 @@
+/*/
+!/.config/
+!/.local/
+!/bin/
+!.profile
+!.zshenv
+!.gitmodules
+!.github
+
