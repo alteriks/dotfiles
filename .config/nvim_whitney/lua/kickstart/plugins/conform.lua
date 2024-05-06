@@ -40,6 +40,12 @@ return {
         -- is found.
         -- javascript = { { "prettierd", "prettier" } },
       },
+      -- formatters = {
+      --   markdownlint = {
+      --     cmd = 'markdownlint',
+      --     prepend_args = { '-c', '~/.config/markdownlint/markdownlint.yaml ' },
+      --   },
+      -- },
     },
   },
 }

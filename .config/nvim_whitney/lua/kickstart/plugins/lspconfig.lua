@@ -169,6 +169,8 @@ return {
       local servers = {
         bashls = {},
         cssls = {},
+        docker_compose_language_service = {},
+        dockerls = {}, -- Dockerfile
         html = {},
         markdownlint = {},
         markdown_oxide = {},

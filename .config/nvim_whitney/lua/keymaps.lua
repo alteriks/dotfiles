@@ -1,9 +1,6 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
--- Clear highlight on pressing <Esc> in normal mode
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -11,21 +8,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-
--- TIP: Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -42,6 +24,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 local map = vim.keymap.set
+-- Clear highlight on pressing <Esc> in normal mode
+map('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- TIP: Disable arrow keys in normal mode
+map('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+map('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+map('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+map('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Move Lines with Alt in NORMAL/INSERT/VISUAL
 map('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'Move Down' })
@@ -76,7 +73,7 @@ map('x', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev Search Result
 map('o', 'N', "'nN'[v:searchforward]", { expr = true, desc = 'Prev Search Result' })
 
 -- lazy
-map('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
+map('n', '<leader>L', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 
 -- new file
 map('n', '<leader>nf', '<cmd>enew<cr>', { desc = 'New [F]ile' })
@@ -114,9 +111,10 @@ map('n', '<leader>gs', '<cmd>Telescope git_status<CR>', { desc = 'git [s]tatus' 
 -- map('n', '<leader>fz', require('telescope').extensions.zoxide.list, { desc = '[z]oxide jump' })
 
 -- nvimtree
--- TODO:disable <leader>e, it's easier to change window using <C-j>
-map('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Nvimtree Toggle window' })
-map('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
+-- INFO: using neotree
+--
+-- map('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Nvimtree Toggle window' })
+-- map('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
 
 -- selfexplanatory
 map('n', '<c-z>', '', { desc = 'Disable suspend with Ctrl+z' })
@@ -125,36 +123,29 @@ map('n', '<Leader>o', 'o<ESC>', { desc = 'Insert newline above and return to NOR
 map('n', '<Leader>O', 'O<ESC>', { desc = 'Insert newline below and return to NORMAL' })
 map('i', '<C-BS>', '<Esc>cvb', { desc = 'Delete entire word' })
 
--- global lsp mappings
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
--- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' }) -- FIXME: conflict with quit
--- map('n', '<leader>lf', vim.diagnostic.open_float, { desc = 'lsp floating diagnostics' }) -- FIXME: conflict with :lazy
+-- global lsp mappings
+local diagnostic_goto = function(next, severity)
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go { severity = severity }
+  end
+end
+map('n', '<leader>ld', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
+map('n', ']e', diagnostic_goto(true, 'ERROR'), { desc = 'Next Error' })
+map('n', '[e', diagnostic_goto(false, 'ERROR'), { desc = 'Prev Error' })
+map('n', ']w', diagnostic_goto(true, 'WARN'), { desc = 'Next Warning' })
+map('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
+map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous [D]iagnostic message' })
+map('n', ']d', vim.diagnostic.goto_next, { desc = 'Next [D]iagnostic message' })
+map('n', '<leader>le', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+map('n', '<leader>lq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+map('n', '<leader>lf', vim.diagnostic.open_float, { desc = 'lsp floating diagnostics' })
+-- map('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' }) -- FIXME: vs folke/trouble
+-- map('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
 
 -- Copy
 map('n', '<C-S-c>', '<cmd>%y+<CR>', { desc = 'file copy whole' })
-
--- global lsp mappings
--- TODO: defined in lspconfig.lua, verify that it's working
--- vim.keymap.del("n", "<leader>lf")
--- vim.keymap.del("n", "<leader>q")
--- map("n", "<leader>lf", vim.diagnostic.open_float, { desc = "lsp floating diagnostics" })
--- map("n", "<leader>lq", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
--- local diagnostic_goto = function(next, severity)
---   local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
---   severity = severity and vim.diagnostic.severity[severity] or nil
---   return function()
---     go { severity = severity }
---   end
--- end
--- map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
--- map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" }) -- INFO: learn
--- map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" }) -- INFO: learn
--- map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
--- map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
--- map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
--- map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 -- vim: ts=2 sts=2 sw=2 et

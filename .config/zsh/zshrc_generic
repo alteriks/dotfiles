@@ -68,21 +68,6 @@ bindkey "^[[4~" end-of-line
 bindkey "^[OD" backward-word
 bindkey "^[OC" forward-word
 
-# unbind C-j (default: accept-line)
-bindkey -r "^J"
-bindkey -rM vicmd "^J"
-bindkey -rM viins "^J"
-# neovim keybinding C-j for down/C-k for up
-bindkey -M viins "^J" history-substring-search-down
-bindkey -M viins "^K" history-substring-search-up
-bindkey -M vicmd "^J" history-substring-search-down
-bindkey -M vicmd "^K" history-substring-search-up
-
-# disable run-help ctrl+home
-# bindkey -M emacs|rg run-help
-bindkey -r "^[H"
-bindkey -r "^[h"
-
 #Most servers don't know about terminal specifics (terminfo) TERM=xterm-kitty or TERM=tmux-256color
 #It' easier to change it for ssh than copy all terminfo (tic)
 #https://github.com/alacritty/alacritty/issues/1208#issuecomment-376697989
@@ -132,6 +117,21 @@ elif [[ -e ~/.config/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]]; then
   export ZVM_VI_SURROUND_BINDKEY=$ZVM_READKEY_ENGINE_ZLE
   export ZVM_VI_SURROUND_BINDKEY=s-prefix
 fi
+
+# disable run-help ctrl+home
+# bindkey -M emacs|rg run-help
+bindkey -r "^[H"
+bindkey -r "^[h"
+
+# unbind C-j (default: accept-line)
+bindkey -r "^J"
+bindkey -rM vicmd "^J"
+bindkey -rM viins "^J"
+# neovim keybinding C-j for down/C-k for up
+bindkey -M viins "^J" history-substring-search-down
+bindkey -M viins "^K" history-substring-search-up
+bindkey -M vicmd "^J" history-substring-search-down
+bindkey -M vicmd "^K" history-substring-search-up
 
 #
 # History

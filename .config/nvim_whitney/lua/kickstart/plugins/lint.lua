@@ -9,12 +9,15 @@ return {
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         -- ansible = { 'ansible_lint' }, -- linter launched by ansiblels
-        ['yaml.ansible'] = { 'ansible_lint' },
+        -- ['yaml.ansible'] = { 'ansible_lint' },
         javascript = { 'eslint_d' },
         javascriptreact = { 'eslint_d' },
         typescript = { 'eslint_d' },
         typescriptreact = { 'eslint_d' },
       }
+      local markdownlint = lint.linters.markdownlint
+      -- markdownlint.args = { '-c', '~/.config/markdownlint/markdownlint.yaml' } -- BUG: doesn't work
+      markdownlint.args = { '--disable', 'MD024', '--' }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:

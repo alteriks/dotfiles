@@ -2,6 +2,17 @@
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
+if not vim.env.SSH_TTY then
+  -- only set clipboard if not in ssh, to make sure the OSC 52
+  -- integration works automatically. Requires Neovim >= 0.10.0
+  vim.opt.clipboard = 'unnamedplus' -- Sync with system clipboard
+  -- Sync clipboard between OS and Neovim.
+  --  Remove this option if you want your OS clipboard to remain independent.
+  --  See `:help 'clipboard'`
+  -- vim.opt.clipboard = 'unnamedplus'
+end
+
+vim.opt.laststatus = 3 -- global statusline
 
 -- Make line numbers default
 vim.opt.number = true
@@ -12,13 +23,11 @@ vim.opt.number = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
+-- Allow virtual editing in Visual block mode - the end is not the end!
+vim.opt.virtualedit = 'block'
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
-
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -55,7 +64,7 @@ vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', leadmultispace = '  │ ', multispace = '│ ' }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+-- vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -63,12 +72,13 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.opt.grepprg = 'rg --vimgrep'
+
 -- Set highlight on search
 vim.opt.hlsearch = true
 -- to enable cursorline!
 vim.opt.cursorlineopt = 'both'
 
--- TODO: verify o.commentstring
 vim.opt.commentstring = '# %s' -- default if filetype is not set and Comment.nvim cannot use computed LSP ts_context_commentstring
 
 -- disable nvim intro

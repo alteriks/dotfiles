@@ -1,5 +1,3 @@
--- Set <space> as the leader key
--- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -14,9 +12,10 @@ require 'options'
 require 'lazy-bootstrap'
 
 -- [[ Configure and install plugins ]]
-require 'lazy-plugins'
+-- require 'lazy-plugins' -- INFO: already imported in bootstrap - `import = 'lazy-plugins',`
 
 -- [[ Basic Keymaps ]]
+-- Many plugins have their own way of configuring key mappings
 require 'keymaps'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
