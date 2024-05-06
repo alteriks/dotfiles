@@ -1,11 +1,36 @@
-require("kickstart.util").lazy_file()
+require('kickstart.util').lazy_file()
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    event = 'LazyFile', 'VeryLazy',
+    -- event = 'LazyFile', 'VeryLazy',
+    event = 'VeryLazy',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'dockerfile',
+        'git_config',
+        'gitcommit', --TODO:verify
+        'gitignore',
+        'html',
+        'jq', -- TODO: verify
+        'json',
+        'jsonc',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'perl',
+        'php',
+        'puppet', -- TODO:verify
+        'terraform',
+        'toml',
+        'yaml', --meh
+
+        'vim',
+        'vimdoc',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {

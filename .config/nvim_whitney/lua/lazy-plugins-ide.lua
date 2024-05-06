@@ -4,6 +4,7 @@ if vim.fn.hostname() == 'carbon' or vim.fn.hostname() == 'moar' then
     require 'kickstart/plugins/conform',
     require 'kickstart/plugins/lint',
     require 'kickstart/plugins/lspconfig',
+    require 'kickstart/plugins/flash',
 
     {
       'vhyrro/luarocks.nvim',
