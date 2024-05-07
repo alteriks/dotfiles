@@ -69,6 +69,8 @@
 .config/broot/launcher/installed-v1	f	0644
 .config/btop	d	0755
 .config/btop/btop.conf	f	0644
+.config/darkman	d	0755
+.config/darkman/config.yaml	f	0644
 .config/dircolors	f	0644
 .config/electron-flags.conf	f	0644
 .config/git	d	0755
