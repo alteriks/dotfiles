@@ -198,6 +198,7 @@
 .config/nvim_whitney/lua/kickstart/plugins/cmp.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/conform.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/debug.lua	f	0644
+.config/nvim_whitney/lua/kickstart/plugins/flash.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/gitsigns.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/harpoon.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/indent_line.lua	f	0644
@@ -317,6 +318,7 @@
 .config/zsh/zshrc_generic	f	0755
 .github	d	0755
 .github/README.md	f	0644
+.gitignore	f	0644
 .gitmodules	f	0600
 .local	d	0755
 .local/share	d	0755

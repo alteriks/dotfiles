@@ -15,6 +15,7 @@ return {
         ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
+        ['<leader>q'] = { name = '[Q]uit', _ = 'which_key_ignore' },
         ['<leader>gh'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
       }
       -- visual mode
