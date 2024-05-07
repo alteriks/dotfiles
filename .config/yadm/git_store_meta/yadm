@@ -113,6 +113,9 @@
 .config/kitty/kitty_main.conf	f	0644
 .config/kitty/moar.conf	f	0644
 .config/kitty/solarized_dark.conf	f	0644
+.config/kitty/themes	d	0755
+.config/kitty/themes/Alteriks_light.conf	f	0644
+.config/kitty/themes/alteriks.conf	f	0644
 .config/kitty/tokyonight_day.conf	f	0644
 .config/kitty/tokyonight_storm.conf	f	0644
 .config/libvirt	d	0700
