@@ -154,17 +154,6 @@
 .config/nitrogen/nitrogen.cfg	f	0644
 .config/npm	d	0755
 .config/npm/npmrc	f	0644
-.config/nvim	d	0755
-.config/nvim/.luarc.json	f	0644
-.config/nvim/init_bare.lua	f	0644
-.config/nvim/lazy-lock.json	f	0644
-.config/nvim/lazyvim.json	f	0644
-.config/nvim/lua	d	0755
-.config/nvim/lua/config	d	0755
-.config/nvim/lua/config/mason.lua	f	0644
-.config/nvim/lua/plugins	d	0755
-.config/nvim/lua/plugins/mason.lua	f	0644
-.config/nvim/nvim_whitney	l	0664
 .config/nvim_orig	d	0755
 .config/nvim_orig/autoload	d	0755
 .config/nvim_orig/autoload/plug.vim	f	0644
