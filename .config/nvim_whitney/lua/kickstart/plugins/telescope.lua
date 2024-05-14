@@ -63,7 +63,7 @@ return {
           mappings = {
             --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
             i = {
-              ['<ESC>'] = require('telescope.actions').close, -- Exit telescope with single ESC
+              -- ['<ESC>'] = require('telescope.actions').close, -- Exit telescope with single ESC
               ['<C-j>'] = require('telescope.actions').move_selection_next,
               ['<C-k>'] = require('telescope.actions').move_selection_previous,
             },
@@ -83,9 +83,10 @@ return {
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
+      vim.keymap.set('n', '<leader>fh', builtin.command_history, { desc = '[F]ind [h]istory' })
       vim.keymap.set('n', '<leader>fH', builtin.help_tags, { desc = '[F]ind [H]elp' })
-      vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+      vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [k]eymaps' })
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [f]iles' })
       vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
       vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = '[F]ind current [W]ord' })
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[F]ind by [G]rep' })

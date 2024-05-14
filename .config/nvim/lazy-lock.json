@@ -1,0 +1,5 @@
+{
+  "image.nvim": { "branch": "master", "commit": "604692f493519128c58893c28273d4247bc71a4d" },
+  "lazy.nvim": { "branch": "main", "commit": "bef521ac89c8d423f9d092e37b58e8af0c099309" },
+  "nvim-treesitter": { "branch": "master", "commit": "208d504421e4ac53f4230a34cd4b831e8e76cb69" }
+}

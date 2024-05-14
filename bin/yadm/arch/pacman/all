@@ -49,6 +49,8 @@ realtime-privileges # needed by pipewire
 polkit-gnome
 qt6-wayland
 slurp # select a region in a Wayland compositor
+sway
+swaybg
 swaync
 wayvnc
 wl-mirror
@@ -63,6 +65,7 @@ arandr
 dunst
 darkman # changes themes light/dark based on sun
 engrampa
+emacs-wayland
 flameshot
 gnome-calculator
 gparted
@@ -153,6 +156,7 @@ mdcat # markdown reader  used as cat replacement (~/.config/zsh/functions)
 minicom
 mosh
 mtr
+neovide
 neovim
 net-tools
 nfs-utils
@@ -235,6 +239,7 @@ zerotier-one
 # REMOTE
 barrier
 freerdp
+sunshine # + moonlight on iOS
 libvncserver
 rdesktop
 remmina

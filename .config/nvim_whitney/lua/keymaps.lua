@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 local map = vim.keymap.set
+local unmap = vim.keymap.del
 -- Clear highlight on pressing <Esc> in normal mode
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -147,5 +148,38 @@ map('n', '<leader>lf', vim.diagnostic.open_float, { desc = 'lsp floating diagnos
 
 -- Copy
 map('n', '<C-S-c>', '<cmd>%y+<CR>', { desc = 'file copy whole' })
+
+-- cmdline-window
+-- https://www.reddit.com/r/neovim/comments/lizyxj/how_to_get_rid_of_q/
+-- https://www.reddit.com/r/neovim/comments/15bvtr4/comment/jtszt8u/
+map('n', 'q:', '<nop>') -- this only disables 'q:' if both keys are pressed without delay
+map('n', 'q?', '<nop>')
+map('n', 'q/', '<nop>')
+
+local function escape(keys)
+  return vim.api.nvim_replace_termcodes(keys, true, false, true)
+end
+
+-- Use <C-h>, to emulate <C-f> (which is used by kitty)
+vim.keymap.set('c', '<C-h>', function()
+  vim.g.requested_cmdwin = true
+  vim.api.nvim_feedkeys(escape '<C-f>', 'n', false)
+end)
+
+-- Disable 'q' ... long delay ... ':'
+-- screen will flash, because command-line-window is opened but it's closed instantenously
+vim.api.nvim_create_autocmd('CmdWinEnter', {
+  group = vim.api.nvim_create_augroup('CWE', { clear = true }),
+  pattern = '*',
+  callback = function()
+    if vim.g.requested_cmdwin then
+      vim.g.requested_cmdwin = nil
+    else
+      vim.api.nvim_feedkeys(escape ':q<CR>:', 'm', false)
+    end
+  end,
+})
+-- cmdline-window
+--
 
 -- vim: ts=2 sts=2 sw=2 et

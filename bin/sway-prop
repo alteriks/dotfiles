@@ -41,18 +41,18 @@ TMP=/tmp/sway-prop-$$.tmp.json
 
 swaymsg -t get_tree | jq '.. | select(.type?) | select(.focused==true)' >"$TMP"
 
-if [[ "$1" || -t 1 ]]; then
-	cat "$TMP"
+# if [[ "$1" || -t 1 ]]; then
+# 	cat "$TMP"
+# else
+# I prefer to popup a terminal eg:
+if type kitty &>/dev/null; then
+	kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class kitty_sway-prop bat --paging=always --style=plain $TMP
 else
-	# I prefer to popup a terminal eg:
-	if type kitty &>/dev/null; then
-		kitty --single-instance --instance-group no_confirm_on_close -o confirm_os_window_close=0 --class kitty_sway-prop bat --paging=always --style=plain $TMP
-	else
-		# ... but sway doesn't have anything like i3-sensible-terminal.
-		# swaynag is always installed with sway, so:
-		swaynag -l -m "sway-prop" <"$TMP"
-	fi
+	# ... but sway doesn't have anything like i3-sensible-terminal.
+	# swaynag is always installed with sway, so:
+	swaynag -l -m "sway-prop" <"$TMP"
 fi
+# fi
 
 trap 'rm $TMP' EXIT
 

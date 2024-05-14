@@ -7,6 +7,13 @@ return {
       char = {
         jump_labels = true,
       },
+      search = { -- Disable search, because it sucks. /
+        -- enabled = false,
+        enabled = true,
+        search = {
+          incremental = true,
+        },
+      },
     },
   },
   -- stylua: ignore

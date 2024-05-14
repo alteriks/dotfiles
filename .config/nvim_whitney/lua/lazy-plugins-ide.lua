@@ -1,38 +1,51 @@
-if vim.fn.hostname() == 'carbon' or vim.fn.hostname() == 'moar' then
-  -- print 'loading ide'
-  return {
-    require 'kickstart/plugins/conform',
-    require 'kickstart/plugins/lint',
-    require 'kickstart/plugins/lspconfig',
-    require 'kickstart/plugins/flash',
+-- local ide = {}
+-- local image = {}
 
-    {
-      'vhyrro/luarocks.nvim',
-      priority = 1001, -- this plugin needs to run before anything else
-      opts = {
-        rocks = { 'magick' },
-      },
+local ide = {
+  require 'kickstart/plugins/conform',
+  require 'kickstart/plugins/lint',
+  require 'kickstart/plugins/lspconfig',
+  require 'kickstart/plugins/flash',
+}
+local image = {
+  {
+    'vhyrro/luarocks.nvim',
+    priority = 1001, -- this plugin needs to run before anything else
+    opts = {
+      rocks = { 'magick' },
     },
-    {
-      '3rd/image.nvim',
-      dependencies = { 'luarocks.nvim' },
-      -- config = function()
-      --   -- ...
-      -- end,
-      opts = {
-        backend = 'kitty',
-        integrations = {
-          markdown = {
-            enabled = true,
-            clear_in_insert_mode = false,
-            download_remote_images = true,
-            only_render_image_at_cursor = false,
-            filetypes = { 'markdown', 'vimwiki' }, -- markdown extensions (ie. quarto) can go here
-          },
+  },
+  {
+    '3rd/image.nvim',
+    dependencies = { 'luarocks.nvim' },
+    -- config = function()
+    --   -- ...
+    -- end,
+    opts = {
+      backend = 'kitty',
+      integrations = {
+        markdown = {
+          enabled = true,
+          clear_in_insert_mode = false,
+          download_remote_images = true,
+          only_render_image_at_cursor = false,
+          filetypes = { 'markdown', 'vimwiki' }, -- markdown extensions (ie. quarto) can go here
         },
       },
     },
-  }
+  },
+}
+
+-- append ide to image
+vim.list_extend(image, ide)
+
+if vim.fn.hostname() == 'carbon' or vim.fn.hostname() == 'moar' then
+  if vim.g.neovide then
+    -- print 'loading ide'
+    return ide
+  else
+    return image
+  end
 else
   -- print 'NOT loading ide'
   return {}
