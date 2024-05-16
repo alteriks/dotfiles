@@ -12,7 +12,6 @@ return {
         zoxide = {
           prompt_title = '[ Zoxide Jump ]',
           mappings = {
-            -- INFO: Great success!
             ['<C-l>'] = {
               keepinsert = true,
               action = function(selection)

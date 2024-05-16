@@ -8,7 +8,6 @@ local function set_theme(name)
   require('base46').load_all_highlights()
 end
 
--- NOTE: Here is where you install your plugins.
 return {
 
   {
@@ -18,38 +17,24 @@ return {
 
   -- TODO: is it fast/slow? change leadmultispace/multispace
   -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', leadmultispace = '│   ', multispace = '│ ' }
-  -- {
-  --   'lukas-reineke/indent-blankline.nvim',
-  --   event = 'User FilePost',
-  --   opts = {
-  --     indent = { char = '│', highlight = 'IblChar' },
-  --     scope = { char = '│', highlight = 'IblScopeChar' },
-  --   },
-  --   config = function(_, opts)
-  --     dofile(vim.g.base46_cache .. 'blankline')
-  --
-  --     local hooks = require 'ibl.hooks'
-  --     hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
-  --     require('ibl').setup(opts)
-  --
-  --     dofile(vim.g.base46_cache .. 'blankline')
-  --   end,
-  -- },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    event = 'User FilePost',
+    opts = {
+      indent = { char = '│', highlight = 'IblChar' },
+      scope = { char = '│', highlight = 'IblScopeChar' },
+    },
+    config = function(_, opts)
+      dofile(vim.g.base46_cache .. 'blankline')
 
-  -- -- file managing , picker etc
-  -- {
-  --   'nvim-tree/nvim-tree.lua',
-  --   event = 'VeryLazy',
-  --   cmd = { 'NvimTreeToggle', 'NvimTreeFocus' },
-  --   opts = function()
-  --     return require 'nvchad.configs.nvimtree'
-  --   end,
-  --   config = function(_, opts)
-  --     dofile(vim.g.base46_cache .. 'nvimtree')
-  --     require('nvim-tree').setup(opts)
-  --   end,
-  -- },
-  --
+      local hooks = require 'ibl.hooks'
+      hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+      require('ibl').setup(opts)
+
+      dofile(vim.g.base46_cache .. 'blankline')
+    end,
+  },
+
   {
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
     event = 'VeryLazy',
@@ -69,6 +54,75 @@ return {
   {
     'tpope/vim-repeat',
     event = 'VeryLazy',
+  },
+
+  {
+    'folke/noice.nvim',
+    event = 'VeryLazy',
+    opts = {
+      -- add any options here
+      views = {
+        cmdline_popup = {
+          position = {
+            row = 3,
+            col = '70%',
+          },
+        },
+        popupmenu = {
+          relative = 'editor',
+          position = {
+            row = 6,
+            col = '70%',
+          },
+          size = {
+            width = 60,
+          },
+          border = {
+            style = 'rounded',
+            padding = { 0, 1 },
+          },
+          win_options = {
+            winhighlight = { Normal = 'Normal', FloatBorder = 'NoiceCmdlinePopupBorder' },
+          },
+        },
+      },
+      presets = {
+        bottom_search = true,
+      },
+      cmdline = {
+        enabled = true,
+      },
+      -- notify = {
+      --   enabled = false,
+      -- },
+      -- messages = {
+      --   enabled = false,
+      -- },
+      -- popupmenu = {
+      --   enabled = true,
+      -- },
+      lsp = {
+        progress = {
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
+        },
+        hover = {
+          enabled = false,
+        },
+        messages = {
+          enabled = false,
+        },
+      },
+      health = {
+        checker = true, -- Disable if you don't want health checks to run
+      },
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      'MunifTanjim/nui.nvim',
+    },
   },
 
   -- Watches darkman (dbus org.freedesktop.impl.portal.desktop.darkman)

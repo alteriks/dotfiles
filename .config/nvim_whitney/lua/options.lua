@@ -60,7 +60,8 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', leadmultispace = '  │ ', multispace = '│ ' }
+-- INFO: indent-blankline testing
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', leadmultispace = '  │ ', multispace = '│ ' }
 
 -- Preview substitutions live, as you type!
 -- vim.opt.inccommand = 'split'
@@ -105,4 +106,6 @@ vim.g['loaded_python3_provider'] = 0
 vim.g['loaded_perl_provider'] = 0
 vim.g['loaded_ruby_provider'] = 0
 
+--INFO:save bottomline if folke/noice will pass exam
+vim.opt.cmdheight = 0
 -- vim: ts=2 sts=2 sw=2 et

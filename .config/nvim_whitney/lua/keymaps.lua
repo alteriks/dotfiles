@@ -111,12 +111,6 @@ map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'git [c]ommits
 map('n', '<leader>gs', '<cmd>Telescope git_status<CR>', { desc = 'git [s]tatus' })
 -- map('n', '<leader>fz', require('telescope').extensions.zoxide.list, { desc = '[z]oxide jump' })
 
--- nvimtree
--- INFO: using neotree
---
--- map('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Nvimtree Toggle window' })
--- map('n', '<leader>e', '<cmd>NvimTreeFocus<CR>', { desc = 'Nvimtree Focus window' })
-
 -- selfexplanatory
 map('n', '<c-z>', '', { desc = 'Disable suspend with Ctrl+z' })
 map('n', ';', ':', { desc = 'CMD enter command mode' })
