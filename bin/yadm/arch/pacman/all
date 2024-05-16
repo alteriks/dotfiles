@@ -169,6 +169,7 @@ p7zip
 packer
 pacman-contrib
 perl-anyevent-i3 # i3-layout-manager dependency
+pre-commit # python tool that triggers before commits and executes shellcheck /linters
 proxychains-ng
 python-neovim
 pv

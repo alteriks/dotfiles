@@ -16,8 +16,8 @@ return {
         typescriptreact = { 'eslint_d' },
       }
       local markdownlint = lint.linters.markdownlint
-      -- markdownlint.args = { '-c', '~/.config/markdownlint/markdownlint.yaml' } -- BUG: doesn't work
-      markdownlint.args = { '--disable', 'MD024', '--' }
+      markdownlint.args = { '-c', '~/.config/markdownlint/markdownlint.yaml' }
+      -- markdownlint.args = { '--disable', 'MD024', '--' }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
