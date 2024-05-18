@@ -90,7 +90,9 @@ map('v', '>', '>gv')
 map({ 'i', 'n', 'x', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 
 -- quit
-map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+map('n', '<leader>qq', '<cmd>q<cr>', { desc = 'Quit' })
+map('n', '<leader>qa', '<cmd>qa<cr>', { desc = 'Quit All' })
+map('n', '<leader>qx', '<cmd>xa<cr>', { desc = 'Quit All (save)' })
 
 -- undo tree
 map('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Undo Tree' })

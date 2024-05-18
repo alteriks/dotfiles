@@ -41,7 +41,8 @@ return {
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', event = 'VeryLazy', opts = {} },
+  -- version 0.10 includes commenting
+  -- { 'numToStr/Comment.nvim', event = 'VeryLazy', opts = {} },
 
   {
     'lambdalisue/suda.vim',
@@ -174,6 +175,7 @@ return {
   require 'kickstart/plugins/telescope-zoxide',
   require 'kickstart/plugins/todo-comments',
   require 'kickstart/plugins/treesitter',
+  require 'kickstart/plugins/toggleterm',
   require 'kickstart/plugins/which-key',
 
   -- require 'kickstart/plugins/tokyonight',

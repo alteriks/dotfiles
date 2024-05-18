@@ -194,6 +194,7 @@
 .config/nvim_whitney/lua/kickstart/plugins/telescope-zoxide.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/telescope.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/todo-comments.lua	f	0644
+.config/nvim_whitney/lua/kickstart/plugins/toggleterm.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/tokyonight.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/treesitter.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/which-key.lua	f	0644
