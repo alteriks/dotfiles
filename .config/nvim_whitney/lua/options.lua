@@ -106,6 +106,7 @@ vim.g['loaded_python3_provider'] = 0
 vim.g['loaded_perl_provider'] = 0
 vim.g['loaded_ruby_provider'] = 0
 
---INFO:save bottomline if folke/noice will pass exam
-vim.opt.cmdheight = 0
+-- INFO:bottomline is still needed! folke/noice most of the time notifications disappear to fast.
+-- But sometimes they linger for too long if there are to many of them.
+vim.opt.cmdheight = 1
 -- vim: ts=2 sts=2 sw=2 et

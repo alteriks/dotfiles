@@ -50,7 +50,7 @@ return {
   keys = {
     { '<leader>tt', toggle_term_pinned, desc = '[t]erminal in horizontal split' },
     { '<leader>gG', toggle_term_lazygit, desc = 'Git UI via lazygit+toggleterm' },
-    { '<c-g>', toggle_term_lazygit, desc = 'Git UI via lazygit', mode = { 'n', 't' } },
+    -- { '<c-g>', toggle_term_lazygit, desc = 'Git UI via lazygit', mode = { 'n', 't' } },
   },
   config = function()
     require('toggleterm').setup {}

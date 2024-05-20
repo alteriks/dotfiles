@@ -7,34 +7,36 @@ local ide = {
   require 'kickstart/plugins/lspconfig',
   require 'kickstart/plugins/flash',
 }
-local image = {
-  {
-    'vhyrro/luarocks.nvim',
-    priority = 1001, -- this plugin needs to run before anything else
-    opts = {
-      rocks = { 'magick' },
-    },
-  },
-  {
-    '3rd/image.nvim',
-    dependencies = { 'luarocks.nvim' },
-    -- config = function()
-    --   -- ...
-    -- end,
-    opts = {
-      backend = 'kitty',
-      integrations = {
-        markdown = {
-          enabled = true,
-          clear_in_insert_mode = false,
-          download_remote_images = true,
-          only_render_image_at_cursor = false,
-          filetypes = { 'markdown', 'vimwiki' }, -- markdown extensions (ie. quarto) can go here
-        },
-      },
-    },
-  },
-}
+local image = {}
+-- TODO: 3rd/image.nvim not good enough
+-- local image = {
+--   {
+--     'vhyrro/luarocks.nvim',
+--     priority = 1001, -- this plugin needs to run before anything else
+--     opts = {
+--       rocks = { 'magick' },
+--     },
+--   },
+--   {
+--     '3rd/image.nvim',
+--     dependencies = { 'luarocks.nvim' },
+--     -- config = function()
+--     --   -- ...
+--     -- end,
+--     opts = {
+--       backend = 'kitty',
+--       integrations = {
+--         markdown = {
+--           enabled = true,
+--           clear_in_insert_mode = false,
+--           download_remote_images = true,
+--           only_render_image_at_cursor = false,
+--           filetypes = { 'markdown', 'vimwiki' }, -- markdown extensions (ie. quarto) can go here
+--         },
+--       },
+--     },
+--   },
+-- }
 
 -- append ide to image
 vim.list_extend(image, ide)

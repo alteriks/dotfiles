@@ -90,18 +90,18 @@ return {
       presets = {
         bottom_search = true,
       },
-      cmdline = {
-        enabled = true,
-      },
-      -- notify = {
-      --   enabled = false,
-      -- },
-      -- messages = {
-      --   enabled = false,
-      -- },
-      -- popupmenu = {
+      -- cmdline = {
       --   enabled = true,
       -- },
+      notify = {
+        enabled = false,
+      },
+      messages = {
+        enabled = false,
+      },
+      popupmenu = {
+        enabled = true,
+      },
       lsp = {
         progress = {
           enabled = false,

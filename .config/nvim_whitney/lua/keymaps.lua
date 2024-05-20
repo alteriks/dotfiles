@@ -79,6 +79,9 @@ map('n', '<leader>L', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 -- new file
 map('n', '<leader>nf', '<cmd>enew<cr>', { desc = 'New [F]ile' })
 
+-- noice / notification
+map('n', '<leader>nh', '<cmd>NoiceHistory<cr>', { desc = 'Noice [h]istory' })
+map('n', '<leader>nl', '<cmd>NoiceLog<cr>', { desc = 'Noice [l]og' })
 --keywordprg
 map('n', '<leader>K', '<cmd>norm! K<cr>', { desc = 'Keywordprg' })
 
@@ -108,6 +111,7 @@ map('n', '<leader>gg', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
 -- telescope dependent plugins
 map('n', '<leader>ft', '<cmd>TodoTelescope<CR>', { desc = '[t]odo' })
 map('n', '<leader>fo', '<cmd>Telescope oldfiles<CR>', { desc = 'Recent files - [o]ldfiles' })
+map('n', '<leader>f.', '<cmd>cd %:h<CR>', { desc = 'Change Working Directory' })
 map('n', '<leader>th', '<cmd>Telescope themes<CR>', { desc = 'nvchad [th]emes' })
 map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'git [c]ommits' })
 map('n', '<leader>gs', '<cmd>Telescope git_status<CR>', { desc = 'git [s]tatus' })

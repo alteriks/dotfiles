@@ -17,16 +17,6 @@ return {
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
         ['<leader>q'] = { name = '[Q]uit', _ = 'which_key_ignore' },
         ['<leader>gh'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-        G = {
-          function()
-            if vim.loop.cwd() == vim.call('expand', '~/.config') then
-              dotfileslazygit:toggle()
-            else
-              lazygit:toggle()
-            end
-          end,
-          'lazygit',
-        },
       }
       -- }, { prefix = 'g' })
       -- visual mode
