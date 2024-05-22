@@ -31,7 +31,7 @@ return {
         markdown = { 'markdownlint' },
         sh = { 'shfmt' },
         css = { 'prettier' },
-        yaml = { 'yamlfmt' },
+        yaml = { 'yamlfmt' }, -- ~/.config/yamlfmt/yamlfmt.yml
         html = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
