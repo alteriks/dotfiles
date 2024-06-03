@@ -171,6 +171,7 @@ return {
   require 'kickstart/plugins/autopairs',
   require 'kickstart/plugins/cmp',
   require 'kickstart/plugins/gitsigns',
+  require 'kickstart/plugins/flash',
   require 'kickstart/plugins/telescope',
   require 'kickstart/plugins/telescope-zoxide',
   require 'kickstart/plugins/todo-comments',
