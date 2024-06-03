@@ -27,12 +27,13 @@ return {
         }
       end,
       formatters_by_ft = {
+        css = { 'prettier' },
+        go = { 'goimports', 'gofumpt' },
+        html = { 'prettier' },
         lua = { 'stylua' },
         markdown = { 'markdownlint' },
         sh = { 'shfmt' },
-        css = { 'prettier' },
         yaml = { 'yamlfmt' }, -- ~/.config/yamlfmt/yamlfmt.yml
-        html = { 'prettier' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
