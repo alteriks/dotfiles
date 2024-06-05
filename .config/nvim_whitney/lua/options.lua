@@ -66,6 +66,10 @@ vim.opt.list = true
 -- Preview substitutions live, as you type!
 -- vim.opt.inccommand = 'split'
 
+--Tab length
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 

@@ -14,7 +14,8 @@ function M.lazy_file()
     Event.mappings['User LazyFile'] = Event.mappings.LazyFile
   else
     -- Don't delay execution of LazyFile events, but let lazy know about the mapping
-    Event.mappings.LazyFile = { id = 'LazyFile', event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' } }
+    Event.mappings.LazyFile = { id = 'LazyFile', event = {  'BufNewFile' } }
+    -- Event.mappings.LazyFile = { id = 'LazyFile', event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' } }
     Event.mappings['User LazyFile'] = Event.mappings.LazyFile
     return
   end

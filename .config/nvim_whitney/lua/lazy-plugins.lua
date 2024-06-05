@@ -170,7 +170,7 @@ return {
   },
   { -- Ansible filedetect + run
     'mfussenegger/nvim-ansible',
-    event = 'LazyFile',
+    event = 'VeryLazy',
   },
   {
     'otavioschwanck/arrow.nvim',

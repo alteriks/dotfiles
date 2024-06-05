@@ -3,8 +3,9 @@
 return {
   { -- LSP Configuration & Plugins
     -- FIXME: when nvim-lspconfig is set to VeryLazy servers aren't installed automatically
+    lazy = false,
     -- event = 'VeryLazy',
-    event = 'LazyFile',
+    -- event = 'LazyFile',
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
