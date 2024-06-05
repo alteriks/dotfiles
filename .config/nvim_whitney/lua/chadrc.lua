@@ -8,8 +8,8 @@ M.stbufnr = function()
 end
 
 M.ui = {
-  -- theme = 'one_light', -- brakes highlight ie BUG gets dark red
-  -- theme_toggle = { 'ayu_light', 'one_light' },
+  -- theme = 'onedark', -- brakes highlight ie BUG gets dark red
+  -- theme_toggle = { 'ayu_light', 'onedark' },
   -- transparency = true,
 
   telescope = { style = 'bordered' },

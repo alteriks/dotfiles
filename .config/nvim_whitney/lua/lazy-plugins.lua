@@ -10,6 +10,25 @@ end
 
 return {
 
+  { 'echasnovski/mini.surround',
+    version = false,
+    recommended = true,
+    event = 'VeryLazy',
+    opts = {
+        highlight_duration = 500,
+    },
+  },
+  -- { 'echasnovski/mini.pairs', version = false },
+  -- {
+  --   "kylechui/nvim-surround",
+  --   version = "*", -- Use for stability; omit to use `main` branch for the latest features
+  --   event = "VeryLazy",
+  --   config = function()
+  --       require("nvim-surround").setup({
+  --           -- Configuration here, or leave empty to use defaults
+  --       })
+  --   end
+  -- },
   {
     'mbbill/undotree',
     event = 'VeryLazy',
