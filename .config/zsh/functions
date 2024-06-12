@@ -353,7 +353,7 @@ zl () {
 history_all () {
   print -z -- \
   $(~/bin/merge_all_history.pl |\
-  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} ${FZF_DEFAULT_OPTS-} --scheme=history" fzf --tac --print-query |\
+  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} ${FZF_DEFAULT_OPTS-} --scheme=history" fzf --tac |\
   perl -p -e 's/\w+: //')
   } 
 
