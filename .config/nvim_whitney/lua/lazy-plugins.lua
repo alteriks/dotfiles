@@ -10,14 +10,63 @@ end
 
 return {
 
-  { 'echasnovski/mini.surround',
-    version = false,
-    recommended = true,
-    event = 'VeryLazy',
-    opts = {
-        highlight_duration = 500,
+  {
+    'Pocco81/true-zen.nvim',
+    config = function()
+      require('true-zen').setup {
+        -- your config goes here
+        -- or just leave it empty :)
+      }
+    end,
+    keys = {
+      {
+        '<leader>zn',
+        '<cmd>TZNarrow<cr>',
+        mode = 'n',
+        desc = 'Narrow focused',
+        noremap = true,
+      },
+      {
+        '<leader>zn',
+        "<cmd>'<,'>TZNarrow<cr>",
+        mode = 'v',
+        desc = 'Ranged narrow focused',
+        noremap = true,
+      },
+      {
+        '<leader>zf',
+        '<cmd>TZFocus<cr>',
+        mode = 'n',
+        desc = 'Focued mode',
+        noremap = true,
+      },
+      {
+        '<leader>zm',
+        '<cmd>TZMinimalist<cr>',
+        mode = 'n',
+        desc = 'Minimalist mode',
+        noremap = true,
+      },
+      {
+        '<leader>za',
+        '<cmd>TZAtaraxis<cr>',
+        mode = 'n',
+        desc = 'Ataraxis mode',
+        noremap = true,
+      },
     },
   },
+  -- {
+  --   'folke/zen-mode.nvim',
+  --   opts = {
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --   },
+  -- },
+  { 'echasnovski/mini.surround', version = false, recommended = true, event = 'VeryLazy', opts = {
+    highlight_duration = 500,
+  } },
   -- { 'echasnovski/mini.pairs', version = false },
   -- {
   --   "kylechui/nvim-surround",
@@ -201,12 +250,9 @@ return {
   -- require 'kickstart/plugins/tokyonight',
   -- require 'kickstart/plugins/mini',
 
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  --
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.neo-tree',
 

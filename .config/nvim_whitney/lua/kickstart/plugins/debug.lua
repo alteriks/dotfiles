@@ -1,15 +1,5 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
---
--- Primarily focused on configuring the debugger for Go, but can
--- be extended to other languages as well. That's why it's called
--- kickstart.nvim and not kitchen-sink.nvim ;)
-
 return {
-  -- NOTE: Yes, you can install new plugins here!
   'mfussenegger/nvim-dap',
-  -- NOTE: And you can specify dependencies as well
   dependencies = {
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
@@ -44,6 +34,23 @@ return {
         'delve',
       },
     }
+    -- vim.keymap.set('n', "<leader>dB", dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')), { desc = "Breakpoint Condition" })
+    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Toggle Breakpoint' })
+    vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Continue' })
+    -- vim.keymap.set('n', "<leader>da", dap.continue({ before = get_args }), { desc = "Run with Args" })
+    vim.keymap.set('n', '<leader>dC', dap.run_to_cursor, { desc = 'Run to Cursor' })
+    vim.keymap.set('n', '<leader>dg', dap.goto_, { desc = 'Go to Line (No Execute)' })
+    vim.keymap.set('n', '<leader>di', dap.step_into, { desc = 'Step Into' })
+    vim.keymap.set('n', '<leader>dj', dap.down, { desc = 'Down' })
+    vim.keymap.set('n', '<leader>dk', dap.up, { desc = 'Up' })
+    vim.keymap.set('n', '<leader>dl', dap.run_last, { desc = 'Run Last' })
+    vim.keymap.set('n', '<leader>do', dap.step_out, { desc = 'Step Out' })
+    vim.keymap.set('n', '<leader>dO', dap.step_over, { desc = 'Step Over' })
+    vim.keymap.set('n', '<leader>dp', dap.pause, { desc = 'Pause' })
+    vim.keymap.set('n', '<leader>dr', dap.repl.toggle, { desc = 'Toggle REPL' })
+    vim.keymap.set('n', '<leader>ds', dap.session, { desc = 'Session' })
+    vim.keymap.set('n', '<leader>dt', dap.terminate, { desc = 'Terminate' })
+    -- vim.keymap.set('n', "<leader>dw", dap.ui.widgets.hover, { desc = "Widgets" })
 
     -- Basic debugging keymaps, feel free to change to your liking!
     vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
@@ -57,25 +64,25 @@ return {
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
-    dapui.setup {
-      -- Set icons to characters that are more likely to work in every terminal.
-      --    Feel free to remove or use ones that you like more! :)
-      --    Don't feel like these are good choices.
-      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
-      controls = {
-        icons = {
-          pause = '⏸',
-          play = '▶',
-          step_into = '⏎',
-          step_over = '⏭',
-          step_out = '⏮',
-          step_back = 'b',
-          run_last = '▶▶',
-          terminate = '⏹',
-          disconnect = '⏏',
-        },
-      },
-    }
+    dapui.setup {}
+    --   -- Set icons to characters that are more likely to work in every terminal.
+    --   --    Feel free to remove or use ones that you like more! :)
+    --   --    Don't feel like these are good choices.
+    --   icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+    --   controls = {
+    --     icons = {
+    --       pause = '⏸',
+    --       play = '▶',
+    --       step_into = '⏎',
+    --       step_over = '⏭',
+    --       step_out = '⏮',
+    --       step_back = 'b',
+    --       run_last = '▶▶',
+    --       terminate = '⏹',
+    --       disconnect = '⏏',
+    --     },
+    --   },
+    -- }
 
     -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
     vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
