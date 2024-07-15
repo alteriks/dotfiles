@@ -5,6 +5,7 @@ file:///mnt mnt
 file:///home/alteriks/memo/rpi rpi
 file:///home/datastore/Moto/Jeep Jeep
 file:///home/alteriks/Downloads/RPi%20Pico RPi Pico
+sftp://nfs.alt.lan/home ssh://nfs
 sftp://hal/home hal
 file:///net/hal/home hal-autofs
 sftp://moar/home/alteriks moar
