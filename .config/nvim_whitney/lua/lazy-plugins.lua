@@ -10,60 +10,7 @@ end
 
 return {
 
-  {
-    'Pocco81/true-zen.nvim',
-    config = function()
-      require('true-zen').setup {
-        -- your config goes here
-        -- or just leave it empty :)
-      }
-    end,
-    keys = {
-      {
-        '<leader>zn',
-        '<cmd>TZNarrow<cr>',
-        mode = 'n',
-        desc = 'Narrow focused',
-        noremap = true,
-      },
-      {
-        '<leader>zn',
-        "<cmd>'<,'>TZNarrow<cr>",
-        mode = 'v',
-        desc = 'Ranged narrow focused',
-        noremap = true,
-      },
-      {
-        '<leader>zf',
-        '<cmd>TZFocus<cr>',
-        mode = 'n',
-        desc = 'Focued mode',
-        noremap = true,
-      },
-      {
-        '<leader>zm',
-        '<cmd>TZMinimalist<cr>',
-        mode = 'n',
-        desc = 'Minimalist mode',
-        noremap = true,
-      },
-      {
-        '<leader>za',
-        '<cmd>TZAtaraxis<cr>',
-        mode = 'n',
-        desc = 'Ataraxis mode',
-        noremap = true,
-      },
-    },
-  },
-  -- {
-  --   'folke/zen-mode.nvim',
-  --   opts = {
-  --     -- your configuration comes here
-  --     -- or leave it empty to use the default settings
-  --     -- refer to the configuration section below
-  --   },
-  -- },
+  { 'echasnovski/mini.icons', version = false, recommended = true, event = 'VeryLazy', opts = {} },
   { 'echasnovski/mini.surround', version = false, recommended = true, event = 'VeryLazy', opts = {
     highlight_duration = 500,
   } },

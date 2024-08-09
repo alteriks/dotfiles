@@ -191,6 +191,7 @@
 .config/nvim_whitney/lua/kickstart/plugins/lspconfig.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/mini.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/neo-tree.lua	f	0644
+.config/nvim_whitney/lua/kickstart/plugins/neorg.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/telescope-zoxide.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/telescope.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/todo-comments.lua	f	0644

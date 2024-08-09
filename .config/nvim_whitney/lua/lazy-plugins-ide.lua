@@ -6,6 +6,7 @@ local ide = {
   require 'kickstart/plugins/debug',
   require 'kickstart/plugins/lint',
   require 'kickstart/plugins/lspconfig',
+  require 'kickstart/plugins/neorg',
 }
 local image = {}
 -- TODO: 3rd/image.nvim not good enough
