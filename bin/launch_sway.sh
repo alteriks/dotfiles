@@ -9,6 +9,8 @@ export QT_QPA_PLATFORM=wayland
 export XDG_CURRENT_DESKTOP=sway
 # export XDG_CURRENT_DESKTOP=sway:GNOME
 export XDG_SESSION_DESKTOP=sway
+# improves font rendering in libreoffice/openoffice
+export _GL_ALLOW_FXAA_USAGE=0
 
 TMPDIR=$(mktemp -d)
 LOG="$TMPDIR/sway.log"
