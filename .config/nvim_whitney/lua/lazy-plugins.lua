@@ -146,6 +146,7 @@ return {
   {
     'f-person/auto-dark-mode.nvim',
     event = 'VeryLazy',
+    commit = 'e328dc463d238cb7d690fb4daf068eba732a5a14',
     opts = {
       update_interval = 1000,
       set_dark_mode = function()
@@ -154,6 +155,14 @@ return {
       set_light_mode = function()
         set_theme 'one_light'
       end,
+      -- set_dark_mode = function()
+      --   vim.api.nvim_set_option_value('background', 'dark', {})
+      --   vim.cmd 'colorscheme onedark'
+      -- end,
+      -- set_light_mode = function()
+      --   vim.api.nvim_set_option_value('background', 'light', {})
+      --   vim.cmd 'colorscheme one_light'
+      -- end,
     },
   },
 
