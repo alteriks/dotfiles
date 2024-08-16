@@ -62,6 +62,7 @@
 .config/autorandr/postswitch	f	0755
 .config/bat	d	0755
 .config/bat/config	f	0644
+.config/bat/darkman_theme	f	0644
 .config/bat/default_theme	f	0644
 .config/broot	d	0755
 .config/broot/conf.toml	f	0644
