@@ -79,6 +79,11 @@ map('n', '<leader>L', '<cmd>Lazy<cr>', { desc = 'Lazy' })
 -- new file
 map('n', '<leader>nf', '<cmd>enew<cr>', { desc = 'New [F]ile' })
 
+-- buffers
+map('n', '<tab>', '<cmd>bnext<cr>', { desc = 'Next buffer' })
+map('n', '<s-tab>', '<cmd>bprevious<cr>', { desc = 'Previous buffer' })
+map('n', '<leader>x', '<cmd>bdelete<cr>', { desc = 'Close buffer' })
+
 -- noice / notification
 map('n', '<leader>nh', '<cmd>NoiceHistory<cr>', { desc = 'Noice [h]istory' })
 map('n', '<leader>nl', '<cmd>NoiceLog<cr>', { desc = 'Noice [l]og' })
@@ -112,7 +117,6 @@ map('n', '<leader>gg', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
 map('n', '<leader>ft', '<cmd>TodoTelescope<CR>', { desc = '[t]odo' })
 map('n', '<leader>fo', '<cmd>Telescope oldfiles<CR>', { desc = 'Recent files - [o]ldfiles' })
 map('n', '<leader>f.', '<cmd>cd %:h<CR>', { desc = 'Change Working Directory' })
-map('n', '<leader>th', '<cmd>Telescope themes<CR>', { desc = 'nvchad [th]emes' })
 map('n', '<leader>gc', '<cmd>Telescope git_commits<CR>', { desc = 'git [c]ommits' })
 map('n', '<leader>gs', '<cmd>Telescope git_status<CR>', { desc = 'git [s]tatus' })
 -- map('n', '<leader>fz', require('telescope').extensions.zoxide.list, { desc = '[z]oxide jump' })

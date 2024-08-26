@@ -12,7 +12,8 @@ if not vim.env.SSH_TTY then
   -- vim.opt.clipboard = 'unnamedplus'
 end
 
-vim.opt.laststatus = 3 -- global statusline
+-- global statusline
+vim.opt.laststatus = 3
 
 -- Make line numbers default
 vim.opt.number = true

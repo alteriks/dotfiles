@@ -17,9 +17,9 @@ return {
         changedelete = { text = '~' },
       },
       -- enable yadm, TODO: privyadm,sysyadm
-      yadm = {
-        enable = true,
-      },
+      -- yadm = {
+      --   enable = true,
+      -- },
       -- on_attach_pre = function(callback)
       --   callback {
       --     gitdir = '/home/alteriks/.local/share/yadm/priv.git',
