@@ -2,9 +2,10 @@
 return {
   { -- LSP Configuration & Plugins
     -- FIXME: when nvim-lspconfig is set to VeryLazy servers aren't installed automatically
-    lazy = false,
-    -- event = 'VeryLazy',
-    -- event = 'LazyFile',
+    -- and lspconfig isn't loaded on time
+    -- INFO:event vs lazy=false
+    event = { 'BufReadPre', 'BufNewFile' },
+    -- lazy = false,
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
@@ -14,7 +15,11 @@ return {
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      {
+        'j-hui/fidget.nvim',
+        opts = {},
+        lazy = 'VeryLazy',
+      },
 
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis

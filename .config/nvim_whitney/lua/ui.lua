@@ -1,31 +1,77 @@
-return {
-  -- INFO: theme loaded as dependency, check 'akinsho/bufferline.nvim' below
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
-  -- {
-  --   'catppuccin/nvim',
-  --   name = 'catppuccin',
-  --   priority = 1000,
-  -- },
+local diagnostics_icons = {
+  Error = ' ',
+  Warn = ' ',
+  Hint = ' ',
+  Info = '󰗖 ',
+}
 
+local function diagnostic_indicator(_, _, diagnostics, _)
+  local result = {}
+  local symbols = { error = diagnostics_icons.Error, warning = diagnostics_icons.Warn, info = diagnostics_icons.Info, hint = diagnostics_icons.Hint }
+  for name, count in pairs(diagnostics) do
+    if symbols[name] and count > 0 then
+      table.insert(result, symbols[name] .. count)
+    end
+  end
+  local res = table.concat(result, ' ')
+  return #res > 0 and res or ''
+end
+return {
+  {
+    'uloco/bluloco.nvim',
+    lazy = false,
+    priority = 1000,
+    dependencies = { 'rktjmp/lush.nvim' },
+    config = function()
+      -- your optional config goes here, see below.
+    end,
+    opts = {},
+  },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
+    -- event = 'VeryLazy',
+    config = function()
+      -- -- Get the current hour
+      -- local current_hour = tonumber(os.date '%H')
+      --
+      -- -- Set the background based on the time of day
+      -- if current_hour >= 9 and current_hour < 17 then
+      --   -- vim.opt.background = 'light'
+      --   vim.cmd.colorscheme 'bluloco-light'
+      -- else
+      --   require('catppuccin').setup {}
+      --   -- vim.opt.background = 'dark'
+      --   vim.cmd.colorscheme 'catppuccin-macchiato'
+      -- end
+    end,
+    -- vim.cmd.colorscheme 'vim'
+  },
+  --
   -- Watches darkman (dbus org.freedesktop.impl.portal.desktop.darkman)
   -- for theme changes
   {
     'f-person/auto-dark-mode.nvim',
-    event = 'VeryLazy',
+    lazy = false,
+    priority = 9999,
     commit = 'e328dc463d238cb7d690fb4daf068eba732a5a14',
+    -- config = function()
+    --   -- Get the current hour
+    --   local current_hour = tonumber(os.date '%H')
+    --
+    --   -- Set the background based on the time of day
+    --   if current_hour >= 9 and current_hour < 17 then
+    --     -- vim.opt.background = 'light'
+    --     vim.cmd.colorscheme 'bluloco-light'
+    --   else
+    --     require('catppuccin').setup {}
+    --     -- vim.opt.background = 'dark'
+    --     vim.cmd.colorscheme 'catppuccin-macchiato'
+    --   end
+    -- end,
     opts = {
-      update_interval = 1000,
-      -- set_dark_mode = function()
-      --   set_theme 'onedark'
-      -- end,
-      -- set_light_mode = function()
-      --   set_theme 'one_light'
-      -- end,
+      update_interval = 50,
       set_dark_mode = function()
         vim.api.nvim_set_option_value('background', 'dark', {})
         vim.cmd 'colorscheme catppuccin-macchiato'
@@ -34,64 +80,29 @@ return {
       set_light_mode = function()
         vim.api.nvim_set_option_value('background', 'light', {})
         -- vim.cmd 'colorscheme tokyonight-day'
-        vim.cmd 'colorscheme catppuccin-latte'
+        -- vim.cmd 'colorscheme catppuccin-latte'
+        vim.cmd.colorscheme 'bluloco-light'
       end,
     },
   },
 
-  -- {
-  --   'itchyny/lightline.vim',
-  -- },
-  -- {
-  --   'nvim-lualine/lualine.nvim',
-  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  -- },
   {
     'akinsho/bufferline.nvim',
     version = '*',
     after = 'catppuccin',
     dependencies = {
-      {
-        'catppuccin/nvim',
-        name = 'catppuccin',
-        event = 'VeryLazy',
-        config = function()
-          require('catppuccin').setup {}
-          vim.cmd.colorscheme 'catppuccin-macchiato'
-        end,
-      },
       'nvim-tree/nvim-web-devicons',
     },
     opts = {
       options = {
-      -- stylua: ignore
-      -- close_command = function(n) LazyVim.ui.bufremove(n) end,
-      -- stylua: ignore
-      -- right_mouse_command = function(n) LazyVim.ui.bufremove(n) end,
         always_show_bufferline = true,
-        separator_style = 'slant',
-        indicator = { icon = 'X', style = 'icon' }, -- TODO: how to pick visible color
-        -- indicator = { style = 'underline', sp = 'blue' },
+        -- separator_style = 'slant',
+        -- indicator = { icon = 'X', style = 'icon' }, -- TODO: how to pick visible color
+        indicator = { style = 'underline', sp = 'blue' },
         -- highlight = { underline = true, sp = 'blue' }, -- Optional
 
         diagnostics = 'nvim_lsp',
-        -- diagnostics_indicator = function(count, level)
-        --   local icon = level:match 'error' and ' ' or ''
-        --   return ' ' .. icon .. count
-        -- end,
-        diagnostics_indicator = function(count, level, diagnostics_dict, context)
-          local s = ' '
-          for e, n in pairs(diagnostics_dict) do
-            local sym = e == 'error' and ' ' or (e == 'warning' and ' ' or ' ')
-            s = s .. n .. sym
-          end
-          return s
-        end,
-        -- diagnostics_indicator = function(_, _, diag)
-        -- local icons = LazyVim.config.icons.diagnostics
-        -- local ret = (diag.error and icons.Error .. diag.error .. ' ' or '') .. (diag.warning and icons.Warn .. diag.warning or '')
-        -- return vim.trim(ret)
-        -- end,
+        diagnostics_indicator = diagnostic_indicator,
         offsets = {
           {
             filetype = 'neo-tree',
@@ -100,10 +111,6 @@ return {
             text_align = 'left',
           },
         },
-        -- ---@param opts bufferline.IconFetcherOpts
-        -- get_element_icon = function(opts)
-        --   return LazyVim.config.icons.ft[opts.filetype]
-        -- end,
       },
     },
     config = function(_, opts)

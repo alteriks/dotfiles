@@ -155,11 +155,6 @@
 .config/nitrogen/nitrogen.cfg	f	0644
 .config/npm	d	0755
 .config/npm/npmrc	f	0644
-.config/nvim_orig	d	0755
-.config/nvim_orig/autoload	d	0755
-.config/nvim_orig/autoload/plug.vim	f	0644
-.config/nvim_orig/init.vim	f	0644
-.config/nvim_orig/plugins.vim	f	0644
 .config/nvim_whitney	d	0755
 .config/nvim_whitney/.gitignore	f	0644
 .config/nvim_whitney/.stylua.toml	f	0644
