@@ -179,6 +179,7 @@
 .config/nvim_whitney/lua/kickstart/plugins/autopairs.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/cmp.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/conform.lua	f	0644
+.config/nvim_whitney/lua/kickstart/plugins/dashboard.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/debug.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/flash.lua	f	0644
 .config/nvim_whitney/lua/kickstart/plugins/gitsigns.lua	f	0644
