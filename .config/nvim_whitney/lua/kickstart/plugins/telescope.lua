@@ -83,6 +83,7 @@ return {
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
+      vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = '[F]ind [b]uffers' })
       vim.keymap.set('n', '<leader>fh', builtin.command_history, { desc = '[F]ind [h]istory' })
       vim.keymap.set('n', '<leader>fH', builtin.help_tags, { desc = '[F]ind [H]elp' })
       vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [k]eymaps' })

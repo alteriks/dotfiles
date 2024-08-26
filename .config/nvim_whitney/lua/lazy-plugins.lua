@@ -1,19 +1,40 @@
--- [[ Configure and install plugins ]]
-
--- function needed by "f-person/auto-dark-mode.nvim",
-local function set_theme(name)
-  local cur_theme = require('nvconfig').ui.theme
-  require('nvchad.utils').replace_word(cur_theme, name)
-  require('nvconfig').ui.theme = name
-  require('base46').load_all_highlights()
-end
-
 return {
 
-  { 'echasnovski/mini.icons', version = false, recommended = true, event = 'VeryLazy', opts = {} },
-  { 'echasnovski/mini.surround', version = false, recommended = true, event = 'VeryLazy', opts = {
-    highlight_duration = 500,
-  } },
+  {
+    'folke/persistence.nvim',
+    event = 'BufReadPre',
+    opts = {},
+  },
+  {
+    'NvChad/nvim-colorizer.lua',
+    event = 'User FilePost',
+    opts = { user_default_options = { names = false } },
+    config = function(_, opts)
+      require('colorizer').setup(opts)
+
+      -- execute colorizer as soon as possible
+      vim.defer_fn(function()
+        require('colorizer').attach_to_buffer(0)
+      end, 0)
+    end,
+  },
+
+  {
+    'echasnovski/mini.icons',
+    version = false,
+    recommended = true,
+    event = 'VeryLazy',
+    opts = {},
+  },
+  {
+    'echasnovski/mini.surround',
+    version = false,
+    recommended = true,
+    event = 'VeryLazy',
+    opts = {
+      highlight_duration = 500,
+    },
+  },
   -- { 'echasnovski/mini.pairs', version = false },
   -- {
   --   "kylechui/nvim-surround",
@@ -30,8 +51,6 @@ return {
     event = 'VeryLazy',
   },
 
-  -- TODO: is it fast/slow? change leadmultispace/multispace
-  -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', leadmultispace = '│   ', multispace = '│ ' }
   {
     'lukas-reineke/indent-blankline.nvim',
     event = 'User FilePost',
@@ -40,13 +59,9 @@ return {
       scope = { char = '│', highlight = 'IblScopeChar' },
     },
     config = function(_, opts)
-      dofile(vim.g.base46_cache .. 'blankline')
-
       local hooks = require 'ibl.hooks'
       hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
       require('ibl').setup(opts)
-
-      dofile(vim.g.base46_cache .. 'blankline')
     end,
   },
 
@@ -141,31 +156,6 @@ return {
     },
   },
 
-  -- Watches darkman (dbus org.freedesktop.impl.portal.desktop.darkman)
-  -- for theme changes
-  {
-    'f-person/auto-dark-mode.nvim',
-    event = 'VeryLazy',
-    commit = 'e328dc463d238cb7d690fb4daf068eba732a5a14',
-    opts = {
-      update_interval = 1000,
-      set_dark_mode = function()
-        set_theme 'onedark'
-      end,
-      set_light_mode = function()
-        set_theme 'one_light'
-      end,
-      -- set_dark_mode = function()
-      --   vim.api.nvim_set_option_value('background', 'dark', {})
-      --   vim.cmd 'colorscheme onedark'
-      -- end,
-      -- set_light_mode = function()
-      --   vim.api.nvim_set_option_value('background', 'light', {})
-      --   vim.cmd 'colorscheme one_light'
-      -- end,
-    },
-  },
-
   {
     'kdheepak/lazygit.nvim',
     event = 'VeryLazy',
@@ -188,36 +178,19 @@ return {
     },
   },
 
-  -- modular approach: using `require 'path/name'` will
-  -- include a plugin definition from file lua/path/name.lua
-
-  require 'kickstart/plugins/harpoon',
   require 'kickstart/plugins/autopairs',
   require 'kickstart/plugins/cmp',
-  require 'kickstart/plugins/gitsigns',
+  require 'kickstart/plugins/dashboard',
   require 'kickstart/plugins/flash',
+  require 'kickstart/plugins/gitsigns',
+  -- require 'kickstart/plugins/harpoon',
+  require 'kickstart/plugins/neo-tree',
   require 'kickstart/plugins/telescope',
   require 'kickstart/plugins/telescope-zoxide',
   require 'kickstart/plugins/todo-comments',
-  require 'kickstart/plugins/treesitter',
   require 'kickstart/plugins/toggleterm',
+  require 'kickstart/plugins/treesitter',
   require 'kickstart/plugins/which-key',
-
-  -- require 'kickstart/plugins/tokyonight',
-  -- require 'kickstart/plugins/mini',
-
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.indent_line',
-  require 'kickstart.plugins.neo-tree',
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  { import = 'custom.plugins' },
 }
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -7,20 +7,11 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.base46_cache = vim.fn.stdpath 'data' .. '/nvchad/base46/'
-
 require('lazy').setup({
-  {
-    'NvChad/NvChad',
-    lazy = false,
-    branch = 'v2.5',
-  },
-
+  { import = 'ui' },
   { import = 'lazy-plugins' },
   { import = 'lazy-plugins-ide' },
-  { import = 'lazy-settings' },
 }, {
-  install = { colorscheme = { 'nvchad' } },
   change_detection = {
     notify = false,
   },
@@ -79,7 +70,4 @@ require('lazy').setup({
   },
 })
 
--- load theme
-dofile(vim.g.base46_cache .. 'defaults')
-dofile(vim.g.base46_cache .. 'statusline')
 -- vim: ts=2 sts=2 sw=2 et
