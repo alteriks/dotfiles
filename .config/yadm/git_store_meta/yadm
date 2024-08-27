@@ -274,6 +274,10 @@
 .config/yamllint/config	f	0644
 .config/yay	d	0755
 .config/yay/config.json	f	0644
+.config/yazi	d	0755
+.config/yazi/init.lua	f	0644
+.config/yazi/keymap.toml	f	0644
+.config/yazi/yazi.toml	f	0644
 .config/zsh	d	0755
 .config/zsh/.gitignore	f	0644
 .config/zsh/.p10k.zsh	f	0644
