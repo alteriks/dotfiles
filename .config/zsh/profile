@@ -65,6 +65,11 @@ export _Z_DATA="$XDG_DATA_HOME/z"
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 
 # Other XDG fixes
+OS=$(sed -ne 's/^NAME=\(.*\)/\1/p' /etc/os-release)
+export OS
+if [[ "$OS" == "FreeBSD" ]]; then
+	alias dircolors=gdircolors
+fi
 eval "$(dircolors "$XDG_CONFIG_HOME"/dircolors)"
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
