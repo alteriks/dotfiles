@@ -3,7 +3,7 @@
 . ~/.config/yadm/hooks/common
 
 GIT_DIR=$YADM_HOOK_REPO \
-  GIT_WORK_TREE=$YADM_HOOK_WORK \
-  ~/bin/git-store-meta.pl \
-  -t $GIT_STORE_META \
-  --store -d -f mode | grep -Ev '^fields:|^flags:'
+	GIT_WORK_TREE=$YADM_HOOK_WORK \
+	~/bin/git-store-meta.pl \
+	-t "$GIT_STORE_META" \
+	--store -d -f mode | grep -Ev '^fields:|^flags:'

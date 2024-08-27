@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # YADM_VERSION=$( yadm --version | sed 's/[^0-9.]//g' )
 # yadm 2.25 GIT_DIR=~/.config/yadm/repo.git
