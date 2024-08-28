@@ -264,6 +264,9 @@ case $OS_RELEASE_ID in
   debian)
     source ~/.config/zsh/debian
     ;;
+  freebsd)
+    source ~/.config/zsh/freebsd
+    ;;
   rocky)
     source ~/.config/zsh/rhel
     ;;
