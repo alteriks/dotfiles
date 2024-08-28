@@ -12,7 +12,7 @@
 #
 #   for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 
-case $HOSTNAME in 
+case $HOSTNAME in
 
   carbon)
     typeset -g HOSTNAME_COLOR='#99B938'
@@ -25,7 +25,7 @@ case $HOSTNAME in
     typeset -g HOSTNAME_FG_COLOR='#B91D1D'
     typeset -g HOSTNAME_CUSTOM_ICON='A'
     ;;
-  
+
   moar)
     typeset -g HOSTNAME_COLOR='#FFCE00'
     typeset -g HOSTNAME_FG_COLOR=3
@@ -37,6 +37,13 @@ case $HOSTNAME in
     typeset -g HOSTNAME_FG_COLOR='#804D07'
     typeset -g HOSTNAME_CUSTOM_ICON='A'
     ;;
+
+  opnsense*|*bsd)
+    typeset -g HOSTNAME_COLOR='#EA8B07'
+    typeset -g HOSTNAME_FG_COLOR='#804D07'
+    typeset -g HOSTNAME_CUSTOM_ICON='A'
+    ;;
+
 
   *)
     typeset -g HOSTNAME_COLOR='#FA59FF'

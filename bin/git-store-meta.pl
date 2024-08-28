@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/env -S perl -w
 # =============================================================================
 # Usage: git-store-meta.pl ACTION [OPTION...]
 # Store, update, or apply metadata for files revisioned by Git.

@@ -49,6 +49,12 @@ case $HOSTNAME in
     typeset -g HOSTNAME_FG_COLOR='#EBB300'
     ;;
 
+  opnsense*|*bsd*)
+    typeset -g HOSTNAME_COLOR='#DC322F'
+    typeset -g HOSTNAME_FG_COLOR='#AB2B2F'
+    typeset -g HOSTNAME_CUSTOM_ICON='F'
+    ;;
+
   *)
     typeset -g HOSTNAME_COLOR='#FA59FF'
     typeset -g HOSTNAME_FG_COLOR='#C81ACD'

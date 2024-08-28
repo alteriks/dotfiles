@@ -200,6 +200,7 @@ return {
         tsserver = {},
         prettier = {},
         shellcheck = {},
+        sqls = {},
         shfmt = {}, -- Shell formatter - /home/alteriks/.local/share/nvim_nvchad/mason/bin/shfmt -h
         stylua = {},
         yamlfmt = {},
