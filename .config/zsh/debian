@@ -18,3 +18,5 @@ fi
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 bindkey '^T' fzf-completion
 bindkey '^I' fzf-tab-complete
+
+unset MANPAGER
