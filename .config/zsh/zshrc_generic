@@ -245,7 +245,7 @@ zstyle ':fzf-tab:*' switch-group ',' '.'
 # https://github.com/sharkdp/bat/issues/2568#issuecomment-1636575384
 export MANROFFOPT="-c"
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=\"$(/bin/cat ~/.config/bat/darkman_theme || /bin/cat ~/.config/bat/default_theme)\"'"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=\"$(/bin/cat ~/.config/bat/darkman_theme || /bin/cat ~/.config/bat/default_theme)\"'"
 
 # Keep last, so it will ovveride defaults
 source ${XDG_CONFIG_HOME}/zsh/aliases

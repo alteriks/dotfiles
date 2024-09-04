@@ -88,7 +88,7 @@ return {
 
   {
     'akinsho/bufferline.nvim',
-    version = '*',
+    -- version = '*',
     after = 'catppuccin',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
