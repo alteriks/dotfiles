@@ -134,22 +134,3 @@ bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
 source ~/.config/zsh/zshrc_generic
-
-# ZOXIDE
-# Generate:
-# zoxide init zsh > ~/.config/zsh/zoxide.zsh
-if command -v zoxide &> /dev/null ;then
-	source ~/.config/zsh/zoxide.zsh
-	# https://github.com/ajeetdsouza/zoxide/issues/643
-	zoxide_interactive() {
-	  zi
-	  zle accept-line
-	}
-	zle -N zoxide_interactive
-	bindkey "^a" zoxide_interactive
-fi
-
-# DIRENV
-if command -v direnv &> /dev/null ;then
-  eval "$(direnv hook zsh)"
-fi

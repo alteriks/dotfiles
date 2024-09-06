@@ -5,9 +5,6 @@
     #   source "$P10K_CACHE_PROMPT=${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
     # fi
 
-# Already in ./profile
-# export HOSTNAME=$(hostname)
-
 # https://github.com/romkatv/powerlevel10k#extra-space-without-background-on-the-right-side-of-right-prompt
 ZLE_RPROMPT_INDENT=0
 
@@ -52,9 +49,6 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/sdm:$PATH:/opt/vc/bin/
 # else
 #   export EDITOR='mvim'
 # fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 bindkey "[[1;5D" backward-word
 bindkey "[[1;5C" forward-word
@@ -111,7 +105,7 @@ if [[ -e ~/.config/zsh-vim-mode/zsh-vim-mode.plugin.zsh ]]; then
   # Edit current line in nvim - great for easy substitution
   # Use nvim_lazy with ^x+^e OR ESC+^v
   zstyle :zle:edit-command-line editor nvim
-  
+
 elif [[ -e ~/.config/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]]; then
   source ~/.config/zsh-vi-mode/zsh-vi-mode.plugin.zsh;
   export ZVM_VI_SURROUND_BINDKEY=$ZVM_READKEY_ENGINE_ZLE
@@ -162,6 +156,30 @@ export FZF_COMPLETION_TRIGGER=''
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
 bindkey '^T' fzf-completion
 bindkey '^I' fzf-tab-complete
+
+# ZOXIDE
+# Generate:
+# zoxide init zsh > ~/.config/zsh/zoxide.zsh
+if command -v zoxide &> /dev/null ;then
+	source ~/.config/zsh/zoxide.zsh
+	# https://github.com/ajeetdsouza/zoxide/issues/643
+	zoxide_interactive() {
+	  zi
+	  zle accept-line
+	}
+	zle -N zoxide_interactive
+	bindkey "^a" zoxide_interactive
+fi
+
+# DIRENV
+if command -v direnv &> /dev/null ;then
+  eval "$(direnv hook zsh)"
+fi
+
+# PBS proxmox-backup-client
+if [[ -f ~/.config/zsh/pbs.env ]];then
+  source ~/.config/zsh/pbs.env
+fi
 
 # broot --install
 if [[ -e $HOME/.config/broot/launcher/bash/br ]]; then
