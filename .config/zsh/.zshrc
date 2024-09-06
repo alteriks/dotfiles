@@ -135,11 +135,21 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 source ~/.config/zsh/zshrc_generic
 
-# Better rupa/z in rust
-# eval "$(zoxide init zsh)"
-source ~/.config/zsh/zoxide.zsh
+# ZOXIDE
+# Generate:
+# zoxide init zsh > ~/.config/zsh/zoxide.zsh
+if command -v zoxide &> /dev/null ;then
+	source ~/.config/zsh/zoxide.zsh
+	# https://github.com/ajeetdsouza/zoxide/issues/643
+	zoxide_interactive() {
+	  zi
+	  zle accept-line
+	}
+	zle -N zoxide_interactive
+	bindkey "^a" zoxide_interactive
+fi
 
-# pacman -S direnv
+# DIRENV
 if command -v direnv &> /dev/null ;then
   eval "$(direnv hook zsh)"
 fi
