@@ -72,6 +72,9 @@ if [[ "$OS" == "FreeBSD" ]]; then
 fi
 eval "$(dircolors "$XDG_CONFIG_HOME"/dircolors)"
 
+OS_ID_LIKE=$(sed -ne 's/^ID_LIKE=\(.*\)/\1/p' /etc/os-release)
+export OS_ID_LIKE
+
 # fix "xdg-open fork-bomb" export your preferred browser from here
 #export BROWSER=/usr/bin/palemoon
 
