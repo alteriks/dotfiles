@@ -1,5 +1,12 @@
 return {
 
+  -- show a diff, whenever recovering a buffer
+  {
+    'chrisbra/Recover.vim',
+    -- Use :RecoverPluginFinish, to  delete the no-longer-needed swap file when in the recovered window,
+    -- this will delete the swapfile, close the diff window, and end the diff/merge process.
+  },
+
   -- Use zen mode to copy when OSC52 is unavailable
   {
     'folke/zen-mode.nvim',
