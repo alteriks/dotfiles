@@ -17,6 +17,7 @@ pkg-config
 pkgfile
 python-j2cli # sanoid templates using jinja2
 python-pip
+upx # compress go binaries
 yamllint
 
 # FONTS
