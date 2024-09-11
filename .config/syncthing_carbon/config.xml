@@ -918,6 +918,8 @@
     </device>
     <gui enabled="true" tls="false" debugging="false" sendBasicAuthPrompt="false">
         <address>127.0.0.1:8384</address>
+        <user>alteriks@alt.lan</user>
+        <password>$2a$10$1m9EoMp/j5ZK0iRKGDW7beF8ekn/Hko1XAokI5wlMgIBeW1xej3Qm</password>
         <apikey>we9W9mzLAjaYCKRiTg3ryk7FZf73AbHq</apikey>
         <theme>carbon_green</theme>
     </gui>
@@ -936,7 +938,7 @@
         <reconnectionIntervalS>60</reconnectionIntervalS>
         <relaysEnabled>true</relaysEnabled>
         <relayReconnectIntervalM>10</relayReconnectIntervalM>
-        <startBrowser>true</startBrowser>
+        <startBrowser>false</startBrowser>
         <natEnabled>true</natEnabled>
         <natLeaseMinutes>60</natLeaseMinutes>
         <natRenewalMinutes>30</natRenewalMinutes>
