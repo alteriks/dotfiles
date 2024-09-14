@@ -73,7 +73,7 @@ return {
     opts = {
       update_interval = 50,
       set_dark_mode = function()
-        vim.api.nvim_set_option_value('background', 'dark', {})
+        -- vim.api.nvim_set_option_value('background', 'dark', {})
         vim.cmd 'colorscheme catppuccin-macchiato'
         -- vim.cmd 'colorscheme tokyonight-storm'
       end,
