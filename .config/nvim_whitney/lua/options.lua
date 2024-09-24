@@ -12,6 +12,15 @@ if not vim.env.SSH_TTY then
   -- vim.opt.clipboard = 'unnamedplus'
 end
 
+-- Disable automatic commentstring when entering newline from NORMAL mode o/O OR enter in INSERT mode
+-- :help fo-table
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = '*',
+--   callback = function()
+--     vim.opt_local.formatoptions:remove { 'c', 'r', 'o' }
+--   end,
+-- })
+
 -- global statusline
 vim.opt.laststatus = 3
 

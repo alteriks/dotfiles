@@ -136,21 +136,6 @@ pacman_update_ignoredpkg() {
   sudo http_proxy=squid.lan:3128 ftp_proxy=squid.lan:3128 https_proxy=squid.lan:4128 pacman -Syu $(echo $IGNOREDPKG)
 }
 
-rga-fzf() {
-  # RG_PREFIX="rga --files-with-matches"
-  # local file
-  # file="$(
-  # FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
-  #   fzf --sort --preview="[[ ! -z {} ]] && rga --pretty --context 5 {q} {}" \
-  #   --phony -q "$1" \
-  #   --bind "change:reload:$RG_PREFIX {q}" \
-  #   --preview-window="70%:wrap"
-  #   )" &&
-  #     echo "opening $file" &&
-  #     xdg-open "$file"
-  rga $1 | fzf -d: --bind 'enter:become(xdg-open {1} 2>/dev/null)'
-}
-
 # systemctl start/stop && status
 sc() {
   name="${@:(2)}";
@@ -351,13 +336,45 @@ zl () {
 }
 
 history_all () {
-  print -z -- \
-  $(~/bin/merge_all_history.pl |\
-  FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} ${FZF_DEFAULT_OPTS-} --scheme=history" fzf --tac |\
-  perl -p -e 's/\w+: //')
+  local selected
+  IFS=$'\n' selected=($( \
+    ~/bin/merge_all_history.pl |\
+    FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} ${FZF_DEFAULT_OPTS-} --scheme=history" fzf --tac --query="$BUFFER" |\
+    perl -p -e 's/\w+: //'))
+  if [[ "$selected" ]]; then
+    LBUFFER="$selected"
+    if [[ ${#selected[@]} -eq 2 ]]; then
+      LBUFFER="${selected[2]}"
+      zle accept-line
+    fi
+  fi
+  zle reset-prompt
   } 
 
 zle     -N            history_all
 bindkey -M emacs '^T' history_all
 bindkey -M vicmd '^T' history_all
 bindkey -M viins '^T' history_all
+
+ssh_fzf () {
+  local selected
+  IFS=$'\n' selected=($(\
+  	fc -l 1 | \
+  	sed -n 's/.*  \(ssh.*\)/\1/p' | \
+  	grep  -v -e '>' -e '|' -e ';' -e ':' -e '\[' -e '-keygen' -e '-copy-id' | \
+  	FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} ${FZF_DEFAULT_OPTS-} --scheme=history" fzf --tac --query="$BUFFER"))
+
+  if [[ "$selected" ]]; then
+    LBUFFER="$selected"
+    if [[ ${#selected[@]} -eq 2 ]]; then
+      LBUFFER="${selected[2]}"
+      zle accept-line
+    fi
+  fi
+  zle reset-prompt
+  } 
+
+zle     -N            ssh_fzf
+bindkey -M emacs '^S' ssh_fzf
+bindkey -M vicmd '^S' ssh_fzf
+bindkey -M viins '^S' ssh_fzf

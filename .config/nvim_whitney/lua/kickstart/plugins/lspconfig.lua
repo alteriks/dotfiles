@@ -197,7 +197,7 @@ return {
         html = {},
         markdownlint = {},
         markdown_oxide = {},
-        tsserver = {},
+        -- tsserver = {},
         prettier = {},
         shellcheck = {},
         sqls = {},

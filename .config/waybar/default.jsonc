@@ -80,7 +80,7 @@
     }
   },
   "clock": {
-    // "timezone": "America/New_York",
+     "timezone": "Europe/Warsaw",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
     "format": "{:%H:%M | %Y-%m-%d}",
     "format-alt": "{:%Y-%m-%d}",
