@@ -180,7 +180,7 @@ exec flameshot
 bindsym Print exec flameshot gui
 # bindsym --no-repeat $mod+p exec flameshot gui
 bindsym --no-repeat $mod+p exec grim -g "$(slurp -o -c '#ff0000ff')" - | satty --copy-command wl-copy --early-exit --init-tool rectangle --filename -
-# bindsym --no-repeat $mod+Shift+p exec grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | "\(.rect.x+.window_rect.x),\(.rect.y+.window_rect.y) \(.window_rect.width)x\(.window_rect.height)"' | slurp)" - | satty --filename -
+bindsym --no-repeat $mod+shift+p exec ~/bin/satty_window_no_borders.sh
 bindsym $mod+F3 exec nemo
 # bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 

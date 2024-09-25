@@ -1,3 +1,4 @@
+-- Config in lua/kickstart/plugins/telescope-zoxide.lua:extensions
 return {
   {
     'jvgrootveld/telescope-zoxide',
@@ -6,21 +7,6 @@ return {
       'nvim-lua/popup.nvim',
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope.nvim',
-    },
-    opts = {
-      extensions = {
-        zoxide = {
-          prompt_title = '[ Zoxide Jump ]',
-          mappings = {
-            ['<C-l>'] = {
-              keepinsert = true,
-              action = function(selection)
-                require('telescope.builtin').find_files { cwd = selection.path }
-              end,
-            },
-          },
-        },
-      },
     },
   },
 }

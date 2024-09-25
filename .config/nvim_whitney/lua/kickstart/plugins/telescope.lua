@@ -85,6 +85,33 @@ return {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
+          zoxide = {
+            prompt_title = '[ Zoxide Jump | Keymaps: <CR>,<C-t>,<C-g>]',
+            mappings = {
+              -- <CR>, Enter chains with telescope.find_files
+              default = {
+                keepinsert = true,
+                action = function(selection)
+                  require('telescope.builtin').find_files { cwd = selection.path }
+                  vim.fn.system { 'zoxide', 'add', selection.path } -- https://github.com/jvgrootveld/telescope-zoxide/issues/23
+                end,
+              },
+              ['<C-g>'] = {
+                keepinsert = true,
+                action = function(selection)
+                  require('telescope.builtin').live_grep { cwd = selection.path }
+                  vim.fn.system { 'zoxide', 'add', selection.path } -- https://github.com/jvgrootveld/telescope-zoxide/issues/23
+                end,
+              },
+              -- Change current dir only
+              ['<C-t>'] = {
+                action = function(selection)
+                  vim.cmd.tcd(selection.path)
+                  vim.fn.system { 'zoxide', 'add', selection.path } -- https://github.com/jvgrootveld/telescope-zoxide/issues/23
+                end,
+              },
+            },
+          },
         },
       }
 
@@ -107,6 +134,8 @@ return {
       -- vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<leader>fz', require('telescope').extensions.zoxide.list, { desc = '[z]oxide jump' })
+
+      -- vim.keymap.set('n', '<leader>fz', ":lua require('telescope').extensions.zoxide.list<CR> <BAR> builtin.find_files", { desc = '[z]oxide jump' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
