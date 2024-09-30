@@ -1,3 +1,29 @@
+function Linemode:size_and_mtime()
+	local year = os.date("%Y")
+	local time = (self._file.cha.modified or 0) // 1
+
+	if time > 0 and os.date("%Y", time) == year then
+		time = os.date("%b %d %H:%M", time)
+	else
+		time = time and os.date("%b %d  %Y", time) or ""
+	end
+
+	local size = self._file:size()
+	return ui.Line(string.format(" %s %s ", size and ya.readable_size(size) or "-", time))
+end
+
+local bookmarks = {}
+
+require("yamb"):setup({
+	-- Optional, the path ending with path seperator represents folder.
+	bookmarks = bookmarks,
+	-- Optional, the cli of fzf.
+	cli = "fzf",
+	-- Optional, a string used for randomly generating keys, where the preceding characters have higher priority.
+	keys = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+	-- Optional, the path of bookmarks
+	path = (os.getenv("HOME") .. "/.config/zsh/bookmarks_yazi"),
+})
 -- function Manager:render(area)
 -- 	local chunks = self:layout(area)
 --

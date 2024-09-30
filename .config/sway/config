@@ -156,7 +156,8 @@ bindsym $mod+w layout tabbed; exec $notify_sway 'tabbed layout'
 bindsym $mod+e layout toggle split; exec $notify_sway 'tabbed split'
 
 # focus the parent container
-bindsym $mod+Shift+P focus parent
+# brakes printscreen
+# bindsym $mod+Shift+P focus parent
 
 # focus the child container
 bindsym $mod+Shift+C focus child
