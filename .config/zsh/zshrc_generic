@@ -41,7 +41,7 @@ ZSH_TMUX_AUTOQUIT=false
 HIST_IGNORE_SPACE=0
 
 # /opt/vc/bin/ - RPi tools (vcgencmd,dtoverlay,vcdbg)
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sdm:$PATH:/opt/vc/bin/
+export PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/local/sdm:/opt/vc/bin/
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -164,8 +164,47 @@ if command -v zoxide &> /dev/null ;then
 	source ~/.config/zsh/zoxide.zsh
 	# https://github.com/ajeetdsouza/zoxide/issues/643
 	zoxide_interactive() {
-	  zi
-	  zle accept-line
+	  # zi
+	  builtin local result
+	  result=$(
+	  # Disable query of /net
+	  # Fixes: journalctl -fu net-nfs.lan-home.automount
+	  # paź 02 21:23:36 moar systemd[1]: net-nfs.lan-home.automount: Got automount request for /net/nfs.lan/home, triggered by 73266 (zoxide)
+	    _ZO_EXCLUDE_DIRS="/net/*" \
+	    _ZO_FZF_OPTS="
+	      --exact \
+	      --no-sort \
+	      --bind=ctrl-z:ignore,btab:up,tab:down \
+	      --cycle \
+	      --keep-right \
+	      --border=sharp \
+	      --height=45% \
+	      --info=inline \
+	      --layout=reverse \
+	      --tabstop=1 \
+	      --bind 'tab:print()+accept' \
+	      --exit-0 \
+		  " \
+	      command zoxide query --interactive -- "$@")
+	    # Enter is pressed, accept it and enter directory
+	    if [[ "${result}" =~ "^/" ]]; then
+	      print "${result}"
+	      __zoxide_cd "${result}"
+	      zle accept-line
+	    else
+	    # Tab is pressed, accept it print directory to stdout so we can delve furhter
+	      result=$(echo $result | cut -f2 -d'	')
+	      local selected
+	      IFS=$'\n' selected=($( print "${result}"))
+	      if [[ "$selected" ]]; then
+		LBUFFER="$selected"
+		if [[ ${#selected[@]} -eq 2 ]]; then
+		  LBUFFER="z ${selected[2]}"
+		  zle accept-line
+		fi
+	      fi
+	      zle reset-prompt
+	    fi
 	}
 	zle -N zoxide_interactive
 	bindkey "^a" zoxide_interactive

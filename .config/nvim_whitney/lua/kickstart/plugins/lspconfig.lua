@@ -37,7 +37,16 @@ return {
       },
       { 'Bilal2453/luvit-meta', lazy = true }, -- optional `vim.uv` typings
       { -- optional completion source for require statements and module annotations
-        'hrsh7th/nvim-cmp',
+        -- INFO: replaced by blink.cmp
+        -- 'hrsh7th/nvim-cmp',
+        -- opts = function(_, opts)
+        --   opts.sources = opts.sources or {}
+        --   table.insert(opts.sources, {
+        --     name = 'lazydev',
+        --     group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+        --   })
+        -- end,
+        'iguanacucumber/magazine.nvim',
         opts = function(_, opts)
           opts.sources = opts.sources or {}
           table.insert(opts.sources, {
@@ -175,8 +184,10 @@ return {
       --  By default, Neovim doesn't support everything that is in the LSP specification.
       --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
+      -- INFO: replaced by blink.cmp
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+
       -- fix loading golang workspace slowdown
       capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
 

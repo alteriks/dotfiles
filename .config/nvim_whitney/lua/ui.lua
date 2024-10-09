@@ -31,60 +31,53 @@ return {
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
-    -- event = 'VeryLazy',
+    -- INFO: I'll be back... See you in may 2025
+    -- this will flicker when darkman is enabled again
     config = function()
-      -- -- Get the current hour
-      -- local current_hour = tonumber(os.date '%H')
-      --
-      -- -- Set the background based on the time of day
-      -- if current_hour >= 9 and current_hour < 17 then
-      --   -- vim.opt.background = 'light'
-      --   vim.cmd.colorscheme 'bluloco-light'
-      -- else
-      --   require('catppuccin').setup {}
-      --   -- vim.opt.background = 'dark'
-      --   vim.cmd.colorscheme 'catppuccin-macchiato'
-      -- end
+      vim.cmd.colorscheme 'catppuccin-macchiato'
     end,
-    -- vim.cmd.colorscheme 'vim'
   },
+  -- INFO: I'll be back... See you in may 2025
   --
   -- Watches darkman (dbus org.freedesktop.impl.portal.desktop.darkman)
   -- for theme changes
-  {
-    'f-person/auto-dark-mode.nvim',
-    lazy = false,
-    priority = 9999,
-    commit = 'e328dc463d238cb7d690fb4daf068eba732a5a14',
-    -- config = function()
-    --   -- Get the current hour
-    --   local current_hour = tonumber(os.date '%H')
-    --
-    --   -- Set the background based on the time of day
-    --   if current_hour >= 9 and current_hour < 17 then
-    --     -- vim.opt.background = 'light'
-    --     vim.cmd.colorscheme 'bluloco-light'
-    --   else
-    --     require('catppuccin').setup {}
-    --     -- vim.opt.background = 'dark'
-    --     vim.cmd.colorscheme 'catppuccin-macchiato'
-    --   end
-    -- end,
-    opts = {
-      update_interval = 50,
-      set_dark_mode = function()
-        -- vim.api.nvim_set_option_value('background', 'dark', {})
-        vim.cmd 'colorscheme catppuccin-macchiato'
-        -- vim.cmd 'colorscheme tokyonight-storm'
-      end,
-      set_light_mode = function()
-        vim.api.nvim_set_option_value('background', 'light', {})
-        -- vim.cmd 'colorscheme tokyonight-day'
-        -- vim.cmd 'colorscheme catppuccin-latte'
-        vim.cmd.colorscheme 'bluloco-light'
-      end,
-    },
-  },
+  -- {
+  --   'f-person/auto-dark-mode.nvim',
+  --   lazy = false,
+  --   priority = 9999,
+  --   commit = 'e328dc463d238cb7d690fb4daf068eba732a5a14',
+  --   -- config = function()
+  --   --   -- Get the current hour
+  --   --   local current_hour = tonumber(os.date '%H')
+  --   --
+  --   --   -- Set the background based on the time of day
+  --   --   if current_hour >= 9 and current_hour < 17 then
+  --   --     -- vim.opt.background = 'light'
+  --   --     vim.cmd.colorscheme 'bluloco-light'
+  --   --   else
+  --   --     require('catppuccin').setup {}
+  --   --     -- vim.opt.background = 'dark'
+  --   --     vim.cmd.colorscheme 'catppuccin-macchiato'
+  --   --   end
+  --   -- end,
+  --   opts = {
+  --     -- WARN: it launches every 50ms
+  --     -- /usr/bin/dbus-send --session --print-reply=literal --reply-timeout=1000 --dest=org.freedesktop.portal.Desktop /org/freedesktop/portal/desktop org.freedesktop.portal.Settings.Read string:org.freedesktop.appearance string:color-scheme
+  --     update_interval = 50,
+  --     set_dark_mode = function()
+  --       -- vim.api.nvim_set_option_value('background', 'dark', {})
+  --       -- INFO: we have to load colorscheme twice because not all colors are applied on first try :/
+  --       vim.cmd 'colorscheme catppuccin-macchiato'
+  --       vim.cmd 'colorscheme catppuccin-macchiato'
+  --     end,
+  --     set_light_mode = function()
+  --       vim.api.nvim_set_option_value('background', 'light', {})
+  --       -- INFO: we have to load colorscheme twice because not all colors are applied on first try :/
+  --       vim.cmd.colorscheme 'bluloco-light'
+  --       vim.cmd.colorscheme 'bluloco-light'
+  --     end,
+  --   },
+  -- },
 
   {
     'akinsho/bufferline.nvim',

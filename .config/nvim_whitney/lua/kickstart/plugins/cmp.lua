@@ -1,6 +1,9 @@
 return {
   { -- Autocompletion
-    'hrsh7th/nvim-cmp',
+    -- 'hrsh7th/nvim-cmp',
+    'iguanacucumber/magazine.nvim',
+    name = 'nvim-cmp', -- Otherwise highlighting gets messed up
+
     event = 'InsertEnter',
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
@@ -19,13 +22,18 @@ return {
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+              require('luasnip.loaders.from_lua').lazy_load { paths = { './lua/snippets' } }
+              require('luasnip.loaders.from_vscode').lazy_load { paths = { './lua/snippets/vscode' } }
+            end,
+          },
         },
+        config = function()
+          -- require('luasnip.loaders.from_vscode').lazy_load { paths = { '~/.config/nvim_whitney/snippets' } }
+        end,
       },
       'saadparwaiz1/cmp_luasnip',
 
@@ -34,11 +42,15 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'onsails/lspkind.nvim',
+      'hrsh7th/cmp-emoji',
     },
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local lspkind = require 'lspkind'
+
       luasnip.config.setup {}
 
       cmp.setup {
@@ -62,8 +74,8 @@ return {
           ['<C-k>'] = cmp.mapping.select_prev_item(),
 
           -- Scroll the documentation window [b]ack / [f]orward
-          ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          ['<Up>'] = cmp.mapping.scroll_docs(-4),
+          ['<Down>'] = cmp.mapping.scroll_docs(4),
 
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
@@ -112,6 +124,32 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'emoji' },
+        },
+        window = {
+          completion = {
+            border = 'rounded',
+          },
+          documentation = {
+            border = 'rounded',
+          },
+        },
+        formatting = {
+          format = lspkind.cmp_format {
+            mode = 'symbol', -- show only symbol annotations
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            -- can also be a function to dynamically calculate max width such as
+            -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+            ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+
+            -- The function below will be called before any actual modifications from lspkind
+            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+            -- before = function (entry, vim_item)
+            --   ...
+            --   return vim_item
+            -- end
+          },
         },
       }
     end,

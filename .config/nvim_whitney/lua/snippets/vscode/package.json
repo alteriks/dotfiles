@@ -1,0 +1,17 @@
+{
+    "name": "my-snippets",
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "plaintext",
+                    "markdown",
+                    "tex",
+                    "html",
+                    "all"
+                ],
+                "path": "./all.json"
+            }
+        ]
+  }
+}

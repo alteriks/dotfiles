@@ -10,7 +10,8 @@ desc = "Maximize or restore preview"
 [manager]
 
 keymap = [
-	{ on = [ "D" ], run = ''' shell 'dragon-drop -x --all "$@"' --confirm ''', desc = "Drag&Drop" },
+	{ on = [ "E" ], run = ''' shell 'dragon-drop -x --all "$@"' --confirm ''', desc = "Drag&Drop" },
+	{ on = [ "e" ], run = ''' shell 'dragon-drop --target --target 2> /dev/null | xargs -rl -I {} cp {} .' --confirm ''', desc = "Drag&Drop" },
 	{ on = [ "<Esc>" ], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = [ "<C-[>" ], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = [ "q" ],     run = "quit",               desc = "Exit the process" },
@@ -88,7 +89,7 @@ keymap = [
 	{ on = [ "-" ],         run = "link",                       desc = "Symlink the absolute path of files" },
 	{ on = [ "_" ],         run = "link --relative",            desc = "Symlink the relative path of files" },
 	{ on = [ "d" ],         run = "remove",                     desc = "Move the files to the trash" },
-	# Dragon conflict { on = [ "D" ],         run = "remove --permanently",       desc = "Permanently delete the files" },
+	{ on = [ "D" ],         run = "remove --permanently",       desc = "Permanently delete the files" },
 	{ on = [ "a" ],         run = "create",                     desc = "Create a file or directory (ends with / for directories)" },
 	{ on = [ "r" ],         run = "rename --cursor=before_ext", desc = "Rename a file or directory" },
 	{ on = [ ";" ],         run = "shell --interactive",                      desc = "Run a shell command" },

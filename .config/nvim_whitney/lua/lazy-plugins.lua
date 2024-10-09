@@ -211,7 +211,12 @@ return {
   },
 
   require 'kickstart/plugins/autopairs',
+  -- Completion+LuaSnip
   require 'kickstart/plugins/cmp',
+  -- Also used in:
+  -- - lua/kickstart/plugins/autopairs.lua
+  -- - lua/kickstart/plugins/lspconfig.lua :40, :180
+  -- require 'kickstart/plugins/blink-cmp', -- replacement for hrsh7th/nvim-cmp
   require 'kickstart/plugins/dashboard',
   require 'kickstart/plugins/flash',
   require 'kickstart/plugins/gitsigns',
@@ -223,6 +228,7 @@ return {
   require 'kickstart/plugins/toggleterm',
   require 'kickstart/plugins/treesitter',
   require 'kickstart/plugins/which-key',
+  require 'kickstart/plugins/markview',
 }
 
 -- vim: ts=2 sts=2 sw=2 et

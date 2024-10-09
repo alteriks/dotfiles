@@ -291,6 +291,7 @@ YADM() {
       yadm)
         echo -e "${GREEN}[+] YADM${NC}"
         YADM_DATA=$XDG_DATA_HOME/yadm
+		yadm add /home/alteriks/.config/nvim_whitney/
         # echo "!!! $YADM_DATA !!!"
         yadm_f
         ;;
@@ -349,7 +350,7 @@ history_all () {
     fi
   fi
   zle reset-prompt
-  } 
+  }
 
 zle     -N            history_all
 bindkey -M emacs '^T' history_all
@@ -361,7 +362,7 @@ ssh_fzf () {
   IFS=$'\n' selected=($(\
   	fc -l 1 | \
   	sed -n 's/.*  \(ssh.*\)/\1/p' | \
-  	grep  -v -e '>' -e '|' -e ';' -e ':' -e '\[' -e '-keygen' -e '-copy-id' | \
+  	grep  -v -e '>' -e '|' -e ':' -e '\[' -e '-keygen' -e '-copy-id' | \
   	FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} ${FZF_DEFAULT_OPTS-} --scheme=history" fzf --tac --query="$BUFFER"))
 
   if [[ "$selected" ]]; then

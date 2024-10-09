@@ -1,5 +1,7 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+vim.keymap.set('n', 'C-p', '<nop>')
+vim.keymap.set('n', 'C-n', '<nop>')
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -55,8 +57,8 @@ map('v', 'K', ":m '<-2<CR>gv==jgvo<esc>=jgvo", { desc = 'move highlighted text u
 -- thx primeagen
 map('x', '<leader>p', [["_dP]], { desc = 'Paste without overwriting buffer' })
 map('n', 'J', 'mzJ`z', { desc = 'Join lines, but cursor stays where it was' })
-map('n', '<C-d>', '<C-d>zz', { desc = 'Down Half Page' })
-map('n', '<C-u>', '<C-u>zz', { desc = 'Up Half Page' })
+-- map('n', '<C-d>', '<C-d>zz', { desc = 'Down Half Page' })
+-- map('n', '<C-u>', '<C-u>zz', { desc = 'Up Half Page' })
 map('n', '<leader>S', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'substituted hovered word' }) -- INFO: learn
 
 -- quick home/end in NORMAL
