@@ -211,12 +211,15 @@ return {
   },
 
   require 'kickstart/plugins/autopairs',
+  require 'kickstart/plugins/bigfile',
+
   -- Completion+LuaSnip
   require 'kickstart/plugins/cmp',
   -- Also used in:
   -- - lua/kickstart/plugins/autopairs.lua
   -- - lua/kickstart/plugins/lspconfig.lua :40, :180
   -- require 'kickstart/plugins/blink-cmp', -- replacement for hrsh7th/nvim-cmp
+
   require 'kickstart/plugins/dashboard',
   require 'kickstart/plugins/flash',
   require 'kickstart/plugins/gitsigns',

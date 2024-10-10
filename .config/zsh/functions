@@ -291,7 +291,8 @@ YADM() {
       yadm)
         echo -e "${GREEN}[+] YADM${NC}"
         YADM_DATA=$XDG_DATA_HOME/yadm
-		yadm add /home/alteriks/.config/nvim_whitney/
+		# Always add newfiles 
+		yadm add /home/alteriks/.config/nvim_whitney/lua/
         # echo "!!! $YADM_DATA !!!"
         yadm_f
         ;;

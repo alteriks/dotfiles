@@ -155,6 +155,9 @@ map('n', '<leader>lf', vim.diagnostic.open_float, { desc = 'lsp floating diagnos
 -- Copy
 map('n', '<C-S-c>', '<cmd>%y+<CR>', { desc = 'file copy whole' })
 
+-- snippets
+map('n', '<leader>ll', ':lua require("luasnip.loaders").edit_snippet_files()<CR>', { desc = 'Edit lua snippets' })
+
 -- cmdline-window
 -- https://www.reddit.com/r/neovim/comments/lizyxj/how_to_get_rid_of_q/
 -- https://www.reddit.com/r/neovim/comments/15bvtr4/comment/jtszt8u/

@@ -15,6 +15,9 @@ require('lazy').setup({
   change_detection = {
     notify = false,
   },
+  rocks = {
+    hererocks = true,
+  },
   lockfile = vim.fn.stdpath 'config' .. '/lazy-lock_' .. vim.fn.hostname() .. '.json',
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

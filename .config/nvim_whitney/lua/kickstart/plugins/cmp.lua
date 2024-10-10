@@ -31,9 +31,6 @@ return {
             end,
           },
         },
-        config = function()
-          -- require('luasnip.loaders.from_vscode').lazy_load { paths = { '~/.config/nvim_whitney/snippets' } }
-        end,
       },
       'saadparwaiz1/cmp_luasnip',
 
@@ -115,11 +112,11 @@ return {
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
-        experimental = {
-          ghost_text = {
-            hl_group = 'CmpGhostText',
-          },
-        },
+        -- experimental = {
+        -- ghost_text = {
+        --   hl_group = 'CmpGhostText',
+        -- },
+        -- },
         sources = {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },

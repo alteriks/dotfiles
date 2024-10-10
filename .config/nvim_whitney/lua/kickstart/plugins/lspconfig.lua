@@ -191,15 +191,12 @@ return {
       -- fix loading golang workspace slowdown
       capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
 
+      -- above is global maybe it should be ?!
+      -- override for Feel-ix-343/markdown-oxide LSP
+      local markdown_oxide_capabilities = capabilities
+      markdown_oxide_capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+
       -- Enable the following language servers
-      --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-      --
-      --  Add any additional override configuration in the following tables. Available keys are:
-      --  - cmd (table): Override the default command used to start the server
-      --  - filetypes (table): Override the default list of associated filetypes for the server
-      --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-      --  - settings (table): Override the default settings passed when initializing the server.
-      --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         bashls = {},
         cssls = {},
@@ -207,7 +204,6 @@ return {
         dockerls = {}, -- Dockerfile
         html = {},
         markdownlint = {},
-        markdown_oxide = {},
         -- tsserver = {},
         prettier = {},
         shellcheck = {},
@@ -215,17 +211,7 @@ return {
         shfmt = {}, -- Shell formatter - /home/alteriks/.local/share/nvim_nvchad/mason/bin/shfmt -h
         stylua = {},
         yamlfmt = {},
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        --
+
         ansiblels = {
           cmd = { 'ansible-language-server', '--stdio' },
           ['redhat.telemetry.enabled'] = false,
@@ -283,6 +269,35 @@ return {
               staticcheck = true,
               directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
               semanticTokens = true,
+            },
+          },
+        },
+        markdown_oxide = { -- it manages completion: ~/memo/markdown_examples.mdk:70-105
+          default_config = {
+            -- it's nice to watch for new files in ~/memo
+            -- so I can create new references using `[[some_newfile]]`
+            -- <C-s>
+            -- <leader>ca (code actions)
+            capabilities = markdown_oxide_capabilities,
+            commands = {
+              Today = {
+                function()
+                  vim.lsp.buf.execute_command { command = 'jump', arguments = { 'today' } }
+                end,
+                description = "Open today's daily note",
+              },
+              Tomorrow = {
+                function()
+                  vim.lsp.buf.execute_command { command = 'jump', arguments = { 'tomorrow' } }
+                end,
+                description = "Open tomorrow's daily note",
+              },
+              Yesterday = {
+                function()
+                  vim.lsp.buf.execute_command { command = 'jump', arguments = { 'yesterday' } }
+                end,
+                description = "Open yesterday's daily note",
+              },
             },
           },
         },
