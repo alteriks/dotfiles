@@ -18,16 +18,6 @@ local function diagnostic_indicator(_, _, diagnostics, _)
 end
 return {
   {
-    'uloco/bluloco.nvim',
-    lazy = false,
-    priority = 1000,
-    dependencies = { 'rktjmp/lush.nvim' },
-    config = function()
-      -- your optional config goes here, see below.
-    end,
-    opts = {},
-  },
-  {
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
@@ -77,6 +67,16 @@ return {
   --       vim.cmd.colorscheme 'bluloco-light'
   --     end,
   --   },
+  -- },
+  -- {
+  --   'uloco/bluloco.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   dependencies = { 'rktjmp/lush.nvim' },
+  --   config = function()
+  --     -- your optional config goes here, see below.
+  --   end,
+  --   opts = {},
   -- },
 
   {

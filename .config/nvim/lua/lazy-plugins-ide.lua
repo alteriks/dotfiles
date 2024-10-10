@@ -11,17 +11,19 @@ local ide = {
 local image = {
   -- TODO: 3rd/image.nvim not good enough
   -- local image = {
-  {
-    'vhyrro/luarocks.nvim',
-    priority = 1001, -- this plugin needs to run before anything else
-    opts = {
-      rocks = { 'magick' },
-    },
-  },
+  -- {
+  --   'vhyrro/luarocks.nvim',
+  --   priority = 1001, -- this plugin needs to run before anything else
+  --   opts = {
+  --     rocks = { 'magick' },
+  --   },
+  -- },
   {
     '3rd/image.nvim',
+    event = 'VeryLazy',
     dependencies = {
       {
+        'leafo/magick',
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         config = function()
@@ -32,16 +34,6 @@ local image = {
         end,
       },
     },
-
-    -- event = 'VeryLazy',
-
-    lazy = false,
-    -- dependencies = {
-    --   'leafo/magick',
-    -- },
-    -- config = function()
-    --   -- ...
-    -- end,
     opts = {
       backend = 'kitty',
       integrations = {

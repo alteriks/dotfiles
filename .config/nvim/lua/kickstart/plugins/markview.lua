@@ -1,7 +1,8 @@
 return {
 
   'OXY2DEV/markview.nvim',
-  lazy = false, -- Recommended
+  -- lazy = false, -- Recommended
+  ft = 'markdown',
   -- opts = {
   --   hybrid_modes = { 'n' },
   --   headings = presets.glow,
@@ -15,7 +16,7 @@ return {
       hybrid_modes = { 'n' },
       -- less flicker in hybrid_modes (thx: ✨ Feature: Always keep code block highlight #154)
       -- https://github.com/OXY2DEV/markview.nvim/issues/154
-      ignore_nodes = { 'fenced_code_block', 'atx_heading', 'block_quote' },
+      ignore_nodes = { 'fenced_code_block', 'atx_heading', 'block_quote', 'thematic_break' },
       headings = presets.headings.arrowed,
       checkboxes = presets.checkboxes.nerd,
     }
