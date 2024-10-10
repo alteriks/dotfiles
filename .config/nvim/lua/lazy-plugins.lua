@@ -1,5 +1,8 @@
 return {
 
+  {
+    'sindrets/diffview.nvim',
+  },
   -- show a diff, whenever recovering a buffer
   {
     'chrisbra/Recover.vim',

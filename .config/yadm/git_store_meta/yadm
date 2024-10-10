@@ -2,7 +2,6 @@
 <file>	<type>	<mode>
 .cache	d	0755
 .cache/.ignore	f	0644
-.cache/nvim	d	0755
 .config	d	0755
 .config/Kvantum	d	0755
 .config/Kvantum/kvantum.kvconfig	f	0644
